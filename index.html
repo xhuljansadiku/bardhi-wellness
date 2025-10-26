@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bardhi Wellness – Trajnim & Nutrition</title>
+  <meta name="description" content="Platformë trajnimi dhe ushqimi – programe të personalizuara, aplikacion mobil dhe mbështetje nga trajnerë." />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body>
+  <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">
+      <i class="bi bi-activity text-brand me-2"></i>Bardhi Wellness
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+        <li class="nav-item"><a class="btn btn-sm btn-outline-dark ms-lg-2" href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- HERO -->
+<header id="home" class="hero bg-cover d-flex align-items-center justify-content-center text-center">
+  <div class="hero-bg"></div>
+  <div class="container position-relative z-1 py-5">
+    <h1 class="fw-bold mb-3 display-5">
+    Bardhi Wellness  💪 
+    </h1>
+    <p class="lead mb-4">
+      <strong>Bardhi Uka</strong> – Trajner personal që të ndihmon të ndërtosh trupin, mendjen dhe stilin e jetës që dëshiron. ✨
+    </p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="#pricing" class="btn btn-brand btn-lg d-flex align-items-center gap-2 px-4">
+        🚀 <span>Nis sot</span>
+      </a>
+      <a href="transformation.html" class="btn btn-outline-light btn-lg d-flex align-items-center gap-2 px-4">
+        📸 <span>Shiko rezultatet</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT / RRETH MEJE -->
+<section id="about" class="about-section py-6 bg-soft">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <!-- Foto -->
+      <div class="col-lg-6">
+        <figure class="about-photo shadow-soft rounded-2xl overflow-hidden m-0">
+          <img src="assets/images/bardhi-about.jpg" class="w-100 d-block" alt="Bardhi Uka – Trajner personal" />
+        </figure>
+      </div>
+
+      <!-- Teksti -->
+      <div class="col-lg-6">
+        <div class="about-copy">
+          <h3 class="fw-bold mb-3">
+            🏋️‍♂️ Bardhi Uka
+          </h3>
+          <p class="text-muted mb-4">Trajner Personal &amp; Licencuar nga UEFA</p>
+
+          <p class="lead about-lead">
+            Jam <strong>trajner personal dhe coach</strong> me eksperiencë në trajnimin sportiv dhe transformimin trupor.
+          </p>
+
+          <p class="about-p">
+            Me <strong>licenca UEFA (niveli C &amp; B)</strong> dhe <strong>diplomë nga Fakulteti i Shkencave Sportive (Prishtinë)</strong>, e bazoj çdo plan në njohuri shkencore dhe përkushtim real ndaj klientëve të mi.
+          </p>
+
+          <p class="about-p">
+            🚫 Nuk ofroj “sekrete” apo dieta magjike por <strong>plane të personalizuara</strong>, struktura të thjeshta dhe rezultate që zgjasin.
+          </p>
+
+          <p class="about-p mb-4">
+            🎯 <strong>Qëllimi im është i qartë:</strong> të ndihesh mirë në trupin tënd, të kesh energji, vetëbesim dhe një mënyrë jete që të funksionon për ty jo për disa javë, por për gjithë vitin. 💪
+          </p>
+
+          <a href="contact.html" class="btn btn-brand px-4 fw-semibold">Lexo me shumë..</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing" class="py-6 pricing-dark">
+  <div class="container">
+
+    <!-- One-time packages -->
+    <div class="text-center mb-4">
+      <h2 class="section-title">Paketa një-herëshe</h2>
+      <p class="section-lead">Paguaj vetëm një herë. Pa abonim.</p>
+    </div>
+
+    <div class="row g-4 align-items-stretch">
+      <!-- Basic €299 (one-time) -->
+      <div class="col-md-6 col-lg-4">
+        <div class="pkg-card h-100 rounded-2xl">
+          <div class="pkg-thumb" style="--img:url('../images/pako-basic.jpg')"></div>
+          <div class="pkg-body">
+            <div class="pkg-title"><span class="pkg-dot"></span> Pako Basic</div>
+            <div class="pkg-meta mt-1">Bardhi Wellness</div>
+            <div class="pkg-price"><strong>€299,00</strong> EUR</div>
+            <ul class="pkg-feats list-unstyled small">
+              <li>Plan stërvitjeje i personalizuar</li>
+              <li>Video ushtrimesh</li>
+              <li>Udhëzues ushqimi (PDF)</li>
+            </ul>
+            <a href="#" class="btn-dark-outline buy-plan"
+               data-plan="basic" data-price="299" data-mode="pay">Bli tani</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium €399 (one-time) -->
+      <div class="col-md-6 col-lg-4">
+        <div class="pkg-card h-100 rounded-2xl">
+             <div class="pkg-thumb" style="--img:url('../images/pako-premium.jpg')"></div>
+          <div class="pkg-body">
+            <div class="pkg-title"><span class="pkg-dot"></span> 💚 Pako Premium</div>
+            <div class="pkg-meta mt-1">Bardhi Wellness</div>
+            <div class="pkg-price"><strong>€399,00</strong> EUR</div>
+            <ul class="pkg-feats list-unstyled small">
+              <li>Plan 8–12 javë + progresion</li>
+              <li>Makro-kalkulator</li>
+              <li>1 konsultë me trajner</li>
+            </ul>
+            <a href="#" class="btn-brand-dark buy-plan"
+               data-plan="premium" data-price="399" data-mode="pay">Bli tani</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Supreme €499 (one-time) -->
+      <div class="col-md-6 col-lg-4">
+        <div class="pkg-card h-100 rounded-2xl">
+          <div class="pkg-thumb" style="--img:url('../images/pako-supreme.jpg')"></div>
+          <div class="pkg-body">
+            <div class="pkg-title"><span class="pkg-dot"></span> Pako Supreme</div>
+            <div class="pkg-meta mt-1">Bardhi Wellness</div>
+            <div class="pkg-price"><strong>€499,00</strong> EUR</div>
+            <ul class="pkg-feats list-unstyled small">
+              <li>Program i personalizuar i avancuar</li>
+              <li>2 konsulta me trajner</li>
+              <li>Analiza e progresit</li>
+            </ul>
+            <a href="#" class="btn-dark-outline buy-plan"
+               data-plan="supreme" data-price="499" data-mode="pay">Bli tani</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Monthly subscription -->
+    <div class="text-center my-5">
+      <h3 class="section-title mb-2">Abonimi mujor</h3>
+      <p class="section-lead">Fleksibël, anulo kur të duash.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="pkg-card h-100 rounded-2xl">
+          <div class="pkg-thumb" style="--img:url('../images/pako-starter.jpg')"></div>
+          <div class="pkg-body">
+            <div class="pkg-title"><span class="pkg-dot"></span> Pako Starter</div>
+            <div class="pkg-meta mt-1">Bardhi Wellness</div>
+            <div class="pkg-price"><strong>€39,00</strong> EUR / muaj</div>
+            <ul class="pkg-feats list-unstyled small">
+              <li>Plan 3–4x/javë</li>
+              <li>Video ushtrimesh</li>
+              <li>Mbështetje bazë</li>
+            </ul>
+            <a href="#" class="btn-brand-dark buy-plan"
+               data-plan="starter" data-price="39" data-mode="sub">Abonohu tani</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SHOP (Single product -> checkout.html) ============ -->
+<section id="shop" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold" style="color:var(--ink,#0f172a);">Shop</h2>
+      <p class="text-muted mb-0">Bli tani suplementin tonë të fundit për dobësim.</p>
+    </div>
+
+    <div class="row g-4 align-items-center">
+      <!-- Image -->
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
+          <img src="./assets/images/bardhiuka-product.jpg" alt="Suplement Dobësimi" class="w-100 h-100 object-fit-cover">
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4">
+          <div class="card-body p-4 p-lg-5">
+
+            <span class="text-uppercase small text-muted">Bardhi Wellness</span>
+            <h3 class="mt-1 mb-3 fw-bold">Suplement Dobësimi</h3>
+
+            <div class="d-flex align-items-baseline gap-2 mb-3">
+              <span class="h4 mb-0" id="priceLabel">€119,00</span>
+              <span class="text-muted small">EUR (taxat e përfshira)</span>
+            </div>
+
+            <p class="text-muted">Formula jonë premium për energji dhe fokus gjatë stërvitjes, ndihmon në humbje peshe dhe rikuperim.</p>
+
+            <!-- Quantity -->
+            <div class="mb-4">
+              <label for="qtyInput" class="form-label fw-semibold">Sasia</label>
+              <div class="input-group" style="max-width: 220px;">
+                <button class="btn btn-outline-secondary" type="button" id="qtyMinus" aria-label="Zvogëlo sasinë">−</button>
+                <input type="number" class="form-control text-center" id="qtyInput" value="1" min="1" step="1" inputmode="numeric" pattern="[0-9]*">
+                <button class="btn btn-outline-secondary" type="button" id="qtyPlus" aria-label="Rrit sasinë">+</button>
+              </div>
+            </div>
+
+            <!-- Buy Now -->
+            <div class="d-grid gap-2">
+             <!-- KJO: përputhe me foton reale të kartës -->
+<!-- KJO: përputhe me foton reale të kartës -->
+<a id="buyNowBtn"
+   href="checkout.html"
+   class="btn btn-success btn-lg rounded-pill fw-semibold"
+   data-sku="SUPL-DBS-001"
+   data-title="Suplement Dobësimi"
+   data-price="119.00"
+   data-currency="EUR"
+   data-image="./assets/images/bardhiuka-product.jpg">
+  Bli tani
+</a>
+
+              <small class="text-center text-muted">Pagesa përpunohet në checkout.</small>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+ 
+<!-- SUCCESS STORIES -->
+<section id="success-stories" class="py-6 bg-soft">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="section-title">Historitë e Suksesit</h1>
+      <p class="section-lead">
+        Shihni rezultatet nga disa prej anëtarëve tanë të mrekullueshëm që kanë ndjekur
+        <strong>Trajnimin Online me Çmime të Përballueshme.</strong>
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Story 1 -->
+      <div class="col-sm-6 col-lg-4">
+        <a class="story-card rounded-2xl overflow-hidden shadow-soft h-100 d-block story-open"
+           href="#"
+           role="button"
+           aria-haspopup="dialog"
+           aria-controls="storyModal"
+           data-title="Kamila"
+           data-desc="4 javë vetëm CFD, pa ndryshim në ushtrime."
+           data-before="assets/images/before-after/before.png"
+           data-after="assets/images/before-after/after.png">
+          <div class="story-images">
+            <img src="assets/images/before-after/before.png" alt="Kamila - Para" class="before" loading="lazy" decoding="async">
+            <img src="assets/images/before-after/after.png"  alt="Kamila - Pas"  class="after"  loading="lazy" decoding="async">
+          </div>
+          <div class="story-body p-3 text-center">
+            <h6 class="fw-semibold mb-1">Kamila</h6>
+            <p class="small text-muted mb-0">4 javë progres</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Story 2 -->
+      <div class="col-sm-6 col-lg-4">
+        <a class="story-card rounded-2xl overflow-hidden shadow-soft h-100 d-block story-open"
+           href="#"
+           role="button"
+           aria-haspopup="dialog"
+           aria-controls="storyModal"
+           data-title="Arbër G."
+           data-desc="-9 kg në 10 javë"
+           data-before="assets/images/before-after/before.png"
+           data-after="assets/images/before-after/after.png">
+          <div class="story-images">
+            <img src="assets/images/before-after/before.png" alt="Arbër G. - Para" class="before" loading="lazy" decoding="async">
+            <img src="assets/images/before-after/after.png"  alt="Arbër G. - Pas"  class="after"  loading="lazy" decoding="async">
+          </div>
+          <div class="story-body p-3 text-center">
+            <h6 class="fw-semibold mb-1">Arbër G.</h6>
+            <p class="small text-muted mb-0">-9 kg në 10 javë</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Story 3 -->
+      <div class="col-sm-6 col-lg-4">
+        <a class="story-card rounded-2xl overflow-hidden shadow-soft h-100 d-block story-open"
+           href="#"
+           role="button"
+           aria-haspopup="dialog"
+           aria-controls="storyModal"
+           data-title="Dritan K."
+           data-desc="+5 kg masë muskulore në 3 muaj"
+           data-before="assets/images/before-after/before.png"
+           data-after="assets/images/before-after/after.png">
+          <div class="story-images">
+            <img src="assets/images/before-after/before.png" alt="Dritan K. - Para" class="before" loading="lazy" decoding="async">
+            <img src="assets/images/before-after/after.png"  alt="Dritan K. - Pas"  class="after"  loading="lazy" decoding="async">
+          </div>
+          <div class="story-body p-3 text-center">
+            <h6 class="fw-semibold mb-1">Dritan K.</h6>
+            <p class="small text-muted mb-0">+5 kg në 3 muaj</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+   <div class="d-flex justify-content-center mt-5">
+  <a href="./transformation.html" class="btn btn-success px-4 py-2 fw-semibold rounded-pill">
+    Shiko më shumë
+  </a>
+</div>
+
+  </div>
+</section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-6 bg-soft">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <h2 class="section-title">Pyetje të shpeshta</h2>
+          <p class="section-lead">Nëse s’e gjen përgjigjen, na shkruaj direkt.</p>
+          <div class="accordion mt-3" id="faqAcc">
+            <div class="accordion-item rounded-2xl overflow-hidden mb-3">
+              <h2 class="accordion-header" id="f1"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="true" aria-controls="c1">A funksionon pa pajisje?</button></h2>
+              <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc"><div class="accordion-body">Po, kemi opsione për shtëpi dhe palestër. Programi përshtatet sipas pajisjeve që ke.</div></div>
+            </div>
+            <div class="accordion-item rounded-2xl overflow-hidden mb-3">
+              <h2 class="accordion-header" id="f2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">Si menaxhohen kaloritë?</button></h2>
+              <div id="c2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Aplikacioni llogarit makrot sipas qëllimit tënd dhe i sinkronizon me aktivitetin javor.</div></div>
+            </div>
+            <div class="accordion-item rounded-2xl overflow-hidden mb-3">
+              <h2 class="accordion-header" id="f3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">A mund të anulloj kur të dua?</button></h2>
+              <div id="c3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Po, abonimi është pa kontratë. Mund të anulosh para rinovimit të radhës.</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 ms-auto">
+          <div id="cta" class="card rounded-2xl shadow-soft sticky-lg-top" style="top:90px">
+            <div class="card-body p-4">
+              <h4 class="mb-1">Gati të fillosh?</h4>
+              <p class="text-muted">Lini emailin dhe dërgojmë udhëzuesin falas “7 hapa për rezultate”.</p>
+              <form id="leadForm" novalidate>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Emri</label>
+                  <input type="text" id="name" class="form-control" required />
+                  <div class="invalid-feedback">Shkruaj emrin.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" class="form-control" required />
+                  <div class="invalid-feedback">Shkruaj një email të vlefshëm.</div>
+                </div>
+                <button class="btn btn-brand w-100" type="submit">Merr udhëzuesin</button>
+                <p id="formMsg" class="small text-success mt-3 d-none"><i class="bi bi-check2-circle me-1"></i>Faleminderit! Kontrollo emailin.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <h5 class="fw-bold">CoachPro</h5>
+          <p class="text-muted">Trajnime të personalizuara për jetë më të shëndetshme.</p>
+          <div class="d-flex gap-3">
+            <a href="#"><i class="bi bi-instagram fs-4"></i></a>
+            <a href="#"><i class="bi bi-youtube fs-4"></i></a>
+            <a href="#"><i class="bi bi-tiktok fs-4"></i></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2">
+          <h6 class="text-uppercase small">Kompania</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Rreth nesh</a></li>
+            <li><a href="#">Karriera</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h6 class="text-uppercase small">Mbështetje</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Politika e privatësisë</a></li>
+            <li><a href="#">Termat e shërbimit</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h6 class="text-uppercase small">Buletini</h6>
+          <form class="d-flex gap-2" onsubmit="event.preventDefault(); document.getElementById('nlMsg').classList.remove('d-none');">
+            <input type="email" class="form-control" placeholder="Emaili juaj" required />
+            <button class="btn btn-dark" type="submit">Abonohu</button>
+          </form>
+          <div id="nlMsg" class="small text-success mt-2 d-none">U regjistruat me sukses.</div>
+        </div>
+      </div>
+      <div class="border-top mt-4 pt-3 small text-muted">© <span id="year"></span> CoachPro. Të gjitha të drejtat e rezervuara.</div>
+    </div>
+  </footer>
+
+<script>
+(function(){
+  const btn   = document.getElementById('buyNowBtn');
+  if (!btn) return; // ekzekuto vetëm në faqen që ka Shop
+
+  const qtyEl = document.getElementById('qtyInput');
+  const minus = document.getElementById('qtyMinus');
+  const plus  = document.getElementById('qtyPlus');
+
+  // stepper
+  minus?.addEventListener('click', ()=> {
+    const v = Math.max(1, (parseInt(qtyEl.value,10) || 1) - 1);
+    qtyEl.value = v;
+  });
+  plus?.addEventListener('click', ()=> {
+    const v = Math.max(1, (parseInt(qtyEl.value,10) || 1) + 1);
+    qtyEl.value = v;
+  });
+
+  // buy now
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+
+    const qty   = Math.max(1, parseInt(qtyEl.value,10) || 1);
+    const title = this.dataset.title;
+    const price = parseFloat(this.dataset.price);
+    const curr  = this.dataset.currency || 'EUR';
+
+    const item = {
+      sku:      this.dataset.sku,
+      title,
+      price,
+      currency: curr,
+      image:    this.dataset.image,
+      qty
+    };
+
+    // Ruaj në localStorage (opsionale, për UI më të detajuar në checkout)
+    const cart = { items:[item], subtotal:item.price*item.qty, currency:item.currency, updatedAt:Date.now() };
+    try { localStorage.setItem('cart', JSON.stringify(cart)); } catch(e){}
+
+    // Dërgo parametra që i lexon checkout-i yt
+    // plan = "Titulli × qty", mode = pay, price = price*qty
+    const base = location.pathname.replace(/[^/]*$/, ''); // path i dosjes aktuale
+    const url  = new URL(base + 'checkout.html', location.origin);
+    url.searchParams.set('plan', `${title} × ${qty}`);
+    url.searchParams.set('mode', 'pay');
+    url.searchParams.set('price', String(price * qty));
+
+    // fallback info (nëse do t’i përdorësh më vonë)
+    url.searchParams.set('sku', item.sku);
+    url.searchParams.set('currency', curr);
+    url.searchParams.set('image', item.image);
+
+    location.href = url.toString();
+  });
+})();
+</script>
+
+
+<!--  Pastaj ngarko Bootstrap dhe app.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+  <style>
+    /* spacing utility (since Bootstrap <=5 s’ka py-6) */
+    .py-6{padding-top:4.5rem;padding-bottom:4.5rem}
+  </style>
+</body>
+</html>

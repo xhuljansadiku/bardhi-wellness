@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoachPro – Çmimet</title>
+  <meta name="description" content="Planet e abonimit për trajnime dhe ushqim. Zgjidh bazuar në nevojat e tua." />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    :root{
+      --brand:#6A5AE0; --brand-2:#00B894; --soft:#f6f7fb; --ink:#0f1221;
+    }
+    body{font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif;color:#1a1d2b}
+    .btn-brand{background:var(--brand);border-color:var(--brand)}
+    .btn-brand:hover{background:#5b4fd0;border-color:#5b4fd0}
+    .text-brand{color:var(--brand)}
+    .rounded-2xl{border-radius:1.25rem}
+    .shadow-soft{box-shadow:0 12px 40px rgba(15,18,33,.08)}
+    .bg-soft{background:var(--soft)}
+    .section-title{font-weight:800;letter-spacing:-.02em}
+    .price{font-size:2.5rem;font-weight:800}
+    .savings{background:var(--brand-2);color:#0b2a22}
+    .feature-list li{display:flex;gap:.5rem;align-items:baseline;margin-bottom:.5rem}
+    .feature-list i{color:var(--brand)}
+    .badge-pop{background:var(--brand-2)}
+    .table thead th{border-bottom:0}
+    .nav-link{color:inherit}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-transparent">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home"><i class="bi bi-activity text-brand me-2"></i>CoachPro</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="./transformation.html">Transformime</a></li>
+          <li class="nav-item"><a class="nav-link" href="./pricing.html">Paketat</a></li>
+          <li class="nav-item"><a class="btn btn-sm btn-brand ms-lg-2" href="./contact.html">Fillo sot</a></li>
+            <li class="nav-item"><a class="btn btn-sm btn-brand ms-lg-2" href="./login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HEADER -->
+  <header class="py-5 bg-soft border-bottom">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h1 class="display-5 fw-bold">Çmime të thjeshta, rezultate reale</h1>
+          <p class="lead mb-0">Programe stërvitjeje & ushqimi, aplikacion mobil dhe mbështetje nga trajnerë. Anulo kur të duash.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="d-flex align-items-center justify-content-lg-end gap-3 bg-white border rounded-2xl p-2 shadow-soft">
+            <span class="fw-semibold">Mujore</span>
+            <div class="form-check form-switch m-0">
+              <input class="form-check-input" type="checkbox" role="switch" id="billingToggle" />
+              <label class="form-check-label" for="billingToggle">Vjetore</label>
+            </div>
+            <span class="badge savings rounded-pill">Kursen deri në 20%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRICING CARDS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <!-- Basic -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 rounded-2xl">
+            <div class="card-body p-4 d-flex flex-column">
+              <h6 class="text-uppercase text-muted">Basic</h6>
+              <h3 class="price"><span class="price-value" data-monthly="19" data-yearly="15">19</span>€<span class="fs-6 fw-normal">/muaj</span></h3>
+              <p class="text-muted">Për fillestarë që kanë nevojë për një plan të qartë.</p>
+              <ul class="feature-list small flex-grow-1">
+                <li><i class="bi bi-check2-circle"></i>Plan stërvitjeje 3x/javë</li>
+                <li><i class="bi bi-check2-circle"></i>Video ushtrimesh & ditar</li>
+                <li class="text-muted"><i class="bi bi-x text-danger"></i>Chat me trajner</li>
+              </ul>
+              <a href="#cta" class="btn btn-outline-dark w-100 mt-3">Zgjidh Basic</a>
+            </div>
+          </div>
+        </div>
+        <!-- Pro -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 rounded-2xl shadow-soft border-2 position-relative">
+            <span class="badge badge-pop position-absolute top-0 start-50 translate-middle-x mt-3">Më i zgjedhuri</span>
+            <div class="card-body p-4 d-flex flex-column">
+              <h6 class="text-uppercase text-muted">Pro</h6>
+              <h3 class="price"><span class="price-value" data-monthly="39" data-yearly="32">39</span>€<span class="fs-6 fw-normal">/muaj</span></h3>
+              <p class="text-muted">Balancë perfekte për shumicën e klientëve.</p>
+              <ul class="feature-list small flex-grow-1">
+                <li><i class="bi bi-check2-circle"></i>Plan 4–5x/javë + progresion</li>
+                <li><i class="bi bi-check2-circle"></i>Makro‑kalkulator & receta</li>
+                <li><i class="bi bi-check2-circle"></i>Chat me trajner 1:1</li>
+              </ul>
+              <a href="#cta" class="btn btn-brand w-100 mt-3">Zgjidh Pro</a>
+            </div>
+          </div>
+        </div>
+        <!-- Elite -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 rounded-2xl">
+            <div class="card-body p-4 d-flex flex-column">
+              <h6 class="text-uppercase text-muted">Elite</h6>
+              <h3 class="price"><span class="price-value" data-monthly="79" data-yearly="65">79</span>€<span class="fs-6 fw-normal">/muaj</span></h3>
+              <p class="text-muted">Për ata që duan personalizim maksimal dhe performancë.</p>
+              <ul class="feature-list small flex-grow-1">
+                <li><i class="bi bi-check2-circle"></i>Program i personalizuar nga trajneri</li>
+                <li><i class="bi bi-check2-circle"></i>Tele‑sesione javore</li>
+                <li><i class="bi bi-check2-circle"></i>Analiza mujore e progresit</li>
+              </ul>
+              <a href="#cta" class="btn btn-outline-dark w-100 mt-3">Zgjidh Elite</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Money-back + Trust -->
+      <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mt-4 text-muted">
+        <i class="bi bi-shield-check"></i><small>Garanci rimbursimi 14‑ditor</small>
+        <span class="mx-2">•</span>
+        <i class="bi bi-credit-card"></i><small>Pagesa të sigurta (Visa, MasterCard)</small>
+        <span class="mx-2">•</span>
+        <i class="bi bi-people"></i><small>Anulo kur të duash</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE TABLE -->
+  <section class="py-5 bg-soft">
+    <div class="container">
+      <h3 class="section-title mb-4">Krahasim i shpejtë</h3>
+      <div class="table-responsive">
+        <table class="table align-middle bg-white rounded-2xl overflow-hidden">
+          <thead>
+            <tr>
+              <th>Veçori</th>
+              <th class="text-center">Basic</th>
+              <th class="text-center">Pro</th>
+              <th class="text-center">Elite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vitet e programit</td>
+              <td class="text-center">3x/javë</td>
+              <td class="text-center">4–5x/javë</td>
+              <td class="text-center">Custom</td>
+            </tr>
+            <tr>
+              <td>Plan ushqimi</td>
+              <td class="text-center"><i class="bi bi-dash"></i></td>
+              <td class="text-center"><i class="bi bi-check2 text-brand"></i></td>
+              <td class="text-center"><i class="bi bi-check2 text-brand"></i></td>
+            </tr>
+            <tr>
+              <td>Chat me trajner</td>
+              <td class="text-center"><i class="bi bi-x text-danger"></i></td>
+              <td class="text-center"><i class="bi bi-check2 text-brand"></i></td>
+              <td class="text-center"><i class="bi bi-check2 text-brand"></i></td>
+            </tr>
+            <tr>
+              <td>Tele‑sesione</td>
+              <td class="text-center"><i class="bi bi-x text-danger"></i></td>
+              <td class="text-center"><i class="bi bi-dash"></i></td>
+              <td class="text-center"><i class="bi bi-check2 text-brand"></i></td>
+            </tr>
+            <tr>
+              <td>Analiza mujore</td>
+              <td class="text-center"><i class="bi bi-x text-danger"></i></td>
+              <td class="text-center"><i class="bi bi-check2 text-brand"></i></td>
+              <td class="text-center"><i class="bi bi-check2 text-brand"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-7">
+          <h3 class="section-title">Pyetje të shpeshta</h3>
+          <div class="accordion mt-3" id="faqAcc">
+            <div class="accordion-item rounded-2xl overflow-hidden mb-3">
+              <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">A mund ta anulloj kur të dua?</button></h2>
+              <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc"><div class="accordion-body">Po. Abonimi është pa kontratë. Anulo para datës së rinovimit.</div></div>
+            </div>
+            <div class="accordion-item rounded-2xl overflow-hidden mb-3">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">A përfshihet një provë falas?</button></h2>
+              <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Po, 7 ditë provë për planet Pro dhe Elite.</div></div>
+            </div>
+            <div class="accordion-item rounded-2xl overflow-hidden mb-3">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3">A funksionon pa pajisje?</button></h2>
+              <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Po, kemi plane për shtëpi dhe palestër. Zgjidh pajisjet dhe programi përshtatet.</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div id="cta" class="card rounded-2xl shadow-soft sticky-lg-top" style="top:90px">
+            <div class="card-body p-4">
+              <h4 class="mb-1">Gati të fillosh?</h4>
+              <p class="text-muted">Hyr me emailin tënd dhe dërgojmë udhëzuesin “7 hapa për rezultate”.</p>
+              <form id="leadForm" novalidate>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Emri</label>
+                  <input id="name" type="text" class="form-control" required />
+                  <div class="invalid-feedback">Shkruaj emrin.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input id="email" type="email" class="form-control" required />
+                  <div class="invalid-feedback">Shkruaj një email të vlefshëm.</div>
+                </div>
+                <button class="btn btn-brand w-100" type="submit">Krijo llogari</button>
+                <p id="formMsg" class="small text-success mt-3 d-none"><i class="bi bi-check2-circle me-1"></i>Faleminderit! Kontrollo emailin.</p>
+              </form>
+              <div class="small text-muted mt-3"><i class="bi bi-shield-lock me-1"></i>Ne respektojmë privatësinë tënde.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4 border-top">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <div class="small text-muted">© <span id="year"></span> CoachPro</div>
+      <div class="d-flex gap-3">
+        <a class="text-muted" href="#">Termat</a>
+        <a class="text-muted" href="#">Privatësia</a>
+        <a class="text-muted" href="#">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Billing toggle (monthly/yearly)
+    const toggle = document.getElementById('billingToggle');
+    const prices = document.querySelectorAll('.price-value');
+    const unitLabels = document.querySelectorAll('.price span.fs-6');
+
+    function setBilling(yearly){
+      prices.forEach(p=>{
+        const m = p.getAttribute('data-monthly');
+        const y = p.getAttribute('data-yearly');
+        p.textContent = yearly ? y : m;
+      });
+      unitLabels.forEach(l=> l.textContent = yearly ? '/muaj (vjetore)' : '/muaj');
+    }
+    toggle.addEventListener('change', e => setBilling(e.target.checked));
+
+    // Lead form demo validation
+    const leadForm = document.getElementById('leadForm');
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!leadForm.checkValidity()) { leadForm.classList.add('was-validated'); return; }
+      document.getElementById('formMsg').classList.remove('d-none');
+      leadForm.reset();
+      leadForm.classList.remove('was-validated');
+      toggle.checked = false; setBilling(false);
+    });
+  </script>
+</body>
+</html>

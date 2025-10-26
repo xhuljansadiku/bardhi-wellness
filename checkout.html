@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoachPro – Checkout</title>
+  <meta name="description" content="Checkout – blerje si mysafir ose me llogari, pagesë me kartë ose PayPal." />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    :root{ --brand:#7C4DFF; --soft:#f6f7fb }
+    body{font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif;background:var(--soft)}
+    .rounded-2xl{border-radius:1.25rem}
+    .shadow-soft{box-shadow:0 18px 50px rgba(15,18,33,.08)}
+    .btn-brand{background:var(--brand);border-color:var(--brand)}
+    .btn-brand:hover{background:#6f3cff;border-color:#6f3cff}
+    .text-brand{color:var(--brand)}
+    .order-card .list-group-item{border:0;border-top:1px solid #f0f2ff}
+    .order-card .list-group-item:first-child{border-top:0}
+    .badge-plan{background:rgba(124,77,255,.1); color:#3d2ea7}
+    .payment-tabs .nav-link{color:#6b7280}
+    .payment-tabs .nav-link.active{background:rgba(124,77,255,.1);color:#3d2ea7}
+    .field-note{font-size:.85rem;color:#6b7280}
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="bg-white border-bottom">
+    <div class="container py-2 d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge text-bg-dark"><i class="bi bi-activity"></i></span>
+        <strong>CoachPro</strong>
+      </div>
+      <div class="small text-muted d-none d-md-block"><i class="bi bi-shield-check me-1"></i>Pagesë e sigurt • <i class="bi bi-lock-fill me-1 ms-2"></i>256‑bit SSL</div>
+    </div>
+  </header>
+
+  <main class="container my-4 my-lg-5">
+    <div class="row g-4">
+      <!-- Left: details -->
+      <div class="col-lg-7">
+        <div class="card rounded-2xl shadow-soft border-0 mb-3">
+          <div class="card-body p-4">
+            <h5 class="fw-bold mb-3">1) Të dhënat e blerësit</h5>
+            <form id="buyerForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Emri</label>
+                  <input type="text" class="form-control" id="name" required />
+                  <div class="invalid-feedback">Shkruaj emrin.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="email" required />
+                  <div class="invalid-feedback">Shkruaj një email të vlefshëm.</div>
+                  <div class="field-note">Mund të paguash si mysafir. Nëse krijon llogari më pas, porosia lidhet automatikisht me emailin.</div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="createAccount">
+                    <label class="form-check-label" for="createAccount">Dua të krijoj llogari pas pagesës</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl shadow-soft border-0 mb-3">
+          <div class="card-body p-4">
+            <h5 class="fw-bold mb-3">2) Mënyra e pagesës</h5>
+            <ul class="nav nav-pills payment-tabs mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab"><i class="bi bi-credit-card me-1"></i>Kartë (Stripe)</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-paypal-tab" data-bs-toggle="pill" data-bs-target="#pills-paypal" type="button" role="tab"><i class="bi bi-paypal me-1"></i>PayPal</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <!-- Stripe -->
+              <div class="tab-pane fade show active" id="pills-card" role="tabpanel">
+                <div class="alert alert-secondary" role="alert">
+                  Integrim gati: kur shtypet “Paguaj me kartë”, thërritet <code>/api/checkout/session</code> (Stripe) dhe ridrejtohet te Checkout Session.
+                </div>
+                <button class="btn btn-brand w-100" id="payStripe"><i class="bi bi-lock-fill me-2"></i>Paguaj me kartë</button>
+              </div>
+              <!-- PayPal -->
+              <div class="tab-pane fade" id="pills-paypal" role="tabpanel">
+                <div class="alert alert-secondary" role="alert">Butonat PayPal shfaqen këtu sapo të inicializohen (JS SDK). Aktualisht vendosim thirrje te backend për order.</div>
+                <div id="paypalButtons" class="w-100"></div>
+                <button class="btn btn-outline-dark w-100" id="payPayPal">Vazhdo me PayPal</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl shadow-soft border-0">
+          <div class="card-body p-4">
+            <h5 class="fw-bold mb-3">3) Kupon / TVSH</h5>
+            <div class="row g-3">
+              <div class="col-md-7">
+                <label class="form-label">Kupon (opsional)</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="coupon" placeholder="p.sh. WELCOME10" />
+                  <button class="btn btn-outline-secondary" id="applyCoupon">Apliko</button>
+                </div>
+                <div id="couponMsg" class="form-text"></div>
+              </div>
+              <div class="col-md-5">
+                <label class="form-label">Numri i TVSH‑së (opsional)</label>
+                <input type="text" class="form-control" id="vat" placeholder="p.sh. AL12345678" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: order summary -->
+      <div class="col-lg-5">
+        <div class="card order-card rounded-2xl shadow-soft border-0">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <h5 class="fw-bold mb-0">Porosia</h5>
+              <span class="badge badge-plan" id="badgeType">Mujore</span>
+            </div>
+            <div class="small text-muted mb-3" id="planName">Pro</div>
+
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="fw-semibold">Çmimi</div>
+                  <div class="small text-muted" id="priceUnit">/muaj</div>
+                </div>
+                <div class="fs-4 fw-bold">€<span id="amount">39</span></div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>Ulje kuponi</div>
+                <div>−€<span id="discount">0</span></div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>TVSH</div>
+                <div>€<span id="tax">0</span></div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="fw-semibold">Totali për pagesë</div>
+                <div class="fs-5 fw-bold">€<span id="total">39</span></div>
+              </li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-2 small text-muted">
+              <i class="bi bi-shield-lock"></i>
+              Pagesa përpunohet nga ofrues të çertifikuar. Duke vazhduar pranoni Termat & Privatësinë.
+            </div>
+          </div>
+        </div>
+        <div class="text-center small text-muted mt-3"><i class="bi bi-arrow-left-short"></i>Kontrollo të dhënat para pagesës.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-4 border-top bg-white">
+    <div class="container d-flex justify-content-between align-items-center small text-muted">
+      <div>© <span id="year"></span> CoachPro</div>
+      <div class="d-flex gap-3">
+        <a href="#" class="text-muted">Termat</a>
+        <a href="#" class="text-muted">Privatësia</a>
+        <a href="#" class="text-muted">Mbështetje</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+<script>
+(function(){
+  const btn   = document.getElementById('buyNowBtn');
+  if (!btn) return; // ekzekuto vetëm në faqen me Shop
+
+  const qtyEl = document.getElementById('qtyInput');
+  const minus = document.getElementById('qtyMinus');
+  const plus  = document.getElementById('qtyPlus');
+
+  // stepper
+  minus?.addEventListener('click', ()=> {
+    const v = Math.max(1, (parseInt(qtyEl.value,10) || 1) - 1);
+    qtyEl.value = v;
+  });
+  plus?.addEventListener('click', ()=> {
+    const v = Math.max(1, (parseInt(qtyEl.value,10) || 1) + 1);
+    qtyEl.value = v;
+  });
+
+  // buy now
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+
+    const qty   = Math.max(1, parseInt(qtyEl.value,10) || 1);
+    const title = this.dataset.title;
+    const price = parseFloat(this.dataset.price);
+    const curr  = this.dataset.currency || 'EUR';
+
+    const item = {
+      sku:      this.dataset.sku,
+      title,
+      price,
+      currency: curr,
+      image:    this.dataset.image,
+      qty
+    };
+
+    // 1) Ruaj edhe në localStorage (opsionale, për UI të detajuar)
+    const cart = {
+      items: [item],
+      subtotal: item.price * item.qty,
+      currency: item.currency,
+      updatedAt: Date.now()
+    };
+    try { localStorage.setItem('cart', JSON.stringify(cart)); } catch(e){}
+
+    // 2) Ridrejto me query-string që e lexon checkout-i yt (e mbishkruan UI-n)
+    // - plan: "Emri i produktit × qty" (që të shihet edhe sasia)
+    // - mode: pay (pagesë njëherë)
+    // - price: totali = price * qty
+    const url = new URL('checkout.html', location.origin + location.pathname.replace(/[^/]*$/, ''));
+    url.searchParams.set('plan', `${title} × ${qty}`);
+    url.searchParams.set('mode', 'pay');
+    url.searchParams.set('price', String(price * qty));
+
+    // (opsionale) dërgo edhe këto për fallback nëse duhen
+    url.searchParams.set('sku', item.sku);
+    url.searchParams.set('currency', curr);
+    url.searchParams.set('image', item.image);
+
+    location.href = url.toString();
+  });
+})();
+</script>
+
+
+
+  <script>
+(function(){
+  let cart = null;
+  try { cart = JSON.parse(localStorage.getItem('cart')); } catch(e){}
+  if(!cart){
+    const p = new URLSearchParams(location.search);
+    const item = {
+      sku: p.get('sku') || 'SUPL-DBS-001',
+      title: 'Suplement Dobësimi',
+      price: parseFloat(p.get('price')||'119'),
+      currency: p.get('currency') || 'EUR',
+      qty: parseInt(p.get('qty')||'1',10),
+      image: 'assets/images/shop/preworkout.jpg'
+    };
+    cart = { items:[item], subtotal:item.price*item.qty, currency:item.currency };
+  }
+  console.log('CART @ checkout:', cart);
+})();
+</script>
+
+
+
+  <script>
+    // Fill year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ---- Modeli i planit (mund të vijë nga query ?plan=pro&mode=sub&price=39) ----
+    const url = new URL(location.href);
+    const planFromUrl = url.searchParams.get('plan') || 'pro';
+    const modeFromUrl = url.searchParams.get('mode') || 'sub'; // 'sub' ose 'pay'
+    const amountFromUrl = parseFloat(url.searchParams.get('price') || (planFromUrl==='basic'?19:planFromUrl==='elite'?79:39));
+
+    const state = {
+      plan_id: planFromUrl,                  // p.sh. 'basic' | 'pro' | 'elite'
+      is_subscription: modeFromUrl==='sub',  // subscription vs one-time
+      amount: amountFromUrl,                 // euro
+      discount: 0,
+      tax: 0,
+    };
+
+    function renderSummary(){
+      document.getElementById('planName').textContent = state.plan_id.toUpperCase();
+      document.getElementById('badgeType').textContent = state.is_subscription ? 'Mujore' : 'Pagesë njëherë';
+      document.getElementById('priceUnit').textContent = state.is_subscription ? '/muaj' : 'pagesë njëherë';
+      document.getElementById('amount').textContent = state.amount.toFixed(0);
+      document.getElementById('discount').textContent = state.discount.toFixed(0);
+      document.getElementById('tax').textContent = state.tax.toFixed(0);
+      const total = Math.max(0, state.amount - state.discount + state.tax);
+      document.getElementById('total').textContent = total.toFixed(0);
+    }
+    renderSummary();
+
+    // Kuponi (demo logjikë në front; realja të verifikohet në backend)
+    document.getElementById('applyCoupon').addEventListener('click', ()=>{
+      const c = document.getElementById('coupon').value.trim().toUpperCase();
+      const msg = document.getElementById('couponMsg');
+      if(!c){ msg.textContent=''; state.discount=0; renderSummary(); return; }
+      if(c==='WELCOME10') { state.discount = Math.min(10, state.amount*0.25); msg.textContent='Kuponi u aplikua.'; }
+      else { state.discount = 0; msg.textContent='Kupon i pavlefshëm.'; }
+      renderSummary();
+    });
+
+    // Validimi minimal i të dhënave
+    function validateBuyer(){
+      const form = document.getElementById('buyerForm');
+      if(!form.checkValidity()){ form.classList.add('was-validated'); return false; }
+      return true;
+    }
+
+    // Thirrja për Stripe Checkout Session
+    async function startStripe(){
+      if(!validateBuyer()) return;
+      const payload = {
+        plan_id: state.plan_id,
+        email: document.getElementById('email').value,
+        provider: 'stripe',
+        mode: state.is_subscription ? 'subscription' : 'payment',
+        coupon: document.getElementById('coupon').value || undefined,
+        vat: document.getElementById('vat').value || undefined
+      };
+      const res = await fetch('/api/checkout/session', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)
+      }).then(r=>r.json()).catch(()=>({}));
+      if(res && res.url){ location.href = res.url; }
+      else { alert('S’mundu të krijohej seanca e pagesës.'); }
+    }
+
+    // Thirrja për PayPal Order (server-side). Serveri duhet të kthejë {approveUrl}
+    async function startPayPal(){
+      if(!validateBuyer()) return;
+      const payload = {
+        plan_id: state.plan_id,
+        email: document.getElementById('email').value,
+        provider: 'paypal',
+        mode: state.is_subscription ? 'subscription' : 'payment',
+        coupon: document.getElementById('coupon').value || undefined,
+        vat: document.getElementById('vat').value || undefined
+      };
+      const res = await fetch('/api/checkout/session', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)
+      }).then(r=>r.json()).catch(()=>({}));
+      if(res && res.approveUrl){ location.href = res.approveUrl; }
+      else if(res && res.orderID){ /* nëse kthen vetëm orderID, ngarko PayPal JS SDK dhe rendero butonat */ alert('Order u krijua. Konfiguro PayPal JS SDK për të vazhduar.'); }
+      else { alert('S’mundu të krijohej porosia PayPal.'); }
+    }
+
+    document.getElementById('payStripe').addEventListener('click', startStripe);
+    document.getElementById('payPayPal').addEventListener('click', startPayPal);
+  </script>
+</body>
+</html>

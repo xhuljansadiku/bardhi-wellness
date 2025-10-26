@@ -1,0 +1,396 @@
+
+/* ---------- Variables ---------- */
+:root{
+  --brand:#006039;          /* primary - deep green */
+  --brand-600:#004d2e;      /* darker tone */
+  --brand-700:#003d25;      /* darkest tone */
+  --accent:#22c55e;         /* green-500, mbetet si accent */
+  --ink:#0f172a;            /* slate-900 */
+  --ink-700:#334155;        /* slate-700 */
+  --muted:#64748b;          /* slate-500 */
+  --muted-2:#94a3b8;        /* slate-400 */
+  --surface:#ffffff;
+  --surface-2:#f8fafc;      /* slate-50 */
+  --ring: rgba(0,96,57,.35); /* adaptuar nga brand */
+  --shadow: 0 20px 70px rgba(2,6,23,.08);
+  --nav-h: 64px;
+  /* Dark/Premium Colors */
+  --dark-surface: #0f172a;  /* slate-900 for dark nav/backgrounds */
+  --dark-text: #e5e7eb;     /* neutral-200 for text on dark bg */
+  --dark-faint: rgba(255,255,255,.82);
+  --dark-border: rgba(148,163,184,.12);
+  --dropdown-bg: #0b1220;
+}
+
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  height: var(--nav-h);
+  background: var(--surface);
+  transition: all .25s ease;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05);
+  z-index: 1030;
+}
+
+/* kur scrollet – efekt blur + hijë e butë */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: saturate(180%) blur(8px);
+  box-shadow: 0 6px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* Logo & brand name */
+.navbar-brand {
+  color: var(--brand);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.navbar-brand:hover {
+  color: var(--brand-600);
+}
+
+/* Nav links */
+.navbar .nav-link {
+  font-weight: 500;
+  color: var(--ink-700);
+  transition: color .2s ease;
+  padding: .5rem .75rem;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--brand);
+}
+
+/* Butoni Login */
+.navbar .btn-outline-dark {
+  color: var(--brand);
+  border-color: var(--brand);
+  font-weight: 500;
+}
+.navbar .btn-outline-dark:hover {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+/* Mini-cart icon */
+.navbar .bi-bag {
+  font-size: 1.1rem;
+  color: var(--brand-600);
+  transition: color .2s ease;
+}
+.navbar .nav-link:hover .bi-bag {
+  color: var(--brand);
+}
+#miniCartBadge {
+  font-size: .65rem;
+  background: var(--accent);
+}
+
+/* Responsive - mobile dropdown background */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: var(--surface);
+    border-top: 1px solid rgba(0,0,0,.05);
+    padding: 1rem;
+  }
+  .navbar .btn-outline-dark {
+    width: 100%;
+    margin-top: .5rem;
+  }
+}
+
+/* Dark navbar variant (p.sh. hero-top ose admin header) */
+.navbar-dark {
+  background: var(--dark-surface);
+  color: var(--dark-text);
+}
+.navbar-dark .nav-link {
+  color: var(--dark-faint);
+}
+.navbar-dark .nav-link:hover,
+.navbar-dark .nav-link.active {
+  color: var(--accent);
+}
+.navbar-dark .btn-outline-light {
+  border-color: var(--dark-faint);
+  color: var(--dark-faint);
+}
+.navbar-dark .btn-outline-light:hover {
+  background: var(--accent);
+  color: var(--dark-surface);
+}
+
+
+/* ============================
+   HERO – background foto e optimizuar
+   ============================ */
+.hero.bg-cover {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Foto e background-it */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('../images/hero-bardhi.jpg') center top/cover no-repeat;
+  z-index: 0;
+  transform: scale(1.05); /* pak zoom për efekt estetik */
+  filter: brightness(0.55) contrast(1.15) saturate(1.1); /* errësim & gjallëri ngjyrash */
+}
+
+/* Gradient i butë për kontrast më të mirë të tekstit */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 96, 57, 0.10) 0%,
+    rgba(0, 0, 0, 0.30) 100%
+  );
+  z-index: 1;
+}
+.hero-bg::after {
+  z-index: 2;
+}
+
+
+/* Përmbajtja brenda */
+.hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  padding: 0 1rem;
+}
+
+/* Titulli */
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.7);
+}
+
+/* Paragrafi */
+.hero .lead {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+}
+
+/* Butonat */
+.hero .btn-brand {
+  background: var(--brand);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,96,57,0.35);
+}
+.hero .btn-brand:hover {
+  background: var(--brand-600);
+  box-shadow: 0 6px 18px rgba(0,96,57,0.45);
+}
+
+.hero .btn-outline-light {
+  border: 1px solid rgba(255,255,255,0.8);
+  color: #fff;
+  font-weight: 600;
+}
+.hero .btn-outline-light:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Responsivitet */
+@media (max-width: 991.98px){
+  .hero { min-height: 85vh; padding-top: 5rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero .lead { font-size: 1rem; }
+}
+
+
+/* ===== ABOUT SECTION ===== */
+.about-section { background: var(--surface-2); }
+
+.about-photo img{
+  object-fit: cover;
+  height: clamp(380px, 58vh, 560px);
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.about-copy { color: var(--ink); }
+.about-copy .about-lead{
+  font-size: 1.05rem;
+  color: var(--ink-700);
+  margin-bottom: 1rem;
+}
+.about-copy .about-p{
+  color: var(--ink-700);
+  line-height: 1.8;
+}
+
+/* butoni brand këtu duket pak më “premium” */
+.about-section .btn.btn-brand{
+  background: var(--brand);
+  border: none;
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(0,96,57,.18);
+}
+.about-section .btn.btn-brand:hover{
+  background: var(--brand-600);
+  box-shadow: 0 10px 30px rgba(0,96,57,.25);
+}
+
+/* responsivitet i lehtë */
+@media (max-width: 991.98px){
+  .about-photo img{ height: 380px; }
+}
+
+
+/* ===== PRICING – dark showcase ===== */
+#pricing.pricing-dark{
+  background:#0b1422;
+  color:#e5e7eb;
+}
+#pricing.pricing-dark .section-title{color:#fff;}
+#pricing.pricing-dark .section-lead{color:#a9b4c3;}
+
+.pkg-card{
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(148,163,184,.12);
+  border-radius:1rem;
+  overflow:hidden;
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.pkg-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(148,163,184,.25);
+  box-shadow:0 25px 70px rgba(0,0,0,.35);
+}
+
+/* top image – clipped/angled */
+.pkg-thumb{
+  height:250px;
+  background:var(--img,#222) center/cover no-repeat;
+  position:relative;
+  clip-path:polygon(0 0, 84% 0, 100% 50%, 84% 100%, 0 100%);
+  transition:transform .35s ease, filter .35s ease;
+  filter:saturate(1.05) contrast(1.05) brightness(.96);
+}
+.pkg-card:hover .pkg-thumb{
+  transform:scale(1.03);
+  filter:saturate(1.15) contrast(1.08) brightness(1);
+}
+
+/* content */
+.pkg-body{padding:1.25rem 1.25rem 1rem;}
+.pkg-title{display:flex;align-items:center;gap:.5rem;font-weight:600;color:#fff;}
+.pkg-dot{width:.7rem;height:.7rem;border-radius:999px;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.15);}
+.pkg-meta{text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:#9aa4b2;margin-top:.25rem;}
+.pkg-price{margin:.35rem 0 1rem;font-size:1.1rem;color:#e5e7eb;}
+.pkg-price strong{font-size:1.35rem;color:#fff;}
+.pkg-feats{margin:.5rem 0 1rem;}
+.pkg-feats li{margin:.35rem 0;color:#b6c2d1;}
+
+/* buttons */
+.btn-dark-outline{
+  display:block;width:100%;
+  border:1px solid rgba(148,163,184,.3);
+  background:transparent;color:#e5e7eb;
+  padding:.8rem 1rem;border-radius:.5rem;
+  transition:all .2s ease;
+}
+.btn-dark-outline:hover{
+  background:rgba(255,255,255,.05);
+  border-color:rgba(148,163,184,.55);
+  color:#fff;
+}
+.btn-brand-dark{
+  display:block;width:100%;
+  background:var(--brand);border:0;color:#fff;
+  padding:.85rem 1rem;border-radius:.5rem;font-weight:600;
+  box-shadow:0 12px 30px rgba(0,96,57,.25);
+}
+.btn-brand-dark:hover{background:var(--brand-600);}
+
+/* remove default card bg from any leftover bootstrap cards */
+#pricing .card.h-100{background:transparent;border:0;}
+
+
+/* SUCCESS STORIES */
+#success-stories { background: var(--surface-2, #f8fafc); }
+#success-stories .section-title { font-weight: 800; color: var(--ink, #0f172a); }
+#success-stories .section-lead { color: var(--muted, #64748b); max-width: 720px; margin: 0 auto; }
+
+.story-card{
+  background: var(--surface, #ffffff);
+  border: 1px solid rgba(148,163,184,.15);
+  transition: transform .25s ease, box-shadow .25s ease;
+  outline: none;
+}
+.story-card:hover,
+.story-card:focus-visible{
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(15,18,23,.12);
+}
+
+.story-images{ display: grid; grid-template-columns: 1fr 1fr; }
+.story-images img{
+  width: 100%;
+  height: 320px;               /* i njëjtë për kartat */
+  object-fit: cover;
+  display: block;
+  background: #f2f4f7;
+}
+
+/* Preset vizual i lehtë */
+.story-images .before{ filter: grayscale(1) contrast(.95); }
+.story-images .after { filter: brightness(1.06) contrast(1.08) saturate(1.08); }
+
+.story-body{ background: var(--surface, #ffffff); color: var(--ink, #0f172a); }
+
+/* Responsive */
+@media (max-width: 768px){
+  .story-images img{ height: 260px; }
+}
+
+/* Klikueshmëri */
+.story-open{ text-decoration:none; color:inherit; }
+.story-open:hover .story-body h6,
+.story-open:focus-visible .story-body h6{ color: var(--brand, #006039); }
+
+/* Modal images fit */
+#storyModal img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  background:#f2f4f7;
+}
+
+/* Modal tweaks */
+#storyModal .modal-content{ border:0; border-radius:1rem; }
+#storyModal .modal-body{ padding-bottom:1.5rem; }
+#storyModal .btn-close{ filter: invert(0.3); }
+
+/* Motion reduce */
+@media (prefers-reduced-motion: reduce){
+  .story-card{ transition:none; }
+}
+
+
+ 
+ 
+  #shop .object-fit-cover{ object-fit: cover; }
+  #shop .card{ box-shadow: var(--shadow, 0 20px 70px rgba(2,6,23,.08)); }
+ 

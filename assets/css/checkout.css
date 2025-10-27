@@ -1,0 +1,64 @@
+/* ---------- Brand / Variables ---------- */
+:root{
+  --brand:#006039;          /* primary - deep green */
+  --brand-600:#004d2e;
+  --brand-700:#003d25;
+  --accent:#22c55e;
+  --ink:#0f172a;
+  --ink-700:#334155;
+  --muted:#64748b;
+  --muted-2:#94a3b8;
+  --surface:#ffffff;
+  --surface-2:#f8fafc;
+  --ring: rgba(0,96,57,.35);
+  --shadow:0 20px 70px rgba(2,6,23,.08);
+  --line:#e5e7eb;
+}
+
+/* ---------- Base ---------- */
+html,body{background:var(--surface-2); color:var(--ink);}
+.navbar .text-brand{color:var(--brand)!important}
+.rounded-2xl{border-radius:1.25rem}
+.shadow-soft{box-shadow:var(--shadow)}
+.btn-brand{
+  --bs-btn-bg:var(--brand);
+  --bs-btn-border-color:var(--brand);
+  --bs-btn-hover-bg:var(--brand-600);
+  --bs-btn-hover-border-color:var(--brand-600);
+  --bs-btn-active-bg:var(--brand-700);
+  --bs-btn-active-border-color:var(--brand-700);
+  color:#fff;
+}
+
+/* ---------- Cart list ---------- */
+.cart-list{border:1px solid var(--line); border-radius:12px; padding:12px}
+.cart-row{
+  display:grid; grid-template-columns:72px 1fr auto; gap:14px; align-items:center;
+  padding:10px 6px; border-bottom:1px dashed var(--line);
+}
+.cart-row:last-child{border-bottom:0}
+.cart-thumb{width:72px;height:72px;border-radius:14px;object-fit:cover;background:#fff;border:1px solid var(--line)}
+.cart-info .title{font-weight:600}
+.cart-info .meta{font-size:.925rem;color:var(--muted)}
+.cart-ctrl{display:flex;align-items:center;gap:10px}
+.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.qty button{width:36px;height:36px;border:0;background:#fff}
+.qty input{width:56px;border:0;text-align:center;height:36px}
+.x-btn{width:38px;height:38px;border:1px solid var(--line);border-radius:10px;background:#fff;display:grid;place-items:center}
+.x-btn:hover{border-color:var(--brand);color:var(--brand)}
+
+/* ---------- Summary ---------- */
+.badge-plan{background:rgba(0,96,57,.1); color:var(--brand-700); padding:.35rem .6rem; border-radius:999px}
+.list-group-item{border:0;border-top:1px solid var(--line)}
+.list-group-item:first-child{border-top:0}
+
+/* ---------- Forms / Tabs ---------- */
+.form-control:focus{box-shadow:0 0 0 .2rem var(--ring);border-color:var(--brand)}
+.nav-pills .nav-link{border:1px solid var(--line)}
+.nav-pills .nav-link.active{
+  background:var(--brand); border-color:var(--brand);
+}
+
+/* ---------- Utilities ---------- */
+.bg-soft{background:var(--surface-2)}
+.text-brand{color:var(--brand)}

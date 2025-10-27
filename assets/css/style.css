@@ -394,3 +394,7 @@
   #shop .object-fit-cover{ object-fit: cover; }
   #shop .card{ box-shadow: var(--shadow, 0 20px 70px rgba(2,6,23,.08)); }
  
+#miniCart { border-radius: 999px; }
+#miniCartBadge { font-size: .65rem; }
+
+ 

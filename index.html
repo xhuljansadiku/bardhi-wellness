@@ -14,33 +14,64 @@
 
   </head>
   <body>
-    <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-white border-bottom">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">
-        <i class="bi bi-activity text-brand me-2"></i>Bardhi Wellness
+ 
+<!-- NAVBAR MODERNE -->
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top main-nav">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold" href="index.html">
+      <i class="bi bi-activity me-2"></i>Bardhi Wellness
+    </a>
+
+    <!-- Toggler (hap OFFCANVAS në mobile) -->
+    <button class="navbar-toggler d-lg-none" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#mobileNav"
+            aria-controls="mobileNav" aria-label="Hap menunë">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu DESKTOP -->
+    <div class="d-none d-lg-flex ms-auto align-items-center">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item"><a class="nav-link" href="transformation.html">Rreth Bardhit</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Produkt</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+      </ul>
+      <a href="checkout.html" class="btn btn-cart position-relative" aria-label="Shko te checkout">
+        <i class="bi bi-bag"></i>
+        <span class="badge position-absolute top-0 start-100 translate-middle rounded-pill">1</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
-          <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
-          <li class="nav-item"><a class="btn btn-sm btn-outline-dark ms-lg-2" href="login.html">Login</a></li>
-          <!-- Mini-cart icon -->
-  <a href="checkout.html" id="miniCart" class="btn btn-outline-dark position-relative d-none" aria-label="Shko te checkout">
-    <i class="bi bi-bag"></i>
-    <span id="miniCartBadge"
-          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
-  </a>
-
-        </ul>
-      </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<!-- OFFCANVAS – MENU MOBILE FULLSCREEN -->
+<div class="offcanvas offcanvas-end w-100" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+  <div class="offcanvas-header border-bottom">
+    <h6 class="offcanvas-title m-0" id="mobileNavLabel">
+      <i class="bi bi-activity me-2 text-brand"></i>Bardhi Wellness
+    </h6>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Mbyll"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column align-items-end">
+    <ul class="navbar-nav w-100 text-end mb-3">
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformation.html" data-bs-dismiss="offcanvas">Transformime</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="pricing.html" data-bs-dismiss="offcanvas">Paketat</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html" data-bs-dismiss="offcanvas">Kontakt</a></li>
+    </ul>
+
+    <a href="login.html" class="btn btn-login w-100 mb-2" data-bs-dismiss="offcanvas">Login</a>
+    <a href="checkout.html" class="btn btn-cart w-100 justify-content-center" data-bs-dismiss="offcanvas">
+      <i class="bi bi-bag me-2"></i> Shko te checkout
+      <span class="badge ms-2 rounded-pill">1</span>
+    </a>
+  </div>
+</div>
+
 
 
     <!-- HERO -->
@@ -127,9 +158,14 @@
               <div class="pkg-meta mt-1">Bardhi Wellness</div>
               <div class="pkg-price"><strong>€299,00</strong> EUR</div>
               <ul class="pkg-feats list-unstyled small">
-                <li>Plan stërvitjeje i personalizuar</li>
-                <li>Video ushtrimesh</li>
-                <li>Udhëzues ushqimi (PDF)</li>
+                <li>✅ Plan bazik i ushqimi</li>
+                <li>✅ Ushtrime (Gym ose Shtëpi)</li>
+                <li>✅ Konsultë javore</li>
+                 <!-- mungesat krahasuar me Supreme -->
+        <li class="feat-miss">❌ Plan i detajuar i Suplementeve</li>
+        <li class="feat-miss">❌ Program i personalizuar i avancuar</li>
+        <li class="feat-miss">❌ Konsulta 24/7</li>
+        <li class="feat-miss">❌ Analiza e thellë javore e progresit</li>
               </ul>
               <!-- Basic €299 (one-time) -->
   <a href="#" class="btn btn-brand-dark w-100 mt-3 buy-plan"
@@ -143,13 +179,20 @@
           <div class="pkg-card h-100 rounded-2xl">
               <div class="pkg-thumb" style="--img:url('../images/pako-premium.jpg')"></div>
             <div class="pkg-body">
-              <div class="pkg-title"><span class="pkg-dot"></span> 💚 Pako Premium</div>
+              <div class="pkg-title"><span class="pkg-dot"></span>Pako Premium</div>
               <div class="pkg-meta mt-1">Bardhi Wellness</div>
               <div class="pkg-price"><strong>€399,00</strong> EUR</div>
               <ul class="pkg-feats list-unstyled small">
-                <li>Plan 8–12 javë + progresion</li>
-                <li>Makro-kalkulator</li>
-                <li>1 konsultë me trajner</li>
+                   <li>✅ Ushqimi</li>
+                      <li>✅ Ushtrime (Gym & Shtëpi)</li>
+                <li>✅ Plan 8 deri në 16 javë</li>
+                <li>✅ 2-3 konsulta me trajner</li>
+
+                 <!-- mungesat krahasuar me Supreme -->
+        <li class="feat-miss">❌ Plan i detajuar i Suplementeve</li>
+        <li class="feat-miss">❌ Program i personalizuar i avancuar</li>
+        <li class="feat-miss">❌ Konsulta 24/7</li>
+        <li class="feat-miss">❌ Analiza e thellë javore e progresit</li>
               </ul>
               <!-- Premium €399 (one-time) -->
   <a href="#" class="btn btn-brand-dark w-100 mt-3 buy-plan"
@@ -167,9 +210,12 @@
               <div class="pkg-meta mt-1">Bardhi Wellness</div>
               <div class="pkg-price"><strong>€499,00</strong> EUR</div>
               <ul class="pkg-feats list-unstyled small">
-                <li>Program i personalizuar i avancuar</li>
-                <li>2 konsulta me trajner</li>
-                <li>Analiza e progresit</li>
+                <li>✅ Ushqimi</li>
+                <li>✅ Ushtrime (Gym & Shtëpi)</li>
+                <li>✅ Plan i detajuar i Suplementeve</li>
+                <li>✅ Program i personalizuar i avancuar</li>
+                <li>✅ Konsulta 24/7</li>
+                <li>✅ Analiza e thellë javore e progresit</li>
               </ul>
               <!-- Supreme €499 (one-time) -->
   <a href="#" class="btn btn-brand-dark w-100 mt-3 buy-plan"
@@ -190,83 +236,16 @@
           <div class="pkg-card h-100 rounded-2xl">
             <div class="pkg-thumb" style="--img:url('../images/pako-starter.jpg')"></div>
             <div class="pkg-body">
-              <div class="pkg-title"><span class="pkg-dot"></span> Pako Starter</div>
+              <div class="pkg-title"><span class="pkg-dot"></span> Pako Monthly</div>
               <div class="pkg-meta mt-1">Bardhi Wellness</div>
-              <div class="pkg-price"><strong>€39,00</strong> EUR / muaj</div>
+              <div class="pkg-price"><strong>€199,00</strong> EUR / muaj</div>
               <ul class="pkg-feats list-unstyled small">
-                <li>Plan 3–4x/javë</li>
-                <li>Video ushtrimesh</li>
-                <li>Mbështetje bazë</li>
+                <li>✅ Plane të ndryshme javore</li>
+                <li>✅ Video-Konsultime</li>
+                <li>✅ Mbështetje e vazhdueshme</li>
               </ul>
               <a href="#" class="btn-brand-dark buy-plan"
-                data-plan="starter" data-price="39" data-mode="sub">Abonohu tani</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============ SHOP (Single product -> checkout.html) ============ -->
-  <section id="shop" class="py-5 bg-light">
-    <div class="container">
-      <div class="text-center mb-4">
-        <h2 class="fw-bold" style="color:var(--ink,#0f172a);">Shop</h2>
-        <p class="text-muted mb-0">Bli tani suplementin tonë të fundit për dobësim.</p>
-      </div>
-
-      <div class="row g-4 align-items-center">
-        <!-- Image -->
-        <div class="col-lg-6">
-          <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
-            <img src="./assets/images/bardhiuka-product.jpg" alt="Suplement Dobësimi" class="w-100 h-100 object-fit-cover">
-          </div>
-        </div>
-
-        <!-- Details -->
-        <div class="col-lg-6">
-          <div class="card border-0 shadow-sm rounded-4">
-            <div class="card-body p-4 p-lg-5">
-
-              <span class="text-uppercase small text-muted">Bardhi Wellness</span>
-              <h3 class="mt-1 mb-3 fw-bold">Suplement Dobësimi</h3>
-
-              <div class="d-flex align-items-baseline gap-2 mb-3">
-                <span class="h4 mb-0" id="priceLabel">€119,00</span>
-                <span class="text-muted small">EUR (taxat e përfshira)</span>
-              </div>
-
-              <p class="text-muted">Formula jonë premium për energji dhe fokus gjatë stërvitjes, ndihmon në humbje peshe dhe rikuperim.</p>
-
-              <!-- Quantity -->
-              <div class="mb-4">
-                <label for="qtyInput" class="form-label fw-semibold">Sasia</label>
-                <div class="input-group" style="max-width: 220px;">
-                  <button class="btn btn-outline-secondary" type="button" id="qtyMinus" aria-label="Zvogëlo sasinë">−</button>
-                  <input type="number" class="form-control text-center" id="qtyInput" value="1" min="1" step="1" inputmode="numeric" pattern="[0-9]*">
-                  <button class="btn btn-outline-secondary" type="button" id="qtyPlus" aria-label="Rrit sasinë">+</button>
-                </div>
-              </div>
-
-              <!-- Buy Now -->
-              <div class="d-grid gap-2">
-              <!-- KJO: përputhe me foton reale të kartës -->
-  <!-- KJO: përputhe me foton reale të kartës -->
-  <a id="buyNowBtn"
-    href="checkout.html"
-    class="btn btn-success btn-lg rounded-pill fw-semibold"
-    data-sku="SUPL-DBS-001"
-    data-title="Suplement Dobësimi"
-    data-price="119.00"
-    data-currency="EUR"
-    data-image="./assets/images/bardhiuka-product.jpg">
-    Bli tani
-  </a>
-
-                <small class="text-center text-muted">Pagesa përpunohet në checkout.</small>
-              </div>
-
+                data-plan="starter" data-price="199" data-mode="sub">Abonohu tani</a>
             </div>
           </div>
         </div>
@@ -276,7 +255,106 @@
   </section>
 
 
-  
+<!-- ============ SHOP (Single product -> checkout.html) ============ -->
+<section id="shop" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold" style="color:var(--ink,#0f172a);">Shop</h2>
+      <p class="text-muted mb-0">Bli tani suplementin tonë premium për energji dhe dobësim.</p>
+    </div>
+
+    <div class="row g-4 align-items-center">
+      <!-- Foto -->
+      <div class="col-lg-6">
+        <div class="product-image rounded-4 shadow-sm d-flex align-items-center justify-content-center bg-white p-3">
+          <img src="./assets/images/bardhiuka-product.jpg"
+               alt="L Carnitine Capsules Bardhi Wellness"
+               class="img-fluid rounded-3">
+        </div>
+      </div>
+
+      <!-- Detajet -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4">
+          <div class="card-body p-4 p-lg-5">
+
+            <span class="text-uppercase small text-muted">Bardhi Wellness</span>
+            <h3 class="mt-1 mb-3 fw-bold text-brand">L-CARNITINE CAPSULES</h3>
+
+            <div class="d-flex align-items-baseline gap-2 mb-3">
+              <span class="h4 mb-0 text-brand" id="priceLabel">€69,99</span>
+              <span class="text-muted small">EUR (taksat e përfshira)</span>
+            </div>
+
+            <p class="text-muted mb-4">
+              💊 Suplement ushqimor i formuluar për të ndihmuar në humbje peshe,
+              përmirësim të energjisë dhe rikuperim pas stërvitjes.
+            </p>
+
+            <!-- Sasia -->
+            <div class="mb-4">
+              <label for="qtyInput" class="form-label fw-semibold">Sasia</label>
+              <div class="input-group" style="max-width: 220px;">
+                <button class="btn btn-outline-secondary" type="button" id="qtyMinus" aria-label="Zvogëlo sasinë">−</button>
+                <input type="number" class="form-control text-center" id="qtyInput" value="1" min="1" step="1" inputmode="numeric" pattern="[0-9]*">
+                <button class="btn btn-outline-secondary" type="button" id="qtyPlus" aria-label="Rrit sasinë">+</button>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="d-grid gap-2 mb-4">
+              <a id="buyNowBtn"
+                 href="checkout.html"
+                 class="btn btn-success btn-lg rounded-pill fw-semibold"
+                 data-sku="SUPL-DBS-001"
+                 data-title="L-Carnitine Capsules"
+                 data-price="69.99"
+                 data-currency="EUR"
+                 data-image="./assets/images/bardhiuka-product.jpg">
+                 Bli tani
+              </a>
+              <small class="text-center text-muted">
+                💳 Pagesa përpunohet në mënyrë të sigurt përmes Stripe & PayPal.
+                Dërgesa brenda 2–4 ditëve pune.
+              </small>
+            </div>
+
+            <!-- Info për përdorim -->
+            <div class="product-info mt-4">
+              <h6 class="fw-bold mb-1">Përdorimi i rekomanduar</h6>
+              <p class="text-muted small mb-3">
+                Merrni 2 kapsula në ditë ose sipas këshillës së një specialisti.
+                Pini me ujë, rreth 30 minuta para aktivitetit fizik.
+              </p>
+
+              <h6 class="fw-bold mb-1">Si ndihmon</h6>
+              <p class="text-muted small mb-3">
+                L-Carnitina ndihmon në shndërrimin e yndyrës në energji, 
+                duke mbështetur djegien e kalorive dhe performancën fizike.
+                Gjithashtu ndihmon në rikuperim dhe përqendrim më të mirë gjatë stërvitjes.
+              </p>
+
+              <h6 class="fw-bold mb-1">Paralajmërime</h6>
+              <p class="text-muted small mb-3">
+                Mos e tejkaloni dozën e rekomanduar ditore. 
+                Shtesat ushqimore nuk duhet të përdoren si zëvendësim për një dietë të balancuar. 
+                Mbajeni larg fëmijëve dhe ruajeni në vend të thatë e të freskët.
+              </p>
+
+              <h6 class="fw-bold mb-1">Përbërës të tjerë</h6>
+              <p class="text-muted small mb-0">
+                Maltodextrin, ekstrakt çaji jeshil, celulozë mikro-kristaline (Microcrystalline Cellulose), kapsulë HPMC.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   <!-- SUCCESS STORIES -->
   <section id="success-stories" class="py-6 bg-soft">
     <div class="container">
@@ -510,15 +588,27 @@ function addToCart(item){
     location.href = new URL(base + 'checkout.html', location.origin).toString();
   });
 })();
-</script>
+    </script>
 
  
- 
- 
-
   <!--  Pastaj ngarko Bootstrap dhe app.js -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/app.js"></script>
+  <script>
+  const nav = document.getElementById('navMenu');
+  if (nav) {
+    nav.addEventListener('shown.bs.collapse', () => document.body.classList.add('menu-open'));
+    nav.addEventListener('hidden.bs.collapse', () => document.body.classList.remove('menu-open'));
+  }
+
+  // Effekt sticky + blur gjatë scroll
+  const navbar = document.querySelector('.main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+</script>
+
 
     <style>
       /* spacing utility (since Bootstrap <=5 s’ka py-6) */

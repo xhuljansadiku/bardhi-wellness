@@ -1,125 +1,105 @@
-
-/* ---------- Variables ---------- */
+/* ---------- Variables (të tuat) ---------- */
 :root{
-  --brand:#006039;          /* primary - deep green */
-  --brand-600:#004d2e;      /* darker tone */
-  --brand-700:#003d25;      /* darkest tone */
-  --accent:#22c55e;         /* green-500, mbetet si accent */
-  --ink:#0f172a;            /* slate-900 */
-  --ink-700:#334155;        /* slate-700 */
-  --muted:#64748b;          /* slate-500 */
-  --muted-2:#94a3b8;        /* slate-400 */
-  --surface:#ffffff;
-  --surface-2:#f8fafc;      /* slate-50 */
-  --ring: rgba(0,96,57,.35); /* adaptuar nga brand */
-  --shadow: 0 20px 70px rgba(2,6,23,.08);
-  --nav-h: 64px;
-  /* Dark/Premium Colors */
-  --dark-surface: #0f172a;  /* slate-900 for dark nav/backgrounds */
-  --dark-text: #e5e7eb;     /* neutral-200 for text on dark bg */
-  --dark-faint: rgba(255,255,255,.82);
-  --dark-border: rgba(148,163,184,.12);
-  --dropdown-bg: #0b1220;
+  --brand:#006039; --brand-600:#004d2e; --brand-700:#003d25;
+  --accent:#22c55e; --ink:#0f172a; --ink-700:#334155;
+  --muted:#64748b; --surface:#ffffff; --surface-2:#f8fafc;
+  --ring: rgba(0,96,57,.35); --nav-h:64px;
 }
 
+/* No horizontal scroll */
+html,body{overflow-x:hidden}
 
-/* ---------- NAVBAR ---------- */
-.navbar {
-  height: var(--nav-h);
-  background: var(--surface);
-  transition: all .25s ease;
-  box-shadow: 0 1px 0 rgba(0,0,0,.05);
-  z-index: 1030;
+/* ---------- NAVBAR glass ---------- */
+.main-nav{
+  height:var(--nav-h);
+  background:rgba(255,255,255,.85);
+  backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid rgba(15,23,42,.08);
+  box-shadow:0 6px 25px rgba(15,23,42,.08);
+  z-index:1030;
 }
+.navbar-brand{color:var(--brand);letter-spacing:-.2px}
+.navbar-brand .bi{color:var(--brand)}
+.navbar-nav .nav-link{color:var(--ink-700);font-weight:500}
+.navbar-nav .nav-link:hover,.navbar-nav .nav-link.active{color:var(--brand)}
 
-/* kur scrollet – efekt blur + hijë e butë */
-.navbar.scrolled {
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: saturate(180%) blur(8px);
-  box-shadow: 0 6px 25px rgba(15, 23, 42, 0.08);
-}
+/* Buttons */
+.btn{border-radius:.75rem;font-weight:600;transition:all .25s}
+.btn-login{border:1px solid var(--brand);color:var(--brand);background:transparent}
+.btn-login:hover{background:var(--brand);color:#fff;box-shadow:0 6px 18px rgba(0,96,57,.25)}
+.btn-cart{border:1px solid var(--brand);color:var(--brand);background:transparent;display:inline-flex;align-items:center;padding:.55rem 1rem;border-radius:.75rem}
+.btn-cart:hover{background:var(--brand);color:#fff}
+.btn-cart .badge{background:var(--accent);color:#fff;font-size:.65rem;border:2px solid #fff}
 
-/* Logo & brand name */
-.navbar-brand {
-  color: var(--brand);
-  font-weight: 700;
-  letter-spacing: -0.3px;
+/* Hamburger (CSS only) */
+.navbar-toggler{border:none}
+.navbar-toggler-icon{
+  position:relative;display:block;width:1.5rem;height:2px;background:var(--ink);
 }
-.navbar-brand:hover {
-  color: var(--brand-600);
+.navbar-toggler-icon::before,.navbar-toggler-icon::after{
+  content:"";position:absolute;left:0;width:100%;height:2px;background:var(--ink);transition:all .3s ease;
 }
+.navbar-toggler-icon::before{top:-6px}
+.navbar-toggler-icon::after{top:6px}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon{background:transparent}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before{top:0;transform:rotate(45deg)}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after{top:0;transform:rotate(-45deg)}
 
-/* Nav links */
-.navbar .nav-link {
-  font-weight: 500;
-  color: var(--ink-700);
-  transition: color .2s ease;
-  padding: .5rem .75rem;
+/* ---------- OFFCANVAS (mobile full-screen) ---------- */
+.offcanvas{
+  background:
+    radial-gradient(1200px 700px at 92% -10%, rgba(0,96,57,.12), transparent 60%),
+    rgba(255,255,255,.95);
+  backdrop-filter: blur(20px) saturate(160%);
+  border-left:1px solid rgba(15,23,42,.06);
 }
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: var(--brand);
-}
+.offcanvas-header{background:rgba(255,255,255,.6)}
+.offcanvas-title{color:var(--brand);font-weight:700}
+.offcanvas .nav-link{font-size:1.1rem}
+.offcanvas .btn-close{filter: none; opacity:.8}
+.offcanvas .btn-close:hover{opacity:1}
 
-/* Butoni Login */
-.navbar .btn-outline-dark {
-  color: var(--brand);
-  border-color: var(--brand);
-  font-weight: 500;
-}
-.navbar .btn-outline-dark:hover {
-  background: var(--brand);
-  color: #fff;
-  border-color: var(--brand);
-}
-
-/* Mini-cart icon */
-.navbar .bi-bag {
-  font-size: 1.1rem;
-  color: var(--brand-600);
-  transition: color .2s ease;
-}
-.navbar .nav-link:hover .bi-bag {
-  color: var(--brand);
-}
-#miniCartBadge {
-  font-size: .65rem;
-  background: var(--accent);
-}
-
-/* Responsive - mobile dropdown background */
+/* --- MOBILE: butonat 50% të ekranit dhe në të djathtë --- */
 @media (max-width: 991.98px) {
-  .navbar-collapse {
-    background: var(--surface);
-    border-top: 1px solid rgba(0,0,0,.05);
-    padding: 1rem;
+  .offcanvas-body {
+    align-items: flex-end;      /* të gjitha elementet në të djathtë */
+    padding-right: 1.25rem;
   }
-  .navbar .btn-outline-dark {
-    width: 100%;
-    margin-top: .5rem;
+
+  .offcanvas .btn-login,
+  .offcanvas .btn-cart {
+    width: 50vw;                /* 50% e gjerësisë së ekranit */
+    min-width: 160px;
+    max-width: 260px;
+    border-radius: .75rem;
+    padding: .6rem 1rem;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    border-width: 1.5px;
+    margin-right: 0;            /* mbështet djathtas */
+  }
+
+  /* distancat vertikale midis butonave */
+  .offcanvas .btn-login {
+    margin-top: .75rem;
+    margin-bottom: .4rem;
+  }
+  .offcanvas .btn-cart {
+    margin-bottom: .8rem;
+  }
+
+  /* efekt hover i butë */
+  .offcanvas .btn-login:hover,
+  .offcanvas .btn-cart:hover {
+    transform: translateX(-3px);
+    box-shadow: 0 6px 15px rgba(0,96,57,.18);
   }
 }
 
-/* Dark navbar variant (p.sh. hero-top ose admin header) */
-.navbar-dark {
-  background: var(--dark-surface);
-  color: var(--dark-text);
-}
-.navbar-dark .nav-link {
-  color: var(--dark-faint);
-}
-.navbar-dark .nav-link:hover,
-.navbar-dark .nav-link.active {
-  color: var(--accent);
-}
-.navbar-dark .btn-outline-light {
-  border-color: var(--dark-faint);
-  color: var(--dark-faint);
-}
-.navbar-dark .btn-outline-light:hover {
-  background: var(--accent);
-  color: var(--dark-surface);
-}
 
 
 /* ============================
@@ -325,6 +305,201 @@
 
 /* remove default card bg from any leftover bootstrap cards */
 #pricing .card.h-100{background:transparent;border:0;}
+
+
+/* ========== SHOP SECTION ========== */
+#shop {
+  background: var(--surface-2, #f8fafc);
+  color: var(--ink, #0f172a);
+}
+
+#shop .container {
+  max-width: 1100px;
+}
+
+/* Titulli & paragrafi */
+#shop h2 {
+  font-size: clamp(1.8rem, 1.6vw + 1rem, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+}
+#shop p.text-muted {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* Imazhi e plotë, e përqendruar */
+#shop .ratio {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+#shop .ratio:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.12);
+}
+#shop .ratio img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* imazhi i plotë */
+  object-position: center;
+}
+
+/* Karta e detajeve */
+#shop .card {
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+#shop .card:hover {
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+}
+
+#shop .card-body {
+  color: var(--ink-700);
+}
+
+/* Titulli produktit */
+#shop h3 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--brand, #006039);
+  letter-spacing: -0.5px;
+}
+
+/* Çmimi */
+#shop #priceLabel {
+  font-weight: 700;
+  color: var(--brand, #006039);
+}
+
+/* Quantity input */
+#shop .input-group button {
+  border-color: rgba(0, 96, 57, 0.25);
+  color: var(--brand, #006039);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+#shop .input-group button:hover {
+  background: var(--brand, #006039);
+  color: #fff;
+}
+#shop .input-group input {
+  border-color: rgba(0, 96, 57, 0.25);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Butoni “Bli tani” */
+#shop #buyNowBtn {
+  background: var(--brand, #006039);
+  border: none;
+  transition: all 0.3s ease;
+}
+#shop #buyNowBtn:hover {
+  background: var(--brand-600, #004d2e);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 96, 57, 0.25);
+}
+
+/* Teksti nën buton */
+#shop small.text-muted {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Responsivitet */
+@media (max-width: 767.98px) {
+  #shop .card-body {
+    padding: 1.75rem;
+  }
+  #shop .ratio {
+    border-radius: 0.8rem;
+  }
+  #shop h3 {
+    font-size: 1.45rem;
+  }
+  #shop #buyNowBtn {
+    font-size: 1rem;
+  }
+}
+
+/* ===== SHOP – Premium look (Bardhi Wellness) ===== */
+#shop {
+  background: var(--surface-2, #f8fafc);
+  color: var(--ink, #0f172a);
+}
+
+#shop .text-brand {
+  color: var(--brand, #006039);
+}
+
+/* Foto e produktit */
+#shop .product-image img {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .4s ease;
+}
+#shop .product-image:hover img {
+  transform: scale(1.03);
+}
+
+/* Karta */
+#shop .card {
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, .08);
+}
+#shop .card-body {
+  color: var(--ink-700, #334155);
+}
+
+/* Quantity */
+#shop .input-group button {
+  border-color: rgba(0, 96, 57, .25);
+  color: var(--brand, #006039);
+  font-weight: 600;
+}
+#shop .input-group button:hover {
+  background: var(--brand, #006039);
+  color: #fff;
+}
+#shop .input-group input {
+  border-color: rgba(0, 96, 57, .25);
+}
+
+/* Butoni “Bli tani” */
+#shop #buyNowBtn {
+  background: var(--brand, #006039);
+  border: none;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+#shop #buyNowBtn:hover {
+  background: var(--brand-600, #004d2e);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 96, 57, .25);
+}
+
+/* Info seksionet */
+#shop .product-info h6 {
+  color: var(--brand-600, #004d2e);
+  font-size: 1rem;
+}
+#shop .product-info p {
+  line-height: 1.6;
+}
+
+/* Responsivitet */
+@media (max-width: 767.98px) {
+  #shop .card-body { padding: 1.75rem; }
+  #shop h3 { font-size: 1.45rem; }
+}
+
 
 
 /* SUCCESS STORIES */

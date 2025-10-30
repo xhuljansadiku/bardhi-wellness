@@ -354,78 +354,84 @@
   </div>
 </section>
 
-<!-- ============ SUCCESS STORIES ============ -->
+<!-- ============ SUCCESS STORIES (CENTERED SLIDESHOW) ============ -->
 <section id="success-stories" class="py-6">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h1 class="section-title fw-bold">Historitë e Suksesit</h1>
-      <p class="section-lead text-muted mb-0">
-        Shih disa nga transformimet reale të klientëve që kanë ndjekur programet <strong>Bardhi Wellness</strong>.
-      </p>
-    </div>
+  <div class="container text-center">
+    <h1 class="section-title fw-bold mb-3">Historitë e Suksesit</h1>
+    <p class="section-lead mb-5">Shih disa nga transformimet reale të klientëve tanë.</p>
 
-    <div class="row g-4">
-      <!-- Story 1 -->
-      <div class="col-6 col-lg-3">
-        <div class="story-card text-center rounded-4 shadow-sm h-100">
-          <div class="story-thumb overflow-hidden rounded-top-4">
-            <img src="assets/images/before-after/tr-1.JPG" alt="-19 kg" class="img-fluid story-img">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-4">
+        <div id="storiesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4200">
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="3"></button>
           </div>
-          <div class="story-body p-3">
-            <h6 class="fw-semibold mb-1">-19 kg në vetëm disa javë</h6>
-            <p class="small text-muted mb-0">Rezultat i jashtëzakonshëm me dietë të personalizuar dhe përkushtim.</p>
+
+          <div class="carousel-inner rounded-4 shadow-soft overflow-hidden">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="story-frame">
+                <img src="assets/images/before-after/tr-1.JPG" class="story-img" alt="-19 kg – disa javë">
+              </div>
+              <div class="story-caption">
+                <h6 class="mb-1">-19 kg në disa javë</h6>
+                <p class="mb-0">Rezultat i arritur me plan të personalizuar dhe përkushtim.</p>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="story-frame">
+                <img src="assets/images/before-after/tr-2.JPG" class="story-img" alt="20 ditë – ndryshim i shpejtë">
+              </div>
+              <div class="story-caption">
+                <h6 class="mb-1">Ndryshim në 20 ditë</h6>
+                <p class="mb-0">Nga 69 kg në 60 kg – dietë strikte dhe aktivitet i moderuar.</p>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="story-frame">
+                <img src="assets/images/before-after/tr-3.JPG" class="story-img" alt="+5 kg masë muskulore">
+              </div>
+              <div class="story-caption">
+                <h6 class="mb-1">+5 kg masë muskulore</h6>
+                <p class="mb-0">Në 3 muaj me program të avancuar ushqimi & stërvitjeje.</p>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+              <div class="story-frame">
+                <img src="assets/images/before-after/tr-4.JPG" class="story-img" alt="Transformim total">
+              </div>
+              <div class="story-caption">
+                <h6 class="mb-1">Transformim total</h6>
+                <p class="mb-0">Rezultate të jashtëzakonshme në pak javë – disiplinë & fokus.</p>
+              </div>
+            </div>
           </div>
+
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#storiesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#storiesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
         </div>
-      </div>
 
-      <!-- Story 2 -->
-      <div class="col-6 col-lg-3">
-        <div class="story-card text-center rounded-4 shadow-sm h-100">
-          <div class="story-thumb overflow-hidden rounded-top-4">
-            <img src="assets/images/before-after/tr-2.JPG" alt="Super ndryshim" class="img-fluid story-img">
-          </div>
-          <div class="story-body p-3">
-            <h6 class="fw-semibold mb-1">Super ndryshim në 20 ditë</h6>
-            <p class="small text-muted mb-0">Nga 69 kg në 60 kg, me dietë të kujdesshme dhe aktivitet të moderuar.</p>
-          </div>
-        </div>
+        <a href="./transformation.html" class="btn btn-success mt-4 fw-semibold rounded-pill px-4">Shiko më shumë</a>
       </div>
-
-      <!-- Story 3 -->
-      <div class="col-6 col-lg-3">
-        <div class="story-card text-center rounded-4 shadow-sm h-100">
-          <div class="story-thumb overflow-hidden rounded-top-4">
-            <img src="assets/images/before-after/tr-3.JPG" alt="Dritan K." class="img-fluid story-img">
-          </div>
-          <div class="story-body p-3">
-            <h6 class="fw-semibold mb-1">-10 kg Test</h6>
-            <p class="small text-muted mb-0">Test fitoi forcë dhe masë muskulore me plan të avancuar stërvitjeje.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Story 4 -->
-      <div class="col-6 col-lg-3">
-        <div class="story-card text-center rounded-4 shadow-sm h-100">
-          <div class="story-thumb overflow-hidden rounded-top-4">
-            <img src="assets/images/before-after/tr-4.JPG" alt="Transformim total" class="img-fluid story-img">
-          </div>
-          <div class="story-body p-3">
-            <h6 class="fw-semibold mb-1">Transformim i plotë</h6>
-            <p class="small text-muted mb-0">Rezultat i pabesueshëm në pak javë, me disiplinë dhe udhëzim të saktë.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Button -->
-    <div class="text-center mt-5">
-      <a href="./transformation.html" class="btn btn-success px-4 py-2 fw-semibold rounded-pill">
-        Shiko më shumë
-      </a>
     </div>
   </div>
 </section>
+
 
 
 <!-- ============ FAQ & PËRFSHIRJET ============ -->
@@ -627,7 +633,7 @@
       <div class="col-lg-5">
         <h2 class="section-title fw-bold mb-1">Na kontakto</h2>
         <p class="section-lead text-muted">
-          Kemi kënaqësi të të ndihmojmë me zgjedhjen e planit, porositë dhe çdo paqartësi.
+          Kemi kënaqësi të të ndihmojmë me zgjedhjen e planit,  porositë dhe çdo paqartësi.
         </p>
 
         <div class="contact-cards">
@@ -654,10 +660,8 @@
           </div>
         </div>
 
-        <!-- Optional Map placeholder -->
-        <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm mt-4">
-          <iframe title="Harta" src="about:blank" loading="lazy"></iframe>
-        </div>
+
+
       </div>
 
       <!-- Form -->

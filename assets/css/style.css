@@ -100,6 +100,67 @@ html,body{overflow-x:hidden}
   }
 }
 
+/* ===== BRAND LOGO ===== */
+.navbar-brand {
+  font-size: 1.25rem;
+  color: var(--brand, #006039);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: var(--brand-600, #004d2e);
+}
+
+.brand-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .brand-logo {
+    height: 28px;
+  }
+  .navbar-brand span {
+    font-size: 1.05rem;
+  }
+}
+
+/* ===== OFFCANVAS HEADER ===== */
+.offcanvas-header {
+  background: var(--surface, #ffffff);
+  padding: 1rem 1.25rem;
+}
+
+.offcanvas-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.offcanvas-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--brand, #006039);
+  letter-spacing: 0.3px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .offcanvas-logo {
+    height: 28px;
+  }
+  .offcanvas-title {
+    font-size: 1rem;
+  }
+}
+
+
 
 
 /* ============================
@@ -915,73 +976,98 @@ html,body{overflow-x:hidden}
 }
 
 
-
-/* ===== FOOTER Bardhi Wellness ===== */
+/* ===== FOOTER ===== */
 #footer {
-  background: var(--surface, #ffffff);
-  border-top: 1px solid rgba(15,23,42,.08);
-  color: var(--ink-700, #334155);
-  font-family: "Inter", sans-serif;
+  background: #0b1621;
+  color: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(0,96,57,0.25), transparent 70%);
+  pointer-events: none;
+}
+
+#footer h4, 
+#footer h6 {
+  letter-spacing: 0.3px;
 }
 
 #footer .text-brand {
   color: var(--brand, #006039);
 }
 
-#footer a {
-  color: var(--ink-700, #334155);
-  text-decoration: none;
-  transition: color .2s ease, transform .2s ease;
-}
-#footer a:hover {
-  color: var(--brand, #006039);
-  transform: translateX(3px);
-}
-
-#footer i {
+/* Social Icons */
+#footer .social-links a {
   font-size: 1.4rem;
-  color: var(--brand, #006039);
-  transition: transform .3s ease, color .3s ease;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
 }
-#footer i:hover {
-  color: var(--brand-600, #004d2e);
-  transform: scale(1.15);
+#footer .social-links a:hover {
+  color: var(--brand, #00a86b);
+  transform: translateY(-3px);
 }
 
+/* Links */
+#footer .footer-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.25rem 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+#footer .footer-links a:hover {
+  color: var(--brand, #00a86b);
+  transform: translateX(4px);
+}
+
+/* Inputs & Buttons */
+#footer .form-control {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  border-radius: 50rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+}
+#footer .form-control::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+#footer .form-control:focus {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--brand, #00a86b);
+  box-shadow: 0 0 0 0.25rem rgba(0,168,107,0.25);
+}
+
+/* Button */
 #footer .btn-brand {
   background: var(--brand, #006039);
   color: #fff;
-  font-weight: 500;
-  border-radius: .6rem;
-  transition: background .3s ease, transform .2s ease;
+  font-weight: 600;
+  border: none;
+  border-radius: 50rem;
+  transition: all 0.3s ease;
 }
 #footer .btn-brand:hover {
   background: var(--brand-600, #004d2e);
   transform: translateY(-2px);
 }
 
-#footer input.form-control {
-  border-color: rgba(15,23,42,.15);
-  font-size: .95rem;
-  padding: .55rem .9rem;
-}
-
+/* Divider */
 #footer hr {
-  border-color: rgba(15,23,42,.1);
+  border-color: rgba(255,255,255,0.1);
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 767.98px) {
-  #footer {
+  #footer .col-md-6 {
     text-align: center;
   }
-  #footer .d-flex {
+  #footer .social-links {
     justify-content: center;
   }
 }
-
-
- 
-
-
- 

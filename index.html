@@ -19,10 +19,12 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top main-nav">
   <div class="container">
-    <!-- Brand -->
-    <a class="navbar-brand fw-bold" href="index.html">
-      <i class="bi bi-activity me-2"></i>Bardhi Wellness
-    </a>
+  <!-- Brand -->
+<a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+  <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
+  <span>Bardhi Wellness</span>
+</a>
+
 
     <!-- Toggler (hap OFFCANVAS në mobile) -->
     <button class="navbar-toggler d-lg-none" type="button"
@@ -51,12 +53,17 @@
 
 <!-- OFFCANVAS – MENU MOBILE FULLSCREEN -->
 <div class="offcanvas offcanvas-end w-100" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
-  <div class="offcanvas-header border-bottom">
-    <h6 class="offcanvas-title m-0" id="mobileNavLabel">
-      <i class="bi bi-activity me-2 text-brand"></i>Bardhi Wellness
+  <div class="offcanvas-header border-bottom align-items-center">
+  <div class="d-flex align-items-center">
+    <img src="assets/images/bu-logo.png" alt="Bardhi Wellness Logo" class="offcanvas-logo me-2">
+    <h6 class="offcanvas-title m-0 d-flex align-items-center" id="mobileNavLabel">
+      <i class="me-2 text-brand"></i>
+      Bardhi Wellness
     </h6>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Mbyll"></button>
   </div>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Mbyll"></button>
+</div>
+
   <div class="offcanvas-body d-flex flex-column align-items-end">
     <ul class="navbar-nav w-100 text-end mb-3">
       <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformation.html" data-bs-dismiss="offcanvas">Transformime</a></li>
@@ -79,10 +86,10 @@
     <div class="hero-bg"></div>
     <div class="container position-relative z-1 py-5">
       <h1 class="fw-bold mb-3 display-5">
-      Bardhi Wellness  💪 
+      Bardhi Uka  💪 
       </h1>
       <p class="lead mb-4">
-        <strong>Bardhi Uka</strong> – Trajner personal që të ndihmon të ndërtosh trupin, mendjen dhe stilin e jetës që dëshiron. ✨
+  Trajner personal që të ndihmon të ndërtosh trupin, mendjen dhe stilin e jetës që dëshiron. ✨
       </p>
       <div class="d-flex flex-wrap justify-content-center gap-3">
         <a href="#pricing" class="btn btn-brand btn-lg d-flex align-items-center gap-2 px-4">
@@ -144,8 +151,8 @@
 
       <!-- One-time packages -->
       <div class="text-center mb-4">
-        <h2 class="section-title">Paketa një-herëshe</h2>
-        <p class="section-lead">Paguaj vetëm një herë. Pa abonim.</p>
+        <h2 class="section-title">Paketat</h2>
+        <p class="section-lead">Paguaj vetëm një herë. <br> Pa abonim.</p>
       </div>
 
       <div class="row g-4 align-items-stretch">
@@ -314,7 +321,7 @@
                  Bli tani
               </a>
               <small class="text-center text-muted">
-                💳 Pagesa përpunohet në mënyrë të sigurt përmes Stripe & PayPal.
+                💳 Pagesa përpunohet në mënyrë të sigurt përmes Stripe & PayPal.<br>
                 Dërgesa brenda 2–4 ditëve pune.
               </small>
             </div>
@@ -323,21 +330,21 @@
             <div class="product-info mt-4">
               <h6 class="fw-bold mb-1">Përdorimi i rekomanduar</h6>
               <p class="text-muted small mb-3">
-                Merrni 2 kapsula në ditë ose sipas këshillës së një specialisti.
+                Merrni 2 kapsula në ditë ose sipas këshillës së një specialisti. <br>
                 Pini me ujë, rreth 30 minuta para aktivitetit fizik.
               </p>
 
               <h6 class="fw-bold mb-1">Si ndihmon</h6>
               <p class="text-muted small mb-3">
                 L-Carnitina ndihmon në shndërrimin e yndyrës në energji, 
-                duke mbështetur djegien e kalorive dhe performancën fizike.
+                duke mbështetur djegien e kalorive dhe performancën fizike.<br>
                 Gjithashtu ndihmon në rikuperim dhe përqendrim më të mirë gjatë stërvitjes.
               </p>
 
               <h6 class="fw-bold mb-1">Paralajmërime</h6>
               <p class="text-muted small mb-3">
-                Mos e tejkaloni dozën e rekomanduar ditore. 
-                Shtesat ushqimore nuk duhet të përdoren si zëvendësim për një dietë të balancuar. 
+                Mos e tejkaloni dozën e rekomanduar ditore. <br>
+                Shtesat ushqimore nuk duhet të përdoren si zëvendësim për një dietë të balancuar. <br>
                 Mbajeni larg fëmijëve dhe ruajeni në vend të thatë e të freskët.
               </p>
 
@@ -358,7 +365,7 @@
 <section id="success-stories" class="py-6">
   <div class="container text-center">
     <h1 class="section-title fw-bold mb-3">Historitë e Suksesit</h1>
-    <p class="section-lead mb-5">Shih disa nga transformimet reale të klientëve tanë.</p>
+    <p class="section-lead mb-5">Disa nga transformimet reale të klientëve tanë.</p>
 
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-4">
@@ -390,7 +397,7 @@
               </div>
               <div class="story-caption">
                 <h6 class="mb-1">Ndryshim në 20 ditë</h6>
-                <p class="mb-0">Nga 69 kg në 60 kg – dietë strikte dhe aktivitet i moderuar.</p>
+                <p class="mb-0">Nga 69 kg në 60 kg, <br> dietë strikte dhe aktivitet i moderuar.</p>
               </div>
             </div>
 
@@ -412,7 +419,7 @@
               </div>
               <div class="story-caption">
                 <h6 class="mb-1">Transformim total</h6>
-                <p class="mb-0">Rezultate të jashtëzakonshme në pak javë – disiplinë & fokus.</p>
+                <p class="mb-0">Rezultate të jashtëzakonshme në pak javë, <br> disiplinë & fokus.</p>
               </div>
             </div>
           </div>
@@ -442,7 +449,7 @@
       <div class="col-lg-7">
         <div class="mb-4">
           <h2 class="section-title fw-bold mb-1">Pyetje të shpeshta</h2>
-          <p class="section-lead text-muted mb-0">Nëse s’e gjen përgjigjen këtu, na shkruaj—kemi reagim të shpejtë.</p>
+          <p class="section-lead text-muted mb-0">Nëse s’e gjen përgjigjen këtu, <br> na shkruaj kemi reagim të shpejtë.</p>
         </div>
 
         <div class="accordion" id="faqAcc">
@@ -455,7 +462,7 @@
             </h2>
             <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
               <div class="accordion-body">
-                Po. Programet tona kanë versione për <strong>Shtëpi</strong> dhe <strong>Palestër</strong>. Përshtatim ushtrimet sipas pajisjeve që ke në dispozicion.
+                Po. <br> Programet tona kanë versione për <strong>Shtëpi</strong> dhe <strong>Palestër</strong>.<br> Përshtatim ushtrimet sipas pajisjeve që ke në dispozicion.
               </div>
             </div>
           </div>
@@ -483,7 +490,7 @@
             </h2>
             <div id="c3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
               <div class="accordion-body">
-                Po. <strong>Abonimi Monthly (€199/muaj)</strong> është pa kontratë afatgjatë. Mund ta ndalosh para rinovimit të radhës.
+                Po.<br> <strong>Abonimi Monthly (€199/muaj)</strong> është pa kontratë afatgjatë. <br>Mund ta ndalosh para rinovimit të radhës.
               </div>
             </div>
           </div>
@@ -511,12 +518,12 @@
           <div class="accordion-item rounded-2xl overflow-hidden mb-3">
             <h2 class="accordion-header" id="f5">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5" aria-controls="c5">
-                Si bëhet pagesa? A është e sigurt?
+                Si bëhet pagesa?<br> A është e sigurt?
               </button>
             </h2>
             <div id="c5" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
               <div class="accordion-body">
-                Pagesat procesohen në checkout me metoda të sigurta (kartë). Të dhënat trajtohen sipas praktikave më të mira të sigurisë.
+                Pagesat procesohen në checkout me metoda të sigurta (kartë).<br> Të dhënat trajtohen sipas praktikave më të mira të sigurisë.
               </div>
             </div>
           </div>
@@ -530,7 +537,7 @@
             </h2>
             <div id="c6" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
               <div class="accordion-body">
-                Është suplement për fokus dhe energji në stërvitje, që mund të mbështesë humbjen e peshës kur kombinohet me dietë dhe aktivitet. Përdor sipas udhëzimit në etiketë.
+                Është suplement për fokus dhe energji në stërvitje, që mund të mbështesë humbjen e peshës kur kombinohet me dietë dhe aktivitet.<br> Përdor sipas udhëzimit në etiketë.
               </div>
             </div>
           </div>
@@ -544,7 +551,7 @@
             </h2>
             <div id="c7" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
               <div class="accordion-body">
-                Për paketat “one-time” (Basic/Premium/Supreme) ofrojmë rimbursim vetëm para dërgimit të planit të personalizuar. Për abonimet, ndalohet rinovimi i radhës.
+                Për paketat “one-time” (Basic/Premium/Supreme) ofrojmë rimbursim vetëm para dërgimit të planit të personalizuar.<br> Për abonimet, ndalohet rinovimi i radhës.
               </div>
             </div>
           </div>
@@ -572,7 +579,7 @@
             </h2>
             <div id="c9" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
               <div class="accordion-body">
-                Jo. Ne ofrojmë trajnim dhe këshillim fitnesi/nutricioni. Për gjendje shëndetësore specifike, konsultohu me mjekun përpara se të nisësh.
+                Jo.<br> Ne ofrojmë trajnim dhe këshillim fitnesi/nutricioni.<br> Për gjendje shëndetësore specifike, konsultohu me mjekun përpara se të nisësh.
               </div>
             </div>
           </div>
@@ -590,9 +597,9 @@
                 <span class="badge bg-brand-soft text-brand fw-semibold">Paketat One-Time</span>
               </div>
               <ul class="list-clean mb-0">
-                <li>✅ <strong>Basic (€299)</strong>: Plan ushqimi bazik, ushtrime (Gym/Shtëpi), konsultë javore.</li>
-                <li>✅ <strong>Premium (€399)</strong>: Ushqim + Ushtrime (Gym & Shtëpi), plan 8–16 javë, 2–3 konsulta.</li>
-                <li>✅ <strong>Supreme (€499)</strong>: + Suplemente (plan), program i avancuar, 24/7, analiza javore.</li>
+                <li>✅ <strong>Basic (€299)</strong>: <br>Plan ushqimi bazik, ushtrime (Gym/Shtëpi), konsultë javore.</li>
+                <li>✅ <strong>Premium (€399)</strong>: <br>Ushqim + Ushtrime (Gym & Shtëpi), plan 8–16 javë, 2–3 konsulta.</li>
+                <li>✅ <strong>Supreme (€499)</strong>: <br>+ Suplemente (plan), program i avancuar, 24/7, analiza javore.</li>
               </ul>
             </div>
 
@@ -601,7 +608,7 @@
                 <span class="badge bg-brand-soft text-brand fw-semibold">Abonime</span>
               </div>
               <ul class="list-clean mb-0">
-                <li>✅ <strong>Monthly (€199/muaj)</strong>: Plane javore, video-konsultime, mbështetje e vazhdueshme.</li>
+                <li>✅ <strong>Monthly (€199/muaj)</strong>:<br> Plane javore, video-konsultime, mbështetje e vazhdueshme.</li>
               </ul>
             </div>
 
@@ -610,7 +617,7 @@
                 <span class="badge bg-brand-soft text-brand fw-semibold">Shop</span>
               </div>
               <ul class="list-clean mb-0">
-                <li>✅ <strong>L-Carnitine Capsules</strong>: Suplement për fokus/energji – bli nga “Shop”.</li>
+                <li>✅ <strong>L-Carnitine Capsules</strong>:<br> Suplement për fokus/energji bli nga “Shop”.</li>
               </ul>
             </div>
 
@@ -633,7 +640,7 @@
       <div class="col-lg-5">
         <h2 class="section-title fw-bold mb-1">Na kontakto</h2>
         <p class="section-lead text-muted">
-          Kemi kënaqësi të të ndihmojmë me zgjedhjen e planit,  porositë dhe çdo paqartësi.
+          Kemi kënaqësi të të ndihmojmë me zgjedhjen e planit,  <br>porositë dhe çdo paqartësi.
         </p>
 
         <div class="contact-cards">
@@ -641,21 +648,21 @@
             <i class="bi bi-envelope-paper"></i>
             <div>
               <div class="title">Email</div>
-              <a href="mailto:info@bardhiwellness.com" class="link-ink">info@bardhiwellness.com</a>
+              <a href="mailto:bardhiwellness@gmail.com" class="link-ink">bardhiwellness@gmail.com</a>
             </div>
           </div>
           <div class="contact-card">
             <i class="bi bi-whatsapp"></i>
             <div>
               <div class="title">WhatsApp</div>
-              <a class="link-ink" href="https://wa.me/38900000000" target="_blank" rel="noopener">Shkruaj në WhatsApp</a>
+              <a class="link-ink" href="https://wa.me/+4917684132643" target="_blank" rel="noopener">Shkruaj në WhatsApp</a>
             </div>
           </div>
           <div class="contact-card">
             <i class="bi bi-clock-history"></i>
             <div>
               <div class="title">Orari</div>
-              <div class="text-muted small">Hën–Pre: 09:00–18:00 • Sht: 10:00–14:00</div>
+              <div class="text-muted small">24/7</div>
             </div>
           </div>
         </div>
@@ -724,20 +731,19 @@
     </div>
   </div>
 </section>
-
-    <!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer id="footer" class="py-5 mt-5">
   <div class="container">
     <div class="row g-4">
 
       <!-- Brand -->
       <div class="col-md-6 col-lg-4">
-        <h4 class="fw-bold mb-3 text-brand">Bardhi Wellness</h4>
-        <p class="text-muted small">
+        <h4 class="fw-bold mb-3 text-white">Bardhi Wellness</h4>
+        <p class="text-light opacity-75 small">
           🌿 Trajnime të personalizuara, plane ushqimore dhe programe fitnesi që transformojnë trupin dhe mendjen.
         </p>
 
-        <div class="d-flex gap-3 mt-3">
+        <div class="d-flex gap-3 mt-3 social-links">
           <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
           <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
@@ -746,8 +752,8 @@
 
       <!-- Company -->
       <div class="col-md-6 col-lg-2">
-        <h6 class="fw-bold text-uppercase mb-3">Kompania</h6>
-        <ul class="list-unstyled small">
+        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Kompania</h6>
+        <ul class="list-unstyled small footer-links">
           <li><a href="#">Rreth nesh</a></li>
           <li><a href="#">Programet</a></li>
           <li><a href="#">Transformime</a></li>
@@ -757,8 +763,8 @@
 
       <!-- Support -->
       <div class="col-md-6 col-lg-3">
-        <h6 class="fw-bold text-uppercase mb-3">Mbështetje</h6>
-        <ul class="list-unstyled small">
+        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Mbështetje</h6>
+        <ul class="list-unstyled small footer-links">
           <li><a href="#">Kontakt</a></li>
           <li><a href="#">Politika e privatësisë</a></li>
           <li><a href="#">Kushtet e përdorimit</a></li>
@@ -768,8 +774,8 @@
 
       <!-- Newsletter -->
       <div class="col-md-6 col-lg-3">
-        <h6 class="fw-bold text-uppercase mb-3">Buletini</h6>
-        <p class="small text-muted mb-2">Abonohu për këshilla dhe oferta ekskluzive çdo javë.</p>
+        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Buletini</h6>
+        <p class="small text-light opacity-75 mb-2">Abonohu për këshilla dhe oferta ekskluzive.</p>
         <form class="d-flex flex-column flex-sm-row gap-2"
               onsubmit="event.preventDefault(); document.getElementById('nlMsg').classList.remove('d-none');">
           <input type="email" class="form-control" placeholder="Emaili juaj" required />
@@ -779,13 +785,14 @@
       </div>
     </div>
 
-    <hr class="my-4">
+    <hr class="my-4 border-secondary opacity-25">
 
-    <div class="text-center small text-muted">
-      © <span id="year"></span> Bardhi Wellness — Të gjitha të drejtat e rezervuara.
+    <div class="text-center small text-light opacity-75">
+      © <span id="year"></span> Bardhi Wellness - Të gjitha të drejtat e rezervuara.
     </div>
   </div>
 </footer>
+
 
 <script>
   // FAQ: opsionale – auto-scroll te pyetja e hapur

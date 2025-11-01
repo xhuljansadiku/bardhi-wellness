@@ -1,9 +1,16 @@
 /* ---------- Variables (të tuat) ---------- */
 :root{
-  --brand:#006039; --brand-600:#004d2e; --brand-700:#003d25;
-  --accent:#22c55e; --ink:#0f172a; --ink-700:#334155;
-  --muted:#64748b; --surface:#ffffff; --surface-2:#f8fafc;
-  --ring: rgba(0,96,57,.35); --nav-h:64px;
+  --brand:#006039; 
+  --brand-600:#004d2e; 
+  --brand-700:#003d25;
+  --accent:#22c55e; 
+  --ink:#0f172a; 
+  --ink-700:#334155;
+  --muted:#64748b; 
+  --surface:#ffffff; 
+  --surface-2:#f8fafc;
+  --ring: rgba(0,96,57,.35); 
+  --nav-h:64px;
 }
 
 /* No horizontal scroll */
@@ -296,449 +303,430 @@ html,body{overflow-x:hidden}
 @media (max-width: 991.98px){
   .about-photo img{ height: 380px; }
 }
+ 
 
+/* =========================================
+   PRICING – Redesigned (Bootstrap-based) + Minimal Icons
+   ========================================= */
 
-/* ===== PRICING – dark showcase ===== */
 #pricing.pricing-dark{
+  --card-bg: rgba(255,255,255,.02);
+  --card-brd: rgba(148,163,184,.12);
   background:#0b1422;
   color:#e5e7eb;
 }
-#pricing.pricing-dark .section-title{color:#fff;}
-#pricing.pricing-dark .section-lead{color:#a9b4c3;}
+#pricing .section-title{ color:#fff; }
+#pricing .section-lead{ color:#a9b4c3; }
 
-.pkg-card{
-  background:rgba(255,255,255,.02);
-  border:1px solid rgba(148,163,184,.12);
+/* Cards */
+#pricing .pkg.card{
+  background:var(--card-bg);
+  border:1px solid var(--card-brd);
   border-radius:1rem;
-  overflow:hidden;
   transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.pkg-card:hover{
+#pricing .pkg.card:hover{
   transform:translateY(-4px);
   border-color:rgba(148,163,184,.25);
   box-shadow:0 25px 70px rgba(0,0,0,.35);
 }
 
-/* top image – clipped/angled */
-.pkg-thumb{
-  height:250px;
-  background:var(--img,#222) center/cover no-repeat;
-  position:relative;
-  clip-path:polygon(0 0, 84% 0, 100% 50%, 84% 100%, 0 100%);
-  transition:transform .35s ease, filter .35s ease;
+/* Media */
+#pricing .pkg__media{
+  background: var(--img,#222) center/cover no-repeat;
   filter:saturate(1.05) contrast(1.05) brightness(.96);
+  clip-path: polygon(0 0, 84% 0, 100% 50%, 84% 100%, 0 100%);
+  transition:transform .35s ease, filter .35s ease;
 }
-.pkg-card:hover .pkg-thumb{
+#pricing .pkg.card:hover .pkg__media{
   transform:scale(1.03);
   filter:saturate(1.15) contrast(1.08) brightness(1);
 }
 
-/* content */
-.pkg-body{padding:1.25rem 1.25rem 1rem;}
-.pkg-title{display:flex;align-items:center;gap:.5rem;font-weight:600;color:#fff;}
-.pkg-dot{width:.7rem;height:.7rem;border-radius:999px;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.15);}
-.pkg-meta{text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:#9aa4b2;margin-top:.25rem;}
-.pkg-price{margin:.35rem 0 1rem;font-size:1.1rem;color:#e5e7eb;}
-.pkg-price strong{font-size:1.35rem;color:#fff;}
-.pkg-feats{margin:.5rem 0 1rem;}
-.pkg-feats li{margin:.35rem 0;color:#b6c2d1;}
-
-/* buttons */
-.btn-dark-outline{
-  display:block;width:100%;
-  border:1px solid rgba(148,163,184,.3);
-  background:transparent;color:#e5e7eb;
-  padding:.8rem 1rem;border-radius:.5rem;
-  transition:all .2s ease;
+/* Header bits */
+#pricing .pkg__dot{
+  width:.7rem; height:.7rem; border-radius:999px; background:#22c55e;
+  box-shadow:0 0 0 3px rgba(34,197,94,.15);
+  display:inline-block; flex:0 0 auto;
 }
-.btn-dark-outline:hover{
-  background:rgba(255,255,255,.05);
-  border-color:rgba(148,163,184,.55);
-  color:#fff;
-}
-.btn-brand-dark{
-  display:block;width:100%;
-  background:var(--brand);border:0;color:#fff;
-  padding:.85rem 1rem;border-radius:.5rem;font-weight:600;
-  box-shadow:0 12px 30px rgba(0,96,57,.25);
-}
-.btn-brand-dark:hover{background:var(--brand-600);}
+#pricing .card-title{ color:#fff; font-weight:700; letter-spacing:.2px; }
 
-/* remove default card bg from any leftover bootstrap cards */
-#pricing .card.h-100{background:transparent;border:0;}
-
-
-/* ========== SHOP SECTION ========== */
-#shop {
-  background: var(--surface-2, #f8fafc);
-  color: var(--ink, #0f172a);
+/* -------------------------------
+   Features list – MINIMAL ICONS
+   ✓ elegant green, ✕ soft red
+   ------------------------------- */
+#pricing .pkg__features li{
+  position:relative;
+  padding-left:1.75rem;
+  margin:.55rem 0;
+  color:#d8dee9;
+  font-weight:500;
+  line-height:1.45;
 }
-
-#shop .container {
-  max-width: 1100px;
+#pricing .pkg__features li::before{
+  content:"✓";
+  position:absolute; left:0; top:0;
+  font-size:1.05rem; line-height:1.2;
+  color:#00b37e;             /* elegant green */
+  font-weight:700; opacity:.95;
 }
-
-/* Titulli & paragrafi */
-#shop h2 {
-  font-size: clamp(1.8rem, 1.6vw + 1rem, 2.3rem);
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  color: var(--ink);
+#pricing .pkg__features .feat-miss{
+  color:#9ca3af;             /* softer text for missing */
+  opacity:.95;
 }
-#shop p.text-muted {
-  font-size: 1rem;
-  opacity: 0.85;
+#pricing .pkg__features .feat-miss::before{
+  content:"✕";
+  position:absolute; left:0; top:0;
+  font-size:1.05rem; line-height:1.2;
+  color:#ef4444;             /* soft red */
+  font-weight:700; opacity:.9;
+}
+/* (optional) subtle hover for desktop */
+@media (hover:hover){
+  #pricing .pkg__features li:hover{ color:#ffffff; transition:color .2s ease; }
+  #pricing .pkg__features li:hover::before{ transform:scale(1.08); transition:transform .2s ease; }
 }
 
-/* Imazhi e plotë, e përqendruar */
-#shop .ratio {
-  background: #fff;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+/* Buttons */
+#pricing .btn-brand-dark{
+  background:var(--brand); border:0; color:#fff; font-weight:700; border-radius:.65rem;
+  box-shadow:0 12px 30px rgba(0,96,57,.25); padding:.85rem 1rem;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
-#shop .ratio:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.12);
+#pricing .btn-brand-dark:hover{ background:var(--brand-600); transform:translateY(-2px); }
+
+/* Featured */
+#pricing .pkg--featured{
+  border-color: color-mix(in srgb, var(--brand) 30%, transparent);
+  box-shadow: 0 35px 90px rgba(0,96,57,.15);
 }
-#shop .ratio img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* imazhi i plotë */
-  object-position: center;
+#pricing .pkg--featured:hover{
+  border-color: color-mix(in srgb, var(--brand) 45%, transparent);
+  box-shadow: 0 45px 120px rgba(0,96,57,.22);
 }
 
-/* Karta e detajeve */
-#shop .card {
-  border-radius: 1rem;
-  background: #fff;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-  transition: box-shadow 0.3s ease;
-}
-#shop .card:hover {
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
-}
-
-#shop .card-body {
-  color: var(--ink-700);
+/* Ribbon */
+#pricing .pkg__ribbon{
+  position:absolute; top:14px; right:-44px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-600));
+  color:#fff; font-weight:700; font-size:.75rem; letter-spacing:.04em;
+  padding:.45rem 2.25rem; transform: rotate(35deg);
+  box-shadow:0 8px 24px rgba(0,96,57,.25);
+  z-index:2;
 }
 
-/* Titulli produktit */
-#shop h3 {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: var(--brand, #006039);
-  letter-spacing: -0.5px;
+/* Subscription variant */
+#pricing .pkg--sub .pkg__media{ clip-path:none; min-height:240px; }
+
+.py-6{ padding-top:4rem; padding-bottom:4rem; }
+@media (max-width: 991.98px){
+  #pricing .pkg--sub .pkg__media{ min-height:180px; }
 }
 
-/* Çmimi */
-#shop #priceLabel {
-  font-weight: 700;
-  color: var(--brand, #006039);
+/* =========================================
+   COMPARISON TABLE – tick/cross colors
+   ========================================= */
+.pricing-compare-table .tick i{
+  color:#00b37e !important;   /* green tick */
+}
+.pricing-compare-table .cross i{
+  color:#ef4444 !important;   /* red cross */
+  opacity:1 !important;
 }
 
-/* Quantity input */
-#shop .input-group button {
-  border-color: rgba(0, 96, 57, 0.25);
-  color: var(--brand, #006039);
-  font-weight: 600;
-  font-size: 1.1rem;
+/* ===========================
+   SHOP – Premium single product
+   =========================== */
+:root{
+  --brand:#006039;
+  --brand-600:#004d2e;
+  --ink:#0f172a;
+  --ink-700:#334155;
+  --muted:#64748b;
+  --surface-2:#0b1422;        /* do të vendosim një look dark premium */
+  --card:#0f172a;
+  --ring: rgba(0,96,57,.25);
 }
-#shop .input-group button:hover {
-  background: var(--brand, #006039);
-  color: #fff;
+.py-6{padding-top:4rem;padding-bottom:4rem;}
+
+#shop{
+  background: radial-gradient(1200px 700px at 85% -10%, rgba(0,96,57,.12), transparent 60%),
+              #0b1422;
+  color:#e5e7eb;
 }
-#shop .input-group input {
-  border-color: rgba(0, 96, 57, 0.25);
-  color: var(--ink);
-  font-weight: 500;
+#shop .section-title{
+  color:#fff;font-weight:800;letter-spacing:.2px;
+}
+#shop .section-lead{
+  color:#a9b4c3;max-width:56ch;margin:0 auto;
 }
 
-/* Butoni “Bli tani” */
-#shop #buyNowBtn {
-  background: var(--brand, #006039);
-  border: none;
-  transition: all 0.3s ease;
+/* Gallery */
+#shop .shop-gallery{ background:rgba(255,255,255,.04); }
+#shop .shop-gallery .gallery-main{
+  width:100%;height:100%;object-fit:contain;transition:transform .4s ease;
 }
-#shop #buyNowBtn:hover {
-  background: var(--brand-600, #004d2e);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 96, 57, 0.25);
-}
+#shop .shop-gallery:hover .gallery-main{ transform:scale(1.02); }
 
-/* Teksti nën buton */
-#shop small.text-muted {
-  font-size: 0.9rem;
-  opacity: 0.7;
+/* Highlight mini-cards */
+#shop .hi-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(148,163,184,.12);
+  color:#d6dde8;
+  border-radius:.9rem;
+  padding:.85rem 1rem;
+  display:flex;align-items:center;gap:.5rem;
+  font-weight:600;
 }
+#shop .hi-card i{ color:#22c55e; }
 
-/* Responsivitet */
-@media (max-width: 767.98px) {
-  #shop .card-body {
-    padding: 1.75rem;
-  }
-  #shop .ratio {
-    border-radius: 0.8rem;
-  }
-  #shop h3 {
-    font-size: 1.45rem;
-  }
-  #shop #buyNowBtn {
-    font-size: 1rem;
-  }
+/* Buy card */
+#shop .shop-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(148,163,184,.12);
 }
+#shop .product-title{ color:#fff; letter-spacing:-.2px; font-weight:800; }
+#shop .price{ color:var(--brand); font-weight:800; }
 
-/* ===== SHOP – Premium look (Bardhi Wellness) ===== */
-#shop {
-  background: var(--surface-2, #f8fafc);
-  color: var(--ink, #0f172a);
-}
-
-#shop .text-brand {
-  color: var(--brand, #006039);
-}
-
-/* Foto e produktit */
-#shop .product-image img {
-  object-fit: contain;
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform .4s ease;
-}
-#shop .product-image:hover img {
-  transform: scale(1.03);
-}
-
-/* Karta */
-#shop .card {
-  border-radius: 1rem;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, .08);
-}
-#shop .card-body {
-  color: var(--ink-700, #334155);
-}
+/* brand helpers */
+#shop .text-brand{ color:var(--brand)!important; }
+#shop .text-brand-600, #shop .text-brand-600{ color:var(--brand-600)!important; }
+#shop .bg-brand-soft{ background:color-mix(in srgb, var(--brand) 12%, white); }
+#shop .text-brand{ color:var(--brand); }
+#shop .text-brand-600{ color:var(--brand-600); }
 
 /* Quantity */
-#shop .input-group button {
-  border-color: rgba(0, 96, 57, .25);
-  color: var(--brand, #006039);
-  font-weight: 600;
+#shop .input-qty{
+  max-width: 240px;
+  border-radius:.9rem;
+  overflow:hidden;
+  border:1px solid rgba(0,96,57,.25);
+  background:#0e1726;
 }
-#shop .input-group button:hover {
-  background: var(--brand, #006039);
-  color: #fff;
+#shop .input-qty .form-control{
+  border:0;background:transparent;color:#e5e7eb;font-weight:600;
 }
-#shop .input-group input {
-  border-color: rgba(0, 96, 57, .25);
+#shop .btn-outline-brand{
+  border:0;border-left:1px solid rgba(0,96,57,.2);border-right:1px solid rgba(0,96,57,.2);
+  background:rgba(255,255,255,.02);
+  color:var(--brand);
+  font-weight:800;
 }
-
-/* Butoni “Bli tani” */
-#shop #buyNowBtn {
-  background: var(--brand, #006039);
-  border: none;
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-}
-#shop #buyNowBtn:hover {
-  background: var(--brand-600, #004d2e);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 96, 57, .25);
+#shop .btn-outline-brand:hover{
+  background:var(--brand); color:#fff;
 }
 
-/* Info seksionet */
-#shop .product-info h6 {
-  color: var(--brand-600, #004d2e);
-  font-size: 1rem;
+/* CTA button */
+#shop .btn-brand{
+  background:var(--brand);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:800; letter-spacing:.2px;
+  padding:.9rem 1.2rem;
+  box-shadow:0 12px 30px rgba(0,96,57,.28);
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
-#shop .product-info p {
-  line-height: 1.6;
+#shop .btn-brand:hover{ background:var(--brand-600); transform:translateY(-2px); }
+
+/* Trust badges */
+#shop .trust{ color:#cfd6e1; }
+#shop .trust i{ color:#22c55e; margin-right:.35rem; }
+
+/* Info card */
+#shop .shop-info{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(148,163,184,.12);
+}
+#shop .shop-info h6{ color:var(--brand); }
+
+/* Responsive */
+@media (max-width: 991.98px){
+  #shop .shop-card{ position:static; }
+}
+@media (max-width: 575.98px){
+  #shop .section-title{ font-size:1.75rem; }
+  #shop .product-title{ font-size:1.35rem; }
+  #shop .btn-brand{ padding:.8rem 1rem; }
 }
 
-/* Responsivitet */
-@media (max-width: 767.98px) {
-  #shop .card-body { padding: 1.75rem; }
-  #shop h3 { font-size: 1.45rem; }
+/* ===== Shop Card – compact & cute ===== */
+:root{
+  --brand:#006039;
+  --brand-600:#004d2e;
+  --ink:#0f172a;
 }
 
- 
-  #shop .object-fit-cover{ object-fit: cover; }
-  #shop .card{ box-shadow: var(--shadow, 0 20px 70px rgba(2,6,23,.08)); }
- 
-#miniCart { border-radius: 999px; }
-#miniCartBadge { font-size: .65rem; }
+.py-6{padding-top:4rem;padding-bottom:4rem;}
+
+#shop{
+  background:radial-gradient(900px 500px at 80% -10%, rgba(0,96,57,.06), transparent 60%), #f5f7fa;
+}
+
+.text-brand{ color:var(--brand)!important; }
+
+.shop-card{
+  background:#fff;
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:1rem;
+}
+
+/* Image */
+#shop .ratio img{
+  width:100%; height:100%; object-fit:contain; border-radius:.5rem;
+}
+
+/* Title + price */
+#shop h3{ color:var(--brand); letter-spacing:-.3px; }
+#shop #priceLabel{ color:var(--brand); font-weight:800; }
+
+/* Qty */
+#shop .shop-qty .btn-outline-brand{
+  border-color: rgba(0,96,57,.25);
+  color: var(--brand);
+  font-weight:700;
+}
+#shop .shop-qty .btn-outline-brand:hover{
+  background:var(--brand); color:#fff;
+}
+#shop .shop-qty .form-control{
+  border-color: rgba(0,96,57,.25);
+  font-weight:600;
+}
+
+/* CTA */
+#shop .btn-brand{
+  background:var(--brand); color:#fff; border:none;
+  border-radius:999px; font-weight:700; padding:.9rem 1.1rem;
+  box-shadow:0 8px 22px rgba(0,96,57,.18);
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+#shop .btn-brand:hover{ background:var(--brand-600); transform:translateY(-2px); }
+
+/* Small polish */
+#shop .card.shadow-lg{ box-shadow:0 16px 40px rgba(2,6,23,.08)!important; }
+#shop .card.shadow-sm{ box-shadow:0 8px 24px rgba(2,6,23,.06)!important; }
+
+/* Responsive */
+@media (max-width: 991.98px){
+  #shop .card-body{ padding:1.75rem!important; }
+}
+
+/* ===== SHOP – Fix image in ratio & nicer sizing ===== */
+
+/* Bëje imazhin të mbushë plotësisht container-in ratio */
+#shop .ratio { position: relative; }
+#shop .ratio > img{
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block;
+}
+
+/* Jepi një lartësi të këndshme kartës së fotos */
+#shop .ratio.ratio-3x4,
+#shop .ratio.ratio-4x3{
+  min-height: 420px;            /* desktop */
+  background: #fff;
+  border-radius: .75rem;
+  box-shadow: 0 8px 24px rgba(15,23,42,.06);
+}
+@media (max-width: 991.98px){
+  #shop .ratio.ratio-3x4,
+  #shop .ratio.ratio-4x3{ min-height: 340px; }
+}
+@media (max-width: 575.98px){
+  #shop .ratio.ratio-3x4,
+  #shop .ratio.ratio-4x3{ min-height: 280px; }
+}
+
+/* Balanco kartën e infove që të mos duket “e rëndë” */
+#shop .card.shop-card,
+#shop .card{
+  border-radius: 1rem;
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 8px 24px rgba(15,23,42,.06);
+}
+#shop .card-body{ padding: 2rem 1.75rem; }
 
 
+ /* ===== SUCCESS STORIES – DARK SLIDESHOW (CLEAN VERSION) ===== */
 
- */
 #success-stories {
-  background: var(--surface-2, #f8fafc); /* si tek paketat */
-  color: var(--ink, #0f172a);             /* ngjyra bazë e tekstit */
+  background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+  color: #fff;
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
 
 #success-stories .section-title {
-  color: var(--brand, #006039);
-  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
 }
 
-/* Kartat */
-#success-stories .story-card {
-  background: #fff;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+#success-stories .section-lead {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ===== SLIDESHOW CONTAINER ===== */
+#success-stories .carousel-inner {
+  background: #162033;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1rem;
-}
-#success-stories .story-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+  max-width: 34rem;
+  margin: 2rem auto;
+  overflow: hidden;
 }
 
-/* Fotot – të plota, me hapësirë të bardhë anash nëse nuk mbushin plotësisht */
-#success-stories .story-thumb {
+/* ===== IMAGE FRAME ===== */
+#success-stories .story-frame {
   aspect-ratio: 3 / 4;
   width: 100%;
-  background: #fff; /* sfond i bardhë për pjesët bosh */
+  background: #0f172a;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
 }
+
 #success-stories .story-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* fotot duken të plota */
-  background-color: #fff;
-  transition: transform 0.4s ease;
-}
-#success-stories .story-card:hover .story-img {
-  transform: scale(1.03);
+  object-fit: contain;
+  transition: transform 0.45s ease;
 }
 
-/* Teksti poshtë */
-#success-stories .story-body {
-  min-height: 110px;
+#success-stories .carousel-item.active .story-img {
+  transform: scale(1.02);
 }
-#success-stories .story-body h6 {
-  color: var(--ink, #0f172a);
-  font-weight: 600;
-  font-size: 1rem;
+
+/* ===== CAPTION ===== */
+#success-stories .story-caption {
+  padding: 1rem 1.25rem 1.25rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.25);
 }
-#success-stories .story-body p {
-  color: var(--muted, #64748b);
+
+#success-stories .story-caption h6 {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+#success-stories .story-caption p {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0;
   font-size: 0.9rem;
-  line-height: 1.4;
 }
 
-/* Butoni */
-#success-stories .btn-success {
-  background: var(--brand, #006039);
-  border: none;
-  transition: all 0.3s ease;
-}
-#success-stories .btn-success:hover {
-  background: var(--brand-600, #004d2e);
-  transform: translateY(-2px);
+/* ===== HIDE CAROUSEL DOTS ===== */
+#success-stories .carousel-indicators {
+  display: none !important;
 }
 
-/* Responsive */
-@media (max-width: 767.98px) {
-  #success-stories .col-6 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  #success-stories .story-body {
-    min-height: auto;
-  }
-}
-
-
-
-/* ===== SUCCESS STORIES – CENTERED DARK SLIDESHOW ===== */
-#success-stories{
-  background: linear-gradient(180deg,#0b1220 0%,#0f172a 100%);
-  color:#fff;
-  padding-top:4rem;
-  padding-bottom:4rem;
-}
-
-#success-stories .section-title{
-  font-weight:800;
-  color:#fff;
-}
-#success-stories .section-lead{
-  color:rgba(255,255,255,.8);
-  max-width:640px;
-  margin:0 auto;
-}
-
-/* Slideshow box */
-#success-stories .carousel-inner{
-  background:#162033;
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:1rem;
-}
-
-/* Image frame */
-#success-stories .story-frame{
-  aspect-ratio:3/4;
-  width:100%;
-  background:#0f172a;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-#success-stories .story-img{
-  width:100%; height:100%;
-  object-fit:contain;
-  transition:transform .45s ease;
-}
-#success-stories .carousel-item.active .story-img{transform:scale(1.01);}
-
-/* Caption */
-#success-stories .story-caption{
-  padding:1rem 1.25rem 1.25rem;
-  text-align:center;
-  background:rgba(0,0,0,.25);
-}
-#success-stories .story-caption h6{color:#fff;font-weight:700;}
-#success-stories .story-caption p{color:rgba(255,255,255,.75);margin-bottom:0;}
-
-/* Indicators */
-#success-stories .carousel-indicators [data-bs-target]{
-  width:10px;height:10px;border-radius:50%;
-  background-color:rgba(255,255,255,.4);
-}
-#success-stories .carousel-indicators .active{
-  background-color:var(--brand,#22c55e);
-}
-
-/* Controls */
-#success-stories .carousel-control-prev-icon,
-#success-stories .carousel-control-next-icon{
-  filter:drop-shadow(0 6px 16px rgba(0,0,0,.4));
-}
-
-/* Button */
-#success-stories .btn-success{
-  background:var(--brand,#006039);
-  border:none;
-  transition:.3s ease;
-}
-#success-stories .btn-success:hover{
-  background:var(--brand-600,#004d2e);
-  transform:translateY(-2px);
-}
-
-/* Responsive */
-@media(max-width:767.98px){
-  #success-stories .col-lg-4{max-width:100%;}
-  #success-stories .section-title{font-size:1.6rem;}
-}
-
+/* ===== CUSTOM ARROWS ===== */
 #success-stories .carousel-control-prev-icon,
 #success-stories .carousel-control-next-icon {
   background-image: none;
@@ -754,13 +742,16 @@ html,body{overflow-x:hidden}
   inset: 0;
   border-top: 2px solid #fff;
   border-right: 2px solid #fff;
-  transform: rotate(135deg);
   opacity: 0.9;
   transition: all 0.3s ease;
 }
 
+#success-stories .carousel-control-prev-icon::before {
+  transform: rotate(-135deg);
+}
+
 #success-stories .carousel-control-next-icon::before {
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 
 #success-stories .carousel-control-prev:hover .carousel-control-prev-icon::before,
@@ -769,10 +760,34 @@ html,body{overflow-x:hidden}
   transform: scale(1.1) rotate(var(--angle));
 }
 
-/* ===== HIDE CAROUSEL DOTS ===== */
-#success-stories .carousel-indicators {
-  display: none !important;
+/* ===== BUTTON ===== */
+#success-stories .btn-success {
+  background: var(--brand, #006039);
+  border: none;
+  transition: all 0.3s ease;
 }
+
+#success-stories .btn-success:hover {
+  background: var(--brand-600, #004d2e);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 767.98px) {
+  #success-stories {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  #success-stories .section-title {
+    font-size: 1.6rem;
+  }
+
+  #success-stories .carousel-inner {
+    max-width: 90%;
+  }
+}
+
 
 /* ====== Variabla bazë (ndrysho sipas brand-it tënd) ====== */
 :root{

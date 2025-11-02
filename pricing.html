@@ -11,7 +11,6 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css">
-
   </head>
   <body>
  
@@ -35,11 +34,11 @@
     <!-- Menu DESKTOP -->
     <div class="d-none d-lg-flex ms-auto align-items-center">
       <ul class="navbar-nav me-3">
-        <li class="nav-item"><a class="nav-link" href="about.html">Rreth Bardhit</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
-        <li class="nav-item"><a class="nav-link" href="shop.html">Produkt</a></li>
 
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Produkti</a></li>
         <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Rreth Bardhit</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
       </ul>
       <a href="checkout.html" class="btn btn-cart position-relative" aria-label="Shko te checkout">
@@ -78,134 +77,186 @@
   </div>
 </div>
 
+<!-- ================= 5- Packages - PRICING ================= -->
+<section id="pricing" class="py-6 pricing-dark">
+  <div class="container">
 
-  <!-- PRICING -->
-  <section id="pricing" class="py-6 pricing-dark mt-5">
-    <div class="container">
+    <!-- One-time packages -->
+    <div class="text-center mb-5">
+      <h2 class="section-title mb-2">Paketat</h2>
+      <p class="section-lead">Zgjidh planin që të përshtatet më së miri.</p>
+    </div>
 
-      <!-- One-time packages -->
-      <div class="text-center mb-4">
-        <h2 class="section-title">Paketat</h2>
-        <p class="section-lead">Paguaj vetëm një herë. <br> Pa abonim.</p>
-      </div>
+    <div class="row g-4 align-items-stretch">
 
-      <div class="row g-4 align-items-stretch">
-        <!-- Basic €299 (one-time) -->
-        <div class="col-md-6 col-lg-4">
-          <div class="pkg-card h-100 rounded-2xl">
-            <div class="pkg-thumb" style="--img:url('../images/pako-basic.jpg')"></div>
-            <div class="pkg-body">
-              <div class="pkg-title"><span class="pkg-dot"></span> Pako Basic</div>
-              <div class="pkg-meta mt-1">Bardhi Wellness</div>
-              <div class="pkg-price"><strong>€299,00</strong> EUR</div>
-              <ul class="pkg-feats list-unstyled small">
-                <li>✅ Plan bazik i ushqimi</li>
-                <li>✅ Ushtrime (Gym ose Shtëpi)</li>
-                <li>✅ Konsultë javore</li>
-                 <!-- mungesat krahasuar me Supreme -->
-        <li class="feat-miss">❌ Plan i detajuar i Suplementeve</li>
-        <li class="feat-miss">❌ Program i personalizuar i avancuar</li>
-        <li class="feat-miss">❌ Konsulta 24/7</li>
-        <li class="feat-miss">❌ Analiza e thellë javore e progresit</li>
-              </ul>
-              <!-- Basic €299 (one-time) -->
-  <a href="#" class="btn btn-brand-dark w-100 mt-3 buy-plan"
-    data-plan="basic" data-price="299" data-mode="pay">Bli tani</a>
-            </div>
+      <!-- Basic -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-lg pkg elevation pkg--ghost">
+          <div class="position-relative">
+            <div class="ratio ratio-16x9 pkg__media" style="--img:url('../images/pako-basic.jpg')"></div>
           </div>
-        </div>
-
-        <!-- Premium €399 (one-time) -->
-        <div class="col-md-6 col-lg-4">
-          <div class="pkg-card h-100 rounded-2xl">
-              <div class="pkg-thumb" style="--img:url('../images/pako-premium.jpg')"></div>
-            <div class="pkg-body">
-              <div class="pkg-title"><span class="pkg-dot"></span>Pako Premium</div>
-              <div class="pkg-meta mt-1">Bardhi Wellness</div>
-              <div class="pkg-price"><strong>€399,00</strong> EUR</div>
-              <ul class="pkg-feats list-unstyled small">
-                   <li>✅ Ushqimi</li>
-                      <li>✅ Ushtrime (Gym & Shtëpi)</li>
-                <li>✅ Plan 8 deri në 16 javë</li>
-                <li>✅ 2-3 konsulta me trajner</li>
-
-                 <!-- mungesat krahasuar me Supreme -->
-        <li class="feat-miss">❌ Plan i detajuar i Suplementeve</li>
-        <li class="feat-miss">❌ Program i personalizuar i avancuar</li>
-        <li class="feat-miss">❌ Konsulta 24/7</li>
-        <li class="feat-miss">❌ Analiza e thellë javore e progresit</li>
-              </ul>
-              <!-- Premium €399 (one-time) -->
-  <a href="#" class="btn btn-brand-dark w-100 mt-3 buy-plan"
-    data-plan="premium" data-price="399" data-mode="pay">Bli tani</a>
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex align-items-center gap-2">
+              <span class="pkg__dot"></span>
+              <h5 class="card-title mb-0 text-white">Pako Basic</h5>
             </div>
-          </div>
-        </div>
+      
 
-        <!-- Supreme €499 (one-time) -->
-        <div class="col-md-6 col-lg-4">
-          <div class="pkg-card h-100 rounded-2xl">
-            <div class="pkg-thumb" style="--img:url('../images/pako-supreme.jpg')"></div>
-            <div class="pkg-body">
-              <div class="pkg-title"><span class="pkg-dot"></span> Pako Supreme</div>
-              <div class="pkg-meta mt-1">Bardhi Wellness</div>
-              <div class="pkg-price"><strong>€499,00</strong> EUR</div>
-              <ul class="pkg-feats list-unstyled small">
-                <li>✅ Ushqimi</li>
-                <li>✅ Ushtrime (Gym & Shtëpi)</li>
-                <li>✅ Plan i detajuar i Suplementeve</li>
-                <li>✅ Program i personalizuar i avancuar</li>
-                <li>✅ Konsulta 24/7</li>
-                <li>✅ Analiza e thellë javore e progresit</li>
-              </ul>
-              <!-- Supreme €499 (one-time) -->
-  <a href="#" class="btn btn-brand-dark w-100 mt-3 buy-plan"
-    data-plan="supreme" data-price="499" data-mode="pay">Bli tani</a>
+            <div class="mt-3">
+              <div class="h4 m-0 text-white"><strong>€299,00</strong> <span class="fs-6 opacity-75">EUR</span></div>
             </div>
+
+            <ul class="list-unstyled mt-3 mb-0 pkg__features">
+              <li>Plan bazik i ushqimi</li>
+              <li>Ushtrime (Gym ose Shtëpi)</li>
+              <li>Konsultë javore</li>
+              <li class="feat-miss">Plan i detajuar i Suplementeve</li>
+              <li class="feat-miss">Program i personalizuar i avancuar</li>
+              <li class="feat-miss">Konsulta 24/7</li>
+              <li class="feat-miss">Analiza e thellë javore e progresit</li>
+            </ul>
+
+            <a href="#"
+               class="btn btn-brand-dark w-100 mt-4 buy-plan"
+               data-plan="basic" data-price="299" data-mode="pay">
+               Bli tani
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Monthly subscription -->
-      <div class="text-center my-5">
-        <h3 class="section-title mb-2">Abonimi mujor</h3>
-        <p class="section-lead">Fleksibël, anulo kur të duash.</p>
+      <!-- Premium (featured) -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-xl pkg pkg--featured position-relative">
+          <div class="pkg__ribbon">Më i përzgjedhur</div>
+          <div class="position-relative">
+            <div class="ratio ratio-16x9 pkg__media" style="--img:url('../images/pako-premium.jpg')"></div>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex align-items-center gap-2">
+              <span class="pkg__dot"></span>
+              <h5 class="card-title mb-0 text-white">Pako Premium</h5>
+            </div>
+     
+
+            <div class="mt-3">
+              <div class="h4 m-0 text-white"><strong>€399,00</strong> <span class="fs-6 opacity-75">EUR</span></div>
+            </div>
+
+            <ul class="list-unstyled mt-3 mb-0 pkg__features">
+              <li>Ushqimi</li>
+              <li>Ushtrime (Gym &amp; Shtëpi)</li>
+              <li>Plan 8–16 javë</li>
+              <li>2–3 konsulta me trajner</li>
+              <li class="feat-miss">Plan i detajuar i Suplementeve</li>
+              <li class="feat-miss">Program i personalizuar i avancuar</li>
+              <li class="feat-miss">Konsulta 24/7</li>
+              <li class="feat-miss">Analiza e thellë javore e progresit</li>
+            </ul>
+
+            <a href="#"
+               class="btn btn-brand-dark w-100 mt-4 buy-plan"
+               data-plan="premium" data-price="399" data-mode="pay">
+               Bli tani
+            </a>
+          </div>
+        </div>
       </div>
 
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-8 col-lg-6">
-          <div class="pkg-card h-100 rounded-2xl">
-            <div class="pkg-thumb" style="--img:url('../images/pako-starter.jpg')"></div>
-            <div class="pkg-body">
-              <div class="pkg-title"><span class="pkg-dot"></span> Pako Monthly</div>
-              <div class="pkg-meta mt-1">Bardhi Wellness</div>
-              <div class="pkg-price"><strong>€199,00</strong> EUR / muaj</div>
-              <ul class="pkg-feats list-unstyled small">
-                <li>✅ Plane të ndryshme javore</li>
-                <li>✅ Video-Konsultime</li>
-                <li>✅ Mbështetje e vazhdueshme</li>
-              </ul>
-              <a href="#" class="btn-brand-dark buy-plan"
-                data-plan="starter" data-price="199" data-mode="sub">Abonohu tani</a>
+      <!-- Supreme -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-lg pkg">
+          <div class="position-relative">
+            <div class="ratio ratio-16x9 pkg__media" style="--img:url('../images/pako-supreme.jpg')"></div>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex align-items-center gap-2">
+              <span class="pkg__dot"></span>
+              <h5 class="card-title mb-0 text-white">Pako Supreme</h5>
             </div>
+ 
+
+            <div class="mt-3">
+              <div class="h4 m-0 text-white"><strong>€499,00</strong> <span class="fs-6 opacity-75">EUR</span></div>
+            </div>
+
+            <ul class="list-unstyled mt-3 mb-0 pkg__features">
+              <li>Ushqimi</li>
+              <li>Ushtrime (Gym &amp; Shtëpi)</li>
+              <li>Plan i detajuar i Suplementeve</li>
+              <li>Program i personalizuar i avancuar</li>
+              <li>Konsulta 24/7</li>
+              <li>Analiza e thellë javore e progresit</li>
+            </ul>
+
+            <a href="#"
+               class="btn btn-brand-dark w-100 mt-4 buy-plan"
+               data-plan="supreme" data-price="499" data-mode="pay">
+               Bli tani
+            </a>
           </div>
         </div>
       </div>
 
     </div>
-  </section>
 
-<!-- ===== FOOTER ===== -->
-<footer id="footer" class="py-5 mt-5">
+    <!-- Monthly subscription -->
+    <div class="text-center my-5">
+      <h3 class="section-title mb-2">Abonimi mujor</h3>
+      <p class="section-lead">Fleksibël, anulo kur të duash.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <div class="card border-0 shadow-xl pkg pkg--sub d-md-flex flex-md-row overflow-hidden">
+          <div class="ratio ratio-16x9 pkg__media flex-grow-1" style="--img:url('../images/pako-starter.jpg')"></div>
+          <div class="card-body d-flex flex-column flex-grow-1">
+            <div class="d-flex align-items-center gap-2">
+              <span class="pkg__dot"></span>
+              <h5 class="card-title mb-0 text-white">Pako Monthly</h5>
+            </div>
+ 
+
+            <div class="mt-3">
+              <div class="h4 m-0 text-white"><strong>€199,00</strong> <span class="fs-6 opacity-75">EUR / muaj</span></div>
+            </div>
+
+            <ul class="list-unstyled mt-3 mb-0 pkg__features">
+              <li>Plane të ndryshme javore</li>
+              <li>Video-Konsultime</li>
+              <li>Mbështetje e vazhdueshme</li>
+            </ul>
+
+            <a href="#"
+               class="btn btn-brand-dark mt-4 align-self-stretch align-self-md-end buy-plan"
+               data-plan="starter" data-price="199" data-mode="sub">
+               Abonohu tani
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 11- FOOTER ===== -->
+<footer id="footer-light" class="py-5">
   <div class="container">
     <div class="row g-4">
 
       <!-- Brand -->
       <div class="col-md-6 col-lg-4">
-        <h4 class="fw-bold mb-3 text-white">Bardhi Wellness</h4>
-        <p class="text-light opacity-75 small">
-          🌿 Trajnime të personalizuara, plane ushqimore dhe programe fitnesi që transformojnë trupin dhe mendjen.
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+  <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
+  <span>Bardhi Wellness</span>
+</a> 
+        <p>
+        Trajnime të personalizuara, plane ushqimore dhe programe fitnesi që transformojnë trupin dhe mendjen.
         </p>
+
+
+
 
         <div class="d-flex gap-3 mt-3 social-links">
           <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -216,30 +267,30 @@
 
       <!-- Company -->
       <div class="col-md-6 col-lg-2">
-        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Kompania</h6>
+        <h6 class="fw-bold text-uppercase mb-3">Kompania</h6>
         <ul class="list-unstyled small footer-links">
-          <li><a href="#">Rreth nesh</a></li>
-          <li><a href="#">Programet</a></li>
-          <li><a href="#">Transformime</a></li>
-          <li><a href="#">Karriera</a></li>
+          <li><a href="/about.html">Rreth Bardhit</a></li>
+          <li><a href="/packages.html">Programet</a></li>
+          <li><a href="/transformation.html">Transformime</a></li>
+          <li><a href="/shop.html">Produkt</a></li>
         </ul>
       </div>
 
       <!-- Support -->
       <div class="col-md-6 col-lg-3">
-        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Mbështetje</h6>
+        <h6 class="fw-bold text-uppercase mb-3 ">Mbështetje</h6>
         <ul class="list-unstyled small footer-links">
-          <li><a href="#">Kontakt</a></li>
+          <li><a href="/contact.html">Kontakt</a></li>
           <li><a href="#">Politika e privatësisë</a></li>
           <li><a href="#">Kushtet e përdorimit</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
 
       <!-- Newsletter -->
       <div class="col-md-6 col-lg-3">
-        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Buletini</h6>
-        <p class="small text-light opacity-75 mb-2">Abonohu për këshilla dhe oferta ekskluzive.</p>
+        <h6 class="fw-bold text-uppercase mb-3  ">Buletini</h6>
+        <p class="small   opacity-75 mb-2">Abonohu për këshilla dhe oferta ekskluzive.</p>
         <form class="d-flex flex-column flex-sm-row gap-2"
               onsubmit="event.preventDefault(); document.getElementById('nlMsg').classList.remove('d-none');">
           <input type="email" class="form-control" placeholder="Emaili juaj" required />
@@ -251,11 +302,17 @@
 
     <hr class="my-4 border-secondary opacity-25">
 
-    <div class="text-center small text-light opacity-75">
+    <div class="text-center small   opacity-75">
       © <span id="year"></span> Bardhi Wellness - Të gjitha të drejtat e rezervuara.
     </div>
   </div>
 </footer>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" aria-label="Kthehu lart">
+  <i class="bi bi-arrow-up-short"></i>
+</button>
+
 
 
 <script>
@@ -299,75 +356,18 @@
   })();
 </script>
 
-
 <script>
   // vendos automatikisht vitin
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-
-    <script>
-/* ---------------- CART helpers ---------------- */
-function readCart(){
-  try{ return JSON.parse(localStorage.getItem('cart')||'null'); }catch(e){ return null; }
-}
-function writeCart(c){ localStorage.setItem('cart', JSON.stringify(c)); }
-function ensureCart(){
-  let c = readCart();
-  if(!c || !Array.isArray(c.items)) c = { items:[], currency:'EUR', updatedAt:Date.now() };
-  return c;
-}
-function addToCart(item){
-  const c = ensureCart();
-  // merge sipas sku + mode (p.sh. e njëjta pako por 'sub' vs 'pay' janë të ndryshme)
-  const i = c.items.find(x => x.sku===item.sku && x.mode===item.mode);
-  if(i){ i.qty += item.qty||1; }
-  else { c.items.push({ ...item, qty:item.qty||1 }); }
-  c.updatedAt = Date.now();
-  writeCart(c);
-}
-
  
 
-/* ---------------- SHOP: “Bli tani” (suplement) ---------------- */
-(function(){
-  const btn   = document.getElementById('buyNowBtn');
-  if (!btn) return;
+<!--  Pastaj ngarko Bootstrap dhe app.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/app.js"></script>
 
-  const qtyEl = document.getElementById('qtyInput');
-  const minus = document.getElementById('qtyMinus');
-  const plus  = document.getElementById('qtyPlus');
-
-  // stepper
-  minus?.addEventListener('click', ()=> { qtyEl.value = Math.max(1,(+qtyEl.value||1)-1); });
-  plus ?.addEventListener('click', ()=> { qtyEl.value = Math.max(1,(+qtyEl.value||1)+1); });
-
-  btn.addEventListener('click', function(e){
-    e.preventDefault();
-    const qty = Math.max(1, parseInt(qtyEl.value,10) || 1);
-
-    addToCart({
-      type: 'product',
-      sku:  this.dataset.sku,                 // SUPL-DBS-001
-      title:this.dataset.title,               // Suplement Dobësimi
-      price:parseFloat(this.dataset.price),   // 119
-      currency:this.dataset.currency || 'EUR',
-      image:this.dataset.image,
-      qty,
-      mode: 'pay'                             // produkt = pagesë njëherë
-    });
-
-    const base = location.pathname.replace(/[^/]*$/, '');
-    location.href = new URL(base + 'checkout.html', location.origin).toString();
-  });
-})();
-    </script>
-
- 
-  <!--  Pastaj ngarko Bootstrap dhe app.js -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/app.js"></script>
-  <script>
+<script>
   const nav = document.getElementById('navMenu');
   if (nav) {
     nav.addEventListener('shown.bs.collapse', () => document.body.classList.add('menu-open'));
@@ -382,10 +382,45 @@ function addToCart(item){
   });
 </script>
 
-
-    <style>
+<style>
       /* spacing utility (since Bootstrap <=5 s’ka py-6) */
       .py-6{padding-top:4.5rem;padding-bottom:4.5rem}
-    </style>
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function (el) {
+      new bootstrap.Tooltip(el);
+    });
+  });
+</script>
+
+ 
+
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  // Shfaq / fsheh butonin
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  // Scroll smooth deri në fillim
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+
+<script>
+  // Hiq çdo 'active' nga linket e nav-it në këtë faqe
+  document.querySelectorAll('.navbar .nav-link.active')
+    .forEach(a => a.classList.remove('active'));
+</script>
+
   </body>
   </html>

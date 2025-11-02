@@ -1388,12 +1388,17 @@ body{ padding-top: var(--nav-h,64px); }
 .py-6 { padding-top: 4rem; padding-bottom: 4rem; }
 
 
-/* =======================
-   FOOTER – Bardhi Wellness
-   Dark, clean, brand-accented
-   ======================= */
 
-#footer{
+
+/* =========================================================
+   FOOTER – Bardhi Wellness
+   Two versions: DARK (#footer-dark) and LIGHT (#footer-light)
+   ========================================================= */
+
+/* --------------------
+   DARK VERSION
+   -------------------- */
+#footer-dark{
   background: radial-gradient(1200px 600px at 0% -10%, rgba(0,96,57,.18), transparent 60%),
               linear-gradient(180deg,#0b1422 0%, #0f172a 100%);
   color:#e2e8f0;
@@ -1401,108 +1406,233 @@ body{ padding-top: var(--nav-h,64px); }
   overflow:hidden;
 }
 
-/* Headings & copy */
-#footer h4,
-#footer h6{ letter-spacing:.3px; }
-#footer h4{ color:#fff; }
-#footer h6{ color:rgba(255,255,255,.65); }
-
-#footer p,
-#footer .small{ color:rgba(255,255,255,.78); }
+/* Texts */
+#footer-dark h4, #footer-dark h6{ letter-spacing:.3px; }
+#footer-dark h4{ color:#fff; }
+#footer-dark h6{ color:rgba(255,255,255,.65); }
+#footer-dark p, #footer-dark .small{ color:rgba(255,255,255,.78); }
 
 /* Links */
-#footer .footer-links a{
+#footer-dark .footer-links a{
   color:rgba(255,255,255,.78);
   text-decoration:none;
   display:inline-block;
   padding:.15rem 0;
-  transition:color .25s ease, transform .25s ease, opacity .25s ease;
+  transition:color .25s, transform .25s, opacity .25s;
 }
-#footer .footer-links a:hover{
+#footer-dark .footer-links a:hover{
   color:var(--brand,#006039);
   transform:translateX(3px);
   opacity:1;
 }
 
 /* Social icons */
-#footer .social-links a{
+#footer-dark .social-links a{
   font-size:1.35rem;
   color:rgba(255,255,255,.78);
-  transition:transform .25s ease, color .25s ease, text-shadow .25s ease;
-  line-height:1;
+  transition:transform .25s, color .25s, text-shadow .25s;
 }
-#footer .social-links a:hover{
+#footer-dark .social-links a:hover{
   color:#9ee6bf;
   transform:translateY(-3px);
   text-shadow:0 6px 18px rgba(0,96,57,.25);
 }
 
 /* Newsletter */
-#footer .form-control{
+#footer-dark .form-control{
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.18);
   color:#fff;
   border-radius:999px;
   padding:.65rem 1rem;
   font-size:.95rem;
-  transition:border-color .25s ease, box-shadow .25s ease, background .25s ease;
+  transition:border-color .25s, box-shadow .25s, background .25s;
 }
-#footer .form-control::placeholder{ color:rgba(255,255,255,.65); }
-#footer .form-control:focus{
+#footer-dark .form-control::placeholder{ color:rgba(255,255,255,.65); }
+#footer-dark .form-control:focus{
   background:rgba(255,255,255,.12);
   border-color: color-mix(in srgb, var(--brand,#006039) 60%, white);
   box-shadow:0 0 0 .2rem rgba(0,96,57,.28);
   outline:0;
 }
 
-/* CTA button (reuse brand) */
-#footer .btn.btn-brand{
+/* CTA button */
+#footer-dark .btn.btn-brand{
   background:var(--brand,#006039);
   color:#fff;
   border:none;
   border-radius:999px;
   font-weight:700;
   padding:.65rem 1.15rem;
-  transition:transform .2s ease, box-shadow .25s ease, background .2s ease;
+  transition:transform .2s, box-shadow .25s, background .2s;
   box-shadow:0 10px 24px rgba(0,96,57,.25);
 }
-#footer .btn.btn-brand:hover{
+#footer-dark .btn.btn-brand:hover{
   background:var(--brand-600,#004d2e);
   transform:translateY(-2px);
   box-shadow:0 14px 30px rgba(0,96,57,.28);
 }
 
+/* Divider + bottom note */
+#footer-dark hr{ border-color:rgba(255,255,255,.12)!important; opacity:.6; }
+#footer-dark .text-center.small{ color:rgba(255,255,255,.75); }
+
+/* Responsive */
+@media (max-width: 767.98px){
+  #footer-dark .social-links{ justify-content:flex-start; }
+  #footer-dark .form-control{ font-size:.95rem; }
+}
+
+/* Hover motion */
+@media (prefers-reduced-motion:no-preference){
+  #footer-dark h4{ transition:transform .25s; }
+  #footer-dark h4:hover{ transform:translateY(-2px); }
+}
+
+/* --------------------
+   LIGHT VERSION
+   -------------------- */
+ 
+
+#footer-light {
+  background: var(--surface, #ffffff);
+  color: var(--ink, #0f172a);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Headings & titles */
+#footer-light h4,
+#footer-light h6 {
+  letter-spacing: 0.3px;
+  color: var(--ink, #0f172a);
+}
+#footer-light h4 {
+  font-weight: 800;
+  color: var(--brand, #006039);
+}
+#footer-light h6 {
+  color: var(--ink-700, #1e293b);
+  font-weight: 700;
+}
+
+/* Descriptive text */
+#footer-light p,
+#footer-light .small {
+  color: #334155; /* më i fortë se më parë */
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Links */
+#footer-light .footer-links a {
+  color: var(--ink-700, #1e293b);
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.15rem 0;
+  font-weight: 500;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+#footer-light .footer-links a:hover {
+  color: var(--brand, #006039);
+  transform: translateX(4px);
+}
+
+/* Social icons */
+#footer-light .social-links a {
+  font-size: 1.35rem;
+  color: var(--brand, #006039);
+  opacity: 0.95;
+  transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
+}
+#footer-light .social-links a:hover {
+  color: var(--brand-700, #004d2e);
+  transform: translateY(-3px);
+  text-shadow: 0 4px 14px rgba(0, 96, 57, 0.25);
+}
+
+/* Newsletter input */
+#footer-light .form-control {
+  background: #f1f5f9;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  color: var(--ink, #0f172a);
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+#footer-light .form-control::placeholder {
+  color: #64748b;
+  opacity: 0.8;
+}
+#footer-light .form-control:focus {
+  border-color: var(--brand, #006039);
+  background: #ffffff;
+  box-shadow: 0 0 0 0.25rem rgba(0, 96, 57, 0.18);
+  outline: 0;
+}
+
+/* CTA button */
+#footer-light .btn.btn-brand {
+  background: var(--brand, #006039);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 0.65rem 1.15rem;
+  box-shadow: 0 6px 18px rgba(0, 96, 57, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+#footer-light .btn.btn-brand:hover {
+  background: var(--brand-600, #004d2e);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 96, 57, 0.25);
+}
+
 /* Divider */
-#footer hr{
-  border-color:rgba(255,255,255,.12) !important;
-  opacity:.6;
+#footer-light hr {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  opacity: 1;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Bottom note */
-#footer .text-center.small{
-  color:rgba(255,255,255,.75);
+#footer-light .text-center.small {
+  color: #475569;
+  opacity: 0.9;
 }
 
-/* Focus-visible for accessibility */
-#footer a:focus-visible,
-#footer button:focus-visible,
-#footer .form-control:focus-visible{
-  outline:2px solid color-mix(in srgb, var(--brand,#006039) 70%, white);
-  outline-offset:2px;
-  border-radius:.5rem;
+/* Focus-visible */
+#footer-light a:focus-visible,
+#footer-light button:focus-visible,
+#footer-light .form-control:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand, #006039) 70%, white);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
 }
 
-/* Responsive tweaks */
-@media (max-width: 767.98px){
-  #footer .social-links{ justify-content:flex-start; }
-  #footer .form-control{ font-size:.95rem; }
+/* Responsive */
+@media (max-width: 767.98px) {
+  #footer-light .social-links {
+    justify-content: flex-start;
+  }
+  #footer-light .form-control {
+    font-size: 0.95rem;
+  }
 }
 
-/* Optional subtle float on brand header */
-@media (prefers-reduced-motion: no-preference){
-  #footer h4{ transition:transform .25s ease; }
-  #footer h4:hover{ transform:translateY(-2px); }
+/* Subtle hover motion */
+@media (prefers-reduced-motion: no-preference) {
+  #footer-light h4 {
+    transition: transform 0.25s ease;
+  }
+  #footer-light h4:hover {
+    transform: translateY(-2px);
+  }
 }
+
 
 
  /* ========== BACK TO TOP BUTTON  ========== */
@@ -1582,3 +1712,6 @@ body{ padding-top: var(--nav-h,64px); }
     right: 20px;
   }
 }
+
+
+ 

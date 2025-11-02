@@ -35,11 +35,11 @@
     <!-- Menu DESKTOP -->
     <div class="d-none d-lg-flex ms-auto align-items-center">
       <ul class="navbar-nav me-3">
-        <li class="nav-item"><a class="nav-link" href="about.html">Rreth Bardhit</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
-        <li class="nav-item"><a class="nav-link" href="shop.html">Produkt</a></li>
 
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Produkti</a></li>
         <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Rreth Bardhit</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
       </ul>
       <a href="checkout.html" class="btn btn-cart position-relative" aria-label="Shko te checkout">
@@ -78,30 +78,27 @@
   </div>
 </div>
 
+<!-- ============ 6- SHOP (Single product -> checkout.html) ============ -->
+<section id="shop" class="py-6">
+  <div class="container" style="max-width: 980px;">
+    <h2 class="text-center fw-bold mb-2" style="color:var(--ink,#0f172a);">Shop</h2>
+    <p class="text-center text-muted mb-4">Bli tani suplementin tonë premium për energji dhe dobësim.</p>
 
-<!-- ============ SHOP (Single product -> checkout.html) ============ -->
-<section id="shop" class="py-5 bg-light mt-5">
-  <div class="container">
-    <div class="text-center mb-4">
-      <h2 class="fw-bold" style="color:var(--ink,#0f172a);">Shop</h2>
-      <p class="text-muted mb-0">Bli tani suplementin tonë premium për energji dhe dobësim.</p>
-    </div>
-
-    <div class="row g-4 align-items-center">
-      <!-- Foto -->
-      <div class="col-lg-6">
-        <div class="product-image rounded-4 shadow-sm d-flex align-items-center justify-content-center bg-white p-3">
-          <img src="./assets/images/bardhiuka-product.jpg"
-               alt="L Carnitine Capsules Bardhi Wellness"
-               class="img-fluid rounded-3">
+    <!-- KARTA E PRODUKTIT -->
+    <div class="card shop-card border-0 shadow-lg rounded-4 overflow-hidden">
+      <div class="row g-0 align-items-center">
+        <!-- Foto -->
+        <div class="col-md-5 bg-white">
+          <div class="img-fluid rounded-3 w-100 h-100">
+            <img src="./assets/images/bardhiuka-product.jpg"
+                 alt="L Carnitine Capsules Bardhi Wellness"
+                 class="img-fluid rounded-3 object-fit-contain">
+          </div>
         </div>
-      </div>
 
-      <!-- Detajet -->
-      <div class="col-lg-6">
-        <div class="card border-0 shadow-sm rounded-4">
+        <!-- Info + CTA -->
+        <div class="col-md-7">
           <div class="card-body p-4 p-lg-5">
-
             <span class="text-uppercase small text-muted">Bardhi Wellness</span>
             <h3 class="mt-1 mb-3 fw-bold text-brand">L-CARNITINE CAPSULES</h3>
 
@@ -116,75 +113,89 @@
             </p>
 
             <!-- Sasia -->
-            <div class="mb-4">
-              <label for="qtyInput" class="form-label fw-semibold">Sasia</label>
-              <div class="input-group" style="max-width: 220px;">
-                <button class="btn btn-outline-secondary" type="button" id="qtyMinus" aria-label="Zvogëlo sasinë">−</button>
+            <div class="mb-3">
+              <label for="qtyInput" class="form-label fw-semibold mb-1">Sasia</label>
+              <div class="input-group input-group-sm shop-qty" style="max-width: 190px;">
+                <button class="btn btn-outline-brand" type="button" id="qtyMinus" aria-label="Zvogëlo sasinë">−</button>
                 <input type="number" class="form-control text-center" id="qtyInput" value="1" min="1" step="1" inputmode="numeric" pattern="[0-9]*">
-                <button class="btn btn-outline-secondary" type="button" id="qtyPlus" aria-label="Rrit sasinë">+</button>
+                <button class="btn btn-outline-brand" type="button" id="qtyPlus" aria-label="Rrit sasinë">+</button>
               </div>
             </div>
 
             <!-- CTA -->
-            <div class="d-grid gap-2 mb-4">
-              <a id="buyNowBtn"
-                 href="checkout.html"
-                 class="btn btn-success btn-lg rounded-pill fw-semibold"
-                 data-sku="SUPL-DBS-001"
-                 data-title="L-Carnitine Capsules"
-                 data-price="69.99"
-                 data-currency="EUR"
-                 data-image="./assets/images/bardhiuka-product.jpg">
-                 Bli tani
-              </a>
-            </div>
+            <a id="buyNowBtn"
+               href="checkout.html"
+               class="btn btn-brand w-100 mb-3"
+               data-sku="SUPL-DBS-001"
+               data-title="L-Carnitine Capsules"
+               data-price="69.99"
+               data-currency="EUR"
+               data-image="./assets/images/bardhiuka-product.jpg">
+               Bli tani
+            </a>
 
-            <!-- Info për përdorim -->
-            <div class="product-info mt-4">
-              <h6 class="fw-bold mb-1">Përdorimi i rekomanduar</h6>
-              <p class="text-muted small mb-3">
-                Merrni 2 kapsula në ditë ose sipas këshillës së një specialisti. <br>
-                Pini me ujë, rreth 30 minuta para aktivitetit fizik.
-              </p>
-
-              <h6 class="fw-bold mb-1">Si ndihmon</h6>
-              <p class="text-muted small mb-3">
-                L-Carnitina ndihmon në shndërrimin e yndyrës në energji, 
-                duke mbështetur djegien e kalorive dhe performancën fizike.<br>
-                Gjithashtu ndihmon në rikuperim dhe përqendrim më të mirë gjatë stërvitjes.
-              </p>
-
-              <h6 class="fw-bold mb-1">Paralajmërime</h6>
-              <p class="text-muted small mb-3">
-                Mos e tejkaloni dozën e rekomanduar ditore. <br>
-                Shtesat ushqimore nuk duhet të përdoren si zëvendësim për një dietë të balancuar. <br>
-                Mbajeni larg fëmijëve dhe ruajeni në vend të thatë e të freskët.
-              </p>
-
-              <h6 class="fw-bold mb-1">Përbërës të tjerë</h6>
-              <p class="text-muted small mb-0">
-                Maltodextrin, ekstrakt çaji jeshil, celulozë mikro-kristaline (Microcrystalline Cellulose), kapsulë HPMC.
-              </p>
-            </div>
-
+            <!-- Info të shkurtra -->
+            <ul class="list-inline small text-muted mb-0">
+              <li class="list-inline-item me-3"><i class="bi bi-shield-check me-1 text-brand"></i>Pagesë e sigurt</li>
+              <li class="list-inline-item me-3"><i class="bi bi-truck me-1 text-brand"></i>Dërgesë e shpejtë</li>
+              <li class="list-inline-item"><i class="bi bi-arrow-repeat me-1 text-brand"></i>Kthim 14-ditor</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Info të hollësishme (mbetet nën kartë) -->
+    <div class="card border-0 shadow-sm rounded-4 mt-4">
+      <div class="card-body p-4 p-lg-5">
+        <h6 class="fw-bold mb-1 text-brand">Përdorimi i rekomanduar</h6>
+        <p class="text-muted small mb-3">
+          Merrni 2 kapsula në ditë ose sipas këshillës së një specialisti. <br>
+          Pini me ujë, rreth 30 minuta para aktivitetit fizik.
+        </p>
+
+        <h6 class="fw-bold mb-1 text-brand">Si ndihmon</h6>
+        <p class="text-muted small mb-3">
+          L-Carnitina ndihmon në shndërrimin e yndyrës në energji, 
+          duke mbështetur djegien e kalorive dhe performancën fizike.<br>
+          Gjithashtu ndihmon në rikuperim dhe përqendrim më të mirë gjatë stërvitjes.
+        </p>
+
+        <h6 class="fw-bold mb-1 text-brand">Paralajmërime</h6>
+        <p class="text-muted small mb-3">
+          Mos e tejkaloni dozën e rekomanduar ditore. <br>
+          Shtesat ushqimore nuk duhet të përdoren si zëvendësim për një dietë të balancuar. <br>
+          Mbajeni larg fëmijëve dhe ruajeni në vend të thatë e të freskët.
+        </p>
+
+        <h6 class="fw-bold mb-0 text-brand">Përbërës të tjerë</h6>
+        <p class="text-muted small mb-0">
+          Maltodextrin, ekstrakt çaji jeshil, celulozë mikro-kristaline (Microcrystalline Cellulose), kapsulë HPMC.
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer id="footer" class="py-5 mt-5">
+
+<!-- ===== 11- FOOTER ===== -->
+<footer id="footer-dark" class="py-5">
   <div class="container">
     <div class="row g-4">
 
       <!-- Brand -->
       <div class="col-md-6 col-lg-4">
-        <h4 class="fw-bold mb-3 text-white">Bardhi Wellness</h4>
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+  <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
+  <span>Bardhi Wellness</span>
+</a> 
         <p class="text-light opacity-75 small">
-          🌿 Trajnime të personalizuara, plane ushqimore dhe programe fitnesi që transformojnë trupin dhe mendjen.
+        Trajnime të personalizuara, plane ushqimore dhe programe fitnesi që transformojnë trupin dhe mendjen.
         </p>
+
+
+
 
         <div class="d-flex gap-3 mt-3 social-links">
           <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -197,10 +208,10 @@
       <div class="col-md-6 col-lg-2">
         <h6 class="fw-bold text-uppercase mb-3 text-white-50">Kompania</h6>
         <ul class="list-unstyled small footer-links">
-          <li><a href="#">Rreth nesh</a></li>
-          <li><a href="#">Programet</a></li>
-          <li><a href="#">Transformime</a></li>
-          <li><a href="#">Karriera</a></li>
+          <li><a href="/about.html">Rreth Bardhit</a></li>
+          <li><a href="/packages.html">Programet</a></li>
+          <li><a href="/transformation.html">Transformime</a></li>
+          <li><a href="/shop.html">Produkt</a></li>
         </ul>
       </div>
 
@@ -208,10 +219,10 @@
       <div class="col-md-6 col-lg-3">
         <h6 class="fw-bold text-uppercase mb-3 text-white-50">Mbështetje</h6>
         <ul class="list-unstyled small footer-links">
-          <li><a href="#">Kontakt</a></li>
+          <li><a href="/contact.html">Kontakt</a></li>
           <li><a href="#">Politika e privatësisë</a></li>
           <li><a href="#">Kushtet e përdorimit</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
 
@@ -235,6 +246,11 @@
     </div>
   </div>
 </footer>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" aria-label="Kthehu lart">
+  <i class="bi bi-arrow-up-short"></i>
+</button>
 
 
 <script>
@@ -366,5 +382,32 @@ function addToCart(item){
       /* spacing utility (since Bootstrap <=5 s’ka py-6) */
       .py-6{padding-top:4.5rem;padding-bottom:4.5rem}
     </style>
+
+    
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  // Shfaq / fsheh butonin
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  // Scroll smooth deri në fillim
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+
+<script>
+  // Hiq çdo 'active' nga linket e nav-it në këtë faqe
+  document.querySelectorAll('.navbar .nav-link.active')
+    .forEach(a => a.classList.remove('active'));
+</script>
+
   </body>
   </html>

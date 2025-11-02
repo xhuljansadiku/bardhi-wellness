@@ -35,11 +35,11 @@
     <!-- Menu DESKTOP -->
     <div class="d-none d-lg-flex ms-auto align-items-center">
       <ul class="navbar-nav me-3">
-        <li class="nav-item"><a class="nav-link" href="transformation.html">Rreth Bardhit</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Produkt</a></li>
 
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Produkti</a></li>
         <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Rreth Bardhit</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
       </ul>
       <a href="checkout.html" class="btn btn-cart position-relative" aria-label="Shko te checkout">
@@ -123,17 +123,24 @@
   </section>
 
 
-<!-- ===== FOOTER ===== -->
-<footer id="footer" class="py-5 mt-5">
+
+<!-- ===== 11- FOOTER ===== -->
+<footer id="footer-dark" class="py-5">
   <div class="container">
     <div class="row g-4">
 
       <!-- Brand -->
       <div class="col-md-6 col-lg-4">
-        <h4 class="fw-bold mb-3 text-white">Bardhi Wellness</h4>
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+  <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
+  <span>Bardhi Wellness</span>
+</a> 
         <p class="text-light opacity-75 small">
-          🌿 Trajnime të personalizuara, plane ushqimore dhe programe fitnesi që transformojnë trupin dhe mendjen.
+        Trajnime të personalizuara, plane ushqimore dhe programe fitnesi që transformojnë trupin dhe mendjen.
         </p>
+
+
+
 
         <div class="d-flex gap-3 mt-3 social-links">
           <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -146,10 +153,10 @@
       <div class="col-md-6 col-lg-2">
         <h6 class="fw-bold text-uppercase mb-3 text-white-50">Kompania</h6>
         <ul class="list-unstyled small footer-links">
-          <li><a href="#">Rreth nesh</a></li>
-          <li><a href="#">Programet</a></li>
-          <li><a href="#">Transformime</a></li>
-          <li><a href="#">Karriera</a></li>
+          <li><a href="/about.html">Rreth Bardhit</a></li>
+          <li><a href="/packages.html">Programet</a></li>
+          <li><a href="/transformation.html">Transformime</a></li>
+          <li><a href="/shop.html">Produkt</a></li>
         </ul>
       </div>
 
@@ -157,10 +164,10 @@
       <div class="col-md-6 col-lg-3">
         <h6 class="fw-bold text-uppercase mb-3 text-white-50">Mbështetje</h6>
         <ul class="list-unstyled small footer-links">
-          <li><a href="#">Kontakt</a></li>
+          <li><a href="/contact.html">Kontakt</a></li>
           <li><a href="#">Politika e privatësisë</a></li>
           <li><a href="#">Kushtet e përdorimit</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
 
@@ -184,6 +191,11 @@
     </div>
   </div>
 </footer>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" aria-label="Kthehu lart">
+  <i class="bi bi-arrow-up-short"></i>
+</button>
 
 
 <script>
@@ -315,5 +327,32 @@ function addToCart(item){
       /* spacing utility (since Bootstrap <=5 s’ka py-6) */
       .py-6{padding-top:4.5rem;padding-bottom:4.5rem}
     </style>
+
+    
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  // Shfaq / fsheh butonin
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  // Scroll smooth deri në fillim
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+
+<script>
+  // Hiq çdo 'active' nga linket e nav-it në këtë faqe
+  document.querySelectorAll('.navbar .nav-link.active')
+    .forEach(a => a.classList.remove('active'));
+</script>
+
   </body>
   </html>

@@ -3,294 +3,319 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CoachPro – Transformations</title>
-  <meta name="description" content="Rezultate reale: para & pas, histori suksesi dhe deshmime nga klientët." />
+  <title>Transformime – Bardhi Wellness</title>
+  <meta name="description" content="Transformime reale të klientëve të Bardhi Wellness – rezultate të matshme me plan ushqimi, ushtrime dhe ndjekje profesionale." />
 
-  <!-- Bootstrap 5 -->
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
-  <style>
-    :root{ --brand:#6A5AE0; --soft:#f6f7fb; }
-    body{font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif;color:#121426}
-    .text-brand{color:var(--brand)}
-    .btn-brand{background:var(--brand);border-color:var(--brand)}
-    .btn-brand:hover{background:#5a4fd1;border-color:#5a4fd1}
-    .rounded-2xl{border-radius:1.25rem}
-    .shadow-soft{box-shadow:0 14px 40px rgba(10,12,20,.08)}
-    .bg-soft{background:var(--soft)}
-    .section-title{font-weight:800;letter-spacing:-.02em}
+  <!-- Your global CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-    /* Before/After slider */
-    .ba{position:relative;overflow:hidden;border-radius:1rem}
-    .ba img{display:block;width:100%;height:auto}
-    .ba .after{position:absolute; inset:0; width:50%; overflow:hidden}
-    .ba .after img{position:absolute; inset:0; width:200%; height:100%; max-width:none}
-    .ba .handle{position:absolute; top:0; bottom:0; left:50%; width:2px; background:#fff; box-shadow:0 0 0 2px rgba(0,0,0,.1)}
-    .ba .knob{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; border-radius:999px; background:#fff; display:grid; place-items:center; box-shadow:0 8px 24px rgba(0,0,0,.12)}
-    .ba .knob i{font-size:18px}
-    .ba .labels{position:absolute; top:.5rem; left:.5rem; right:.5rem; display:flex; justify-content:space-between; pointer-events:none}
-    .ba .badge{backdrop-filter:saturate(160%) blur(6px); background:rgba(0,0,0,.45)}
-
-    /* Masonry-like with CSS columns for simple layout */
-    @media (min-width: 992px){.masonry{column-count:3; column-gap:1.25rem}}
-    @media (min-width: 768px) and (max-width: 991.98px){.masonry{column-count:2; column-gap:1rem}}
-    .masonry-item{break-inside:avoid; margin-bottom:1.25rem}
-
-    .filter-pill{cursor:pointer}
-    .filter-pill.active{background:var(--brand); color:#fff}
-  </style>
+ 
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-transparent">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#home"><i class="bi bi-activity text-brand me-2"></i>CoachPro</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="./transformation.html">Transformime</a></li>
-          <li class="nav-item"><a class="nav-link" href="./pricing.html">Paketat</a></li>
-          <li class="nav-item"><a class="btn btn-sm btn-brand ms-lg-2" href="./contact.html">Fillo sot</a></li>
-            <li class="nav-item"><a class="btn btn-sm btn-brand ms-lg-2" href="./login.html">Login</a></li>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top main-nav">
+  <div class="container">
+  <!-- Brand -->
+<a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+  <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
+  <span>Bardhi Wellness</span>
+</a>
+
+
+    <!-- Toggler (hap OFFCANVAS në mobile) -->
+    <button class="navbar-toggler d-lg-none" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#mobileNav"
+            aria-controls="mobileNav" aria-label="Hap menunë">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu DESKTOP -->
+    <div class="d-none d-lg-flex ms-auto align-items-center">
+      <ul class="navbar-nav me-3">
+
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Produkti</a></li>
+        <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Rreth Bardhit</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+      </ul>
+      <a href="checkout.html" class="btn btn-cart position-relative" aria-label="Shko te checkout">
+        <i class="bi bi-bag"></i>
+        <span class="badge position-absolute top-0 start-100 translate-middle rounded-pill">1</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- OFFCANVAS – MENU MOBILE FULLSCREEN -->
+<div class="offcanvas offcanvas-end w-100" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+  <div class="offcanvas-header border-bottom align-items-center">
+  <div class="d-flex align-items-center">
+    <img src="assets/images/bu-logo.png" alt="Bardhi Wellness Logo" class="offcanvas-logo me-2">
+    <h6 class="offcanvas-title m-0 d-flex align-items-center" id="mobileNavLabel">
+      <i class="me-2 text-brand"></i>
+      Bardhi Wellness
+    </h6>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Mbyll"></button>
+</div>
+
+  <div class="offcanvas-body d-flex flex-column align-items-end">
+    <ul class="navbar-nav w-100 text-end mb-3">
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformation.html" data-bs-dismiss="offcanvas">Transformime</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="pricing.html" data-bs-dismiss="offcanvas">Paketat</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html" data-bs-dismiss="offcanvas">Kontakt</a></li>
+    </ul>
+
+    <a href="login.html" class="btn btn-login w-100 mb-2" data-bs-dismiss="offcanvas">Login</a>
+    <a href="checkout.html" class="btn btn-cart w-100 justify-content-center" data-bs-dismiss="offcanvas">
+      <i class="bi bi-bag me-2"></i> Shko te checkout
+      <span class="badge ms-2 rounded-pill">1</span>
+    </a>
+  </div>
+</div>
+
+ <!-- ============  7- SUCCESS STORIES (Modern Slideshow) ============ -->
+<section id="success-stories" class="py-6">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title mb-1">Historitë e Suksesit</h2>
+      <p class="section-lead">Transformime reale nga klientët e Bardhi Wellness.</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-9 col-lg-6">
+        <div id="storiesCarousel" class="carousel slide stories" data-bs-ride="carousel" data-bs-interval="4200">
+          
+          <!-- Indicators -->
+          <div class="carousel-indicators indicators-dot">
+            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+
+          <!-- Slides -->
+          <div class="carousel-inner rounded-4 shadow-xl overflow-hidden">
+            <!-- 1 -->
+            <div class="carousel-item active">
+              <figure class="story-frame m-0">
+                <img src="assets/images/before-after/tr-1.JPG" class="story-img" alt="-19 kg – disa javë">
+                <figcaption class="story-caption">
+                  <div class="title">-19 kg</div>
+                  <div class="desc">Vetëm 7 javë • kontroll kalorish & aktivitet konstant</div>
+                </figcaption>
+              </figure>
+            </div>
+            <!-- 2 -->
+            <div class="carousel-item">
+              <figure class="story-frame m-0">
+                <img src="assets/images/before-after/tr-2.JPG" class="story-img"
+     alt="20 ditë – ndryshim i shpejtë" loading="lazy" decoding="async">
+                <figcaption class="story-caption">
+                  <div class="title">69 kg → 60 kg</div>
+                  <div class="desc">20 ditë • dietë strikte + kardio i moderuar</div>
+                </figcaption>
+              </figure>
+            </div>
+            <!-- 3 -->
+            <div class="carousel-item">
+              <figure class="story-frame m-0">
+                <img src="assets/images/before-after/tr-3.JPG" class="story-img" alt="-10 kg">
+                <figcaption class="story-caption">
+                  <div class="title">-10 kg</div>
+                  <div class="desc">3.5 javë • deficit i kontrolluar & progres në peshë</div>
+                </figcaption>
+              </figure>
+            </div>
+            <!-- 4 -->
+            <div class="carousel-item">
+              <figure class="story-frame m-0">
+                  <img src="assets/images/before-after/tr-4.JPG" class="story-img" alt="Transformim total">
+                <figcaption class="story-caption">
+                  <div class="title">Transformim total</div>
+                  <div class="desc">Disiplinë, plan ushqimi & stërvitje e strukturuar</div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#storiesCarousel" data-bs-slide="prev" aria-label="Previous">
+            <span class="ctrl ctrl-prev"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#storiesCarousel" data-bs-slide="next" aria-label="Next">
+            <span class="ctrl ctrl-next"></span>
+          </button>
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== 11- FOOTER ===== -->
+<footer id="footer-light" class="py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Brand -->
+      <div class="col-md-6 col-lg-4">
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+  <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
+  <span>Bardhi Wellness</span>
+</a> 
+        <p>
+        Trajnime të personalizuara, plane ushqimore dhe programe fitnesi që transformojnë trupin dhe mendjen.
+        </p>
+
+
+
+
+        <div class="d-flex gap-3 mt-3 social-links">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="col-md-6 col-lg-2">
+        <h6 class="fw-bold text-uppercase mb-3">Kompania</h6>
+        <ul class="list-unstyled small footer-links">
+          <li><a href="/about.html">Rreth Bardhit</a></li>
+          <li><a href="/packages.html">Programet</a></li>
+          <li><a href="/transformation.html">Transformime</a></li>
+          <li><a href="/shop.html">Produkt</a></li>
         </ul>
       </div>
-    </div>
-  </nav>
 
+      <!-- Support -->
+      <div class="col-md-6 col-lg-3">
+        <h6 class="fw-bold text-uppercase mb-3 ">Mbështetje</h6>
+        <ul class="list-unstyled small footer-links">
+          <li><a href="/contact.html">Kontakt</a></li>
+          <li><a href="#">Politika e privatësisë</a></li>
+          <li><a href="#">Kushtet e përdorimit</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
 
-  <!-- HEADER -->
-  <header class="py-5 bg-soft border-bottom">
-    <div class="container">
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-7">
-          <h1 class="display-5 fw-bold">Transformime të klientëve</h1>
-          <p class="lead mb-0">Para & Pas nga programet tona të personalizuara. Frymëzohu dhe nis udhëtimin tënd.</p>
-        </div>
-        <div class="col-lg-5">
-          <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
-            <span class="badge rounded-pill text-bg-light filter-pill active" data-filter="all">Të gjitha</span>
-            <span class="badge rounded-pill text-bg-light filter-pill" data-filter="fatloss">Humbje peshe</span>
-            <span class="badge rounded-pill text-bg-light filter-pill" data-filter="muscle">Muskulaturë</span>
-            <span class="badge rounded-pill text-bg-light filter-pill" data-filter="performance">Performancë</span>
-          </div>
-        </div>
+      <!-- Newsletter -->
+      <div class="col-md-6 col-lg-3">
+        <h6 class="fw-bold text-uppercase mb-3  ">Buletini</h6>
+        <p class="small   opacity-75 mb-2">Abonohu për këshilla dhe oferta ekskluzive.</p>
+        <form class="d-flex flex-column flex-sm-row gap-2"
+              onsubmit="event.preventDefault(); document.getElementById('nlMsg').classList.remove('d-none');">
+          <input type="email" class="form-control" placeholder="Emaili juaj" required />
+          <button class="btn btn-brand" type="submit">Abonohu</button>
+        </form>
+        <div id="nlMsg" class="small text-success mt-2 d-none">✅ U abonuat me sukses!</div>
       </div>
     </div>
-  </header>
 
-  <!-- STATS -->
-  <section class="py-4">
-    <div class="container">
-      <div class="row text-center g-3">
-        <div class="col-6 col-lg-3"><div class="p-3 bg-white border rounded-2xl"><div class="h2 mb-0" id="stat1">0</div><div class="text-muted small">kg mesatar humbje</div></div></div>
-        <div class="col-6 col-lg-3"><div class="p-3 bg-white border rounded-2xl"><div class="h2 mb-0" id="stat2">0</div><div class="text-muted small">javë mesatarisht</div></div></div>
-        <div class="col-6 col-lg-3"><div class="p-3 bg-white border rounded-2xl"><div class="h2 mb-0" id="stat3">0%</div><div class="text-muted small">vazhdimësi plani</div></div></div>
-        <div class="col-6 col-lg-3"><div class="p-3 bg-white border rounded-2xl"><div class="h2 mb-0" id="stat4">0</div><div class="text-muted small">histori suksesi</div></div></div>
-      </div>
+    <hr class="my-4 border-secondary opacity-25">
+
+    <div class="text-center small   opacity-75">
+      © <span id="year"></span> Bardhi Wellness - Të gjitha të drejtat e rezervuara.
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- GALLERY (Masonry) -->
-  <section class="py-5">
-    <div class="container">
-      <div class="masonry" id="gallery">
-        <!-- ITEM 1 -->
-        <article class="masonry-item" data-tags="fatloss">
-          <div class="card rounded-2xl shadow-soft border-0">
-            <div class="ba" data-ratio="66%">
-              <img src="https://picsum.photos/seed/before1/900/600" alt="Para" />
-              <div class="after"><img src="https://picsum.photos/seed/after1/900/600" alt="Pas" /></div>
-              <div class="handle"></div>
-              <div class="knob" aria-label="Zvarrite për të parë para/pas"><i class="bi bi-arrows-expand"></i></div>
-              <div class="labels"><span class="badge text-bg-dark">Para</span><span class="badge text-bg-dark">Pas</span></div>
-            </div>
-            <div class="card-body">
-              <h6 class="mb-1">Arbër – −9kg në 10 javë</h6>
-              <div class="small text-muted">Kalori të kontrolluara, 3 seanca/ javë, hapa ditorë.</div>
-            </div>
-          </div>
-        </article>
-        <!-- ITEM 2 -->
-        <article class="masonry-item" data-tags="muscle">
-          <div class="card rounded-2xl shadow-soft border-0">
-            <div class="ba">
-              <img src="https://picsum.photos/seed/before2/900/1100" alt="Para" />
-              <div class="after"><img src="https://picsum.photos/seed/after2/900/1100" alt="Pas" /></div>
-              <div class="handle"></div>
-              <div class="knob"><i class="bi bi-arrows-expand"></i></div>
-              <div class="labels"><span class="badge text-bg-dark">Para</span><span class="badge text-bg-dark">Pas</span></div>
-            </div>
-            <div class="card-body">
-              <h6 class="mb-1">Elira – +4kg muskul në 16 javë</h6>
-              <div class="small text-muted">Hipertrofi 4x/javë, progresion, proteinë e mjaftueshme.</div>
-            </div>
-          </div>
-        </article>
-        <!-- ITEM 3 -->
-        <article class="masonry-item" data-tags="performance">
-          <div class="card rounded-2xl shadow-soft border-0">
-            <div class="ba">
-              <img src="https://picsum.photos/seed/before3/900/700" alt="Para" />
-              <div class="after"><img src="https://picsum.photos/seed/after3/900/700" alt="Pas" /></div>
-              <div class="handle"></div>
-              <div class="knob"><i class="bi bi-arrows-expand"></i></div>
-              <div class="labels"><span class="badge text-bg-dark">Para</span><span class="badge text-bg-dark">Pas</span></div>
-            </div>
-            <div class="card-body">
-              <h6 class="mb-1">Dritan – 5km nga 28:40 → 22:15</h6>
-              <div class="small text-muted">VO₂ intervale, punë teknike dhe forcë.</div>
-            </div>
-          </div>
-        </article>
-        <!-- Shto më shumë artikuj duke kopjuar strukturën e mësipërme -->
-      </div>
-    </div>
-  </section>
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" aria-label="Kthehu lart">
+  <i class="bi bi-arrow-up-short"></i>
+</button>
 
-  <!-- QUOTES -->
-  <section class="py-5 bg-soft">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <blockquote class="p-4 bg-white border rounded-2xl h-100">“Programi ishte i qëndrueshëm. Nuk më duhej të hiqja dorë nga jeta sociale.”<footer class="small text-muted mt-2">— Arta, 29 vjeç</footer></blockquote>
-        </div>
-        <div class="col-md-4">
-          <blockquote class="p-4 bg-white border rounded-2xl h-100">“Plan i thjeshtë + mbështetje nga trajneri = progres çdo javë.”<footer class="small text-muted mt-2">— Genc, 34 vjeç</footer></blockquote>
-        </div>
-        <div class="col-md-4">
-          <blockquote class="p-4 bg-white border rounded-2xl h-100">“Mësova teknikën e duhur dhe u ndjeva më i/e fortë që në muajin e parë.”<footer class="small text-muted mt-2">— Bora, 25 vjeç</footer></blockquote>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SUBMIT YOUR TRANSFORMATION -->
-  <section id="submit" class="py-5">
-    <div class="container">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-6">
-          <h2 class="section-title">Dërgo transformimin tënd</h2>
-          <p class="text-muted">Ndaje historinë tënde me komunitetin. Ngarko fotot “Para” dhe “Pas”, dhe shkruaj disa rreshta për përvojën.</p>
-          <ul class="small text-muted">
-            <li>Lejohen JPG/PNG deri në 5MB secila.</li>
-            <li>Ne mund të redaktojmë lehtë për kornizim/ndriçim për koherencë vizuale.</li>
-          </ul>
-        </div>
-        <div class="col-lg-6">
-          <div class="card rounded-2xl shadow-soft">
-            <div class="card-body p-4">
-              <form id="submitForm" novalidate>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label">Emri</label>
-                    <input type="text" class="form-control" id="name" required />
-                    <div class="invalid-feedback">Shkruaj emrin.</div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required />
-                    <div class="invalid-feedback">Shkruaj një email të vlefshëm.</div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Foto “Para”</label>
-                    <input type="file" class="form-control" id="before" accept="image/*" required />
-                    <div class="invalid-feedback">Ngarko një foto.</div>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Foto “Pas”</label>
-                    <input type="file" class="form-control" id="after" accept="image/*" required />
-                    <div class="invalid-feedback">Ngarko një foto.</div>
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label">Historia</label>
-                    <textarea class="form-control" id="story" rows="4" placeholder="Shkurt për udhëtimin tënd..." required></textarea>
-                    <div class="invalid-feedback">Shkruaj disa detaje.</div>
-                  </div>
-                </div>
-                <button class="btn btn-brand w-100 mt-3" type="submit">Dërgo</button>
-                <p id="submitMsg" class="small text-success mt-3 d-none"><i class="bi bi-check2-circle me-1"></i>U dërgua! Do të të kontaktojmë së shpejti.</p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ================= SCRIPTS ================= -->
 
-  <!-- FOOTER -->
-  <footer class="py-4 border-top">
-    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
-      <div class="small text-muted">© <span id="year"></span> CoachPro</div>
-      <div class="d-flex gap-3">
-        <a class="text-muted" href="#">Termat</a>
-        <a class="text-muted" href="#">Privatësia</a>
-        <a class="text-muted" href="#">Kontakt</a>
-      </div>
-    </div>
-  </footer>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+<!-- Your app JS -->
+<script src="assets/js/app.js"></script>
 
-    // Animate stats (demo values)
-    const targets = [9, 10, 92, 350]; // kg, weeks, adherence%, stories
-    const els = [stat1, stat2, stat3, stat4];
-    els.forEach((el,i)=>{
-      const target = targets[i];
-      const duration = 1200; const start = performance.now();
-      const step = (t)=>{ const p = Math.min(1,(t-start)/duration); el.textContent = i===2 ? Math.round(target*p)+"%" : Math.round(target*p); if(p<1) requestAnimationFrame(step)}; requestAnimationFrame(step);
+<!-- Tooltips -->
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function (el) {
+      new bootstrap.Tooltip(el);
     });
+  });
+</script>
 
-    // Filter logic
-    const pills = document.querySelectorAll('.filter-pill');
-    const items = document.querySelectorAll('.masonry-item');
-    pills.forEach(p=>p.addEventListener('click',()=>{
-      pills.forEach(x=>x.classList.remove('active'));
-      p.classList.add('active');
-      const f = p.dataset.filter;
-      items.forEach(it=>{
-        const show = f==='all' || it.dataset.tags.includes(f);
-        it.style.display = show ? '' : 'none';
-      })
-    }))
+<!-- Footer helpers -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-    // Before/After slider logic (no external libs)
-    document.querySelectorAll('.ba').forEach(wrapper=>{
-      const after = wrapper.querySelector('.after');
-      const handle = wrapper.querySelector('.handle');
-      const knob = wrapper.querySelector('.knob');
-      function setX(px){
-        const r = wrapper.getBoundingClientRect();
-        const x = Math.max(0, Math.min(px - r.left, r.width));
-        const pct = x / r.width * 100;
-        after.style.width = pct + '%';
-        handle.style.left = pct + '%';
-        knob.style.left = pct + '%';
-      }
-      function start(e){
-        e.preventDefault();
-        const move = (ev)=> setX((ev.touches?ev.touches[0].clientX:ev.clientX));
-        const up = ()=>{ window.removeEventListener('mousemove',move); window.removeEventListener('touchmove',move); window.removeEventListener('mouseup',up); window.removeEventListener('touchend',up)};
-        window.addEventListener('mousemove',move); window.addEventListener('touchmove',move,{passive:false}); window.addEventListener('mouseup',up); window.addEventListener('touchend',up);
-      }
-      wrapper.addEventListener('mousedown', start);
-      wrapper.addEventListener('touchstart', start, {passive:false});
+<!-- Back to top (uses your CSS class .show) -->
+<script>
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
+  });
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+<!-- Modal binder for gallery -->
+<script>
+  const tModal = document.getElementById('tModal');
+  if (tModal){
+    tModal.addEventListener('show.bs.modal', function (ev){
+      const trigger = ev.relatedTarget;
+      if(!trigger) return;
+      const img   = trigger.getAttribute('data-img');
+      const title = trigger.getAttribute('data-title') || 'Transformim';
+      const desc  = trigger.getAttribute('data-desc')  || '';
+      const badgesRaw = trigger.getAttribute('data-badges') || '[]';
+      const badges = JSON.parse(badgesRaw);
+
+      tModal.querySelector('#tModalImg').src = img;
+      tModal.querySelector('#tModalImg').alt = title;
+      tModal.querySelector('#tModalTitle').textContent = title;
+      tModal.querySelector('#tModalDesc').textContent  = desc;
+
+      const holder = tModal.querySelector('#tModalBadges');
+      holder.innerHTML = '';
+      badges.forEach(b => {
+        const span = document.createElement('span');
+        span.className = 'badge bg-success-subtle text-success-emphasis border';
+        span.style.borderColor = 'rgba(0,96,57,.25)';
+        span.textContent = b;
+        holder.appendChild(span);
+      });
     });
+  }
+</script>
 
-    // Form demo (no backend – just success message)
-    const submitForm = document.getElementById('submitForm');
-    submitForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if(!submitForm.checkValidity()){ submitForm.classList.add('was-validated'); return; }
-      document.getElementById('submitMsg').classList.remove('d-none');
-      submitForm.reset(); submitForm.classList.remove('was-validated');
-    });
-  </script>
+<!-- Optional: sticky/blur on scroll for navbar -->
+<script>
+  const navbar = document.querySelector('.main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+</script>
+
+<!-- Tiny spacing util (if needed) -->
+<style>.shadow-soft{box-shadow:0 10px 28px rgba(2,6,23,.08)}</style>
+
+<script>
+  // Hiq çdo 'active' nga linket e nav-it në këtë faqe
+  document.querySelectorAll('.navbar .nav-link.active')
+    .forEach(a => a.classList.remove('active'));
+</script>
+
+
 </body>
 </html>

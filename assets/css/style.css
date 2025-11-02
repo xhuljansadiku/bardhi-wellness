@@ -16,13 +16,16 @@
 /* No horizontal scroll */
 html,body{overflow-x:hidden}
 
- 
-/* ===============================
-   NAVBAR – Bardhi Wellness (CLEAN)
+  /* ===============================
+   NAVBAR – Bardhi Wellness (CLEAN FIXED)
    =============================== */
 
-/* Glass bar */
+/* Jep hapësirë nën navbar që të mos fshihet përmbajtja */
+body{ padding-top: var(--nav-h,64px); }
+
+/* Glass bar – FIXED */
 .main-nav{
+  position: fixed; top: 0; left: 0; width: 100%;
   height: var(--nav-h,64px);
   background: rgba(255,255,255,.86);
   backdrop-filter: saturate(160%) blur(14px);
@@ -31,7 +34,6 @@ html,body{overflow-x:hidden}
   box-shadow: 0 6px 24px rgba(2,6,23,.08);
   transition: background .25s, box-shadow .25s, height .2s, border-color .25s;
   z-index: 1030;
-  position: relative;
 }
 .main-nav::after{
   content:"";
@@ -40,7 +42,7 @@ html,body{overflow-x:hidden}
   opacity:.55;
 }
 
-/* Optional shrink on scroll (add .scrolled to <body>) */
+/* (Opsionale) Nëse DO ndërrim stili në scroll, shto .scrolled tek <body> */
 .scrolled .main-nav{
   background: rgba(255,255,255,.96);
   box-shadow: 0 10px 28px rgba(2,6,23,.12);
@@ -57,7 +59,10 @@ html,body{overflow-x:hidden}
   transition: color .25s, transform .25s;
 }
 .navbar-brand:hover{ color: var(--brand-600,#004d2e); transform: translateY(-1px); }
-.brand-logo{ height:44px; width:auto; object-fit:contain; display:block; transition: transform .25s, height .2s; }
+.brand-logo{
+  height:44px; width:auto; object-fit:contain; display:block;
+  transition: transform .25s, height .2s;
+}
 .scrolled .brand-logo{ height: 38px; }
 
 @media (max-width: 576px){
@@ -82,7 +87,6 @@ html,body{overflow-x:hidden}
   background: var(--brand,#006039);
   box-shadow: 0 8px 20px rgba(0,96,57,.20);
 }
-
 /* Underline on hover (non-active) */
 .navbar-nav .nav-link:not(.active)::after{
   content:"";
@@ -95,8 +99,10 @@ html,body{overflow-x:hidden}
 }
 .navbar-nav .nav-link:hover::after{ transform: scaleX(1); }
 
-/* Buttons */
+/* Buttons base */
 .btn{ border-radius:.8rem; font-weight:700; transition: transform .2s, box-shadow .25s, background .2s, color .2s; }
+
+/* Login (outline) */
 .btn-login{
   border:1.5px solid var(--brand,#006039);
   color: var(--brand,#006039);
@@ -110,32 +116,7 @@ html,body{overflow-x:hidden}
   transform: translateY(-1px);
 }
 
-/* Badge më elegante në ikonën e shportës */
-.btn-cart .badge{
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background: var(--accent,#22c55e);
-  color: #fff;
-  font-size: .65rem;
-  font-weight: 700;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 0 3px rgba(34,197,94,.25); /* glow i butë */
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.btn-cart:hover .badge{
-  transform: scale(1.1);
-  box-shadow: 0 0 0 4px rgba(34,197,94,.3);
-}
-
-
+/* Cart button */
 .btn-cart{
   position: relative;
   display:inline-flex; align-items:center; justify-content:center;
@@ -143,7 +124,7 @@ html,body{overflow-x:hidden}
   padding:.55rem .9rem;
   border-radius:.9rem;
   border:1.5px solid var(--brand,#006039);
-  background: linear-gradient(180deg, rgba(0,96,57,.06), rgba(255,255,255,.0));
+  background: linear-gradient(180deg, rgba(0,96,57,.06), rgba(255,255,255,0));
   color: var(--brand,#006039);
 }
 .btn-cart:hover{
@@ -152,18 +133,22 @@ html,body{overflow-x:hidden}
   box-shadow: 0 12px 26px rgba(0,96,57,.28);
   transform: translateY(-1px);
 }
+/* Badge – një version i vetëm (s’ka dublikatë) */
 .btn-cart .badge{
   position: absolute;
-  top:-4px; right:-8px;
-  background: #22c55e;
-  color:#fff;
-  font-size:.65rem;
+  top:-6px; right:-6px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent,#22c55e);
+  color: #fff; font-size:.65rem; font-weight:700;
   border: 2px solid #fff;
-  border-radius:999px;
-  padding:.15rem .35rem;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 0 0 3px rgba(34,197,94,.25);
+  transition: transform .25s, box-shadow .25s;
 }
+.btn-cart:hover .badge{ transform: scale(1.1); box-shadow: 0 0 0 4px rgba(34,197,94,.3); }
 
-/* Hamburger (works with <span class="navbar-toggler-icon"></span>) */
+/* Hamburger (me <span class="navbar-toggler-icon"></span>) */
 .navbar-toggler{
   border:none; padding:.25rem .35rem; outline:none !important; box-shadow:none !important;
 }
@@ -174,15 +159,12 @@ html,body{overflow-x:hidden}
 .navbar-toggler-icon::before,
 .navbar-toggler-icon::after{
   content:""; position:absolute; left:0; right:0; height:2px; border-radius:2px; background: var(--ink,#0f172a);
-  transition: transform .3s ease, top .3s ease, bottom .3s ease, background .3s ease;
+  transition: transform .3s, top .3s, bottom .3s, background .3s;
 }
 .navbar-toggler-icon::before{ top:-6px; }
 .navbar-toggler-icon::after{ bottom:-6px; }
-
-/* Cross state */
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon{
-  background: transparent;
-}
+/* X state */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon{ background: transparent; }
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before{
   top:0; transform: rotate(45deg); background: var(--brand,#006039);
 }
@@ -206,7 +188,7 @@ html,body{overflow-x:hidden}
 }
 
 #mobileNav .offcanvas-header{
-  position: sticky; top:0; z-index: 2;
+  position: sticky; top:0; z-index:2;
   background:#fff;
   padding:.9rem 1rem;
   border-bottom:1px solid rgba(15,23,42,.08);
@@ -227,12 +209,12 @@ html,body{overflow-x:hidden}
 /* Body layout + safe area */
 #mobileNav .offcanvas-body{
   display:flex; flex-direction:column; align-items:stretch;
-  row-gap: .75rem;
-  padding: 1rem;
+  row-gap:.75rem;
+  padding:1rem;
   padding-bottom: calc(1rem + env(safe-area-inset-bottom));
 }
 
-/* Mobile nav links with chevron */
+/* Mobile nav links me chevron */
 #mobileNav .navbar-nav{ width:100%; margin-bottom:.5rem; }
 #mobileNav .navbar-nav .nav-link{
   display:flex; align-items:center; justify-content:space-between;
@@ -246,22 +228,19 @@ html,body{overflow-x:hidden}
 }
 #mobileNav .navbar-nav .nav-link:last-child{ border-bottom:none; }
 #mobileNav .navbar-nav .nav-link::after{
-  content:"\F285"; /* chevron-right, Bootstrap Icons */
-  font-family: "bootstrap-icons";
-  font-size:1rem;
-  opacity:.45;
-  transition: transform .2s, opacity .2s;
+  content:"\F285"; /* chevron-right – Bootstrap Icons */
+  font-family:"bootstrap-icons";
+  font-size:1rem; opacity:.45; transition: transform .2s, opacity .2s;
 }
 #mobileNav .navbar-nav .nav-link:hover{
   background: rgba(0,96,57,.06);
   color: var(--brand,#006039);
 }
 #mobileNav .navbar-nav .nav-link:hover::after{
-  transform: translateX(3px);
-  opacity:.85;
+  transform: translateX(3px); opacity:.85;
 }
 
-/* Full-width buttons at bottom */
+/* Butona fundore full-width */
 #mobileNav .btn-login,
 #mobileNav .btn-cart{
   width:100%;
@@ -276,11 +255,7 @@ html,body{overflow-x:hidden}
   position: static; margin-left:.35rem; border:0; padding:.2rem .45rem;
 }
 
-/* Close button contrast */
-#mobileNav .btn-close{ opacity:.75; transition: opacity .2s; }
-#mobileNav .btn-close:hover{ opacity:1; }
-
-/* Desktop tweaks for offcanvas trigger area */
+/* Trigger area alignment on md- */
 @media (max-width: 991.98px){
   .offcanvas-body{ align-items:flex-end; padding-right:1.25rem; }
 }
@@ -1530,28 +1505,27 @@ html,body{overflow-x:hidden}
 }
 
 
-
-
-/* ========== BACK TO TOP BUTTON ========== */
+ /* ========== BACK TO TOP BUTTON  ========== */
 #backToTop {
   position: fixed;
-  bottom: 30px;
-  right: 25px;
-  width: 45px;
-  height: 45px;
+  bottom: 32px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   border: none;
-  background: var(--brand, #006039);
+  background: linear-gradient(135deg, var(--brand, #006039), var(--brand-600, #004d2e));
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  box-shadow: 0 8px 24px rgba(0,96,57,.25);
-  transition: all .35s ease;
+  box-shadow: 0 8px 24px rgba(0,96,57,.25), inset 0 0 0 2px rgba(255,255,255,.1);
+  transform: translateY(50px) scale(.95);
+  transition: all .4s cubic-bezier(.4,.14,.3,1.02);
   z-index: 999;
 }
 
@@ -1559,43 +1533,52 @@ html,body{overflow-x:hidden}
 #backToTop.show {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Hover: efekt glow & rotate */
+#backToTop:hover {
+  background: linear-gradient(135deg, var(--brand-600, #004d2e), var(--brand-700, #00331f));
+  box-shadow: 0 12px 30px rgba(0,96,57,.35), 0 0 10px rgba(0,96,57,.3);
+  transform: translateY(-4px) scale(1.05) rotate(-4deg);
+}
+
+/* Pulsim i lehtë (animacion automatik) */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,96,57,.35); }
+  50% { box-shadow: 0 0 0 10px rgba(0,96,57,.0); }
+}
+#backToTop.show {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Tooltip “Lart” */
+#backToTop::after {
+  content: "Lart";
+  position: absolute;
+  bottom: 115%;
+  font-size: 0.75rem;
+  background: rgba(15,23,42,.85);
+  color: #fff;
+  padding: 3px 7px;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all .25s ease;
+  pointer-events: none;
+}
+#backToTop:hover::after {
+  opacity: 1;
   transform: translateY(0);
 }
 
-/* Hover effect */
-#backToTop:hover {
-  background: var(--brand-600, #004d2e);
-  box-shadow: 0 10px 28px rgba(0,96,57,.35);
-  transform: translateY(-3px);
-}
-
-/* Animacion i lehtë kur futet */
-#backToTop {
-  transform: translateY(40px);
-}
-
-/* Responsive tweak */
+/* Responsive tweaks */
 @media (max-width: 576px) {
   #backToTop {
-    width: 42px;
-    height: 42px;
-    font-size: 1.4rem;
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
     bottom: 20px;
     right: 20px;
   }
 }
-
-#backToTop::after {
-  content: "Lart";
-  position: absolute;
-  bottom: 110%;
-  font-size: 0.7rem;
-  background: rgba(0,0,0,0.75);
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 4px;
-  opacity: 0;
-  transition: opacity .2s;
-}
-#backToTop:hover::after { opacity: 1; }
-

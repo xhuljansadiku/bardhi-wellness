@@ -16,158 +16,274 @@
 /* No horizontal scroll */
 html,body{overflow-x:hidden}
 
-/* ---------- NAVBAR glass ---------- */
+ 
+/* ===============================
+   NAVBAR – Bardhi Wellness (CLEAN)
+   =============================== */
+
+/* Glass bar */
 .main-nav{
-  height:var(--nav-h);
-  background:rgba(255,255,255,.85);
-  backdrop-filter:saturate(160%) blur(14px);
-  border-bottom:1px solid rgba(15,23,42,.08);
-  box-shadow:0 6px 25px rgba(15,23,42,.08);
-  z-index:1030;
+  height: var(--nav-h,64px);
+  background: rgba(255,255,255,.86);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 6px 24px rgba(2,6,23,.08);
+  transition: background .25s, box-shadow .25s, height .2s, border-color .25s;
+  z-index: 1030;
+  position: relative;
 }
-.navbar-brand{color:var(--brand);letter-spacing:-.2px}
-.navbar-brand .bi{color:var(--brand)}
-.navbar-nav .nav-link{color:var(--ink-700);font-weight:500}
-.navbar-nav .nav-link:hover,.navbar-nav .nav-link.active{color:var(--brand)}
+.main-nav::after{
+  content:"";
+  position:absolute; inset:0 -1px auto -1px; height:1px;
+  background: linear-gradient(90deg, transparent, rgba(0,96,57,.18), transparent);
+  opacity:.55;
+}
+
+/* Optional shrink on scroll (add .scrolled to <body>) */
+.scrolled .main-nav{
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 10px 28px rgba(2,6,23,.12);
+  border-color: rgba(15,23,42,.10);
+  height: 58px;
+}
+
+/* Brand */
+.navbar-brand{
+  color: var(--brand,#006039);
+  font-weight: 800;
+  letter-spacing: .1px;
+  display:flex; align-items:center; gap:.5rem;
+  transition: color .25s, transform .25s;
+}
+.navbar-brand:hover{ color: var(--brand-600,#004d2e); transform: translateY(-1px); }
+.brand-logo{ height:44px; width:auto; object-fit:contain; display:block; transition: transform .25s, height .2s; }
+.scrolled .brand-logo{ height: 38px; }
+
+@media (max-width: 576px){
+  .brand-logo{ height: 30px; }
+  .navbar-brand span{ font-size:1.05rem; }
+}
+
+/* Desktop nav links */
+.navbar-nav .nav-link{
+  color: var(--ink-700,#334155);
+  font-weight: 600;
+  letter-spacing:.1px;
+  padding:.4rem .75rem;
+  margin: 0 .15rem;
+  border-radius: .65rem;
+  position:relative;
+  transition: color .2s, background .2s, transform .2s;
+}
+.navbar-nav .nav-link:hover{ color: var(--brand,#006039); background: rgba(0,96,57,.08); }
+.navbar-nav .nav-link.active{
+  color:#fff;
+  background: var(--brand,#006039);
+  box-shadow: 0 8px 20px rgba(0,96,57,.20);
+}
+
+/* Underline on hover (non-active) */
+.navbar-nav .nav-link:not(.active)::after{
+  content:"";
+  position:absolute; left:12%; right:12%; bottom:4px; height:2px;
+  border-radius:2px;
+  background: linear-gradient(90deg, transparent, var(--brand,#006039), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .22s ease;
+}
+.navbar-nav .nav-link:hover::after{ transform: scaleX(1); }
 
 /* Buttons */
-.btn{border-radius:.75rem;font-weight:600;transition:all .25s}
-.btn-login{border:1px solid var(--brand);color:var(--brand);background:transparent}
-.btn-login:hover{background:var(--brand);color:#fff;box-shadow:0 6px 18px rgba(0,96,57,.25)}
-.btn-cart{border:1px solid var(--brand);color:var(--brand);background:transparent;display:inline-flex;align-items:center;padding:.55rem 1rem;border-radius:.75rem}
-.btn-cart:hover{background:var(--brand);color:#fff}
-.btn-cart .badge{background:var(--accent);color:#fff;font-size:.65rem;border:2px solid #fff}
-
-/* Hamburger (CSS only) */
-.navbar-toggler{border:none}
-.navbar-toggler-icon{
-  position:relative;display:block;width:1.5rem;height:2px;background:var(--ink);
+.btn{ border-radius:.8rem; font-weight:700; transition: transform .2s, box-shadow .25s, background .2s, color .2s; }
+.btn-login{
+  border:1.5px solid var(--brand,#006039);
+  color: var(--brand,#006039);
+  background: transparent;
+  padding:.55rem 1rem;
 }
-.navbar-toggler-icon::before,.navbar-toggler-icon::after{
-  content:"";position:absolute;left:0;width:100%;height:2px;background:var(--ink);transition:all .3s ease;
-}
-.navbar-toggler-icon::before{top:-6px}
-.navbar-toggler-icon::after{top:6px}
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon{background:transparent}
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before{top:0;transform:rotate(45deg)}
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after{top:0;transform:rotate(-45deg)}
-
-/* ---------- OFFCANVAS (mobile full-screen) ---------- */
-.offcanvas{
-  background:
-    radial-gradient(1200px 700px at 92% -10%, rgba(0,96,57,.12), transparent 60%),
-    rgba(255,255,255,.95);
-  backdrop-filter: blur(20px) saturate(160%);
-  border-left:1px solid rgba(15,23,42,.06);
-}
-.offcanvas-header{background:rgba(255,255,255,.6)}
-.offcanvas-title{color:var(--brand);font-weight:700}
-.offcanvas .nav-link{font-size:1.1rem}
-.offcanvas .btn-close{filter: none; opacity:.8}
-.offcanvas .btn-close:hover{opacity:1}
-
-/* --- MOBILE: butonat 50% të ekranit dhe në të djathtë --- */
-@media (max-width: 991.98px) {
-  .offcanvas-body {
-    align-items: flex-end;      /* të gjitha elementet në të djathtë */
-    padding-right: 1.25rem;
-  }
-
-  .offcanvas .btn-login,
-  .offcanvas .btn-cart {
-    width: 50vw;                /* 50% e gjerësisë së ekranit */
-    min-width: 160px;
-    max-width: 260px;
-    border-radius: .75rem;
-    padding: .6rem 1rem;
-    font-weight: 600;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    gap: .4rem;
-    border-width: 1.5px;
-    margin-right: 0;            /* mbështet djathtas */
-  }
-
-  /* distancat vertikale midis butonave */
-  .offcanvas .btn-login {
-    margin-top: .75rem;
-    margin-bottom: .4rem;
-  }
-  .offcanvas .btn-cart {
-    margin-bottom: .8rem;
-  }
-
-  /* efekt hover i butë */
-  .offcanvas .btn-login:hover,
-  .offcanvas .btn-cart:hover {
-    transform: translateX(-3px);
-    box-shadow: 0 6px 15px rgba(0,96,57,.18);
-  }
+.btn-login:hover{
+  background: var(--brand,#006039);
+  color:#fff;
+  box-shadow: 0 10px 24px rgba(0,96,57,.25);
+  transform: translateY(-1px);
 }
 
-/* ===== BRAND LOGO ===== */
-.navbar-brand {
-  font-size: 1.25rem;
-  color: var(--brand, #006039);
-  text-decoration: none;
-  letter-spacing: 0.3px;
-  transition: color 0.3s ease;
-}
-
-.navbar-brand:hover {
-  color: var(--brand-600, #004d2e);
-}
-
-.brand-logo {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
-/* Responsive tweaks */
-@media (max-width: 576px) {
-  .brand-logo {
-    height: 28px;
-  }
-  .navbar-brand span {
-    font-size: 1.05rem;
-  }
-}
-
-/* ===== OFFCANVAS HEADER ===== */
-.offcanvas-header {
-  background: var(--surface, #ffffff);
-  padding: 1rem 1.25rem;
-}
-
-.offcanvas-logo {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
-.offcanvas-title {
+/* Badge më elegante në ikonën e shportës */
+.btn-cart .badge{
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--accent,#22c55e);
+  color: #fff;
+  font-size: .65rem;
   font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--brand, #006039);
-  letter-spacing: 0.3px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 3px rgba(34,197,94,.25); /* glow i butë */
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-/* Responsive */
-@media (max-width: 576px) {
-  .offcanvas-logo {
-    height: 28px;
-  }
-  .offcanvas-title {
-    font-size: 1rem;
-  }
+.btn-cart:hover .badge{
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px rgba(34,197,94,.3);
 }
 
 
+.btn-cart{
+  position: relative;
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:.5rem;
+  padding:.55rem .9rem;
+  border-radius:.9rem;
+  border:1.5px solid var(--brand,#006039);
+  background: linear-gradient(180deg, rgba(0,96,57,.06), rgba(255,255,255,.0));
+  color: var(--brand,#006039);
+}
+.btn-cart:hover{
+  background: var(--brand,#006039);
+  color:#fff;
+  box-shadow: 0 12px 26px rgba(0,96,57,.28);
+  transform: translateY(-1px);
+}
+.btn-cart .badge{
+  position: absolute;
+  top:-4px; right:-8px;
+  background: #22c55e;
+  color:#fff;
+  font-size:.65rem;
+  border: 2px solid #fff;
+  border-radius:999px;
+  padding:.15rem .35rem;
+}
+
+/* Hamburger (works with <span class="navbar-toggler-icon"></span>) */
+.navbar-toggler{
+  border:none; padding:.25rem .35rem; outline:none !important; box-shadow:none !important;
+}
+.navbar-toggler-icon{
+  position: relative; width: 24px; height:2px; background: var(--ink,#0f172a);
+  display:inline-block; border-radius:2px;
+}
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after{
+  content:""; position:absolute; left:0; right:0; height:2px; border-radius:2px; background: var(--ink,#0f172a);
+  transition: transform .3s ease, top .3s ease, bottom .3s ease, background .3s ease;
+}
+.navbar-toggler-icon::before{ top:-6px; }
+.navbar-toggler-icon::after{ bottom:-6px; }
+
+/* Cross state */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon{
+  background: transparent;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before{
+  top:0; transform: rotate(45deg); background: var(--brand,#006039);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after{
+  bottom:auto; top:0; transform: rotate(-45deg); background: var(--brand,#006039);
+}
+
+/* ===============================
+   OFFCANVAS (Mobile) — Polished
+   =============================== */
+
+#mobileNav.offcanvas{
+  width:100vw;
+  background:
+    radial-gradient(1000px 600px at 95% -10%, rgba(0,96,57,.12), transparent 60%),
+    rgba(255,255,255,.96);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-left:1px solid rgba(15,23,42,.08);
+  box-shadow: -12px 0 36px rgba(2,6,23,.12);
+}
+
+#mobileNav .offcanvas-header{
+  position: sticky; top:0; z-index: 2;
+  background:#fff;
+  padding:.9rem 1rem;
+  border-bottom:1px solid rgba(15,23,42,.08);
+}
+
+#mobileNav .offcanvas-title{
+  color: var(--brand,#006039);
+  font-weight:800; letter-spacing:.2px;
+}
+
+#mobileNav .offcanvas-logo{
+  height:36px; width:auto; object-fit:contain; display:block;
+}
+@media (min-width: 576px){
+  #mobileNav .offcanvas-logo{ height:42px; }
+}
+
+/* Body layout + safe area */
+#mobileNav .offcanvas-body{
+  display:flex; flex-direction:column; align-items:stretch;
+  row-gap: .75rem;
+  padding: 1rem;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
+/* Mobile nav links with chevron */
+#mobileNav .navbar-nav{ width:100%; margin-bottom:.5rem; }
+#mobileNav .navbar-nav .nav-link{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:.75rem;
+  color: var(--ink,#0f172a);
+  font-weight:700;
+  padding:.95rem 0;
+  border-bottom:1px solid rgba(15,23,42,.08);
+  border-radius:.5rem;
+  transition: background .2s, color .2s;
+}
+#mobileNav .navbar-nav .nav-link:last-child{ border-bottom:none; }
+#mobileNav .navbar-nav .nav-link::after{
+  content:"\F285"; /* chevron-right, Bootstrap Icons */
+  font-family: "bootstrap-icons";
+  font-size:1rem;
+  opacity:.45;
+  transition: transform .2s, opacity .2s;
+}
+#mobileNav .navbar-nav .nav-link:hover{
+  background: rgba(0,96,57,.06);
+  color: var(--brand,#006039);
+}
+#mobileNav .navbar-nav .nav-link:hover::after{
+  transform: translateX(3px);
+  opacity:.85;
+}
+
+/* Full-width buttons at bottom */
+#mobileNav .btn-login,
+#mobileNav .btn-cart{
+  width:100%;
+  border-radius:.9rem;
+  padding:.75rem 1rem;
+}
+#mobileNav .btn-cart{
+  justify-content:center;
+  background: linear-gradient(180deg, rgba(0,96,57,.06), rgba(255,255,255,0));
+}
+#mobileNav .btn-cart .badge{
+  position: static; margin-left:.35rem; border:0; padding:.2rem .45rem;
+}
+
+/* Close button contrast */
+#mobileNav .btn-close{ opacity:.75; transition: opacity .2s; }
+#mobileNav .btn-close:hover{ opacity:1; }
+
+/* Desktop tweaks for offcanvas trigger area */
+@media (max-width: 991.98px){
+  .offcanvas-body{ align-items:flex-end; padding-right:1.25rem; }
+}
 
 
 /* ============================
@@ -267,43 +383,251 @@ html,body{overflow-x:hidden}
 }
 
 
-/* ===== ABOUT SECTION ===== */
-.about-section { background: var(--surface-2); }
+/* =========================
+   SECTIONS: proof / how / benefits
+   Bardhi Wellness – animated
+   ========================= */
 
-.about-photo img{
-  object-fit: cover;
-  height: clamp(380px, 58vh, 560px);
-  filter: saturate(1.05) contrast(1.02);
+/* Utils */
+.py-6{padding-top:4rem;padding-bottom:4rem;}
+.section-title{color:var(--ink);font-weight:800;letter-spacing:.2px}
+.section-lead{color:var(--muted)}
+
+/* ---------- Shared cards look ---------- */
+.card-like{
+  background:#fff;
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:1rem;
+  box-shadow:0 10px 22px rgba(2,6,23,.06);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+}
+.card-like:hover{
+  transform:translateY(-6px);
+  border-color:rgba(0,96,57,.22);
+  box-shadow:0 24px 55px rgba(0,96,57,.12);
 }
 
-.about-copy { color: var(--ink); }
-.about-copy .about-lead{
-  font-size: 1.05rem;
+/* =========================================================
+   1) SOCIAL PROOF – cards që "lëkunden" lehtë (logos/numra)
+   ========================================================= */
+#proof .proof-card{
+  composes: card-like;
+  padding: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  animation: floatY 6s ease-in-out infinite var(--delay,0s);
+}
+
+/* shimmer dekorativ diagonal */
+#proof .proof-card::before{
+  content:"";
+  position:absolute; inset:-40%;
+  background: conic-gradient(from 180deg at 50% 50%,
+    transparent 0 20%,
+    rgba(0,96,57,.06) 21% 30%,
+    transparent 31% 100%);
+  filter: blur(18px);
+  transform: rotate(8deg);
+  z-index:-1;
+  animation: slowSpin 24s linear infinite;
+}
+
+/* underline gradient i butë kur kalon hover */
+#proof .proof-card::after{
+  content:"";
+  position:absolute; left:12px; right:12px; bottom:10px; height:3px;
+  border-radius:999px;
+  background: linear-gradient(90deg, transparent, var(--brand), transparent);
+  opacity:.0; transform: translateY(4px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+#proof .proof-card:hover::after{ opacity:.55; transform: translateY(0); }
+
+#proof .stat{ line-height:1; }
+#proof .label{ font-size:.95rem; color:var(--muted); }
+
+/* Stagger animations për 4 kolonat */
+#proof .col-6:nth-child(1) .proof-card{ --delay:.0s; }
+#proof .col-6:nth-child(2) .proof-card{ --delay:.6s; }
+#proof .col-6:nth-child(3) .proof-card{ --delay:1.2s; }
+#proof .col-6:nth-child(4) .proof-card{ --delay:1.8s; }
+
+/* =========================================================
+   2) SI FUNKSIONON – ikona me “pop-in” & hover feedback
+   ========================================================= */
+#how .how-card{
+  composes: card-like;
+  text-align:center;
+  padding:1.15rem .95rem;
+  position:relative;
+  overflow:hidden;
+}
+#how .how-card::after{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(600px 220px at 50% -10%, rgba(0,96,57,.06), transparent 60%);
+  opacity:0; transition: opacity .25s ease;
+}
+#how .how-card:hover::after{ opacity:1; }
+
+#how .how-ico{
+  width:3rem;height:3rem;
+  display:inline-grid;place-items:center;
+  border-radius:.9rem;
+  background: color-mix(in srgb, var(--brand) 14%, white);
+  color: var(--brand);
+  box-shadow: inset 0 0 0 1px rgba(0,96,57,.25);
+  font-size:1.35rem;
+  margin-bottom:.65rem;
+  animation: popIn .7s ease both;
+}
+#how .how-card:hover .how-ico{
+  animation: pulseGlow 1.3s ease-in-out both;
+}
+
+/* =========================================================
+   3) PËRFITIMET – 6 pika me ikonë që noton lehtë
+   ========================================================= */
+#benefits .benefit{
+  composes: card-like;
+  padding:1.15rem 1rem;
+  height:100%;
+  position:relative;
+}
+#benefits .benefit-ico{
+  width:3rem; height:3rem;
+  display:inline-grid; place-items:center;
+  border-radius:.9rem;
+  background: color-mix(in srgb, var(--brand) 12%, white);
+  color: var(--brand);
+  box-shadow: inset 0 0 0 1px rgba(0,96,57,.25);
+  font-size:1.35rem;
+  margin-bottom:.6rem;
+  animation: floatY 7.5s ease-in-out infinite;
+}
+#benefits .benefit:hover .benefit-ico{
+  animation-duration: 4.5s;
+}
+
+/* =======================
+   Animations (keyframes)
+   ======================= */
+@keyframes floatY{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-6px); }
+}
+@keyframes slowSpin{
+  to{ transform: rotate(368deg); }
+}
+@keyframes popIn{
+  0%{ opacity:0; transform: translateY(8px) scale(.94); }
+  100%{ opacity:1; transform: translateY(0) scale(1); }
+}
+@keyframes pulseGlow{
+  0%,100%{ box-shadow: inset 0 0 0 1px rgba(0,96,57,.25), 0 0 0 0 rgba(0,96,57,.0); transform: translateZ(0); }
+  50%{ box-shadow: inset 0 0 0 1px rgba(0,96,57,.25), 0 0 20px 2px rgba(0,96,57,.18); transform: translateY(-2px); }
+}
+
+/* =======================
+   Accessibility: reduce motion
+   ======================= */
+@media (prefers-reduced-motion: reduce){
+  #proof .proof-card,
+  #benefits .benefit-ico{ animation: none !important; }
+  #how .how-ico{ animation: none !important; }
+}
+
+/* =======================
+   Responsive tweaks
+   ======================= */
+@media (max-width: 767.98px){
+  #proof .proof-card{ padding:.95rem; }
+  #how .how-card, #benefits .benefit{ padding:1rem .85rem; }
+}
+
+
+/* ===========================
+   ABOUT SECTION – Bardhi Wellness
+   =========================== */
+
+/* Background i bardhë */
+.about-section {
+  background: var(--surface, #fff);
+  color: var(--ink, #0f172a);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Foto */
+.about-photo img {
+  object-fit: cover;
+  width: 100%;
+  height: clamp(380px, 58vh, 560px);
+  border-radius: 1rem;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+  filter: saturate(1.05) contrast(1.03) brightness(0.98);
+  transition: transform 0.45s ease, box-shadow 0.4s ease;
+}
+.about-photo img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 96, 57, 0.15);
+}
+
+/* Teksti */
+.about-copy {
+  color: var(--ink);
+  padding-left: 1rem;
+}
+.about-copy .section-title {
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.about-copy .about-lead {
+  font-size: 1.1rem;
   color: var(--ink-700);
+  line-height: 1.65;
   margin-bottom: 1rem;
 }
-.about-copy .about-p{
+.about-copy .about-p {
   color: var(--ink-700);
   line-height: 1.8;
+  font-size: 1.02rem;
 }
 
-/* butoni brand këtu duket pak më “premium” */
-.about-section .btn.btn-brand{
+/* Butoni brand – pamje “premium” */
+.about-section .btn.btn-brand {
   background: var(--brand);
   border: none;
   color: #fff;
-  box-shadow: 0 6px 24px rgba(0,96,57,.18);
+  font-weight: 600;
+  border-radius: 0.65rem;
+  padding: 0.9rem 1.4rem;
+  box-shadow: 0 10px 25px rgba(0, 96, 57, 0.25);
+  transition: all 0.25s ease;
 }
-.about-section .btn.btn-brand:hover{
+.about-section .btn.btn-brand:hover {
   background: var(--brand-600);
-  box-shadow: 0 10px 30px rgba(0,96,57,.25);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 96, 57, 0.25);
 }
 
-/* responsivitet i lehtë */
-@media (max-width: 991.98px){
-  .about-photo img{ height: 380px; }
+/* Responsivitet */
+@media (max-width: 991.98px) {
+  .about-photo img {
+    height: 380px;
+    margin-bottom: 1.5rem;
+  }
+  .about-copy {
+    padding-left: 0;
+  }
 }
- 
+@media (max-width: 767.98px) {
+  .about-copy .section-title { font-size: 1.6rem; }
+  .about-copy .about-lead { font-size: 1rem; }
+}
+
 
 /* =========================================
    PRICING – Redesigned (Bootstrap-based) + Minimal Icons
@@ -649,440 +973,558 @@ html,body{overflow-x:hidden}
 }
 #shop .card-body{ padding: 2rem 1.75rem; }
 
-
- /* ===== SUCCESS STORIES – DARK SLIDESHOW (CLEAN VERSION) ===== */
-
-#success-stories {
-  background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
-  color: #fff;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+ /* ===== SUCCESS STORIES – Modern, readable, full image ===== */
+:root{
+  --brand:#006039;
+  --brand-600:#004d2e;
 }
 
-#success-stories .section-title {
-  font-weight: 800;
-  color: #fff;
+#success-stories{
+  background:
+    radial-gradient(1100px 620px at 85% -10%, rgba(0,96,57,.18), transparent 60%),
+    linear-gradient(180deg,#0b1220 0%,#0f172a 100%);
+  color:#fff;
+}
+#success-stories .section-title{ font-weight:800; letter-spacing:.2px; color:#fff; }
+#success-stories .section-lead{ color:rgba(255,255,255,.82); max-width:56ch; margin:0 auto; }
+
+/* Carousel shell */
+#success-stories .carousel.stories{ position:relative; }
+#success-stories .carousel-inner{
+  background:#0f172a;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:1rem;
+  box-shadow:0 16px 48px rgba(0,0,0,.45);
+  overflow:hidden;
 }
 
-#success-stories .section-lead {
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
+/* Frame & image */
+#success-stories .story-frame{
+  aspect-ratio:3/4;
+  width:100%;
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+  background:#0b1220; /* letterbox e errët për raportet jo 3:4 */
+}
+#success-stories .story-img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:contain;             /* FOTO E PLOTË */
+  object-position:center;
+  transition:transform .6s ease;
+  filter:contrast(1.06) saturate(1.06);
+}
+#success-stories .carousel-item.active .story-img{ transform:scale(1.01); }
+
+/* Caption – panel i lexueshëm */
+#success-stories .story-caption{
+  position:absolute; left:0; right:0; bottom:.6rem;
+  padding:.65rem .8rem; margin:0 .6rem;
+  border-radius:.75rem;
+  background:linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.55) 100%);
+  backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 10px 24px rgba(0,0,0,.25);
+  text-align:left;
+}
+#success-stories .story-caption .title{
+  font-weight:800; color:#fff; letter-spacing:.2px;
+  text-shadow:0 2px 8px rgba(0,0,0,.6);
+  font-size:1.05rem; margin-bottom:.15rem;
+}
+#success-stories .story-caption .desc{
+  color:rgba(255,255,255,.92); font-size:.9rem; line-height:1.25;
+  text-shadow:0 1px 6px rgba(0,0,0,.55);
 }
 
-/* ===== SLIDESHOW CONTAINER ===== */
-#success-stories .carousel-inner {
-  background: #162033;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Controls */
+#success-stories .carousel-control-prev,
+#success-stories .carousel-control-next{
+  width:3rem; height:3rem; top:50%; transform:translateY(-50%); opacity:1;
+}
+#success-stories .ctrl{
+  width:2.4rem; height:2.4rem; border-radius:999px;
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.25);
+  box-shadow:0 6px 14px rgba(0,0,0,.35);
+  position:relative; display:inline-block;
+}
+#success-stories .ctrl::before{
+  content:""; position:absolute; inset:0; margin:auto;
+  width:.7rem; height:.7rem; border-top:2px solid #fff; border-right:2px solid #fff;
+}
+#success-stories .ctrl-prev::before{ transform:rotate(-135deg); left:.15rem; }
+#success-stories .ctrl-next::before{ transform:rotate(45deg); right:.15rem; }
+#success-stories .carousel-control-prev:hover .ctrl,
+#success-stories .carousel-control-next:hover .ctrl{ background:rgba(0,0,0,.5); }
+
+/* Indicators – jashtë fotos, sipër */
+#success-stories .carousel-indicators{
+  position:static; margin:.8rem 0 .2rem 0; gap:.45rem;
+}
+#success-stories .carousel-indicators [data-bs-target]{
+  width:.5rem; height:.5rem; border-radius:999px;
+  background:rgba(255,255,255,.45); border:0; opacity:1;
+}
+#success-stories .carousel-indicators .active{ background:#fff; transform:scale(1.15); }
+
+/* CTA */
+#success-stories .btn-success{
+  background:var(--brand); border:none;
+  box-shadow:0 12px 30px rgba(0,96,57,.28);
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+#success-stories .btn-success:hover{ background:var(--brand-600); transform:translateY(-2px); }
+
+/* Responsive */
+@media (max-width:575.98px){
+  #success-stories .story-caption{ padding:.55rem .7rem; margin:0 .5rem; bottom:.5rem; }
+  #success-stories .story-caption .title{ font-size:1rem; }
+  #success-stories .story-caption .desc{ font-size:.84rem; }
+}
+ 
+/* ===========================
+   FAQ & PËRFSHIRJET – Dark (si Pricing)
+   =========================== */
+
+/* Seksioni – sfond i errët si pricing */
+#faq {
+  background: linear-gradient(180deg, #0b1422 0%, #0f172a 100%);
+  color: #e5e7eb;
+}
+
+/* Tituj & hyrje */
+#faq .section-title{
+  color:#fff;
+  letter-spacing:.2px;
+  font-weight:800;
+}
+#faq .section-lead{
+  color:#a9b4c3;
+}
+
+/* -------- Accordion (FAQ) -------- */
+#faq .accordion-item{
+  border:1px solid rgba(148,163,184,.18);
+  background: rgba(255,255,255,.03);
   border-radius: 1rem;
-  max-width: 34rem;
-  margin: 2rem auto;
   overflow: hidden;
+  transition: box-shadow .25s ease, border-color .25s ease, transform .12s ease, background .25s ease;
+}
+#faq .accordion-item + .accordion-item{ margin-top:.35rem; }
+
+#faq .accordion-item:hover{
+  box-shadow: 0 16px 44px rgba(0,0,0,.35);
+  border-color: rgba(148,163,184,.32);
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.045);
 }
 
-/* ===== IMAGE FRAME ===== */
-#success-stories .story-frame {
-  aspect-ratio: 3 / 4;
-  width: 100%;
-  background: #0f172a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#success-stories .story-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.45s ease;
-}
-
-#success-stories .carousel-item.active .story-img {
-  transform: scale(1.02);
-}
-
-/* ===== CAPTION ===== */
-#success-stories .story-caption {
-  padding: 1rem 1.25rem 1.25rem;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.25);
-}
-
-#success-stories .story-caption h6 {
-  color: #fff;
+#faq .accordion-button{
+  background: transparent;
+  color: #e5e7eb;
   font-weight: 700;
-  margin-bottom: 0.35rem;
+  padding: 1rem 1.15rem;
+  box-shadow: none;
+}
+#faq .accordion-button::after{
+  filter: invert(85%);         /* shigjeta e hapjes me kontrast në dark */
+  transform: scale(.9);
+  opacity:.9;
+}
+#faq .accordion-button:not(.collapsed){
+  color: #fff;
+  background: color-mix(in srgb, var(--brand, #006039) 12%, transparent);
+  border-bottom: 1px solid rgba(148,163,184,.16);
+}
+#faq .accordion-button:focus{
+  border-color: transparent;
+  box-shadow: 0 0 0 .2rem rgba(0,96,57,.28);
 }
 
-#success-stories .story-caption p {
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 0;
-  font-size: 0.9rem;
+#faq .accordion-body{
+  color: #cbd5e1;
+  line-height: 1.75;
+  padding: 1rem 1.15rem 1.15rem;
 }
 
-/* ===== HIDE CAROUSEL DOTS ===== */
-#success-stories .carousel-indicators {
-  display: none !important;
+/* -------- Listat ndihmëse -------- */
+#faq .list-check,
+#faq .list-clean{
+  list-style:none;
+  padding-left:0;
+  margin-bottom:0;
+}
+#faq .list-clean li{
+  color:#e5e7eb;
+  opacity:.95;
+  margin:.35rem 0;
 }
 
-/* ===== CUSTOM ARROWS ===== */
-#success-stories .carousel-control-prev-icon,
-#success-stories .carousel-control-next-icon {
-  background-image: none;
-  width: 2rem;
-  height: 2rem;
-  position: relative;
+/* “Checklist” me ikonë ✓ (dark) */
+#faq .list-check li{
+  position:relative;
+  padding-left:1.55rem;
+  margin:.45rem 0;
+  color:#e5e7eb;
 }
-
-#success-stories .carousel-control-prev-icon::before,
-#success-stories .carousel-control-next-icon::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
-  opacity: 0.9;
-  transition: all 0.3s ease;
+#faq .list-check li::before{
+  content:"";
+  position:absolute; left:0; top:.35rem;
+  width:.95rem; height:.95rem; border-radius:.45rem;
+  background: rgba(34,197,94,.12);
+  border:2px solid #22c55e;           /* accent i gjelbër */
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.25);
 }
-
-#success-stories .carousel-control-prev-icon::before {
-  transform: rotate(-135deg);
-}
-
-#success-stories .carousel-control-next-icon::before {
+#faq .list-check li::after{
+  content:""; position:absolute; left:.32rem; top:.53rem;
+  width:.45rem; height:.25rem;
+  border-right:2px solid #22c55e;
+  border-bottom:2px solid #22c55e;
   transform: rotate(45deg);
 }
 
-#success-stories .carousel-control-prev:hover .carousel-control-prev-icon::before,
-#success-stories .carousel-control-next:hover .carousel-control-next-icon::before {
-  opacity: 1;
-  transform: scale(1.1) rotate(var(--angle));
-}
-
-/* ===== BUTTON ===== */
-#success-stories .btn-success {
-  background: var(--brand, #006039);
-  border: none;
-  transition: all 0.3s ease;
-}
-
-#success-stories .btn-success:hover {
-  background: var(--brand-600, #004d2e);
-  transform: translateY(-2px);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 767.98px) {
-  #success-stories {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
-  #success-stories .section-title {
-    font-size: 1.6rem;
-  }
-
-  #success-stories .carousel-inner {
-    max-width: 90%;
-  }
-}
-
-
-/* ====== Variabla bazë (ndrysho sipas brand-it tënd) ====== */
-:root{
-  --brand: #006039;
-  --brand-600:#004d2e;
-  --ink:#0f172a;
-  --muted:#64748b;
-  --surface-2:#f8fafc;
-  --card:#ffffff;
-  --ring: rgba(0,96,57,.25);
-}
-
-/* ====== Utilities që mund t’i përdorë faqja ====== */
-.rounded-2xl{ border-radius: 1rem; }
-.shadow-soft{ box-shadow: 0 10px 30px rgba(15,23,42,.08); }
-.bg-soft{ background: var(--surface-2); }
-.text-brand{ color: var(--brand); }
-.bg-brand-soft{ background: color-mix(in srgb, var(--brand) 10%, white); }
-
-/* ====== FAQ – Tituj & hyrje ====== */
-#faq .section-title{
-  color: var(--ink);
-  letter-spacing:.2px;
-}
-#faq .section-lead{
-  color: var(--muted);
-  max-width: 52ch;
-}
-
-/* ====== FAQ – Accordion ====== */
-#faq .accordion-item{
-  border: 1px solid rgba(15,23,42,.08);
-  background: var(--card);
-}
-#faq .accordion-button{
-  padding: 1rem 1.25rem;
-  font-weight: 600;
-  color: var(--ink);
-  background: var(--card);
-  box-shadow: none;
-}
-#faq .accordion-button:not(.collapsed){
-  color: var(--brand);
-  background: color-mix(in srgb, var(--brand) 6%, white);
-  border-bottom: 1px solid rgba(15,23,42,.06);
-}
-#faq .accordion-button:focus{
-  box-shadow: 0 0 0 .25rem var(--ring);
-  border-color: transparent;
-}
-#faq .accordion-body{
-  color: var(--ink);
-  line-height: 1.6;
-}
-
-/* Listat brenda përgjigjeve */
-#faq .list-check,
-#faq .list-clean{
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-#faq .list-check li{
-  position: relative;
-  padding-left: 1.6rem;
-  margin:.4rem 0;
-  color: var(--ink);
-}
-#faq .list-check li::before{
-  content: "✓";
-  position: absolute; left: 0; top: .1rem;
-  width: 1.1rem; height: 1.1rem;
-  display: inline-grid; place-items: center;
-  border-radius: .5rem;
-  background: color-mix(in srgb, var(--brand) 12%, white);
-  color: var(--brand);
-  font-weight: 700; font-size:.8rem;
-}
-#faq .list-clean li{
-  margin:.35rem 0;
-  color: var(--ink);
-}
-
-/* ====== Sidebar “Çfarë përfshihet” ====== */
+/* -------- Sidebar “Përfshirjet” -------- */
 #faq .card{
-  border: 1px solid rgba(15,23,42,.08);
-  background: var(--card);
-}
-#faq .badge{
-  border-radius: .5rem;
-  padding: .4rem .6rem;
-  font-size: .75rem;
-}
-
-/* ====== CONTACT – Info cards ====== */
-#contact .contact-cards{
-  display: grid;
-  gap: .85rem;
-}
-#contact .contact-card{
-  display: grid;
-  grid-template-columns: 44px 1fr;
-  align-items: center;
-  gap: .85rem;
-  padding: .9rem 1rem;
-  background: var(--card);
-  border: 1px solid rgba(15,23,42,.08);
+  border:1px solid rgba(148,163,184,.18);
+  background: rgba(255,255,255,.04);
   border-radius: 1rem;
-  transition: transform .2s ease, box-shadow .3s ease, border-color .2s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  color:#e5e7eb;
 }
-#contact .contact-card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(15,23,42,.08);
-  border-color: color-mix(in srgb, var(--brand) 18%, transparent);
-}
-#contact .contact-card i{
-  height: 44px; width: 44px;
-  display: inline-grid; place-items: center;
-  border-radius: .9rem;
-  background: color-mix(in srgb, var(--brand) 10%, white);
-  color: var(--brand);
-  font-size: 1.1rem;
-}
-#contact .contact-card .title{
-  font-weight: 700; color: var(--ink);
-  line-height: 1.2; margin-bottom: .15rem;
-}
-#contact .link-ink{
-  color: var(--ink);
-  text-decoration: none;
-}
-#contact .link-ink:hover{ color: var(--brand); }
-
-/* ====== CONTACT – Karta & forma ====== */
-#contact .card{
-  border: 1px solid rgba(15,23,42,.08);
-  background: var(--card);
-}
-#contact .form-label{
-  color: var(--ink);
-  font-weight: 600;
-}
-#contact .form-control,
-#contact .form-select{
-  border: 1px solid rgba(15,23,42,.15);
-  background: #fff;
-  color: var(--ink);
-  padding:.65rem .85rem;
-  border-radius: .8rem;
-  transition: border-color .2s ease, box-shadow .2s ease;
-}
-#contact .form-control:focus,
-#contact .form-select:focus{
-  border-color: var(--brand);
-  box-shadow: 0 0 0 .2rem var(--ring);
-}
-#contact textarea.form-control{
-  resize: vertical;
-}
-
-/* Butoni kryesor */
-.btn-brand{
-  background: var(--brand);
-  border-color: var(--brand);
-  color: #fff;
-  padding: .8rem 1rem;
-  border-radius: 999px;
-  font-weight: 700;
+#faq .card h4{
+  color:#fff;
+  font-weight:800;
   letter-spacing:.2px;
-  transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
-}
-.btn-brand:hover{
-  background: var(--brand-600);
-  border-color: var(--brand-600);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 18px rgba(0,96,57,.18);
-}
-.btn-brand:active{ transform: translateY(0); }
-
-/* Mesazhet e validimit */
-.was-validated .form-control:invalid, 
-.form-control.is-invalid{
-  border-color: #dc3545;
-}
-.was-validated .form-control:valid, 
-.form-control.is-valid{
-  border-color: #198754;
 }
 
+#faq .badge{
+  border-radius:.55rem;
+  padding:.45rem .6rem;
+  font-size:.75rem;
+  letter-spacing:.2px;
+  border:1px solid rgba(148,163,184,.22);
+  color:#e5e7eb;
+  background: rgba(255,255,255,.06);
+}
+#faq .bg-brand-soft{
+  background: color-mix(in srgb, var(--brand, #006039) 22%, transparent) !important;
+  border-color: color-mix(in srgb, var(--brand, #006039) 40%, transparent) !important;
+}
+#faq .text-brand{ color: #76e0a4; } /* më e lexueshme mbi dark */
 
-/* ====== Responsive ====== */
+/* Listat me ✅ në sidebar (dark) */
+#faq .card .list-clean li{
+  position:relative;
+  padding-left:1.4rem;
+  color:#e5e7eb;
+}
+#faq .card .list-clean li::before{
+  content:"✓";
+  position:absolute; left:0; top:.1rem;
+  width:1.1rem; height:1.1rem;
+  display:inline-grid; place-items:center;
+  border-radius:.5rem;
+  background: rgba(34,197,94,.14);
+  color:#22c55e;
+  font-weight:800; font-size:.75rem;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.25);
+}
+
+/* Divider & meta-infos (light në dark) */
+#faq hr{ border-color: rgba(226,232,240,.12); }
+#faq .small.text-muted{ color:#9fb0c2 !important; }
+
+/* Hover links brenda faq */
+#faq a{ color:#9ee6bf; }
+#faq a:hover{ color:#c7f1dc; }
+
+/* -------- Sticky fix on mobile -------- */
 @media (max-width: 991.98px){
   #faq .sticky-lg-top{ position: static !important; }
 }
-@media (max-width: 575.98px){
-  #contact .contact-card{
-    grid-template-columns: 40px 1fr;
-    padding: .8rem .9rem;
-  }
-  .btn-brand{ padding: .75rem .95rem; }
+
+/* -------- Spacing helpers -------- */
+.py-6{ padding-top: 4rem; padding-bottom: 4rem; }
+
+/* ===========================
+   CONTACT – Bardhi Wellness (White Background)
+   =========================== */
+
+#contact {
+  background: #fff; /* white background */
+  color: var(--ink, #0f172a);
 }
 
-
-/* ===== FOOTER ===== */
-#footer {
-  background: #0b1621;
-  color: #e2e8f0;
-  position: relative;
-  overflow: hidden;
+/* Tituj & paragrafë */
+#contact .section-title {
+  color: var(--ink);
+  font-size: clamp(1.8rem, 1.6vw + 1rem, 2.3rem);
+  font-weight: 800;
+  margin-bottom: .25rem;
+}
+#contact .section-lead {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-#footer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top left, rgba(0,96,57,0.25), transparent 70%);
-  pointer-events: none;
+/* -------- Contact cards -------- */
+#contact .contact-cards {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-#footer h4, 
-#footer h6 {
-  letter-spacing: 0.3px;
+#contact .contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .9rem 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: .9rem;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+  transition: all .25s ease;
 }
-
-#footer .text-brand {
-  color: var(--brand, #006039);
-}
-
-/* Social Icons */
-#footer .social-links a {
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.7);
-  transition: all 0.3s ease;
-}
-#footer .social-links a:hover {
-  color: var(--brand, #00a86b);
+#contact .contact-card:hover {
+  background: #fff;
+  border-color: rgba(0,96,57,.25);
   transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,96,57,.10);
 }
 
-/* Links */
-#footer .footer-links a {
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  display: inline-block;
-  margin: 0.25rem 0;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-#footer .footer-links a:hover {
-  color: var(--brand, #00a86b);
-  transform: translateX(4px);
-}
-
-/* Inputs & Buttons */
-#footer .form-control {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: #fff;
-  border-radius: 50rem;
-  padding: 0.65rem 1rem;
-  font-size: 0.9rem;
-}
-#footer .form-control::placeholder {
-  color: rgba(255,255,255,0.6);
-}
-#footer .form-control:focus {
-  background: rgba(255,255,255,0.15);
-  border-color: var(--brand, #00a86b);
-  box-shadow: 0 0 0 0.25rem rgba(0,168,107,0.25);
+#contact .contact-card i {
+  font-size: 1.6rem;
+  color: var(--brand);
+  background: rgba(0,96,57,.08);
+  width: 2.8rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .75rem;
 }
 
-/* Button */
-#footer .btn-brand {
-  background: var(--brand, #006039);
-  color: #fff;
+#contact .contact-card .title {
   font-weight: 600;
-  border: none;
-  border-radius: 50rem;
-  transition: all 0.3s ease;
+  color: var(--ink);
+  margin-bottom: .15rem;
 }
-#footer .btn-brand:hover {
-  background: var(--brand-600, #004d2e);
+
+#contact .link-ink {
+  color: var(--brand);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .25s ease;
+}
+#contact .link-ink:hover {
+  color: var(--brand-600);
+  text-decoration: underline;
+}
+
+/* -------- Forma e kontaktit -------- */
+#contact .card {
+  border: 1px solid rgba(15,23,42,.08);
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(15,23,42,.06);
+  transition: box-shadow .3s ease, transform .2s ease;
+}
+#contact .card:hover {
+  box-shadow: 0 12px 32px rgba(15,23,42,.08);
   transform: translateY(-2px);
 }
 
-/* Divider */
-#footer hr {
-  border-color: rgba(255,255,255,0.1);
+#contact .card h4 {
+  color: var(--ink);
+  font-weight: 700;
 }
 
-/* Responsive */
+/* Input & Select */
+#contact .form-control,
+#contact .form-select {
+  border: 1px solid rgba(15,23,42,.15);
+  border-radius: .65rem;
+  padding: .65rem .9rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--ink);
+  transition: all .25s ease;
+}
+#contact .form-control:focus,
+#contact .form-select:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 .25rem rgba(0,96,57,.12);
+}
+#contact textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Butoni */
+#contact .btn.btn-brand {
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: .65rem;
+  padding: .9rem 1.25rem;
+  box-shadow: 0 10px 24px rgba(0,96,57,.25);
+  transition: all .25s ease;
+}
+#contact .btn.btn-brand:hover {
+  background: var(--brand-600);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,96,57,.25);
+}
+
+/* Mesazhi i suksesit */
+#contact #cFormMsg {
+  font-weight: 500;
+  color: var(--brand);
+}
+
+/* GDPR text */
+#contact p.small.text-muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* -------- Responsivitet -------- */
+@media (max-width: 991.98px) {
+  #contact .contact-cards {
+    gap: .75rem;
+  }
+  #contact .contact-card {
+    padding: .8rem .9rem;
+  }
+}
 @media (max-width: 767.98px) {
-  #footer .col-md-6 {
-    text-align: center;
-  }
-  #footer .social-links {
-    justify-content: center;
-  }
+  #contact .section-title { font-size: 1.6rem; }
+  #contact .card-body { padding: 1.75rem; }
+  #contact .contact-card i { font-size: 1.4rem; width: 2.4rem; height: 2.4rem; }
+  #contact .btn.btn-brand { font-size: 1rem; }
+}
+
+/* Spacing utilitar */
+.py-6 { padding-top: 4rem; padding-bottom: 4rem; }
+
+
+/* =======================
+   FOOTER – Bardhi Wellness
+   Dark, clean, brand-accented
+   ======================= */
+
+#footer{
+  background: radial-gradient(1200px 600px at 0% -10%, rgba(0,96,57,.18), transparent 60%),
+              linear-gradient(180deg,#0b1422 0%, #0f172a 100%);
+  color:#e2e8f0;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Headings & copy */
+#footer h4,
+#footer h6{ letter-spacing:.3px; }
+#footer h4{ color:#fff; }
+#footer h6{ color:rgba(255,255,255,.65); }
+
+#footer p,
+#footer .small{ color:rgba(255,255,255,.78); }
+
+/* Links */
+#footer .footer-links a{
+  color:rgba(255,255,255,.78);
+  text-decoration:none;
+  display:inline-block;
+  padding:.15rem 0;
+  transition:color .25s ease, transform .25s ease, opacity .25s ease;
+}
+#footer .footer-links a:hover{
+  color:var(--brand,#006039);
+  transform:translateX(3px);
+  opacity:1;
+}
+
+/* Social icons */
+#footer .social-links a{
+  font-size:1.35rem;
+  color:rgba(255,255,255,.78);
+  transition:transform .25s ease, color .25s ease, text-shadow .25s ease;
+  line-height:1;
+}
+#footer .social-links a:hover{
+  color:#9ee6bf;
+  transform:translateY(-3px);
+  text-shadow:0 6px 18px rgba(0,96,57,.25);
+}
+
+/* Newsletter */
+#footer .form-control{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  color:#fff;
+  border-radius:999px;
+  padding:.65rem 1rem;
+  font-size:.95rem;
+  transition:border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+#footer .form-control::placeholder{ color:rgba(255,255,255,.65); }
+#footer .form-control:focus{
+  background:rgba(255,255,255,.12);
+  border-color: color-mix(in srgb, var(--brand,#006039) 60%, white);
+  box-shadow:0 0 0 .2rem rgba(0,96,57,.28);
+  outline:0;
+}
+
+/* CTA button (reuse brand) */
+#footer .btn.btn-brand{
+  background:var(--brand,#006039);
+  color:#fff;
+  border:none;
+  border-radius:999px;
+  font-weight:700;
+  padding:.65rem 1.15rem;
+  transition:transform .2s ease, box-shadow .25s ease, background .2s ease;
+  box-shadow:0 10px 24px rgba(0,96,57,.25);
+}
+#footer .btn.btn-brand:hover{
+  background:var(--brand-600,#004d2e);
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(0,96,57,.28);
+}
+
+/* Divider */
+#footer hr{
+  border-color:rgba(255,255,255,.12) !important;
+  opacity:.6;
+}
+
+/* Bottom note */
+#footer .text-center.small{
+  color:rgba(255,255,255,.75);
+}
+
+/* Focus-visible for accessibility */
+#footer a:focus-visible,
+#footer button:focus-visible,
+#footer .form-control:focus-visible{
+  outline:2px solid color-mix(in srgb, var(--brand,#006039) 70%, white);
+  outline-offset:2px;
+  border-radius:.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767.98px){
+  #footer .social-links{ justify-content:flex-start; }
+  #footer .form-control{ font-size:.95rem; }
+}
+
+/* Optional subtle float on brand header */
+@media (prefers-reduced-motion: no-preference){
+  #footer h4{ transition:transform .25s ease; }
+  #footer h4:hover{ transform:translateY(-2px); }
 }

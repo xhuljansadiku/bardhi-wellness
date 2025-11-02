@@ -1389,6 +1389,158 @@ body{ padding-top: var(--nav-h,64px); }
 
 
 
+/* =================== Checkout ============================= */
+ 
+/* =========================================================
+   CHECKOUT – UI polish (stepper, cart, summary, payments)
+   Vendose në fund të assets/css/style.css
+   ========================================================= */
+
+/* -------- Utilitare & variabla të buta -------- */
+:root{
+  --brand: #006039;
+  --brand-600: #004d2e;
+  --ink: #0f172a;
+}
+.bg-soft{ background: #f6f8fb; }
+.rounded-2xl{ border-radius: 1rem; }
+.shadow-soft{ box-shadow: 0 10px 30px rgba(2,6,23,.08); }
+
+/* -------- Stepper (1. Shporta → 2. Të dhënat → 3. Paguaj) -------- */
+.stepper{
+  display:flex; gap:.75rem; align-items:center; flex-wrap:wrap;
+  background:#fff; border:1px solid rgba(15,23,42,.08); border-radius:1rem;
+  padding:.6rem .8rem; box-shadow:0 6px 18px rgba(2,6,23,.06);
+}
+.stepper .item{display:flex; align-items:center; gap:.5rem; color:#475569; font-weight:600}
+.stepper .dot{
+  width:28px; height:28px; border-radius:999px; display:grid; place-items:center;
+  font-weight:700; font-size:.9rem; color:#fff; background:#cbd5e1;
+}
+.stepper .item.active .dot{ background:var(--brand); }
+.stepper .item.done .dot{ background:#16a34a; }
+.stepper .sep{ width:18px; height:2px; background:rgba(15,23,42,.12); border-radius:2px; }
+
+/* -------- Nav pill (Stripe/PayPal) -------- */
+.nav-pills .nav-link{
+  border-radius:999px;
+  font-weight:600;
+  color:#334155;
+  background:#f1f5f9;
+}
+.nav-pills .nav-link:hover{ background:#e2e8f0; }
+.nav-pills .nav-link.active{
+  background:var(--brand);
+  color:#fff;
+  box-shadow:0 8px 20px rgba(0,96,57,.22);
+}
+
+/* -------- Cart list -------- */
+.cart-list{ display:flex; flex-direction:column; gap:12px; }
+.cart-row{
+  display:grid; grid-template-columns:64px 1fr auto; gap:12px;
+  align-items:center; background:#fff; border:1px solid rgba(15,23,42,.08);
+  border-radius:12px; padding:10px;
+}
+.cart-thumb{
+  width:64px; height:64px; border-radius:10px; object-fit:cover; background:#fff;
+  border:1px solid rgba(15,23,42,.06);
+}
+.cart-info .title{ font-weight:700; color:var(--ink); line-height:1.2; }
+.cart-info .meta{ color:#64748b; font-size:.95rem; }
+.cart-ctrl{ display:flex; align-items:center; gap:10px; }
+.cart-ctrl .qty{
+  display:inline-flex; align-items:center; gap:6px; border:1px solid rgba(15,23,42,.12);
+  border-radius:999px; padding:2px 6px; background:#fff;
+}
+.cart-ctrl .qty input{
+  width:52px; text-align:center; border:0; outline:0; background:transparent;
+}
+.cart-ctrl .btn-minus,
+.cart-ctrl .btn-plus{
+  width:28px; height:28px; border:0; border-radius:999px; line-height:28px;
+  background:#f1f5f9; color:#0f172a; font-weight:700; cursor:pointer;
+}
+.cart-ctrl .btn-minus:hover,
+.cart-ctrl .btn-plus:hover{ background:#e2e8f0; }
+.cart-ctrl .x-btn{
+  border:0; background:transparent; color:#64748b; padding:6px; border-radius:8px;
+}
+.cart-ctrl .x-btn:hover{ background:#f1f5f9; color:#0f172a; }
+
+/* Kur shporta është bosh */
+.cart-empty{
+  border:1px dashed rgba(15,23,42,.18);
+  border-radius:1rem; background:#fff;
+}
+
+/* -------- Summary (djathtas) -------- */
+@media (min-width: 992px){
+  .summary-sticky{ position:sticky; top:96px; }
+}
+.badge-plan{
+  background: rgba(0,96,57,.1);
+  color: var(--brand);
+  border-radius:999px;
+  padding:.35rem .6rem;
+  font-weight:700;
+}
+
+/* -------- Butona brand -------- */
+.btn-brand{
+  --bs-btn-bg: var(--brand);
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-bg: var(--brand-600);
+  --bs-btn-hover-border-color: var(--brand-600);
+  border-radius:999px; font-weight:700; box-shadow:0 10px 24px rgba(0,96,57,.22);
+}
+.btn-outline-brand{
+  color: var(--brand);
+  border-color: var(--brand);
+  background:#fff;
+}
+.btn-outline-brand:hover{ background:var(--brand); color:#fff; border-color:var(--brand); }
+
+/* Loading state për butonat e pagesës (përdoret nga JS) */
+.btn-loading{ position:relative; pointer-events:none; opacity:.9; }
+.btn-loading::after{
+  content:""; width:18px; height:18px; border:2px solid rgba(255,255,255,.6);
+  border-top-color:#fff; border-radius:50%; position:absolute; right:14px; top:50%;
+  transform:translateY(-50%); animation:spin .7s linear infinite;
+}
+@keyframes spin{ to { transform:translateY(-50%) rotate(360deg);} }
+
+/* -------- Forma në step 2 -------- */
+#buyerForm .form-control{
+  background:#fff; border:1px solid rgba(15,23,42,.12); border-radius:12px;
+}
+#buyerForm .form-control:focus{
+  border-color: var(--brand);
+  box-shadow: 0 0 0 .2rem rgba(0,96,57,.18);
+}
+
+/* -------- Alerts -------- */
+.alert-secondary{
+  background:#f8fafc; border-color:rgba(15,23,42,.08); color:#334155;
+  border-radius:12px;
+}
+
+/* -------- Tabela të përmbledhjes -------- */
+.list-group-item{
+  border-color: rgba(15,23,42,.08);
+}
+
+/* -------- Spacing i lehtë në mobile -------- */
+@media (max-width: 575.98px){
+  .cart-row{ grid-template-columns:56px 1fr auto; }
+  .cart-thumb{ width:56px; height:56px; }
+}
+
+
+
+
+
 
 /* =========================================================
    FOOTER – Bardhi Wellness

@@ -1,48 +1,113 @@
- <!doctype html>
+<!doctype html>
 <html lang="sq">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Checkout – Bardhi Wellness</title>
+  <meta name="theme-color" content="#006039">
 
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="./assets/css/checkout.css"/>
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css"/>
+  
 </head>
 <body class="bg-soft">
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top bg-white border-bottom">
+<nav class="navbar navbar-expand-lg fixed-top main-nav">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">
-      <i class="bi bi-activity text-brand me-2"></i>Bardhi Wellness
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+  <!-- Brand -->
+<a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+  <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
+  <span>Bardhi Wellness</span>
+</a>
+
+
+    <!-- Toggler (hap OFFCANVAS në mobile) -->
+    <button class="navbar-toggler d-lg-none" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#mobileNav"
+            aria-controls="mobileNav" aria-label="Hap menunë">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
+
+    <!-- Menu DESKTOP -->
+    <div class="d-none d-lg-flex ms-auto align-items-center">
+      <ul class="navbar-nav me-3">
+
         <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Produkti</a></li>
+        <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Rreth Bardhit</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
-        <li class="nav-item"><a class="btn btn-sm btn-outline-dark ms-lg-2" href="login.html">Login</a></li>
       </ul>
+      <a href="checkout.html" class="btn btn-cart position-relative" aria-label="Shko te checkout">
+        <i class="bi bi-bag"></i>
+        <span class="badge position-absolute top-0 start-100 translate-middle rounded-pill">1</span>
+      </a>
     </div>
   </div>
 </nav>
 
+<!-- OFFCANVAS – MENU MOBILE FULLSCREEN -->
+<div class="offcanvas offcanvas-end w-100" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+  <div class="offcanvas-header border-bottom align-items-center">
+  <div class="d-flex align-items-center">
+    <img src="assets/images/bu-logo.png" alt="Bardhi Wellness Logo" class="offcanvas-logo me-2">
+    <h6 class="offcanvas-title m-0 d-flex align-items-center" id="mobileNavLabel">
+      <i class="me-2 text-brand"></i>
+      Bardhi Wellness
+    </h6>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Mbyll"></button>
+</div>
+
+  <div class="offcanvas-body d-flex flex-column align-items-end">
+    <ul class="navbar-nav w-100 text-end mb-3">
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformation.html" data-bs-dismiss="offcanvas">Transformime</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="pricing.html" data-bs-dismiss="offcanvas">Paketat</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html" data-bs-dismiss="offcanvas">Kontakt</a></li>
+    </ul>
+
+    <a href="login.html" class="btn btn-login w-100 mb-2" data-bs-dismiss="offcanvas">Login</a>
+    <a href="checkout.html" class="btn btn-cart w-100 justify-content-center" data-bs-dismiss="offcanvas">
+      <i class="bi bi-bag me-2"></i> Shko te checkout
+      <span class="badge ms-2 rounded-pill">1</span>
+    </a>
+  </div>
+</div>
+
 <main class="container py-4 py-lg-5">
+  <!-- Stepper -->
+  <div class="mb-3">
+    <div class="stepper" id="stepper">
+      <div class="item active" data-step="cart">
+        <span class="dot">1</span><span>Shporta</span>
+      </div>
+      <div class="sep"></div>
+      <div class="item" data-step="details">
+        <span class="dot">2</span><span>Të dhënat & Pagesa</span>
+      </div>
+      <div class="sep"></div>
+      <div class="item" data-step="pay">
+        <span class="dot">3</span><span>Paguaj</span>
+      </div>
+    </div>
+  </div>
 
   <div class="row g-4">
-    <!-- Kolona majtas (pjesa që ndryshon sipas hapit) -->
+    <!-- Kolona majtas -->
     <div class="col-lg-8">
 
-      <!-- === HAPI 1: SHPORTA === -->
-      <section id="stepCart" class="card border-0 shadow-soft rounded-2xl">
+      <!-- HAPI 1: SHPORTA -->
+      <section id="stepCart" class="card border-0 shadow-soft rounded-2xl mt-4">
         <div class="card-body p-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="mb-0"><i class="bi bi-bag-check me-2 text-brand"></i>Shporta</h4>
-            <a href="index.html#pricing" class="btn btn-sm btn-outline-secondary">Vazhdo blerjet</a>
+            <a href="index.html#pricing" class="btn btn-sm btn-outline-secondary">
+              <i class="bi bi-plus-lg me-1"></i>Vazhdo blerjet
+            </a>
           </div>
 
           <div id="cartList" class="cart-list"></div>
@@ -54,24 +119,28 @@
         </div>
       </section>
 
-      <!-- === HAPI 2: TË DHËNAT + PAGESA === -->
+      <!-- HAPI 2: TË DHËNAT + PAGESA -->
       <section id="stepDetails" class="card border-0 shadow-soft rounded-2xl d-none">
         <div class="card-body p-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="mb-0"><i class="bi bi-person-vcard me-2 text-brand"></i>Të dhënat e blerësit</h4>
-            <button class="btn btn-sm btn-outline-secondary" id="backToCart"><i class="bi bi-arrow-left"></i> Mbrapa</button>
+            <button class="btn btn-sm btn-outline-secondary" id="backToCart">
+              <i class="bi bi-arrow-left"></i> Mbrapa
+            </button>
           </div>
 
           <form id="buyerForm" novalidate class="mb-4">
+            <!-- honeypot anti-spam -->
+            <input type="text" class="d-none" tabindex="-1" autocomplete="off" id="botField">
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label">Emri</label>
-                <input type="text" class="form-control" id="name" required />
+                <input type="text" class="form-control" id="name" autocomplete="name" required />
                 <div class="invalid-feedback">Shkruaj emrin.</div>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Email <span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="email" required />
+                <input type="email" class="form-control" id="email" autocomplete="email" required />
                 <div class="invalid-feedback">Shkruaj email të vlefshëm.</div>
               </div>
               <div class="col-12">
@@ -86,24 +155,31 @@
           <h5 class="mb-3"><i class="bi bi-credit-card-2-front me-2 text-brand"></i>Mënyra e pagesës</h5>
           <ul class="nav nav-pills mb-3" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tabCard">
+              <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tabCard" type="button" aria-controls="tabCard">
                 <i class="bi bi-credit-card me-1"></i>Kartë (Stripe)
               </button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tabPP">
+              <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tabPP" type="button" aria-controls="tabPP">
                 <i class="bi bi-paypal me-1"></i>PayPal
               </button>
             </li>
           </ul>
+
           <div class="tab-content">
             <div class="tab-pane fade show active" id="tabCard">
-              <div class="alert alert-secondary">Kur shtypet <strong>Paguaj me kartë</strong> krijohet <code>/api/checkout/session</code> dhe ridrejtohesh te Stripe Checkout.</div>
-              <button class="btn btn-brand w-100" id="payStripe"><i class="bi bi-lock-fill me-2"></i>Paguaj me kartë</button>
+              <div class="alert alert-secondary">
+                Kur shtypet <strong>Paguaj me kartë</strong> krijohet <code>/api/checkout/session</code> dhe ridrejtohesh te Stripe Checkout.
+              </div>
+              <button class="btn btn-brand w-100" id="payStripe">
+                <i class="bi bi-lock-fill me-2"></i>Paguaj me kartë
+              </button>
             </div>
             <div class="tab-pane fade" id="tabPP">
               <div class="alert alert-secondary">Butonat PayPal inicializohen përmes JS SDK (placeholder).</div>
-              <button class="btn btn-outline-dark w-100" id="payPayPal">Vazhdo me PayPal</button>
+              <button class="btn btn-outline-dark w-100" id="payPayPal">
+                <i class="bi bi-paypal me-2"></i>Vazhdo me PayPal
+              </button>
             </div>
           </div>
         </div>
@@ -111,9 +187,9 @@
 
     </div>
 
-    <!-- Kolona djathtas – Përmbledhja (qëndron gjatë të dy hapave) -->
-    <div class="col-lg-4">
-      <div class="card border-0 shadow-soft rounded-2xl">
+    <!-- Kolona djathtas – Përmbledhja -->
+    <div class="col-lg-4 mt-5">
+      <div class="card border-0 shadow-soft rounded-2xl summary-sticky">
         <div class="card-body p-4">
           <div class="d-flex justify-content-between align-items-center mb-2">
             <h5 class="mb-0">Përmbledhje</h5>
@@ -144,16 +220,12 @@
           <div class="mb-3">
             <label class="form-label">Kupon (opsional)</label>
             <div class="input-group">
-              <input type="text" class="form-control" id="coupon" placeholder="p.sh. WELCOME10"/>
+              <input type="text" class="form-control" id="coupon" placeholder="p.sh. WELCOME10 ose 10%" inputmode="text"/>
               <button class="btn btn-outline-secondary" id="applyCoupon">Apliko</button>
             </div>
             <div id="couponMsg" class="form-text"></div>
           </div>
-
-          <div class="mb-2">
-            <label class="form-label">Numri i TVSH-së (opsional)</label>
-            <input type="text" class="form-control" id="vat" placeholder="p.sh. AL12345678"/>
-          </div>
+ 
 
           <div class="small text-muted"><i class="bi bi-shield-check me-1"></i>Pagesa përpunohet nga ofrues të çertifikuar.</div>
         </div>
@@ -162,21 +234,127 @@
   </div>
 </main>
 
+
+<!-- ===== 11- FOOTER ===== -->
+<footer id="footer-dark" class="py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Brand -->
+      <div class="col-md-6 col-lg-4">
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+  <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
+  <span>Bardhi Wellness</span>
+</a> 
+        <p class="text-light opacity-75 small">
+        Trajnime të personalizuara, plane ushqimore dhe programe fitnesi që transformojnë trupin dhe mendjen.
+        </p>
+
+
+
+
+        <div class="d-flex gap-3 mt-3 social-links">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="col-md-6 col-lg-2">
+        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Kompania</h6>
+        <ul class="list-unstyled small footer-links">
+          <li><a href="/about.html">Rreth Bardhit</a></li>
+          <li><a href="/packages.html">Programet</a></li>
+          <li><a href="/transformation.html">Transformime</a></li>
+          <li><a href="/shop.html">Produkt</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="col-md-6 col-lg-3">
+        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Mbështetje</h6>
+        <ul class="list-unstyled small footer-links">
+          <li><a href="/contact.html">Kontakt</a></li>
+          <li><a href="#">Politika e privatësisë</a></li>
+          <li><a href="#">Kushtet e përdorimit</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-md-6 col-lg-3">
+        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Buletini</h6>
+        <p class="small text-light opacity-75 mb-2">Abonohu për këshilla dhe oferta ekskluzive.</p>
+        <form class="d-flex flex-column flex-sm-row gap-2"
+              onsubmit="event.preventDefault(); document.getElementById('nlMsg').classList.remove('d-none');">
+          <input type="email" class="form-control" placeholder="Emaili juaj" required />
+          <button class="btn btn-brand" type="submit">Abonohu</button>
+        </form>
+        <div id="nlMsg" class="small text-success mt-2 d-none">✅ U abonuat me sukses!</div>
+      </div>
+    </div>
+
+    <hr class="my-4 border-secondary opacity-25">
+
+    <div class="text-center small text-light opacity-75">
+      © <span id="year"></span> Bardhi Wellness - Të gjitha të drejtat e rezervuara.
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" aria-label="Kthehu lart">
+  <i class="bi bi-arrow-up-short"></i>
+</button>
+
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-/* ---------------- Helpers ---------------- */
-const money = (v,c='EUR') => new Intl.NumberFormat('sq-AL',{style:'currency',currency:c}).format(v);
+/* ================= Helpers ================= */
+const money = (v,c='EUR') =>
+  new Intl.NumberFormat('sq-AL', {
+    style: 'currency',
+    currency: c,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(v);
+
+// rrumbullakosje e sigurt në 2 shifra dhjetore
+const round2 = (n) => Math.round((Number(n) + Number.EPSILON) * 100) / 100;
+
 const readCart  = () => { try { return JSON.parse(localStorage.getItem('cart')||'{"items":[]}'); } catch { return {items:[]} } };
 const writeCart = (c) => localStorage.setItem('cart', JSON.stringify(c));
+let cart = sanitizeCart(readCart());
+const setTaxRate = 0; // vendos p.sh. 0.2 (20%) nëse do të simulohet TVSH
 
-let cart = readCart();
+function sanitizeCart(c){
+  if(!c || !Array.isArray(c.items)) return {items:[], currency:'EUR', updatedAt:Date.now()};
+  c.items = c.items.map(i=>({
+    type: i.type || 'plan',
+    sku: i.sku || 'SKU',
+    title: i.title || 'Artikull',
+    price: Number(i.price)||0,
+    currency: i.currency || 'EUR',
+    image: i.image || 'assets/images/pako.jpg',
+    qty: Math.max(1, Number(i.qty)||1),
+    mode: i.mode==='sub' ? 'sub' : 'pay'
+  }));
+  return c;
+}
 
-/* ---------------- Render ---------------- */
+/* ================= Render ================= */
 function renderCart() {
   const wrap = document.getElementById('cartList');
   if (!cart.items.length) {
-    wrap.innerHTML = `<div class="text-center text-muted py-4">Shporta bosh. <a href="index.html#pricing">Shto artikuj</a>.</div>`;
+    wrap.innerHTML = `
+      <div class="p-4 text-center cart-empty">
+        <div class="display-6 mb-1">🛒</div>
+        <p class="text-muted mb-3">Shporta është bosh.</p>
+        <a class="btn btn-outline-secondary" href="index.html#pricing">
+          <i class="bi bi-plus-lg me-1"></i> Shto artikuj
+        </a>
+      </div>`;
     return;
   }
   wrap.innerHTML = '';
@@ -184,18 +362,18 @@ function renderCart() {
     const row = document.createElement('div');
     row.className = 'cart-row';
     row.innerHTML = `
-      <img class="cart-thumb" src="${it.image||'assets/images/pako.jpg'}" alt="">
+      <img class="cart-thumb" src="${it.image}" alt="${it.title}">
       <div class="cart-info">
         <div class="title">${it.title}</div>
         <div class="meta">${it.mode==='sub' ? money(it.price,it.currency)+' /muaj' : money(it.price,it.currency)}</div>
       </div>
       <div class="cart-ctrl">
-        <div class="qty">
-          <button class="btn-minus" aria-label="−">−</button>
-          <input type="number" min="1" value="${it.qty||1}">
-          <button class="btn-plus" aria-label="+">+</button>
+        <div class="qty" role="group" aria-label="Ndrysho sasinë">
+          <button class="btn-minus" aria-label="Zvogëlo sasinë">−</button>
+          <input type="number" min="1" value="${it.qty}">
+          <button class="btn-plus" aria-label="Rrit sasinë">+</button>
         </div>
-        <button class="x-btn" aria-label="Hiq"><i class="bi bi-x-lg"></i></button>
+        <button class="x-btn" aria-label="Hiq artikullin"><i class="bi bi-x-lg"></i></button>
       </div>
     `;
     const minus = row.querySelector('.btn-minus');
@@ -213,57 +391,136 @@ function renderSummary(){
   const lines = document.getElementById('summaryLines');
   lines.innerHTML = '';
   let subtotal = 0, hasSub = false;
+
   (cart.items||[]).forEach(it=>{
     const li = document.createElement('li');
     li.className = 'list-group-item d-flex justify-content-between';
-    const lineTotal = (it.qty||1)*it.price;
-    subtotal += lineTotal;
+    const lineTotal = round2((it.qty||1) * it.price);
+    subtotal = round2(subtotal + lineTotal);
     hasSub = hasSub || it.mode==='sub';
-    li.innerHTML = `<span>${it.title} <span class="text-muted small">× ${it.qty||1}</span></span><span>${money(lineTotal,it.currency||'EUR')}</span>`;
+    li.innerHTML = `<span>${it.title} <span class="text-muted small">× ${it.qty||1}</span></span><span>${money(lineTotal, it.currency||'EUR')}</span>`;
     lines.appendChild(li);
   });
+
   document.getElementById('badgeType').textContent = hasSub ? 'Ka abonim' : 'Pagesë njëherë';
-  document.getElementById('subtotal').textContent = subtotal.toFixed(0);
-  const discount = +document.getElementById('discount').textContent || 0;
-  const tax = +document.getElementById('tax').textContent || 0;
-  document.getElementById('total').textContent = Math.max(0, subtotal - discount + tax).toFixed(0);
+  document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+
+  // lexo uljen me presje dhjetore
+  const discountEl = document.getElementById('discount');
+  const discount = round2(parseFloat(discountEl.textContent) || 0);
+
+  const taxBase = Math.max(0, round2(subtotal - discount));
+  const tax = round2(taxBase * setTaxRate);
+  document.getElementById('tax').textContent = tax.toFixed(2);
+
+  const total = Math.max(0, round2(taxBase + tax));
+  document.getElementById('total').textContent = total.toFixed(2);
 }
 
 function persist(){ cart.updatedAt=Date.now(); writeCart(cart); renderCart(); renderSummary(); }
 
-/* ---------------- Coupon demo ---------------- */
+/* ================= Coupon ================= */
+function parseCoupon(val){
+  // Shembuj validë: WELCOME10 (10 EUR), -10 (10 EUR), 10% (përqindje), SAVE15% (përqindje)
+  const v = val.trim().toUpperCase();
+  if (!v) return {type:null, value:0, msg:''};
+
+  // përqindje?
+  const perc = v.match(/(\d{1,2})\s*%/);
+  if (perc) return {type:'percent', value: Number(perc[1]), msg: `Kupon përqindje ${perc[1]}% u aplikua.`};
+
+  // fikse (numër brenda tekstit ose standard WELCOME10)
+  const num = v.match(/(\d{1,4})/);
+  if (num) return {type:'fixed', value: Number(num[1]), msg: `Kupon -€${Number(num[1]).toFixed(2)} u aplikua.`};
+
+  return {type:null, value:0, msg:'Kupon i pavlefshëm.'};
+}
+
 document.getElementById('applyCoupon').addEventListener('click', ()=>{
-  const c = document.getElementById('coupon').value.trim().toUpperCase();
-  const msg = document.getElementById('couponMsg');
-  let d = 0;
-  if (c==='WELCOME10'){ d=10; msg.textContent='Kuponi u aplikua.'; }
-  else if(c){ msg.textContent='Kupon i pavlefshëm.'; }
-  else { msg.textContent=''; }
-  document.getElementById('discount').textContent = d.toFixed(0);
+  const input = document.getElementById('coupon');
+  const {type, value, msg} = parseCoupon(input.value);
+  const subtotal = round2((cart.items||[]).reduce((s,i)=> s + round2(i.price*(i.qty||1)), 0));
+
+  let discount = 0;
+  if (type==='fixed') {
+    discount = Math.min(value, subtotal);
+  } else if (type==='percent') {
+    discount = round2(subtotal * (value/100));
+  } else {
+    discount = 0;
+  }
+  // mos lejo ulje > subtotal
+  discount = round2(Math.min(discount, subtotal));
+
+  const el = document.getElementById('couponMsg');
+  el.textContent = msg || (input.value ? 'Kupon i pavlefshëm.' : '');
+
+  // gjithmonë ruaj me 2 presje
+  document.getElementById('discount').textContent = discount.toFixed(2);
+
   renderSummary();
 });
 
-/* ---------------- Steps ---------------- */
+/* ================= Steps ================= */
 const stepCart = document.getElementById('stepCart');
 const stepDetails = document.getElementById('stepDetails');
+const stepper = document.getElementById('stepper');
+
+function setStep(which){
+  // vizuale
+  stepper.querySelectorAll('.item').forEach(it=>{
+    const s = it.getAttribute('data-step');
+    it.classList.toggle('active', s===which);
+    it.classList.toggle('done', s==='cart' && which==='details');
+  });
+
+  if (which==='cart'){
+    stepDetails.classList.add('d-none');
+    stepCart.classList.remove('d-none');
+    history.replaceState(null,'','#cart');
+  } else {
+    stepCart.classList.add('d-none');
+    stepDetails.classList.remove('d-none');
+    history.replaceState(null,'','#details');
+    // fokuso email në hapin 2
+    setTimeout(()=> document.getElementById('email')?.focus(), 10);
+  }
+  window.scrollTo({top:0, behavior:'smooth'});
+}
 
 document.getElementById('goDetails').addEventListener('click', ()=>{
   if (!cart.items.length) { alert('Shporta bosh.'); return; }
-  stepCart.classList.add('d-none');
-  stepDetails.classList.remove('d-none');
-  window.scrollTo({top:0, behavior:'smooth'});
+  setStep('details');
 });
+document.getElementById('backToCart').addEventListener('click', ()=> setStep('cart'));
 
-document.getElementById('backToCart').addEventListener('click', ()=>{
-  stepDetails.classList.add('d-none');
-  stepCart.classList.remove('d-none');
-  window.scrollTo({top:0, behavior:'smooth'});
-});
+// hap direkt step 2 nëse ka #details në URL
+if (location.hash==='#details' && cart.items.length) setStep('details');
 
-/* ---------------- Payments (payload demo) ---------------- */
+/* ================= Inputs polish ================= */
+const vatEl = document.getElementById('vat');
+if (vatEl) {
+  vatEl.addEventListener('input', (e)=>{
+    e.target.value = e.target.value.toUpperCase().replace(/\s+/g,'');
+  });
+}
+
+
+/* ================= Payments ================= */
+function toggleLoading(btn, on=true){
+  if (!btn) return;
+  btn.classList.toggle('btn-loading', on);
+  btn.disabled = !!on;
+}
+
 async function startStripe(){
   const form = document.getElementById('buyerForm');
+  if (document.getElementById('botField')?.value) return; // honeypot
   if(!form.checkValidity()){ form.classList.add('was-validated'); return; }
+
+  const btn = document.getElementById('payStripe');
+  toggleLoading(btn, true);
+
   const hasSub = cart.items.some(i=>i.mode==='sub');
   const payload = {
     provider:'stripe',
@@ -271,31 +528,56 @@ async function startStripe(){
     email: document.getElementById('email').value,
     items: cart.items.map(i=>({
       type:i.type, sku:i.sku, title:i.title, qty:i.qty||1,
-      unit_price: Math.round(i.price*100), currency:i.currency||'EUR', mode:i.mode
+      unit_price: Math.round(i.price*100), // 69.99 => 6999 (cent)
+      currency:i.currency||'EUR', mode:i.mode
     })),
     coupon: document.getElementById('coupon').value || undefined,
     vat: document.getElementById('vat').value || undefined
   };
   try{ localStorage.setItem('buyerEmail', payload.email);}catch(e){}
-  const res = await fetch('/api/checkout/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-                   .then(r=>r.json()).catch(()=>({}));
-  if(res && res.url){ location.href = res.url; }
-  else { alert('S’mundu të krijohej seanca e pagesës.'); }
+
+  try{
+    const res = await fetch('/api/checkout/session',{
+      method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
+    }).then(r=>r.json());
+
+    if(res && res.url){ location.href = res.url; }
+    else { alert('S’mundu të krijohej seanca e pagesës.'); }
+  } catch(e){
+    alert('Gabim gjatë krijimit të seancës.');
+  } finally {
+    toggleLoading(btn, false);
+  }
 }
+
 async function startPayPal(){
   const form = document.getElementById('buyerForm');
   if(!form.checkValidity()){ form.classList.add('was-validated'); return; }
+
+  const btn = document.getElementById('payPayPal');
+  toggleLoading(btn, true);
+
   const hasSub = cart.items.some(i=>i.mode==='sub');
-  const res = await fetch('/api/checkout/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({provider:'paypal',mode:hasSub?'subscription':'payment'})})
-                   .then(r=>r.json()).catch(()=>({}));
-  if(res && res.approveUrl){ location.href = res.approveUrl; }
-  else { alert('S’mundu të krijohej porosia PayPal.'); }
+  try{
+    const res = await fetch('/api/checkout/session',{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({provider:'paypal',mode:hasSub?'subscription':'payment'})
+    }).then(r=>r.json());
+
+    if(res && res.approveUrl){ location.href = res.approveUrl; }
+    else { alert('S’mundu të krijohej porosia PayPal.'); }
+  } catch(e){
+    alert('Gabim gjatë krijimit të porosisë PayPal.');
+  } finally {
+    toggleLoading(btn, false);
+  }
 }
 document.getElementById('payStripe').addEventListener('click', startStripe);
 document.getElementById('payPayPal').addEventListener('click', startPayPal);
 
-/* ---------------- Init ---------------- */
+/* ================= Init ================= */
 renderCart(); renderSummary();
 </script>
+
 </body>
 </html>

@@ -971,6 +971,13 @@
   </div>
 </footer>
 
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" aria-label="Kthehu lart">
+  <i class="bi bi-arrow-up-short"></i>
+</button>
+
+
+
 <script>
   // FAQ: opsionale – auto-scroll te pyetja e hapur
   document.addEventListener('shown.bs.collapse', function (e) {
@@ -1112,6 +1119,25 @@ window.addEventListener('scroll', () => {
   if(window.scrollY > 20) document.body.classList.add('scrolled');
   else document.body.classList.remove('scrolled');
 });
+</script>
+
+
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  // Shfaq / fsheh butonin
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  // Scroll smooth deri në fillim
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 </script>
 
 

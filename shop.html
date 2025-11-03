@@ -74,72 +74,93 @@
   </div>
 </div>
 
-<!-- ============ 6- SHOP (Single product -> checkout.html) ============ -->
+<!-- ============ 6- SHOP  ============ -->
 <section id="shop" class="py-6">
   <div class="container" style="max-width: 980px;">
     <h2 class="text-center fw-bold mb-2" style="color:var(--ink,#0f172a);">Shop</h2>
     <p class="text-center text-muted mb-4">Bli tani suplementin tonë premium për energji dhe dobësim.</p>
 
-    <!-- KARTA E PRODUKTIT -->
-    <div class="card shop-card border-0 shadow-lg rounded-4 overflow-hidden">
-      <div class="row g-0 align-items-center">
-        <!-- Foto -->
-        <div class="col-md-5 bg-white">
-          <div class="img-fluid rounded-3 w-100 h-100">
-            <img src="./assets/images/bardhiuka-product.jpg"
-                 alt="L Carnitine Capsules Bardhi Wellness"
-                 class="img-fluid rounded-3 object-fit-contain">
-          </div>
-        </div>
-
-        <!-- Info + CTA -->
-        <div class="col-md-7">
-          <div class="card-body p-4 p-lg-5">
-            <span class="text-uppercase small text-muted">Bardhi Wellness</span>
-            <h3 class="mt-1 mb-3 fw-bold text-brand">L-CARNITINE CAPSULES</h3>
-
-            <div class="d-flex align-items-baseline gap-2 mb-3">
-              <span class="h4 mb-0 text-brand" id="priceLabel">€69,99</span>
-              <span class="text-muted small">EUR (taksat e përfshira)</span>
-            </div>
-
-            <p class="text-muted mb-4">
-              💊 Suplement ushqimor i formuluar për të ndihmuar në humbje peshe,
-              përmirësim të energjisë dhe rikuperim pas stërvitjes.
-            </p>
-
-            <!-- Sasia -->
-            <div class="mb-3">
-              <label for="qtyInput" class="form-label fw-semibold mb-1">Sasia</label>
-              <div class="input-group input-group-sm shop-qty" style="max-width: 190px;">
-                <button class="btn btn-outline-brand" type="button" id="qtyMinus" aria-label="Zvogëlo sasinë">−</button>
-                <input type="number" class="form-control text-center" id="qtyInput" value="1" min="1" step="1" inputmode="numeric" pattern="[0-9]*">
-                <button class="btn btn-outline-brand" type="button" id="qtyPlus" aria-label="Rrit sasinë">+</button>
-              </div>
-            </div>
-
-            <!-- CTA -->
-            <a id="buyNowBtn"
-               href="checkout.html"
-               class="btn btn-brand w-100 mb-3"
-               data-sku="SUPL-DBS-001"
-               data-title="L-Carnitine Capsules"
-               data-price="69.99"
-               data-currency="EUR"
-               data-image="./assets/images/bardhiuka-product.jpg">
-               Bli tani
-            </a>
-
-            <!-- Info të shkurtra -->
-            <ul class="list-inline small text-muted mb-0">
-              <li class="list-inline-item me-3"><i class="bi bi-shield-check me-1 text-brand"></i>Pagesë e sigurt</li>
-              <li class="list-inline-item me-3"><i class="bi bi-truck me-1 text-brand"></i>Dërgesë e shpejtë</li>
-              <li class="list-inline-item"><i class="bi bi-arrow-repeat me-1 text-brand"></i>Kthim 14-ditor</li>
-            </ul>
-          </div>
-        </div>
+<!-- KARTA E PRODUKTIT -->
+<div class="card shop-card border-0 shadow-lg rounded-4 overflow-hidden">
+  <div class="row g-0 align-items-center">
+    <!-- Foto -->
+    <div class="col-md-5 bg-white">
+      <div class="img-fluid rounded-3 w-100 h-100">
+        <img src="./assets/images/bardhiuka-product.jpg"
+             alt="L Carnitine Capsules Bardhi Wellness"
+             class="img-fluid rounded-3 object-fit-contain">
       </div>
     </div>
+
+    <!-- Info + CTA -->
+    <div class="col-md-7">
+      <div class="card-body p-4 p-lg-5">
+        <span class="text-uppercase small text-muted">Bardhi Wellness</span>
+        <h3 class="mt-1 mb-3 fw-bold text-brand">L-CARNITINE CAPSULES</h3>
+
+        <div class="d-flex align-items-baseline gap-2 mb-3">
+          <span class="h4 mb-0 text-brand" id="priceLabel">€99,99</span>
+          <span class="text-muted small">EUR (taksat e përfshira)</span>
+        </div>
+
+        <p class="text-muted mb-4">
+          💊 Suplement ushqimor i formuluar për të ndihmuar në humbje peshe,
+          përmirësim të energjisë dhe rikuperim pas stërvitjes.
+        </p>
+
+        <!-- Promo Info -->
+        <div class="alert alert-success rounded-3 fw-semibold mb-4 d-flex align-items-center justify-content-between" role="alert">
+          <div>
+            🎁 50 porositë e para që përdorin kuponin 
+            <span id="couponCode" class="text-danger fw-bold pulse">USHTRO</span>
+            përfitojnë <strong>30% zbritje</strong> nga €99.99 në vetëm €69.99!
+          </div>
+          <button id="copyBtn" class="btn btn-sm btn-outline-dark ms-3" title="Kopjo kodin">
+            <i class="bi bi-clipboard"></i>
+          </button>
+        </div>
+
+        <div id="copyMsg" class="text-success small fw-semibold mb-3" style="display:none;">
+          ✅ Kuponi u kopjua!
+        </div>
+
+
+        <!-- CTA -->
+        <a href="https://buy.stripe.com/3cIfZi4xD97mgZqcsG5wI00"
+           class="btn btn-brand w-100 mt-3">
+          Bli tani
+        </a>
+
+        <!-- Info të shkurtra -->
+        <ul class="list-inline small text-muted mb-0 mt-3">
+          <li class="list-inline-item me-3"><i class="bi bi-shield-check me-1 text-brand"></i>Pagesë e sigurt</li>
+          <li class="list-inline-item me-3"><i class="bi bi-truck me-1 text-brand"></i>Dërgesë e shpejtë</li>
+          <li class="list-inline-item"><i class="bi bi-arrow-repeat me-1 text-brand"></i>Kthim 14-ditor</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Efekti i pulsimit + Kopjimi -->
+<style>
+  .pulse {
+    animation: pulse 1.3s infinite;
+  }
+ 
+</style>
+
+<script>
+  document.getElementById("copyBtn").addEventListener("click", function() {
+    const code = document.getElementById("couponCode").textContent;
+    navigator.clipboard.writeText(code);
+    const msg = document.getElementById("copyMsg");
+    msg.style.display = "block";
+    setTimeout(() => msg.style.display = "none", 2000);
+  });
+</script>
+
+
 
     <!-- Info të hollësishme (mbetet nën kartë) -->
     <div class="card border-0 shadow-sm rounded-4 mt-4">
@@ -173,6 +194,7 @@
 
   </div>
 </section>
+
 
 
 <!-- ===== 11- FOOTER ===== -->

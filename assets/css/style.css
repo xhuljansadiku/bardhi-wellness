@@ -1867,3 +1867,71 @@ body{ padding-top: var(--nav-h,64px); }
 
 
  
+/* ============================
+   EFECTE – animime & hover (universal)
+   ============================ */
+:root{
+  --fx-duration: .85s;
+  --fx-ease: cubic-bezier(.2,.65,.2,1);
+}
+
+/* Delay helpers */
+.delay-0{animation-delay:0s!important;}
+.delay-1{animation-delay:.15s!important;}
+.delay-2{animation-delay:.30s!important;}
+.delay-3{animation-delay:.45s!important;}
+
+/* Fade-up hyrës */
+.fade-up{
+  opacity:0; transform:translateY(26px);
+  animation:fadeUp var(--fx-duration) var(--fx-ease) forwards;
+}
+@keyframes fadeUp{to{opacity:1; transform:translateY(0);}}
+
+/* Pop-in i lehtë (logo/ikona/butona) */
+.pop-in{
+  opacity:0; transform:scale(.96);
+  animation:popIn var(--fx-duration) var(--fx-ease) forwards;
+}
+@keyframes popIn{
+  60%{opacity:1; transform:scale(1.02);}
+  100%{opacity:1; transform:scale(1);}
+}
+
+/* Hover lift (universale) */
+.hover-lift{
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  will-change: transform;
+}
+.hover-lift:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+}
+.hover-lift:active{
+  transform: translateY(-1px) scale(.99);
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+}
+
+/* Sheen për .btn-brand (shkëlqim diagonal në hover) */
+.btn-brand{ position:relative; overflow:hidden; }
+.btn-brand::after{
+  content:"";
+  position:absolute; inset:0 -60% 0 -60%;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,.18) 40%, transparent 60%);
+  transform: translateX(-120%) skewX(-20deg);
+  transition: transform .6s ease;
+  pointer-events:none;
+}
+.btn-brand:hover::after{ transform: translateX(0) skewX(-20deg); }
+
+/* Bonus i butë për HERO title */
+.hero:hover h1{
+  text-shadow: 0 6px 40px rgba(0,0,0,.7), 0 0 18px rgba(0,192,112,.18);
+}
+
+/* Respecto preferencat e përdoruesit */
+@media (prefers-reduced-motion: reduce){
+  .fade-up, .pop-in{ animation:none!important; opacity:1!important; transform:none!important; }
+  .hover-lift, .btn-brand::after{ transition:none!important; }
+}
+

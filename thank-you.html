@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Faleminderit për porosinë – Bardhi Wellness</title>
+  <meta name="theme-color" content="#006039">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css"/>
+
+  <style>
+    body {
+      background: linear-gradient(160deg, #e6f4ed 0%, #f8fafc 100%);
+      font-family: "Inter", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .thankyou-container {
+      text-align: center;
+      position: relative;
+      max-width: 520px;
+      background: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      padding: 3rem 2rem;
+      overflow: hidden;
+      animation: fadeInUp 0.7s ease forwards;
+    }
+
+    /* Confetti dots */
+    .thankyou-container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(0,96,57,0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 80% 80%, rgba(0,96,57,0.08) 0%, transparent 60%);
+      z-index: 0;
+    }
+
+    .thankyou-icon {
+      background: var(--brand, #006039);
+      color: #fff;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 0 0 8px rgba(0,96,57,0.15);
+      position: relative;
+      z-index: 1;
+      animation: pulse 1.8s infinite;
+    }
+
+    .thankyou-container h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--brand, #006039);
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .thankyou-container p {
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-brand {
+      background: var(--brand, #006039);
+      color: #fff;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.75rem 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,96,57,0.25);
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-brand:hover {
+      background: #15744e;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,96,57,0.35);
+    }
+
+    .btn-outline {
+      color: var(--brand, #006039);
+      border: 2px solid var(--brand, #006039);
+      background: transparent;
+      border-radius: 2rem;
+      padding: 0.75rem 1.8rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      background: var(--brand, #006039);
+      color: #fff;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0,96,57,0.15); }
+      50% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(0,96,57,0.10); }
+      100% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0,96,57,0.15); }
+    }
+
+    /* Optional small confetti circles */
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand, #006039);
+      opacity: 0.4;
+      animation: float 5s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+      50% { transform: translateY(-60px) rotate(180deg); opacity: 1; }
+      100% { transform: translateY(0) rotate(360deg); opacity: 0.8; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="thankyou-container">
+    <div class="thankyou-icon">
+      <i class="bi bi-check2-circle"></i>
+    </div>
+    <h1>Faleminderit për porosinë tuaj!</h1>
+    <p>
+      Porosia juaj u përfundua me sukses 🎉 <br>
+      Brenda pak minutash do të merrni një email me të gjitha detajet. <br>
+      Jemi të lumtur që zgjodhët <strong>Bardhi Wellness</strong>.
+    </p>
+
+    <div class="d-flex justify-content-center flex-wrap gap-2">
+      <a href="index.html" class="btn btn-brand">
+        <i class="bi bi-house-door me-1"></i> Kthehu në faqen kryesore
+      </a>
+ 
+    </div>
+
+    <!-- dekorative confetti -->
+    <div class="confetti" style="top:10%; left:15%; animation-delay:0s;"></div>
+    <div class="confetti" style="top:15%; right:20%; animation-delay:1s;"></div>
+    <div class="confetti" style="bottom:10%; left:30%; animation-delay:2s;"></div>
+    <div class="confetti" style="bottom:15%; right:25%; animation-delay:3s;"></div>
+  </div>
+</body>
+</html>

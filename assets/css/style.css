@@ -1935,3 +1935,104 @@ body{ padding-top: var(--nav-h,64px); }
   .hover-lift, .btn-brand::after{ transition:none!important; }
 }
 
+
+
+
+/* ===========================
+   BMI / Kalori / Ujë – Qendër
+   =========================== */
+
+.calc-section {
+  min-height: calc(100vh - var(--nav-h));
+  background: var(--surface-2);
+}
+
+.calc-card {
+  background: var(--surface);
+  border-radius: 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+}
+
+.calc-card .title {
+  color: var(--brand);
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+/* Etiketat dhe inputet */
+.calc-card .label {
+  font-weight: 700;
+  color: var(--ink-700);
+  margin-bottom: 0.4rem;
+}
+
+.calc-card .input,
+.calc-card select {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 2rem;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  background: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.calc-card .input:focus,
+.calc-card select:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+/* Butoni */
+.calc-card .btn {
+  background: linear-gradient(90deg, var(--brand), var(--brand-700));
+  border: none;
+  border-radius: 0.75rem;
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem;
+  transition: filter 0.2s, transform 0.1s;
+}
+
+.calc-card .btn:hover { filter: brightness(1.1); }
+.calc-card .btn:active { transform: translateY(1px); }
+
+/* Rezultatet */
+.calc-card .results {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  animation: fadeInUp 0.5s ease;
+}
+
+.calc-card .res-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.calc-card .res-item:last-child { border-bottom: 0; }
+
+.calc-card .res-label { font-weight: 700; color: var(--ink-700); }
+.calc-card .res-value { font-weight: 700; }
+
+.calc-card .small {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.calc-card .error {
+  display: none;
+  margin-top: 0.5rem;
+  color: #dc2626;
+  font-weight: 700;
+  text-align: center;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

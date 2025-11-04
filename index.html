@@ -76,25 +76,59 @@
 
 
 <!-- ================= 1- HERO =================  -->
+
 <header id="home" class="hero bg-cover d-flex align-items-center justify-content-center text-center">
-    <div class="hero-bg"></div>
-    <div class="container position-relative z-1 py-3">
-      <h1 class="fw-bold mb-3 display-5 fade-up">
-      Bardhi Uka  💪 
-      </h1>
-      <p class="lead mb-4 fade-up delay-1">
-  Trajner personal që të ndihmon të ndërtosh trupin, mendjen dhe stilin e jetës që dëshiron. ✨
-      </p>
-      <div class="d-flex flex-wrap justify-content-center gap-3 fade-up delay-2">
-        <a href="pricing.html" class="btn btn-brand btn-lg d-flex align-items-center gap-2 px-4 hover-lift pop-in">
-          🚀 <span>Nis sot</span>
-        </a>
-        <a href="transformation.html" class="btn btn-outline-light btn-lg d-flex align-items-center gap-2 px-4 hover-lift pop-in">
-          📸 <span>Shiko rezultatet</span>
-        </a>
+  <div class="hero-bg"></div>
+  <div class="container position-relative z-1 py-3">
+    <h1 class="fw-bold mb-3 display-5 fade-up">Bardhi Uka 💪</h1>
+    <p class="lead mb-4 fade-up delay-1">
+      Trajner personal që të ndihmon të ndërtosh trupin, mendjen dhe stilin e jetës që dëshiron. ✨
+    </p>
+    <div class="d-flex flex-wrap justify-content-center gap-3 fade-up delay-2">
+      <a href="pricing.html" class="btn btn-brand btn-lg d-flex align-items-center gap-2 px-4 hover-lift pop-in">
+        🚀 <span>Nis sot</span>
+      </a>
+      <a href="transformation.html" class="btn btn-outline-light btn-lg d-flex align-items-center gap-2 px-4 hover-lift pop-in">
+        📸 <span>Shiko rezultatet</span>
+      </a>
+    </div>
+
+    <!-- ====== STATISTIKA ====== -->
+    <div class="hero-stats mt-5 fade-up delay-3">
+      <div class="row justify-content-center g-4">
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-icon mb-2">🔥</div>
+           <div class="stat-value h3 fw-bold mb-0" data-count="10" data-suffix="M+">0</div>
+            <div class="stat-label small text-uppercase text-muted">Shikime mujore</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-icon mb-2">💪</div>
+            <div class="stat-value h3 fw-bold mb-0" data-count="500" data-suffix="+">0</div>
+            <div class="stat-label small text-uppercase text-muted">Klientë të kënaqur</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-icon mb-2">⭐</div>
+            <div class="stat-value h3 fw-bold mb-0" data-count="4.9" data-suffix="/5" data-decimals="1">0</div>
+            <div class="stat-label small text-uppercase text-muted">Vlerësime mesatare</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-icon mb-2">🌍</div>
+            <div class="stat-value h3 fw-bold mb-0" data-count="15" data-suffix="+">0</div>
+            <div class="stat-label small text-uppercase text-muted">Shtete aktive</div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 </header>
+
 
 <!-- ================= 2- SOCIAL PROOF ================= -->
 <section id="proof" class="py-3 bg-white">
@@ -1213,6 +1247,50 @@ function addToCart(item){
   });
 </script>
 
+
+<script>
+(function(){
+  const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+  function animateCount(el, duration = 1200){
+    const target = parseFloat(el.dataset.count || "0");
+    const suffix = el.dataset.suffix || "";
+    const decimals = parseInt(el.dataset.decimals || "0", 10);
+    const start = 0;
+    const startTime = performance.now();
+
+    function step(now){
+      const p = Math.min((now - startTime) / duration, 1);
+      const eased = easeOutCubic(p);
+      const val = start + (target - start) * eased;
+      el.textContent = val.toFixed(decimals) + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Nis animimin kur seksioni "hero-stats" shihet
+  const container = document.querySelector('.hero-stats');
+  if(!container) return;
+  const counters = container.querySelectorAll('.stat-value');
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        counters.forEach(el => {
+          if(!el.dataset.done){
+            el.dataset.done = "1";
+            animateCount(el, 1200);
+          }
+        });
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  io.observe(container);
+})();
+</script>
 
   </body>
   </html>

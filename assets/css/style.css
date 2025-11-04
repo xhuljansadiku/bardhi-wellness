@@ -292,6 +292,47 @@ body{ padding-top: var(--nav-h,64px); }
   .hero .lead { font-size: 1rem; }
 }
 
+.hero-stats .stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.hero-stats .stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+.hero-stats .stat-icon {
+  font-size: 1.8rem;
+}
+.hero-stats .stat-value {
+  color: #fff;
+}
+.hero-stats .stat-label {
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.5px;
+}
+
+
+.hero-stats .stat-value {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.hero-stats .stat-value::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -120%;
+  width: 120%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+  animation: shimmer 2.8s linear infinite;
+}
+@keyframes shimmer {
+  0% { left: -120%; }
+  100% { left: 120%; }
+}
+
 
 /* =========================
    SECTIONS: proof / how / benefits

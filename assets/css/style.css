@@ -313,6 +313,23 @@ body{ padding-top: var(--nav-h,64px); }
   font-weight: 500;
 }
 
+.hero-stats .stat-card {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.hero-stats .stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+.hero-stats .stat-icon,
+.hero-stats .stat-value,
+.hero-stats .stat-label {
+  color: #fff !important;
+}
 
 /* =========================
    SECTIONS: proof / how / benefits

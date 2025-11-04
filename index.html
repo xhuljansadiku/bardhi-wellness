@@ -1252,7 +1252,7 @@ function addToCart(item){
 (function(){
   const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
 
-  function animateCount(el, duration = 4000){
+  function animateCount(el, duration = 5000){
     const target = parseFloat(el.dataset.count || "0");
     const suffix = el.dataset.suffix || "";
     const decimals = parseInt(el.dataset.decimals || "0", 10);

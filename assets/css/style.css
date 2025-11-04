@@ -176,89 +176,24 @@ body{ padding-top: var(--nav-h,64px); }
    OFFCANVAS (Mobile) — Polished
    =============================== */
 
-#mobileNav.offcanvas{
-  width:100vw;
-  background:
-    radial-gradient(1000px 600px at 95% -10%, rgba(0,96,57,.12), transparent 60%),
-    rgba(255,255,255,.96);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border-left:1px solid rgba(15,23,42,.08);
-  box-shadow: -12px 0 36px rgba(2,6,23,.12);
+/* Navbar & Offcanvas fixes */
+.main-nav, .offcanvas { background:#fff; }
+.navbar-toggler { border:0; }
+.navbar-toggler:focus { box-shadow:none; }
+.navbar-toggler .navbar-toggler-icon {
+  background-image: var(--bs-navbar-toggler-icon-bg);
 }
 
-#mobileNav .offcanvas-header{
-  position: sticky; top:0; z-index:2;
-  background:#fff;
-  padding:.9rem 1rem;
-  border-bottom:1px solid rgba(15,23,42,.08);
+/* Offcanvas logo & spacing */
+.offcanvas .offcanvas-logo { height:32px; width:auto; }
+
+/* Bëj që linku aktiv të dallohet (opsionale) */
+.offcanvas .nav-link.active,
+.offcanvas .nav-link:active {
+  color: var(--brand, #006039);
+  font-weight: 600;
 }
 
-#mobileNav .offcanvas-title{
-  color: var(--brand,#006039);
-  font-weight:800; letter-spacing:.2px;
-}
-
-#mobileNav .offcanvas-logo{
-  height:36px; width:auto; object-fit:contain; display:block;
-}
-@media (min-width: 576px){
-  #mobileNav .offcanvas-logo{ height:42px; }
-}
-
-/* Body layout + safe area */
-#mobileNav .offcanvas-body{
-  display:flex; flex-direction:column; align-items:stretch;
-  row-gap:.75rem;
-  padding:1rem;
-  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
-}
-
-/* Mobile nav links me chevron */
-#mobileNav .navbar-nav{ width:100%; margin-bottom:.5rem; }
-#mobileNav .navbar-nav .nav-link{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:.75rem;
-  color: var(--ink,#0f172a);
-  font-weight:700;
-  padding:.95rem 0;
-  border-bottom:1px solid rgba(15,23,42,.08);
-  border-radius:.5rem;
-  transition: background .2s, color .2s;
-}
-#mobileNav .navbar-nav .nav-link:last-child{ border-bottom:none; }
-#mobileNav .navbar-nav .nav-link::after{
-  content:"\F285"; /* chevron-right – Bootstrap Icons */
-  font-family:"bootstrap-icons";
-  font-size:1rem; opacity:.45; transition: transform .2s, opacity .2s;
-}
-#mobileNav .navbar-nav .nav-link:hover{
-  background: rgba(0,96,57,.06);
-  color: var(--brand,#006039);
-}
-#mobileNav .navbar-nav .nav-link:hover::after{
-  transform: translateX(3px); opacity:.85;
-}
-
-/* Butona fundore full-width */
-#mobileNav .btn-login,
-#mobileNav .btn-cart{
-  width:100%;
-  border-radius:.9rem;
-  padding:.75rem 1rem;
-}
-#mobileNav .btn-cart{
-  justify-content:center;
-  background: linear-gradient(180deg, rgba(0,96,57,.06), rgba(255,255,255,0));
-}
-#mobileNav .btn-cart .badge{
-  position: static; margin-left:.35rem; border:0; padding:.2rem .45rem;
-}
-
-/* Trigger area alignment on md- */
-@media (max-width: 991.98px){
-  .offcanvas-body{ align-items:flex-end; padding-right:1.25rem; }
-}
 
 
 /* ============================

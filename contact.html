@@ -15,6 +15,7 @@
   <body>
  
  
+ 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top main-nav">
   <div class="container">
@@ -48,30 +49,27 @@
 </nav>
 
 <!-- OFFCANVAS – MENU MOBILE FULLSCREEN -->
-<div class="offcanvas offcanvas-end w-100" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+<div class="offcanvas offcanvas-end w-100 bg-white" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel" data-bs-scroll="true">
   <div class="offcanvas-header border-bottom align-items-center">
-  <div class="d-flex align-items-center">
-    <img src="assets/images/bu-logo.png" alt="Bardhi Wellness Logo" class="offcanvas-logo me-2">
-    <h6 class="offcanvas-title m-0 d-flex align-items-center" id="mobileNavLabel">
-      <i class="me-2 text-brand"></i>
-      Bardhi Wellness
-    </h6>
+    <div class="d-flex align-items-center">
+      <img src="assets/images/bu-logo.png" alt="Bardhi Wellness Logo" class="offcanvas-logo me-2" style="height:32px;width:auto;">
+      <h6 class="offcanvas-title m-0 d-flex align-items-center" id="mobileNavLabel">
+        Bardhi Wellness
+      </h6>
+    </div>
+    <button type="button" class="btn-close"  aria-label="Mbyll"></button>
   </div>
-  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Mbyll"></button>
-</div>
 
   <div class="offcanvas-body d-flex flex-column align-items-end">
+    <!-- MENU MOBILE (njësoj si desktop) -->
     <ul class="navbar-nav w-100 text-end mb-3">
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformation.html" data-bs-dismiss="offcanvas">Transformime</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="pricing.html" data-bs-dismiss="offcanvas">Paketat</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html" data-bs-dismiss="offcanvas">Kontakt</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="pricing.html" >Paketat</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="shop.html" >Produkti</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformation.html" >Transformime</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="about.html" >Rreth Bardhit</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="calculator.html" >Matësi i kalorive (BMI)</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html" >Kontakt</a></li>
     </ul>
-
-    <a href="login.html" class="btn btn-login w-100 mb-2" data-bs-dismiss="offcanvas">Login</a>
-    <a href="checkout.html" class="btn btn-cart w-100 justify-content-center" data-bs-dismiss="offcanvas">
-      <i class="bi bi-bag me-2"></i> Shko te checkout
-      <span class="badge ms-2 rounded-pill">1</span>
-    </a>
   </div>
 </div>
 
@@ -509,6 +507,28 @@ function addToCart(item){
       form.classList.remove('was-validated');
     });
   })();
+</script>
+
+
+
+
+<!-- Navbar Mobile Logic -->
+<script>
+  // Fikso që çdo klikim në offcanvas të mbyllë menunë dhe të ndjekë linkun
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileNavLinks = document.querySelectorAll('#mobileNav .nav-link');
+    const mobileNav = document.getElementById('mobileNav');
+    const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(mobileNav);
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        // mbyll menunë
+        bsOffcanvas.hide();
+        // lejo navigimin pas 200ms që të ketë efekt mbyllja
+        setTimeout(() => { window.location.href = link.href; }, 200);
+      });
+    });
+  });
 </script>
 
 

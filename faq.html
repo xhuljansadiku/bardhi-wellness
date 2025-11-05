@@ -1,0 +1,572 @@
+   <!doctype html>
+  <html lang="sq">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bardhi Wellness – Trajnim & Nutrition</title>
+    <meta name="description" content="Platformë trajnimi dhe ushqimi – programe të personalizuara, aplikacion mobil dhe mbështetje nga trajnerë." />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/pricing.css">
+
+  </head>
+  <body>
+ 
+ 
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top main-nav">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+      <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
+      <span>Bardhi Wellness</span>
+    </a>
+
+    <!-- Toggler (hap OFFCANVAS në mobile) -->
+    <button class="navbar-toggler d-lg-none" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#mobileNav"
+            aria-controls="mobileNav" aria-label="Hap menunë">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu DESKTOP -->
+    <div class="d-none d-lg-flex ms-auto align-items-center">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Produkti</a></li>
+        <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Rreth Bardhit</a></li>
+        <li class="nav-item"><a class="nav-link" href="calculator.html">Matësi i kalorive(BMI)</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- OFFCANVAS – MENU MOBILE FULLSCREEN -->
+<div class="offcanvas offcanvas-end w-100 bg-white" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel" data-bs-scroll="true">
+  <div class="offcanvas-header border-bottom align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="assets/images/bu-logo.png" alt="Bardhi Wellness Logo" class="offcanvas-logo me-2" style="height:32px;width:auto;" href="index.html">
+      <h6 class="offcanvas-title m-0 d-flex align-items-center" id="mobileNavLabel">
+        Bardhi Wellness
+      </h6>
+    </div>
+    <!-- FIX: shto data-bs-dismiss -->
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Mbyll"></button>
+  </div>
+
+  <div class="offcanvas-body d-flex flex-column align-items-end">
+    <ul class="navbar-nav w-100 text-end mb-3">
+      <!-- FIX: shto data-bs-dismiss te çdo link -->
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="pricing.html" data-bs-dismiss="offcanvas">Paketat</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="shop.html" data-bs-dismiss="offcanvas">Produkti</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformation.html" data-bs-dismiss="offcanvas">Transformime</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="about.html" data-bs-dismiss="offcanvas">Rreth Bardhit</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="calculator.html" data-bs-dismiss="offcanvas">Matësi i kalorive (BMI)</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html" data-bs-dismiss="offcanvas">Kontakt</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- ============ 8- FAQ & PËRFSHIRJET ============ -->
+<section id="faq" class="py-6 faq-board">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Indeksi & Kërkimi -->
+      <aside class="col-lg-4">
+        <div class="faq-aside sticky-lg-top" style="top: calc(var(--nav-h,64px) + 14px);">
+          <h2 class="section-title mb-2">Pyetje të shpeshta</h2>
+          <p class="text-muted mb-3">Nuk e gjen përgjigjen? <a href="contact.html">Na shkruaj</a>.</p>
+
+          <div class="search-wrap">
+            <i class="bi bi-search"></i>
+            <input id="faqSearch" type="search" class="form-control" placeholder="Kërko pyetje…">
+          </div>
+
+          <nav class="faq-index mt-3">
+            <div class="small text-uppercase text-muted mb-2">Shko te:</div>
+            <ul class="list-unstyled m-0" id="faqIndex">
+              <li><a href="#q1">A funksionon programi edhe pa pajisje?</a></li>
+              <li><a href="#q2">Si llogariten kaloritë dhe makrot?</a></li>
+              <li><a href="#q3">A mund ta anuloj abonimin kur të dua?</a></li>
+              <li><a href="#q4">Cila paketë më përshtatet?</a></li>
+              <li><a href="#q5">Si bëhet pagesa? A është e sigurt?</a></li>
+              <li><a href="#q6">Çfarë është “L-Carnitine Capsules” në Shop?</a></li>
+              <li><a href="#q7">A keni rimbursim për paketat?</a></li>
+              <li><a href="#q8">Sa shpejt marr planin tim?</a></li>
+              <li><a href="#q9">A jepni këshilla mjekësore?</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Përgjigjet (karta të hapura) -->
+      <div class="col-lg-8">
+        <article class="faq-card" id="q1">
+          <h3 class="faq-q"><span class="q-dot">Q1</span> A funksionon programi edhe pa pajisje?</h3>
+          <div class="faq-a">
+            Po. Programet tona kanë versione për <strong>Shtëpi</strong> dhe <strong>Palestër</strong>. Përshtatim ushtrimet sipas pajisjeve që ke në dispozicion.
+          </div>
+        </article>
+
+        <article class="faq-card" id="q2">
+          <h3 class="faq-q"><span class="q-dot">Q2</span> Si llogariten kaloritë dhe makrot?</h3>
+          <div class="faq-a">
+            Ne përllogarisim kaloritë/makrot sipas qëllimit tënd (dobësim / rritje mase) dhe i rishikojmë periodikisht bazuar në progres.
+          </div>
+        </article>
+
+        <article class="faq-card" id="q3">
+          <h3 class="faq-q"><span class="q-dot">Q3</span> A mund ta anuloj abonimin kur të dua?</h3>
+          <div class="faq-a">
+            Po. <strong>Abonimi Monthly (€199/muaj)</strong> është pa kontratë afatgjatë. Mund ta ndalosh para rinovimit të radhës.
+          </div>
+        </article>
+
+        <article class="faq-card" id="q4">
+          <h3 class="faq-q"><span class="q-dot">Q4</span> Cila paketë më përshtatet?</h3>
+          <div class="faq-a">
+            <ul class="list-check mb-0">
+              <li><strong>Basic (€299)</strong> – Plan ushqimi bazik + ushtrime (Gym ose Shtëpi) + konsultë javore.</li>
+              <li><strong>Premium (€399)</strong> – Ushqim + ushtrime (Gym &amp; Shtëpi) + plan 8–16 javë + 2–3 konsulta.</li>
+              <li><strong>Supreme (€499)</strong> – Të gjitha nga Premium + plan i detajuar suplemente + program i avancuar + konsultë 24/7 + analiza javore e progresit.</li>
+              <li><strong>Monthly (€199/muaj)</strong> – Plane javore, video-konsulta dhe mbështetje e vazhdueshme.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="faq-card" id="q5">
+          <h3 class="faq-q"><span class="q-dot">Q5</span> Si bëhet pagesa? A është e sigurt?</h3>
+          <div class="faq-a">
+            Pagesat procesohen në checkout me metoda të sigurta (kartë). Të dhënat trajtohen sipas praktikave më të mira të sigurisë.
+          </div>
+        </article>
+
+        <article class="faq-card" id="q6">
+          <h3 class="faq-q"><span class="q-dot">Q6</span> Çfarë është “L-Carnitine Capsules” në Shop?</h3>
+          <div class="faq-a">
+            Është suplement për fokus dhe energji në stërvitje, që mund të mbështesë humbjen e peshës kur kombinohet me dietë dhe aktivitet. Përdor sipas udhëzimit në etiketë.
+          </div>
+        </article>
+
+        <article class="faq-card" id="q7">
+          <h3 class="faq-q"><span class="q-dot">Q7</span> A keni rimbursim për paketat?</h3>
+          <div class="faq-a">
+            Për paketat “one-time” (Basic/Premium/Supreme) ofrojmë rimbursim vetëm para dërgimit të planit të personalizuar. Për abonimet, ndalohet rinovimi i radhës.
+          </div>
+        </article>
+
+        <article class="faq-card" id="q8">
+          <h3 class="faq-q"><span class="q-dot">Q8</span> Sa shpejt marr planin tim?</h3>
+          <div class="faq-a">
+            Brenda një afati të shkurtër pas plotësimit të pyetësorit fillestar (zakonisht 24–72 orë pune për personalizim).
+          </div>
+        </article>
+
+        <article class="faq-card" id="q9">
+          <h3 class="faq-q"><span class="q-dot">Q9</span> A jepni këshilla mjekësore?</h3>
+          <div class="faq-a">
+            Jo. Ne ofrojmë trajnim dhe këshillim fitnesi/nutricioni. Për gjendje shëndetësore specifike, konsultohu me mjekun përpara se të nisësh.
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ 
+ 
+<!-- ========= FOOTER ========= -->
+<footer class="site-footer text-white mt-auto text-center">
+  <div class="container py-5 py-lg-6">
+    <div class="row g-4 g-lg-5 justify-content-center text-center">
+
+      <!-- Brand + Social -->
+      <div class="col-12 col-lg-3">
+        <a class="footer-brand d-inline-flex align-items-center justify-content-center text-white text-decoration-none mb-3" href="index.html">
+          <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="footer-logo me-2" />
+          <span class="fw-bold">Bardhi Wellness</span>
+        </a>
+        <p class="text-white-50 mb-4">
+          Trajnim & ushqim të personalizuar me mbështetje reale nga trajnerë.<br>
+          Ndërto trupin, mendjen dhe stilin e jetës që dëshiron.
+        </p>
+
+        <div class="d-flex gap-2 justify-content-center">
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="mailto:bardhiwellness@gmail.com" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://wa.me/4917684132643?text=P%C3%ABrsh%C3%ABndetje%20Bardhi%2C%20dua%20info%20rreth%20paketave." target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.instagram.com/bardhi.uka" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.tiktok.com/@bardhiuka" aria-label="TikTok">
+            <i class="bi bi-tiktok"></i>
+          </a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.youtube.com/@bardhiuka" aria-label="YouTube">
+            <i class="bi bi-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-12 col-lg-3">
+        <h6 class="text-uppercase small fw-semibold mb-3"><b>Faqet</b></h6>
+        <ul class="list-unstyled footer-links m-0">
+          <li><a href="pricing.html" class="link-light">Paketat</a></li>
+          <li><a href="shop.html" class="link-light">Shop</a></li>
+          <li><a href="transformation.html" class="link-light">Transformime</a></li>
+          <li><a href="about.html" class="link-light">Rreth Bardhit</a></li>
+          <li><a href="calculator.html" class="link-light">Matësi kalorive (BMI)</a></li>
+          <li><a href="contact.html" class="link-light">Kontakt</a></li>
+        </ul>
+      </div>
+
+   <!-- Support & Ligjore -->
+<div class="col-12 col-lg-3">
+  <h6 class="text-uppercase small fw-semibold mb-3"><b>Mbështetje & Ligjore <br> <small>(Unterstützung & Recht)</small> </b></h6>
+  <ul class="list-unstyled footer-links m-0">
+    <li><a href="faq.html" class="link-light">Pyetje të shpeshta (FAQ)</a></li>
+    <li><a href="impressum.html" class="link-light">Të dhënat ligjore - (Impressum)</a></li>
+    <li><a href="datenschutz.html" class="link-light">Privatësia - (Datenschutz)</a></li>
+    <li><a href="agb.html" class="link-light">Kushtet e përgjithshme - (AGB)</a></li>
+    <li><a href="widerruf.html" class="link-light">E drejta e tërheqjes - (Widerrufsrecht)</a></li>
+    <li><a href="rimbursime.html" class="link-light">Rimbursime & Kthime</a></li>
+  </ul>
+</div>
+
+
+      <!-- Newsletter -->
+      <div class="col-12 col-lg-3">
+        <h6 class="text-uppercase small fw-semibold mb-3"><b>Qëndro i informuar</b></h6>
+        <p class="text-white-50 mb-3">Merr këshilla, oferta dhe lajme në inbox.</p>
+
+        <form id="newsletterForm" novalidate class="needs-validation mx-auto" style="max-width: 350px;">
+          <div class="input-group input-group-lg mb-2">
+            <span class="input-group-text bg-transparent text-white-50 border-secondary-subtle"><i class="bi bi-at"></i></span>
+            <input type="email" id="nlEmail" class="form-control bg-transparent text-white border-secondary-subtle" placeholder="Email-i yt" required />
+          </div>
+          <div class="invalid-feedback d-block small" id="nlError" style="display:none;">Shkruaj një email të vlefshëm.</div>
+          <button class="btn btn-brand w-100 mt-2" type="submit">Abonohu</button>
+          <div id="nlMsg" class="alert alert-success mt-3 py-2 d-none" role="alert">
+            ✅ U abonove me sukses! Faleminderit.
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="footer-bottom border-top border-secondary-subtle">
+    <div class="container py-3 text-center small text-white-50">
+      © <span id="year"></span> Bardhi Wellness. Të gjitha të drejtat e rezervuara.
+    </div>
+  </div>
+</footer>
+<!-- ======== /FOOTER ======== -->
+
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" aria-label="Kthehu lart">
+  <i class="bi bi-arrow-up-short"></i>
+</button>
+
+<script>
+  // FAQ: opsionale – auto-scroll te pyetja e hapur
+  document.addEventListener('shown.bs.collapse', function (e) {
+    const acc = e.target.closest('.accordion-item');
+    if (acc) acc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // Lead form (nëse e përdor diku tjetër me id="leadForm")
+  (function(){
+    const lead = document.getElementById('leadForm');
+    if(!lead) return;
+    lead.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      if(!lead.checkValidity()){
+        ev.stopPropagation();
+        lead.classList.add('was-validated');
+        return;
+      }
+      document.getElementById('formMsg')?.classList.remove('d-none');
+      lead.reset(); lead.classList.remove('was-validated');
+    });
+  })();
+
+  // Contact form
+  (function(){
+    const form = document.getElementById('contactForm');
+    if(!form) return;
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      if(!form.checkValidity()){
+        ev.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+      }
+      // këtu mund të dërgosh me fetch() te një endpoint tëndin
+      document.getElementById('cFormMsg')?.classList.remove('d-none');
+      form.reset(); form.classList.remove('was-validated');
+    });
+  })();
+</script>
+
+<script>
+  // vendos automatikisht vitin
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+/* ---------------- CART helpers ---------------- */
+function readCart(){
+  try{ return JSON.parse(localStorage.getItem('cart')||'null'); }catch(e){ return null; }
+}
+function writeCart(c){ localStorage.setItem('cart', JSON.stringify(c)); }
+function ensureCart(){
+  let c = readCart();
+  if(!c || !Array.isArray(c.items)) c = { items:[], currency:'EUR', updatedAt:Date.now() };
+  return c;
+}
+function addToCart(item){
+  const c = ensureCart();
+  // merge sipas sku + mode (p.sh. e njëjta pako por 'sub' vs 'pay' janë të ndryshme)
+  const i = c.items.find(x => x.sku===item.sku && x.mode===item.mode);
+  if(i){ i.qty += item.qty||1; }
+  else { c.items.push({ ...item, qty:item.qty||1 }); }
+  c.updatedAt = Date.now();
+  writeCart(c);
+}
+
+ 
+
+/* ---------------- SHOP: “Bli tani” (suplement) ---------------- */
+(function(){
+  const btn   = document.getElementById('buyNowBtn');
+  if (!btn) return;
+
+  const qtyEl = document.getElementById('qtyInput');
+  const minus = document.getElementById('qtyMinus');
+  const plus  = document.getElementById('qtyPlus');
+
+  // stepper
+  minus?.addEventListener('click', ()=> { qtyEl.value = Math.max(1,(+qtyEl.value||1)-1); });
+  plus ?.addEventListener('click', ()=> { qtyEl.value = Math.max(1,(+qtyEl.value||1)+1); });
+
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    const qty = Math.max(1, parseInt(qtyEl.value,10) || 1);
+
+    addToCart({
+      type: 'product',
+      sku:  this.dataset.sku,                 // SUPL-DBS-001
+      title:this.dataset.title,               // Suplement Dobësimi
+      price:parseFloat(this.dataset.price),   // 119
+      currency:this.dataset.currency || 'EUR',
+      image:this.dataset.image,
+      qty,
+      mode: 'pay'                             // produkt = pagesë njëherë
+    });
+
+    const base = location.pathname.replace(/[^/]*$/, '');
+    location.href = new URL(base + 'checkout.html', location.origin).toString();
+  });
+})();
+</script>
+
+<!--  Pastaj ngarko Bootstrap dhe app.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+<script>
+  const nav = document.getElementById('navMenu');
+  if (nav) {
+    nav.addEventListener('shown.bs.collapse', () => document.body.classList.add('menu-open'));
+    nav.addEventListener('hidden.bs.collapse', () => document.body.classList.remove('menu-open'));
+  }
+
+  // Effekt sticky + blur gjatë scroll
+  const navbar = document.querySelector('.main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+</script>
+
+<style>
+      /* spacing utility (since Bootstrap <=5 s’ka py-6) */
+      .py-6{padding-top:4.5rem;padding-bottom:4.5rem}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function (el) {
+      new bootstrap.Tooltip(el);
+    });
+  });
+</script>
+
+<script>
+  const backToTop = document.getElementById('backToTop');
+
+  // Shfaq / fsheh butonin
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  // Scroll smooth deri në fillim
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<script>
+  document.getElementById("copyBtn").addEventListener("click", function() {
+    const code = document.getElementById("couponCode").textContent;
+    navigator.clipboard.writeText(code);
+    const msg = document.getElementById("copyMsg");
+    msg.style.display = "block";
+    setTimeout(() => msg.style.display = "none", 2000);
+  });
+</script>
+
+<!-- Navbar Mobile Logic -->
+<script>
+  // Fikso që çdo klikim në offcanvas të mbyllë menunë dhe të ndjekë linkun
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileNavLinks = document.querySelectorAll('#mobileNav .nav-link');
+    const mobileNav = document.getElementById('mobileNav');
+    const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(mobileNav);
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        // mbyll menunë
+        bsOffcanvas.hide();
+        // lejo navigimin pas 200ms që të ketë efekt mbyllja
+        setTimeout(() => { window.location.href = link.href; }, 200);
+      });
+    });
+  });
+</script>
+
+<script>
+(function(){
+  const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+  function animateCount(el, duration = 3000){ // ndrysho këtu sipas shpejtësisë që do
+    const target = parseFloat(el.dataset.count || "0");
+    const suffix = el.dataset.suffix || "";
+    const decimals = parseInt(el.dataset.decimals || "0", 10);
+    const start = 0;
+    const startTime = performance.now();
+
+    function step(now){
+      const p = Math.min((now - startTime) / duration, 1);
+      const eased = easeOutCubic(p);
+      const val = start + (target - start) * eased;
+      el.textContent = val.toFixed(decimals) + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const container = document.querySelector('.hero-stats');
+  if(!container) return;
+ const counters = container.querySelectorAll('.stat-value[data-count]');
+
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        counters.forEach(el => {
+          if(!el.dataset.done){
+            el.dataset.done = "1";
+            animateCount(el, 3000); // këtu vendos shpejtësinë që dëshiron
+          }
+        });
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  io.observe(container);
+})();
+
+copyBtn.classList.add("copied");
+setTimeout(() => copyBtn.classList.remove("copied"), 1000);
+
+
+</script>
+
+<script>
+(function(){
+  const input = document.getElementById('faqSearch');
+  const cards = [...document.querySelectorAll('#faq .faq-card')];
+  const links = [...document.querySelectorAll('#faqIndex a')];
+
+  // Live search (filtron pyetjet & përgjigjet)
+  if(input){
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  }
+
+  // Active link on scroll (spy)
+  const byId = id => document.getElementById(id);
+  const map = links.map(a => ({ link: a, card: byId(a.getAttribute('href').slice(1)) }));
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const m = map.find(x => x.card === entry.target);
+      if(!m) return;
+      if(entry.isIntersecting){
+        links.forEach(l => l.classList.remove('is-active'));
+        m.link.classList.add('is-active');
+      }
+    });
+  }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+
+  map.forEach(x => x.card && io.observe(x.card));
+
+  // Smooth scroll manual (kompenson nav-in fiks)
+  links.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const id = a.getAttribute('href').slice(1);
+      const el = byId(id); if(!el) return;
+
+      const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64;
+      const extra = 12;
+      const y = el.getBoundingClientRect().top + window.pageYOffset - navH - extra;
+
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      // fokus te PYETJA
+      const h = el.querySelector('.faq-q'); if(h) h.setAttribute('tabindex','-1'), h.focus({preventScroll:true});
+    });
+  });
+})();
+</script>
+
+
+  </body>
+  </html>
+
+

@@ -51,7 +51,7 @@
 <div class="offcanvas offcanvas-end w-100 bg-white" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel" data-bs-scroll="true">
   <div class="offcanvas-header border-bottom align-items-center">
     <div class="d-flex align-items-center">
-      <img src="assets/images/bu-logo.png" alt="Bardhi Wellness Logo" class="offcanvas-logo me-2" style="height:32px;width:auto;">
+      <img src="assets/images/bu-logo.png" alt="Bardhi Wellness Logo" class="offcanvas-logo me-2" style="height:32px;width:auto;" href="index.html">
       <h6 class="offcanvas-title m-0 d-flex align-items-center" id="mobileNavLabel">
         Bardhi Wellness
       </h6>
@@ -92,13 +92,7 @@
 <div class="hero-stats mt-5 fade-up delay-3">
   <div class="row row-cols-2 row-cols-md-5 justify-content-center g-4">
 
-    <div class="col">
-      <div class="stat-card text-center">
-        <div class="stat-icon mb-2">🔥</div>
-        <div class="stat-value h3 fw-bold mb-0" data-count="10" data-suffix="M+">0</div>
-        <div class="stat-label small text-uppercase text-white">Shikime mujore</div>
-      </div>
-    </div>
+ 
 
     <div class="col">
       <div class="stat-card text-center">
@@ -116,7 +110,13 @@
       </div>
     </div>
 
-
+   <div class="col">
+      <div class="stat-card text-center">
+        <div class="stat-icon mb-2">🔥</div>
+        <div class="stat-value h3 fw-bold mb-0" data-count="10" data-suffix="M+">0</div>
+        <div class="stat-label small text-uppercase text-white">Shikime mujore</div>
+      </div>
+    </div>
 
     <div class="col">
       <div class="stat-card text-center">
@@ -885,74 +885,127 @@
     </div>
   </div>
 </section>
+ 
+<!-- ========= FOOTER ========= -->
+<footer class="site-footer text-white mt-auto text-center">
+  <div class="container py-5 py-lg-6">
+    <div class="row g-4 g-lg-5 justify-content-center text-center">
 
-<!-- ===== 10- FOOTER ===== -->
-<footer id="footer-dark" class="py-5">
-  <div class="container">
-    <div class="row g-4">
-
-      <!-- Brand -->
-      <div class="col-md-6 col-lg-4">
-        <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
-  <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
-  <span>Bardhi Wellness</span>
-</a> 
-        <p class="text-light opacity-75 small">
-        Trajnime të personalizuara, plane ushqimore dhe programe fitnesi që transformojnë trupin dhe mendjen.
+      <!-- Brand + Social -->
+      <div class="col-12 col-lg-3">
+        <a class="footer-brand d-inline-flex align-items-center justify-content-center text-white text-decoration-none mb-3" href="index.html">
+          <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="footer-logo me-2" />
+          <span class="fw-bold">Bardhi Wellness</span>
+        </a>
+        <p class="text-white-50 mb-4">
+          Trajnim & ushqim të personalizuar me mbështetje reale nga trajnerë.<br>
+          Ndërto trupin, mendjen dhe stilin e jetës që dëshiron.
         </p>
 
-
-
-
-        <div class="d-flex gap-3 mt-3 social-links">
-          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-          <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+        <div class="d-flex gap-2 justify-content-center">
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="mailto:bardhiwellness@gmail.com" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://wa.me/4917684132643?text=P%C3%ABrsh%C3%ABndetje%20Bardhi%2C%20dua%20info%20rreth%20paketave." target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.instagram.com/bardhi.uka" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.tiktok.com/@bardhiuka" aria-label="TikTok">
+            <i class="bi bi-tiktok"></i>
+          </a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.youtube.com/@bardhiuka" aria-label="YouTube">
+            <i class="bi bi-youtube"></i>
+          </a>
         </div>
       </div>
 
-      <!-- Company -->
-      <div class="col-md-6 col-lg-2">
-        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Kompania</h6>
-        <ul class="list-unstyled small footer-links">
-          <li><a href="/about.html">Rreth Bardhit</a></li>
-          <li><a href="/packages.html">Programet</a></li>
-          <li><a href="/transformation.html">Transformime</a></li>
-          <li><a href="/shop.html">Produkt</a></li>
+      <!-- Quick Links -->
+      <div class="col-12 col-lg-3">
+        <h6 class="text-uppercase small fw-semibold mb-3"><b>Faqet</b></h6>
+        <ul class="list-unstyled footer-links m-0">
+          <li><a href="pricing.html" class="link-light">Paketat</a></li>
+          <li><a href="shop.html" class="link-light">Shop</a></li>
+          <li><a href="transformation.html" class="link-light">Transformime</a></li>
+          <li><a href="about.html" class="link-light">Rreth Bardhit</a></li>
+          <li><a href="calculator.html" class="link-light">Matësi kalorive (BMI)</a></li>
+          <li><a href="contact.html" class="link-light">Kontakt</a></li>
         </ul>
       </div>
 
-      <!-- Support -->
-      <div class="col-md-6 col-lg-3">
-        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Mbështetje</h6>
-        <ul class="list-unstyled small footer-links">
-          <li><a href="/contact.html">Kontakt</a></li>
-          <li><a href="#">Politika e privatësisë</a></li>
-          <li><a href="#">Kushtet e përdorimit</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
+   <!-- Support & Ligjore -->
+<div class="col-12 col-lg-3">
+  <h6 class="text-uppercase small fw-semibold mb-3"><b>Mbështetje & Ligjore <br> <small>(Unterstützung & Recht)</small> </b></h6>
+  <ul class="list-unstyled footer-links m-0">
+    <li><a href="faq.html" class="link-light">Pyetje të shpeshta (FAQ)</a></li>
+    <li><a href="impressum.html" class="link-light">Të dhënat ligjore - (Impressum)</a></li>
+    <li><a href="datenschutz.html" class="link-light">Privatësia - (Datenschutz)</a></li>
+    <li><a href="agb.html" class="link-light">Kushtet e përgjithshme - (AGB)</a></li>
+    <li><a href="widerruf.html" class="link-light">E drejta e tërheqjes - (Widerrufsrecht)</a></li>
+    <li><a href="rimbursime.html" class="link-light">Rimbursime & Kthime</a></li>
+  </ul>
+</div>
+
 
       <!-- Newsletter -->
-      <div class="col-md-6 col-lg-3">
-        <h6 class="fw-bold text-uppercase mb-3 text-white-50">Buletini</h6>
-        <p class="small text-light opacity-75 mb-2">Abonohu për këshilla dhe oferta ekskluzive.</p>
-        <form class="d-flex flex-column flex-sm-row gap-2"
-              onsubmit="event.preventDefault(); document.getElementById('nlMsg').classList.remove('d-none');">
-          <input type="email" class="form-control" placeholder="Emaili juaj" required />
-          <button class="btn btn-brand" type="submit">Abonohu</button>
+      <div class="col-12 col-lg-3">
+        <h6 class="text-uppercase small fw-semibold mb-3"><b>Qëndro i informuar</b></h6>
+        <p class="text-white-50 mb-3">Merr këshilla, oferta dhe lajme në inbox.</p>
+
+        <form id="newsletterForm" novalidate class="needs-validation mx-auto" style="max-width: 350px;">
+          <div class="input-group input-group-lg mb-2">
+            <span class="input-group-text bg-transparent text-white-50 border-secondary-subtle"><i class="bi bi-at"></i></span>
+            <input type="email" id="nlEmail" class="form-control bg-transparent text-white border-secondary-subtle" placeholder="Email-i yt" required />
+          </div>
+          <div class="invalid-feedback d-block small" id="nlError" style="display:none;">Shkruaj një email të vlefshëm.</div>
+          <button class="btn btn-brand w-100 mt-2" type="submit">Abonohu</button>
+          <div id="nlMsg" class="alert alert-success mt-3 py-2 d-none" role="alert">
+            ✅ U abonove me sukses! Faleminderit.
+          </div>
         </form>
-        <div id="nlMsg" class="small text-success mt-2 d-none">✅ U abonuat me sukses!</div>
       </div>
+      
     </div>
+  </div>
 
-    <hr class="my-4 border-secondary opacity-25">
-
-    <div class="text-center small text-light opacity-75">
-      © <span id="year"></span> Bardhi Wellness - Të gjitha të drejtat e rezervuara.
+  <div class="footer-bottom border-top border-secondary-subtle">
+    <div class="container py-3 text-center small text-white-50">
+      © <span id="year"></span> Bardhi Wellness. Të gjitha të drejtat e rezervuara.
     </div>
   </div>
 </footer>
+<!-- ======== /FOOTER ======== -->
+
+<!-- ================== COOKIE CONSENT ================== -->
+<div id="cookieConsent" class="position-fixed bottom-0 start-50 translate-middle-x bg-dark text-white p-4 rounded-4 shadow-lg mb-3 mx-3" style="z-index: 2000; max-width: 480px; display:none;">
+  <div class="d-flex flex-column gap-2">
+    <!-- Title -->
+    <div class="d-flex align-items-center gap-2 mb-1">
+      <i class="bi bi-cookie fs-3 text-warning"></i>
+      <h6 class="m-0 fw-bold">Këto faqe përdorin cookies 🍪</h6>
+    </div>
+
+    <!-- Text SQ/DE -->
+    <div id="cookieText" class="small text-light opacity-75">
+      Ne përdorim cookies për të përmirësuar përvojën tuaj në faqe, për analiza dhe marketing të kufizuar. <br>   
+      Duke vazhduar, pranon <a href="datenschutz.html" class="link-light text-decoration-underline">Politikën e Privatësisë</a>.
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex gap-2 mt-2">
+      <button id="cookieAccept" class="btn btn-success btn-sm flex-fill fw-semibold">Prano</button>
+      <button id="cookieDecline" class="btn btn-outline-light btn-sm flex-fill">Refuzo</button>
+    </div>
+
+    <!-- Language toggle -->
+    <div class="text-center mt-2">
+      <button id="langToggle" class="btn btn-link btn-sm text-white-50 text-decoration-none">🇩🇪 Deutsch</button>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- BACK TO TOP BUTTON -->
 <button id="backToTop" aria-label="Kthehu lart">
@@ -1241,6 +1294,122 @@ setTimeout(() => copyBtn.classList.remove("copied"), 1000);
     });
   });
 })();
+</script>
+
+<script>
+document.getElementById("newsletterForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const emailField = document.getElementById("nlEmail");
+  const msg = document.getElementById("nlMsg");
+  const err = document.getElementById("nlError");
+
+  const email = emailField.value.trim();
+
+  // validim bazik
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    err.style.display = "block";
+    msg.classList.add("d-none");
+    return;
+  } else {
+    err.style.display = "none";
+  }
+
+  // Linku i Google Apps Script
+  const url = "https://script.google.com/macros/s/AKfycbxv066AU-2lYVdFZ6a3XfaiG61lqTZ8zr9WzLCZLpInuhEgu0VAiUYNNNo_sa6J__14nA/exec";
+
+  try {
+    await fetch(url, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email })
+    });
+
+    msg.classList.remove("d-none");
+    emailField.value = "";
+  } catch (error) {
+    console.error("Gabim:", error);
+    err.textContent = "Gabim gjatë dërgimit. Provo përsëri.";
+    err.style.display = "block";
+  }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const box   = document.getElementById("cookieConsent");
+  const title = box.querySelector("h6");
+  const text  = document.getElementById("cookieText");
+  const acceptBtn = document.getElementById("cookieAccept");
+  const declineBtn= document.getElementById("cookieDecline");
+  const langBtn   = document.getElementById("langToggle");
+
+  let lang = localStorage.getItem("lang") || "sq";
+
+  const copy = {
+    sq: {
+      title: "Këto faqe përdorin cookies 🍪",
+      text: `Ne përdorim cookies për të përmirësuar përvojën tuaj në faqe, për analiza dhe marketing të kufizuar.
+      Duke vazhduar, pranon <a href="datenschutz.html" class="link-light text-decoration-underline">Politikën e Privatësisë</a>.`,
+      accept: "Prano",
+      decline: "Refuzo",
+      switch: "🇩🇪 Deutsch"
+    },
+    de: {
+      title: "Diese Website verwendet Cookies 🍪",
+      text: `Wir verwenden Cookies, um Ihre Nutzererfahrung zu verbessern, für Analyse und begrenzte Marketingzwecke.
+      Durch die weitere Nutzung stimmen Sie unserer <a href="datenschutz.html" class="link-light text-decoration-underline">Datenschutzrichtlinie</a> zu.`,
+      accept: "Annehmen",
+      decline: "Ablehnen",
+      switch: "🇦🇱 Shqip"
+    }
+  };
+
+  function applyLang(l){
+    const c = copy[l];
+    title.textContent = c.title;
+    text.innerHTML    = c.text;
+    acceptBtn.textContent = c.accept;
+    declineBtn.textContent= c.decline;
+    langBtn.textContent   = c.switch;
+    localStorage.setItem("lang", l);
+    lang = l;
+  }
+  applyLang(lang);
+
+  langBtn.addEventListener("click", () => applyLang(lang === "sq" ? "de" : "sq"));
+
+  // shfaq nëse s'ka zgjedhje më parë
+  if (!localStorage.getItem("cookieAccepted")) box.style.display = "block";
+
+  // ruaj zgjedhjen dhe mbyll
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieAccepted", "true");
+    box.remove();
+  });
+  declineBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieAccepted", "false");
+    box.remove();
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const box = document.getElementById("cookieConsent");
+  const key = "cookieAccepted";
+
+  // nëse s'ka zgjedhje, shto padding-body për mos mbuluar CTA
+  if (!localStorage.getItem(key)) {
+    document.body.style.paddingBottom = "110px";
+  }
+  const clearPad = () => { document.body.style.paddingBottom = ""; };
+
+  document.getElementById("cookieAccept")?.addEventListener("click", clearPad);
+  document.getElementById("cookieDecline")?.addEventListener("click", clearPad);
+});
 </script>
 
 

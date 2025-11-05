@@ -1,4 +1,5 @@
-<!doctype html>
+ 
+     <!doctype html>
   <html lang="sq">
   <head>
     <meta charset="utf-8" />
@@ -11,18 +12,20 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/pricing.css">
+
   </head>
   <body>
+ 
  
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top main-nav">
   <div class="container">
-  <!-- Brand -->
-<a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
-  <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
-  <span>Bardhi Wellness</span>
-</a>
-
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+      <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
+      <span>Bardhi Wellness</span>
+    </a>
 
     <!-- Toggler (hap OFFCANVAS në mobile) -->
     <button class="navbar-toggler d-lg-none" type="button"
@@ -34,7 +37,6 @@
     <!-- Menu DESKTOP -->
     <div class="d-none d-lg-flex ms-auto align-items-center">
       <ul class="navbar-nav me-3">
-
         <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
         <li class="nav-item"><a class="nav-link" href="shop.html">Produkti</a></li>
         <li class="nav-item"><a class="nav-link" href="transformation.html">Transformime</a></li>
@@ -55,192 +57,58 @@
         Bardhi Wellness
       </h6>
     </div>
-    <button type="button" class="btn-close"  aria-label="Mbyll"></button>
+    <!-- FIX: shto data-bs-dismiss -->
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Mbyll"></button>
   </div>
 
   <div class="offcanvas-body d-flex flex-column align-items-end">
-    <!-- MENU MOBILE (njësoj si desktop) -->
     <ul class="navbar-nav w-100 text-end mb-3">
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="pricing.html" >Paketat</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="shop.html" >Produkti</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformation.html" >Transformime</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="about.html" >Rreth Bardhit</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="calculator.html" >Matësi i kalorive (BMI)</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html" >Kontakt</a></li>
+      <!-- FIX: shto data-bs-dismiss te çdo link -->
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="pricing.html" data-bs-dismiss="offcanvas">Paketat</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="shop.html" data-bs-dismiss="offcanvas">Produkti</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformation.html" data-bs-dismiss="offcanvas">Transformime</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="about.html" data-bs-dismiss="offcanvas">Rreth Bardhit</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="calculator.html" data-bs-dismiss="offcanvas">Matësi i kalorive (BMI)</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html" data-bs-dismiss="offcanvas">Kontakt</a></li>
     </ul>
   </div>
 </div>
 
 
-<!-- ================= 5- Packages - PRICING ================= -->
-<section id="pricing" class="py-6 pricing-dark">
-  <div class="container">
-
-    <!-- One-time packages -->
-    <div class="text-center mb-5">
-      <h2 class="section-title mb-2">Paketat</h2>
-      <p class="section-lead">Zgjidh planin që të përshtatet më së miri.</p>
-    </div>
-
-    <div class="row g-4 align-items-stretch">
-
-      <!-- Basic -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-lg pkg elevation pkg--ghost">
-          <div class="position-relative">
-            <div class="ratio ratio-16x9 pkg__media" style="--img:url('../images/pako-basic.jpg')"></div>
-          </div>
-          <div class="card-body d-flex flex-column">
-            <div class="d-flex align-items-center gap-2">
-              <span class="pkg__dot"></span>
-              <h5 class="card-title mb-0 text-white">Pako Basic</h5>
-            </div>
-      
-
-            <div class="mt-3">
-              <div class="h4 m-0 text-white"><strong>€299,00</strong> <span class="fs-6 opacity-75">EUR</span></div>
-            </div>
-
-            <ul class="list-unstyled mt-3 mb-0 pkg__features">
-              <li>Plan bazik i ushqimi</li>
-              <li>Ushtrime (Gym ose Shtëpi)</li>
-              <li>Konsultë javore</li>
-              <li class="feat-miss">Plan i detajuar i Suplementeve</li>
-              <li class="feat-miss">Program i personalizuar i avancuar</li>
-              <li class="feat-miss">Konsulta 24/7</li>
-              <li class="feat-miss">Analiza e thellë javore e progresit</li>
-            </ul>
-
-            <!-- PATCH: Basic -->
-<a href="https://buy.stripe.com/00w14o4xD1EUcJaboC5wI04"
-   class="btn btn-brand-dark w-100 mt-4">
-  Bli tani
-</a>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Premium (featured) -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-xl pkg pkg--featured position-relative">
-          <div class="pkg__ribbon">Më i përzgjedhur</div>
-          <div class="position-relative">
-            <div class="ratio ratio-16x9 pkg__media" style="--img:url('../images/pako-premium.jpg')"></div>
-          </div>
-          <div class="card-body d-flex flex-column">
-            <div class="d-flex align-items-center gap-2">
-              <span class="pkg__dot"></span>
-              <h5 class="card-title mb-0 text-white">Pako Premium</h5>
-            </div>
-     
-
-            <div class="mt-3">
-              <div class="h4 m-0 text-white"><strong>€399,00</strong> <span class="fs-6 opacity-75">EUR</span></div>
-            </div>
-
-            <ul class="list-unstyled mt-3 mb-0 pkg__features">
-              <li>Ushqimi</li>
-              <li>Ushtrime (Gym &amp; Shtëpi)</li>
-              <li>Plan 8–16 javë</li>
-              <li>2–3 konsulta me trajner</li>
-              <li class="feat-miss">Plan i detajuar i Suplementeve</li>
-              <li class="feat-miss">Program i personalizuar i avancuar</li>
-              <li class="feat-miss">Konsulta 24/7</li>
-              <li class="feat-miss">Analiza e thellë javore e progresit</li>
-            </ul>
-
-            <!-- PATCH: Premium -->
-            <a href="https://buy.stripe.com/7sYdRa7JPbfu10sboC5wI03"
-            class="btn btn-brand-dark w-100 mt-4">
-            Bli tani
-            </a>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Supreme -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-lg pkg">
-          <div class="position-relative">
-            <div class="ratio ratio-16x9 pkg__media" style="--img:url('../images/pako-supreme.jpg')"></div>
-          </div>
-          <div class="card-body d-flex flex-column">
-            <div class="d-flex align-items-center gap-2">
-              <span class="pkg__dot"></span>
-              <h5 class="card-title mb-0 text-white">Pako Supreme</h5>
-            </div>
- 
-
-            <div class="mt-3">
-              <div class="h4 m-0 text-white"><strong>€499,00</strong> <span class="fs-6 opacity-75">EUR</span></div>
-            </div>
-
-            <ul class="list-unstyled mt-3 mb-0 pkg__features">
-              <li>Ushqimi</li>
-              <li>Ushtrime (Gym &amp; Shtëpi)</li>
-              <li>Plan i detajuar i Suplementeve</li>
-              <li>Program i personalizuar i avancuar</li>
-              <li>Konsulta 24/7</li>
-              <li>Analiza e thellë javore e progresit</li>
-            </ul>
-
-          <!-- PATCH: Supreme -->
-          <a href="https://buy.stripe.com/7sYcN6e8dcjydNe50e5wI02"
-            class="btn btn-brand-dark w-100 mt-4">
-            Bli tani
-          </a>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Monthly subscription -->
-    <div class="text-center my-5">
-      <h3 class="section-title mb-2">Abonimi mujor</h3>
-      <p class="section-lead">Fleksibël, anulo kur të duash.</p>
-    </div>
-
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-10 col-lg-8">
-        <div class="card border-0 shadow-xl pkg pkg--sub d-md-flex flex-md-row overflow-hidden">
-          <div class="ratio ratio-16x9 pkg__media flex-grow-1" style="--img:url('../images/pako-monthly.jpg')"></div>
-          <div class="card-body d-flex flex-column flex-grow-1">
-            <div class="d-flex align-items-center gap-2">
-              <span class="pkg__dot"></span>
-              <h5 class="card-title mb-0 text-white">Pako Monthly</h5>
-            </div>
- 
-
-            <div class="mt-3">
-              <div class="h4 m-0 text-white"><strong>€199,00</strong> <span class="fs-6 opacity-75">EUR/muaj</span></div>
-            </div>
-
-            <ul class="list-unstyled mt-3 mb-0 pkg__features">
-              <li>Plane të ndryshme javore</li>
-              <li>Video-Konsultime</li>
-              <li>Mbështetje e vazhdueshme</li>
-            </ul>
 
 
-          
 
-             <a href="https://buy.stripe.com/6oUeVee8d6Ze24w50e5wI01"
-            class="btn btn-brand-dark w-100 mt-4">
-            Abonohu tani
-          </a>
-           
-          </div>
-        </div>
-      </div>
-    </div>
+  
+<section class="py-5">
+  <div class="container" style="max-width:800px;">
+    <h1 class="fw-bold mb-4 text-center text-success">AGB – Kushtet e përgjithshme</h1>
 
+    <!-- 🇩🇪 Deutsch -->
+    <h5 class="text-success">1. Anbieter</h5>
+    <p>Bardhi Uka – Bardhi Wellness, Köln, Deutschland</p>
+
+    <h5 class="text-success">2. Leistungen</h5>
+    <p>Bardhi Wellness bietet Fitness und Ernährungspläne (digitale Produkte) sowie ein physisches Produkt (L-Carnitine Capsules) an.</p>
+
+    <h5 class="text-success">3. Zahlung</h5>
+    <p>Die Bezahlung erfolgt über Stripe oder PayPal. <br> Alle Preise sind Endpreise gemäß §19 UStG (Kleinunternehmerregelung).</p>
+
+    <h5 class="text-success">4. Rückgabe & Widerruf</h5>
+    <p>Digitale, personalisierte Pläne sind nach der Bereitstellung von der Rückgabe ausgeschlossen. <br> Physische Produkte können innerhalb von 14 Tagen zurückgegeben werden.</p>
+
+    <hr class="my-5 opacity-50">
+
+    <!-- 🇦🇱 Shqip -->
+    <h5 class="text-success">Kushtet e përgjithshme</h5>
+    <p>Planet digjitale janë të personalizuara dhe nuk mund të rimbursohen pasi të jenë dërguar. 
+        <br> Produktet fizike mund të kthehen brenda 14 ditëve në gjendje origjinale. 
+        <br>Të gjitha çmimet janë përfundimtare, pa TVSH sipas §19 UStG.</p>
   </div>
 </section>
-
+ 
+ 
+ 
+ 
 <!-- ========= FOOTER ========= -->
 <footer class="site-footer text-white mt-auto text-center">
   <div class="container py-5 py-lg-6">
@@ -338,8 +206,6 @@
   <i class="bi bi-arrow-up-short"></i>
 </button>
 
-
-
 <script>
   // FAQ: opsionale – auto-scroll te pyetja e hapur
   document.addEventListener('shown.bs.collapse', function (e) {
@@ -386,7 +252,62 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
+<script>
+/* ---------------- CART helpers ---------------- */
+function readCart(){
+  try{ return JSON.parse(localStorage.getItem('cart')||'null'); }catch(e){ return null; }
+}
+function writeCart(c){ localStorage.setItem('cart', JSON.stringify(c)); }
+function ensureCart(){
+  let c = readCart();
+  if(!c || !Array.isArray(c.items)) c = { items:[], currency:'EUR', updatedAt:Date.now() };
+  return c;
+}
+function addToCart(item){
+  const c = ensureCart();
+  // merge sipas sku + mode (p.sh. e njëjta pako por 'sub' vs 'pay' janë të ndryshme)
+  const i = c.items.find(x => x.sku===item.sku && x.mode===item.mode);
+  if(i){ i.qty += item.qty||1; }
+  else { c.items.push({ ...item, qty:item.qty||1 }); }
+  c.updatedAt = Date.now();
+  writeCart(c);
+}
+
  
+
+/* ---------------- SHOP: “Bli tani” (suplement) ---------------- */
+(function(){
+  const btn   = document.getElementById('buyNowBtn');
+  if (!btn) return;
+
+  const qtyEl = document.getElementById('qtyInput');
+  const minus = document.getElementById('qtyMinus');
+  const plus  = document.getElementById('qtyPlus');
+
+  // stepper
+  minus?.addEventListener('click', ()=> { qtyEl.value = Math.max(1,(+qtyEl.value||1)-1); });
+  plus ?.addEventListener('click', ()=> { qtyEl.value = Math.max(1,(+qtyEl.value||1)+1); });
+
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    const qty = Math.max(1, parseInt(qtyEl.value,10) || 1);
+
+    addToCart({
+      type: 'product',
+      sku:  this.dataset.sku,                 // SUPL-DBS-001
+      title:this.dataset.title,               // Suplement Dobësimi
+      price:parseFloat(this.dataset.price),   // 119
+      currency:this.dataset.currency || 'EUR',
+      image:this.dataset.image,
+      qty,
+      mode: 'pay'                             // produkt = pagesë njëherë
+    });
+
+    const base = location.pathname.replace(/[^/]*$/, '');
+    location.href = new URL(base + 'checkout.html', location.origin).toString();
+  });
+})();
+</script>
 
 <!--  Pastaj ngarko Bootstrap dhe app.js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -420,8 +341,6 @@
   });
 </script>
 
- 
-
 <script>
   const backToTop = document.getElementById('backToTop');
 
@@ -440,15 +359,15 @@
   });
 </script>
 
-
 <script>
-  // Hiq çdo 'active' nga linket e nav-it në këtë faqe
-  document.querySelectorAll('.navbar .nav-link.active')
-    .forEach(a => a.classList.remove('active'));
+  document.getElementById("copyBtn").addEventListener("click", function() {
+    const code = document.getElementById("couponCode").textContent;
+    navigator.clipboard.writeText(code);
+    const msg = document.getElementById("copyMsg");
+    msg.style.display = "block";
+    setTimeout(() => msg.style.display = "none", 2000);
+  });
 </script>
-
-
-
 
 <!-- Navbar Mobile Logic -->
 <script>
@@ -469,6 +388,111 @@
   });
 </script>
 
+<script>
+(function(){
+  const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+  function animateCount(el, duration = 3000){ // ndrysho këtu sipas shpejtësisë që do
+    const target = parseFloat(el.dataset.count || "0");
+    const suffix = el.dataset.suffix || "";
+    const decimals = parseInt(el.dataset.decimals || "0", 10);
+    const start = 0;
+    const startTime = performance.now();
+
+    function step(now){
+      const p = Math.min((now - startTime) / duration, 1);
+      const eased = easeOutCubic(p);
+      const val = start + (target - start) * eased;
+      el.textContent = val.toFixed(decimals) + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const container = document.querySelector('.hero-stats');
+  if(!container) return;
+ const counters = container.querySelectorAll('.stat-value[data-count]');
+
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        counters.forEach(el => {
+          if(!el.dataset.done){
+            el.dataset.done = "1";
+            animateCount(el, 3000); // këtu vendos shpejtësinë që dëshiron
+          }
+        });
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  io.observe(container);
+})();
+
+copyBtn.classList.add("copied");
+setTimeout(() => copyBtn.classList.remove("copied"), 1000);
+
+
+</script>
+
+<script>
+(function(){
+  const input = document.getElementById('faqSearch');
+  const cards = [...document.querySelectorAll('#faq .faq-card')];
+  const links = [...document.querySelectorAll('#faqIndex a')];
+
+  // Live search (filtron pyetjet & përgjigjet)
+  if(input){
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  }
+
+  // Active link on scroll (spy)
+  const byId = id => document.getElementById(id);
+  const map = links.map(a => ({ link: a, card: byId(a.getAttribute('href').slice(1)) }));
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const m = map.find(x => x.card === entry.target);
+      if(!m) return;
+      if(entry.isIntersecting){
+        links.forEach(l => l.classList.remove('is-active'));
+        m.link.classList.add('is-active');
+      }
+    });
+  }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+
+  map.forEach(x => x.card && io.observe(x.card));
+
+  // Smooth scroll manual (kompenson nav-in fiks)
+  links.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const id = a.getAttribute('href').slice(1);
+      const el = byId(id); if(!el) return;
+
+      const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 64;
+      const extra = 12;
+      const y = el.getBoundingClientRect().top + window.pageYOffset - navH - extra;
+
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      // fokus te PYETJA
+      const h = el.querySelector('.faq-q'); if(h) h.setAttribute('tabindex','-1'), h.focus({preventScroll:true});
+    });
+  });
+})();
+</script>
+
 
   </body>
   </html>
+
+
+

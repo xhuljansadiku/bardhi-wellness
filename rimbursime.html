@@ -194,6 +194,37 @@
 <!-- ======== /FOOTER ======== -->
 
 
+
+<!-- ================== COOKIE CONSENT ================== -->
+<div id="cookieConsent" class="position-fixed bottom-0 start-50 translate-middle-x bg-dark text-white p-4 rounded-4 shadow-lg mb-3 mx-3" style="z-index: 2000; max-width: 480px; display:none;">
+  <div class="d-flex flex-column gap-2">
+    <!-- Title -->
+    <div class="d-flex align-items-center gap-2 mb-1">
+      <i class="bi bi-cookie fs-3 text-warning"></i>
+      <h6 class="m-0 fw-bold">Këto faqe përdorin cookies 🍪</h6>
+    </div>
+
+    <!-- Text SQ/DE -->
+    <div id="cookieText" class="small text-light opacity-75">
+      Ne përdorim cookies për të përmirësuar përvojën tuaj në faqe, për analiza dhe marketing të kufizuar. <br>   
+      Duke vazhduar, pranon <a href="datenschutz.html" class="link-light text-decoration-underline">Politikën e Privatësisë</a>.
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex gap-2 mt-2">
+      <button id="cookieAccept" class="btn btn-success btn-sm flex-fill fw-semibold">Prano</button>
+      <button id="cookieDecline" class="btn btn-outline-light btn-sm flex-fill">Refuzo</button>
+    </div>
+
+    <!-- Language toggle -->
+    <div class="text-center mt-2">
+      <button id="langToggle" class="btn btn-link btn-sm text-white-50 text-decoration-none">🇩🇪 Deutsch</button>
+    </div>
+  </div>
+</div>
+
+
+
 <!-- BACK TO TOP BUTTON -->
 <button id="backToTop" aria-label="Kthehu lart">
   <i class="bi bi-arrow-up-short"></i>
@@ -481,6 +512,83 @@ setTimeout(() => copyBtn.classList.remove("copied"), 1000);
     });
   });
 })();
+</script>
+
+<!-- COOKIE CONSENT LOGIC -->
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const box   = document.getElementById("cookieConsent");
+  const title = box.querySelector("h6");
+  const text  = document.getElementById("cookieText");
+  const acceptBtn = document.getElementById("cookieAccept");
+  const declineBtn= document.getElementById("cookieDecline");
+  const langBtn   = document.getElementById("langToggle");
+
+  let lang = localStorage.getItem("lang") || "sq";
+
+  const copy = {
+    sq: {
+      title: "Këto faqe përdorin cookies 🍪",
+      text: `Ne përdorim cookies për të përmirësuar përvojën tuaj në faqe, për analiza dhe marketing të kufizuar.
+      Duke vazhduar, pranon <a href="datenschutz.html" class="link-light text-decoration-underline">Politikën e Privatësisë</a>.`,
+      accept: "Prano",
+      decline: "Refuzo",
+      switch: "🇩🇪 Deutsch"
+    },
+    de: {
+      title: "Diese Website verwendet Cookies 🍪",
+      text: `Wir verwenden Cookies, um Ihre Nutzererfahrung zu verbessern, für Analyse und begrenzte Marketingzwecke.
+      Durch die weitere Nutzung stimmen Sie unserer <a href="datenschutz.html" class="link-light text-decoration-underline">Datenschutzrichtlinie</a> zu.`,
+      accept: "Annehmen",
+      decline: "Ablehnen",
+      switch: "🇦🇱 Shqip"
+    }
+  };
+
+  function applyLang(l){
+    const c = copy[l];
+    title.textContent = c.title;
+    text.innerHTML    = c.text;
+    acceptBtn.textContent = c.accept;
+    declineBtn.textContent= c.decline;
+    langBtn.textContent   = c.switch;
+    localStorage.setItem("lang", l);
+    lang = l;
+  }
+  applyLang(lang);
+
+  langBtn.addEventListener("click", () => applyLang(lang === "sq" ? "de" : "sq"));
+
+  // shfaq nëse s'ka zgjedhje më parë
+  if (!localStorage.getItem("cookieAccepted")) box.style.display = "block";
+
+  // ruaj zgjedhjen dhe mbyll
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieAccepted", "true");
+    box.remove();
+  });
+  declineBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieAccepted", "false");
+    box.remove();
+  });
+});
+</script>
+
+<!-- Fshi padding-body kur pranohet/refuzohet cookie -->
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const box = document.getElementById("cookieConsent");
+  const key = "cookieAccepted";
+
+  // nëse s'ka zgjedhje, shto padding-body për mos mbuluar CTA
+  if (!localStorage.getItem(key)) {
+    document.body.style.paddingBottom = "110px";
+  }
+  const clearPad = () => { document.body.style.paddingBottom = ""; };
+
+  document.getElementById("cookieAccept")?.addEventListener("click", clearPad);
+  document.getElementById("cookieDecline")?.addEventListener("click", clearPad);
+});
 </script>
 
 

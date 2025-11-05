@@ -2027,6 +2027,7 @@ html{
   text-shadow: 0 0 8px rgba(21,165,111,0.25);
 }
 
+ 
 /* ======================= COOKIE CONSENT – ULTRA RESPONSIVE ======================= */
 #cookieConsent{
   /* layout */
@@ -2034,9 +2035,9 @@ html{
   inset: auto env(safe-area-inset-right) calc(12px + env(safe-area-inset-bottom)) env(safe-area-inset-left);
   left: 50%;
   transform: translateX(-50%);
-  display: none;               /* shfaqet nga JS */
+  display: none;               /* shfaqet nga JS me .show */
   z-index: 2147483000;         /* mbi çdo gjë (navbar/offcanvas) */
-  max-width: clamp(300px, 92vw, 420px);
+  max-width: clamp(300px, 92vw, 520px);
   max-height: calc(100svh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   overflow: auto;
   padding: 16px;
@@ -2044,149 +2045,256 @@ html{
   border: 1px solid rgba(255,255,255,.10);
   background: rgba(17,24,39,.92); /* #111827 */
   -webkit-backdrop-filter: blur(14px) saturate(130%);
-          backdrop-filter: blur(14px) saturate(130%);
+  backdrop-filter: blur(14px) saturate(130%);
   box-shadow:
-    0 18px 40px rgba(0,0,0,.45),
-    inset 0 0 0 1px rgba(255,255,255,.04);
-  color: #e5e7eb;              /* text i butë */
-  animation: cc-slide-up .55s ease forwards;
+    0 10px 30px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  color: #e5e7eb; /* text-gray-200 */
+  line-height: 1.5;
+  font-synthesis-weight: none;
 }
 
-/* kontur i lehtë brand */
-#cookieConsent::before{
-  content:""; position:absolute; inset:0; border-radius:18px; pointer-events:none;
-  box-shadow: inset 0 0 0 1px rgba(34,197,94,.18);
-  opacity:.6;
+/* Shfaqja me animim të butë */
+#cookieConsent.show{
+  display: block !important;
+  animation: cc-slide-up .45s cubic-bezier(.2,.7,.2,1) both;
 }
-
-/* titulli + ikona */
-#cookieConsent h6{ 
-  font-weight: 800; letter-spacing:.2px; line-height:1.2; 
-  color:#fff; margin:0;
-}
-#cookieConsent .bi-cookie{ filter: drop-shadow(0 2px 10px rgba(250,204,21,.35)); }
-
-/* trupi i tekstit */
-#cookieConsent .small{ line-height: 1.55; }
-#cookieConsent a{ color:#bff7d7; }
-#cookieConsent a:hover{ color:#e7fff2; text-decoration: underline; }
-
-/* butonat */
-#cookieAccept, #cookieDecline{
-  border-radius: 12px; padding: .6rem .9rem; font-weight: 700;
-  transition: transform .18s ease, box-shadow .25s ease, filter .25s ease, background .25s ease;
-}
-#cookieAccept{
-  background: linear-gradient(135deg, #006039, #10a571);
-  border:0; color:#fff;
-  box-shadow: 0 10px 24px rgba(16,158,111,.25);
-}
-#cookieAccept:hover{ transform: translateY(-1px); filter: brightness(1.05); box-shadow: 0 14px 30px rgba(16,158,111,.32); }
-
-#cookieDecline{
-  background: rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.18);
-  color:#e5e7eb;
-}
-#cookieDecline:hover{ background: rgba(255,255,255,.12); transform: translateY(-1px); }
-
-/* switch i gjuhës */
-#langToggle{
-  color: rgba(255,255,255,.6); font-weight: 700; letter-spacing:.2px;
-}
-#langToggle:hover{ color:#fff; text-decoration: underline; }
-
-/* dispozitivë të vegjël: butonat full width, spacing më i madh */
-@media (max-width: 480px){
-  #cookieConsent{ padding: 18px 16px; border-radius: 16px; }
-  #cookieAccept, #cookieDecline{ width: 100%; }
-}
-
-/* tablet/desktop: butonat në 2 kolona të barabarta */
-@media (min-width: 481px){
-  #cookieConsent .d-flex.gap-2.mt-2{ display:grid !important; grid-template-columns: 1fr 1fr; }
-}
-
-/* fokus i dukshëm për aksesueshmëri */
-#cookieConsent button:focus-visible,
-#cookieConsent a:focus-visible{
-  outline: 2px solid color-mix(in srgb, #10a571 70%, white);
-  outline-offset: 2px; border-radius: 10px;
-}
-
-/* animimi */
 @keyframes cc-slide-up{
-  from{ transform: translate(-50%, 16px); opacity:0; }
-  to{   transform: translate(-50%, 0);   opacity:1; }
+  from{ transform: translate(-50%, 8px); opacity: 0; }
+  to  { transform: translate(-50%, 0);   opacity: 1; }
 }
 
-/* respektim prefers-reduced-motion */
+/* Titulli + ikona */
+#cookieConsent h6{
+  font-size: 1rem;
+  letter-spacing: .25px;
+}
+#cookieConsent .bi-cookie{
+  filter: drop-shadow(0 2px 6px rgba(245,158,11,.4));
+}
+
+/* Teksti dhe linku */
+#cookieConsent #cookieText{
+  font-size: .92rem;
+}
+#cookieConsent a{
+  color: #93c5fd; /* blue-300 */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+#cookieConsent a:hover{
+  color: #bfdbfe; /* blue-200 */
+}
+
+/* Butonat */
+#cookieConsent .btn{
+  border-radius: 12px;
+  font-weight: 600;
+  padding: .55rem .8rem;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease;
+  box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+}
+#cookieConsent .btn:active{
+  transform: translateY(1px);
+}
+
+/* Primary (Prano) – gradient i lehtë smerald */
+#cookieConsent .btn-success{
+  --cc-green1: #10b981; /* emerald-500 */
+  --cc-green2: #059669; /* emerald-600 */
+  background-image: linear-gradient(180deg, var(--cc-green1), var(--cc-green2));
+  border: 1px solid rgba(16,185,129,.35);
+  color: #052e2b;
+  text-shadow: 0 1px 0 rgba(255,255,255,.15);
+}
+#cookieConsent .btn-success:hover{
+  filter: brightness(1.05);
+  box-shadow: 0 6px 16px rgba(16,185,129,.35);
+}
+
+/* Secondary (Refuzo) – outline i dukshëm në dark glass */
+#cookieConsent .btn-outline-light{
+  border: 1px solid rgba(229,231,235,.35);
+  color: #e5e7eb;
+  background: rgba(255,255,255,.02);
+}
+#cookieConsent .btn-outline-light:hover{
+  background: rgba(255,255,255,.08);
+}
+
+/* Butoni i gjuhës */
+#cookieConsent #langToggle{
+  opacity: .75;
+}
+#cookieConsent #langToggle:hover{
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Fokus i aksesueshëm (keyboard) */
+#cookieConsent .btn:focus-visible,
+#cookieConsent a:focus-visible,
+#cookieConsent #langToggle:focus-visible{
+  outline: 0;
+  box-shadow:
+    0 0 0 3px rgba(59,130,246,.55),          /* blu i jashtëm */
+    0 0 0 6px rgba(59,130,246,.25);          /* halo */
+}
+
+/* ======================= LIGHT MODE ======================= */
+@media (prefers-color-scheme: light){
+  #cookieConsent{
+    background: rgba(255,255,255,.92);
+    border-color: rgba(15,23,42,.08);
+    color: #0f172a;
+    box-shadow:
+      0 12px 30px rgba(2,8,23,.12),
+      inset 0 1px 0 rgba(255,255,255,.75);
+  }
+  #cookieConsent a{ color: #0ea5e9; }           /* sky-500 */
+  #cookieConsent a:hover{ color: #0284c7; }     /* sky-600 */
+  #cookieConsent .btn-outline-light{
+    border-color: rgba(15,23,42,.18);
+    color: #0f172a;
+    background: rgba(2,6,23,.03);
+  }
+}
+
+/* ======================= EKRANE SHUMË TË VEGJËL ======================= */
+@media (max-width: 380px){
+  #cookieConsent{ padding: 14px; border-radius: 14px; }
+  #cookieConsent h6{ font-size: .95rem; }
+}
+
+/* ======================= REDUKTIM I LËVIZJEVE ======================= */
 @media (prefers-reduced-motion: reduce){
-  #cookieConsent{ animation: none; }
-  #cookieAccept, #cookieDecline{ transition: none; }
+  #cookieConsent{ animation: none !important; }
+  #cookieConsent *{ transition: none !important; }
 }
 
-/* ==== COOKIE CONSENT – FULL WIDTH ON MOBILE ==== */
-@media (max-width: 575.98px){
+/* ======================= HIGH CONTRAST (Windows) ======================= */
+@media (forced-colors: active){
   #cookieConsent{
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    margin: 0;
-    width: calc(100vw - 20px); /* hapësirë e vogël anësore */
-    max-width: none;
-    border-radius: 18px 18px 0 0;
-    background: rgba(17,24,39,0.97);
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 -2px 30px rgba(0,0,0,0.4);
-    padding: 18px 18px 22px;
-    backdrop-filter: blur(14px) saturate(130%);
+    background: Canvas;
+    color: CanvasText;
+    border: 1px solid ButtonText;
+    box-shadow: none;
   }
-
-  /* teksti pak më i madh dhe i qartë për mobile */
-  #cookieConsent h6{ font-size: 1.05rem; }
-  #cookieConsent .small{ font-size: .95rem; line-height: 1.5; }
-
-  /* butonat full width me distancë vertikale */
-  #cookieConsent .mt-2{
-    display: flex!important;
-    flex-direction: column;
-    gap: .6rem;
-    margin-top: .75rem!important;
+  #cookieConsent .btn{ forced-color-adjust: none; }
+  #cookieConsent .btn-success{
+    background: Highlight;
+    color: HighlightText;
+    border-color: Highlight;
   }
-  #cookieConsent #cookieAccept,
-  #cookieConsent #cookieDecline{
-    width: 100%;
-    font-size: 1rem;
-    padding: .75rem;
-    border-radius: 10px;
-  }
-
-  /* butoni i gjuhës poshtë, qendër */
-  #cookieConsent #langToggle{
-    display: block;
-    text-align: center;
-    margin-top: .5rem;
-    font-weight: 600;
-    opacity: .75;
+  #cookieConsent .btn-outline-light{
+    border-color: ButtonText;
+    color: ButtonText;
+    background: Canvas;
   }
 }
 
-/* === Cookie: gjithmonë në qendër (mobile + desktop) === */
-#cookieConsent{
-  left: 50% !important;
-  right: auto !important;
-  transform: translateX(-50%) !important;
+/* Opsional: klasë për ta ankoruar majtas në desktop (nëse ndonjëherë e do) */
+@media (min-width: 992px){
+  #cookieConsent.cc-left{
+    left: auto;
+    right: 24px;
+    transform: none;
+  }
 }
 
-/* Mobile: “sheet” gati full-width me pak hapësirë anësore */
-@media (max-width: 575.98px){
+/* ======================= BUTON "REFUZO" / ABLEHNEN ======================= */
+#cookieConsent .btn-outline-light {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d1d5db; /* gri e qetë */
+  background: rgba(255, 255, 255, 0.04);
+}
+#cookieConsent .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+#cookieConsent .btn-outline-light:active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(1px);
+}
+
+/* ======================= BUTON I GJUHËS ======================= */
+#cookieConsent #langToggle {
+  color: #a1a1aa; /* e butë */
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding: 3px 10px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+#cookieConsent #langToggle:hover {
+  color: #10b981; /* jeshile si “Prano” */
+  background: rgba(16,185,129,0.08);
+  text-decoration: none;
+}
+#cookieConsent #langToggle:active {
+  transform: translateY(1px);
+}
+
+/* ======================= MOBILE FIXES ======================= */
+@media (max-width: 576px){
+  /* Vendosje & përmasa */
   #cookieConsent{
-    width: calc(100vw - 20px) !important; /* 10px anash */
+    inset: auto 12px calc(14px + env(safe-area-inset-bottom)) 12px !important;
+    left: auto !important;
+    transform: none !important;    /* mos e zhvendos me translateX */
+    width: auto !important;
     max-width: none !important;
-    bottom: 0 !important;
-    border-radius: 18px 18px 0 0 !important;
+    border-radius: 16px;
+    padding: 14px 14px 12px;
+    box-shadow: 0 10px 28px rgba(0,0,0,.35);
   }
+
+  /* Tipografia – më lexueshme */
+  #cookieConsent h6{ font-size: 1rem; line-height: 1.2; }
+  #cookieConsent #cookieText{ font-size: .95rem; line-height: 1.45; }
+
+  /* Butonat – një poshtë tjetrit, të plotë- gjerësi */
+  #cookieConsent .d-flex.mt-2{ flex-direction: column !important; gap: 8px !important; }
+  #cookieConsent .btn{
+    width: 100%;
+    padding: .8rem 1rem;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  /* “Ablehnen/Refuzo” – kontrast i qartë në mobile */
+  #cookieConsent .btn-outline-light{
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.18);
+    color: #e7e7e7;
+  }
+  #cookieConsent .btn-outline-light:hover{ background: rgba(255,255,255,.12); }
+
+  /* Butoni i gjuhës – i dallueshëm, i vogël por prekshëm */
+  #cookieConsent #langToggle{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    font-size: .9rem;
+    border-radius: 10px;
+    background: rgba(255,255,255,.06);
+    color: #cbd5e1;  /* gri e butë */
+  }
+  #cookieConsent #langToggle:hover{
+    background: rgba(16,185,129,.10); /* i lidhur me “Prano” */
+    color: #10b981;
+    text-decoration: none;
+  }
+}
+
+/* Ekstra i dobishëm për telefona shumë të vegjël */
+@media (max-width: 360px){
+  #cookieConsent{ padding: 12px; border-radius: 14px; }
+  #cookieConsent h6{ font-size: .95rem; }
+  #cookieConsent #cookieText{ font-size: .92rem; }
 }
 
 

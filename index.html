@@ -977,6 +977,7 @@
 </footer>
 <!-- ======== /FOOTER ======== -->
 
+
 <!-- ================== COOKIE CONSENT ================== -->
 <div id="cookieConsent" class="position-fixed bottom-0 start-50 translate-middle-x bg-dark text-white p-4 rounded-4 shadow-lg mb-3 mx-3" style="z-index: 2000; max-width: 480px; display:none;">
   <div class="d-flex flex-column gap-2">
@@ -1012,6 +1013,7 @@
   <i class="bi bi-arrow-up-short"></i>
 </button>
 
+<!-- ================== MAIN Logic ================== -->
 <script>
   // FAQ: opsionale – auto-scroll te pyetja e hapur
   document.addEventListener('shown.bs.collapse', function (e) {
@@ -1053,11 +1055,13 @@
   })();
 </script>
 
+<!-- ================== FOOTER Logic ================== -->
 <script>
   // vendos automatikisht vitin
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
+<!-- ================== SHOP / CART Logic ================== -->
 <script>
 /* ---------------- CART helpers ---------------- */
 function readCart(){
@@ -1119,6 +1123,7 @@ function addToCart(item){
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/app.js"></script>
 
+<!-- Navbar menu open/close body class -->
 <script>
   const nav = document.getElementById('navMenu');
   if (nav) {
@@ -1134,11 +1139,14 @@ function addToCart(item){
   });
 </script>
 
+
+
 <style>
       /* spacing utility (since Bootstrap <=5 s’ka py-6) */
       .py-6{padding-top:4.5rem;padding-bottom:4.5rem}
 </style>
 
+<!-- Tooltip Initialization -->
 <script>
   document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function (el) {
@@ -1147,6 +1155,7 @@ function addToCart(item){
   });
 </script>
 
+<!-- Back to Top Button Logic -->
 <script>
   const backToTop = document.getElementById('backToTop');
 
@@ -1165,6 +1174,7 @@ function addToCart(item){
   });
 </script>
 
+<!-- Coupon Code Copy Logic -->
 <script>
   document.getElementById("copyBtn").addEventListener("click", function() {
     const code = document.getElementById("couponCode").textContent;
@@ -1174,6 +1184,7 @@ function addToCart(item){
     setTimeout(() => msg.style.display = "none", 2000);
   });
 </script>
+
 
 <!-- Navbar Mobile Logic -->
 <script>
@@ -1194,6 +1205,7 @@ function addToCart(item){
   });
 </script>
 
+<!-- Hero Stats Counter Animation -->
 <script>
 (function(){
   const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
@@ -1243,6 +1255,7 @@ setTimeout(() => copyBtn.classList.remove("copied"), 1000);
 
 </script>
 
+<!-- FAQ Search & Spy Logic -->
 <script>
 (function(){
   const input = document.getElementById('faqSearch');
@@ -1296,6 +1309,7 @@ setTimeout(() => copyBtn.classList.remove("copied"), 1000);
 })();
 </script>
 
+<!-- NEWSLETTER FORM LOGIC -->
 <script>
 document.getElementById("newsletterForm").addEventListener("submit", async function(e) {
   e.preventDefault();
@@ -1336,6 +1350,7 @@ document.getElementById("newsletterForm").addEventListener("submit", async funct
 });
 </script>
 
+<!-- COOKIE CONSENT LOGIC -->
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   const box   = document.getElementById("cookieConsent");
@@ -1395,7 +1410,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
-
+<!-- Fshi padding-body kur pranohet/refuzohet cookie -->
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   const box = document.getElementById("cookieConsent");

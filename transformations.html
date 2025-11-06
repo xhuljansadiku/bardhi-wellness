@@ -10,10 +10,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-
   <!-- Your global CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
+  <link rel="stylesheet" href="./assets/css/style.css" />
  
 </head>
 <body>
@@ -21,27 +19,24 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top main-nav">
   <div class="container">
-    <!-- Brand -->
     <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
       <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="brand-logo me-2">
       <span>Bardhi Wellness</span>
     </a>
 
-    <!-- Toggler (hap OFFCANVAS në mobile) -->
     <button class="navbar-toggler d-lg-none" type="button"
             data-bs-toggle="offcanvas" data-bs-target="#mobileNav"
             aria-controls="mobileNav" aria-label="Hap menunë">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menu DESKTOP -->
     <div class="d-none d-lg-flex ms-auto align-items-center">
       <ul class="navbar-nav me-3">
         <li class="nav-item"><a class="nav-link" href="pricing.html">Paketat</a></li>
         <li class="nav-item"><a class="nav-link" href="shop.html">Produkti</a></li>
-        <li class="nav-item"><a class="nav-link" href="transformations.html">Transformime</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="transformations.html">Transformime</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">Rreth Bardhit</a></li>
-        <li class="nav-item"><a class="nav-link" href="calorie-calculator.html">Matësi i kalorive(BMI)</a></li>
+        <li class="nav-item"><a class="nav-link" href="calorie-calculator.html">Matësi i kalorive (BMI)</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
       </ul>
     </div>
@@ -52,145 +47,137 @@
 <div class="offcanvas offcanvas-end w-100 bg-white" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel" data-bs-scroll="true">
   <div class="offcanvas-header border-bottom align-items-center">
     <div class="d-flex align-items-center">
-      <img src="assets/images/bu-logo.png" alt="Bardhi Wellness Logo" class="offcanvas-logo me-2" style="height:32px;width:auto;" href="index.html">
-      <h6 class="offcanvas-title m-0 d-flex align-items-center" id="mobileNavLabel">
-        Bardhi Wellness
-      </h6>
+      <img src="assets/images/bu-logo.png" alt="Bardhi Wellness Logo" class="offcanvas-logo me-2" style="height:32px;width:auto;">
+      <h6 class="offcanvas-title m-0 d-flex align-items-center" id="mobileNavLabel">Bardhi Wellness</h6>
     </div>
-    <!-- FIX: shto data-bs-dismiss -->
-    <button type="button" class="btn-close"  aria-label="Mbyll"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Mbyll"></button>
   </div>
 
   <div class="offcanvas-body d-flex flex-column align-items-end">
     <ul class="navbar-nav w-100 text-end mb-3">
-      <!-- FIX: shto data-bs-dismiss te çdo link -->
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="pricing.html" >Paketat</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="shop.html" >Produkti</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformations.html" >Transformime</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="about.html" >Rreth Bardhit</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="calorie-calculator.html" >Matësi i kalorive (BMI)</a></li>
-      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html" >Kontakt</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="pricing.html" data-bs-dismiss="offcanvas">Paketat</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="shop.html" data-bs-dismiss="offcanvas">Produkti</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="transformations.html" data-bs-dismiss="offcanvas">Transformime</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="about.html" data-bs-dismiss="offcanvas">Rreth Bardhit</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="calorie-calculator.html" data-bs-dismiss="offcanvas">Matësi i kalorive (BMI)</a></li>
+      <li class="nav-item"><a class="nav-link py-3 border-bottom" href="contact.html" data-bs-dismiss="offcanvas">Kontakt</a></li>
     </ul>
   </div>
 </div>
 
-
- <!-- ============  7- SUCCESS STORIES (Modern Slideshow) ============ -->
-<section id="success-stories" class="py-6">
+<!-- ============ TRANSFORMIME – Masonry Gallery (no click, no filters) ============ -->
+<section id="transformations" class="py-6 bg-soft" style="margin-top:72px">
   <div class="container">
     <div class="text-center mb-4">
-      <h2 class="section-title mb-1">Historitë e Suksesit</h2>
-      <p class="section-lead">Transformime reale nga klientët e Bardhi Wellness.</p>
+      <h1 class="section-title mb-2">Transformime reale</h1>
+      <p class="section-lead text-muted">Rezultate të arritura me plan ushqimi, stërvitje dhe ndjekje profesionale.</p>
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-9 col-lg-6">
-        <div id="storiesCarousel" class="carousel slide stories" data-bs-ride="carousel" data-bs-interval="4200">
-          
-          <!-- Indicators -->
-          <div class="carousel-indicators indicators-dot">
-            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#storiesCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          </div>
+    <!-- Vetëm galeri, pa klikime -->
+    <div class="masonry mb-5" id="masonryGrid" aria-live="polite">
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-1.JPG" alt="-19 kg në 7 javë – kontroll kalorish & aktivitet" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">-19 kg</div><div class="m-desc">7 javë • deficit i kontrolluar</div></figcaption>
+      </figure>
 
-          <!-- Slides -->
-          <div class="carousel-inner rounded-4 shadow-xl overflow-hidden">
-            <!-- 1 -->
-            <div class="carousel-item active">
-              <figure class="story-frame m-0">
-                <img src="assets/images/before-after/tr-1.JPG" class="story-img" alt="-19 kg – disa javë">
-                <figcaption class="story-caption">
-                  <div class="title">-19 kg</div>
-                  <div class="desc">Vetëm 7 javë • kontroll kalorish & aktivitet konstant</div>
-                </figcaption>
-              </figure>
-            </div>
-            <!-- 2 -->
-            <div class="carousel-item">
-              <figure class="story-frame m-0">
-                <img src="assets/images/before-after/tr-2.JPG" class="story-img"
-     alt="20 ditë – ndryshim i shpejtë" loading="lazy" decoding="async">
-                <figcaption class="story-caption">
-                  <div class="title">69 kg → 60 kg</div>
-                  <div class="desc">20 ditë • dietë strikte + kardio i moderuar</div>
-                </figcaption>
-              </figure>
-            </div>
-            <!-- 3 -->
-            <div class="carousel-item">
-              <figure class="story-frame m-0">
-                <img src="assets/images/before-after/tr-3.JPG" class="story-img" alt="-10 kg">
-                <figcaption class="story-caption">
-                  <div class="title">-10 kg</div>
-                  <div class="desc">3.5 javë • deficit i kontrolluar & progres në peshë</div>
-                </figcaption>
-              </figure>
-            </div>
-            <!-- 4 -->
-            <div class="carousel-item">
-              <figure class="story-frame m-0">
-                  <img src="assets/images/before-after/tr-4.JPG" class="story-img" alt="Transformim total">
-                <figcaption class="story-caption">
-                  <div class="title">Transformim total</div>
-                  <div class="desc">Disiplinë, plan ushqimi & stërvitje e strukturuar</div>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-2.JPG" alt="69 → 60 kg në 20 ditë – dietë strikte & kardio i moderuar" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">69 → 60 kg</div><div class="m-desc">20 ditë • fokus & disiplinë</div></figcaption>
+      </figure>
 
-          <!-- Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#storiesCarousel" data-bs-slide="prev" aria-label="Previous">
-            <span class="ctrl ctrl-prev"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#storiesCarousel" data-bs-slide="next" aria-label="Next">
-            <span class="ctrl ctrl-next"></span>
-          </button>
-        </div>
- 
-      </div>
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-3.JPG" alt="-10 kg në 3.5 javë – progres i qëndrueshëm" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">-10 kg</div><div class="m-desc">3.5 javë • konsistencë</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-4.JPG" alt="Transformim total – plan i strukturuar ushqim & stërvitje" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">Transformim total</div><div class="m-desc">12 javë • strukturë & disiplinë</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-5.jpg" alt="+6 kg masë muskulare në 16 javë – volum progresiv" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">+6 kg muskuj</div><div class="m-desc">16 javë • volum & rikuperim</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-6.jpg" alt="Tonifikim i theksuar – makro të sakta & HIIT (8 javë)" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">Tonifikim</div><div class="m-desc">8 javë • HIIT & makro</div></figcaption>
+      </figure>
+
+      <!-- Të tjera — gjithmonë të dukshme (hiqur is-hidden) -->
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-7.jpg" alt="-7 kg në 4 javë – ecje ditore" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">-7 kg</div><div class="m-desc">4 javë • ecje ditore</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-8.jpg" alt="+4 kg masë në 10 javë – volum i rritur" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">+4 kg</div><div class="m-desc">10 javë • volum i rritur</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-9.jpg" alt="Transformim – volum & rikuperim" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">Progress i dukshëm</div><div class="m-desc">Strukturë • volum</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-10.jpg" alt="Transformim – volum & rikuperim" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">Progress i dukshëm</div><div class="m-desc">Strukturë • volum</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-11.jpg" alt="Transformim – volum & rikuperim" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">Progress i dukshëm</div><div class="m-desc">Strukturë • volum</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-12.jpg" alt="Transformim – volum & rikuperim" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">Progress i dukshëm</div><div class="m-desc">Strukturë • volum</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-13.jpg" alt="Transformim – volum & rikuperim" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">Progress i dukshëm</div><div class="m-desc">Strukturë • volum</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-14.jpg" alt="Transformim – volum & rikuperim" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">Progress i dukshëm</div><div class="m-desc">Strukturë • volum</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-15.jpg" alt="Transformim – volum & rikuperim" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">Progress i dukshëm</div><div class="m-desc">Strukturë • volum</div></figcaption>
+      </figure>
+
+      <figure class="masonry-item">
+        <img src="assets/images/before-after/tr-16.jpg" alt="Transformim – volum & rikuperim" loading="lazy">
+        <figcaption class="m-over"><div class="m-title">Progress i dukshëm</div><div class="m-desc">Strukturë • volum</div></figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
- 
 <!-- ========= FOOTER ========= -->
 <footer class="site-footer text-white mt-auto text-center">
   <div class="container py-5 py-lg-6">
     <div class="row g-4 g-lg-5 justify-content-center text-center">
-
-      <!-- Brand + Social -->
       <div class="col-12 col-lg-3">
         <a class="footer-brand d-inline-flex align-items-center justify-content-center text-white text-decoration-none mb-3" href="index.html">
           <img src="assets/images/bu-logo.png" alt="Bardhi Wellness" class="footer-logo me-2" />
           <span class="fw-bold">Bardhi Wellness</span>
         </a>
-        <p class="text-white-50 mb-4">
-          Trajnim & ushqim të personalizuar me mbështetje reale nga trajnerë.<br>
-          Ndërto trupin, mendjen dhe stilin e jetës që dëshiron.
-        </p>
-
+        <p class="text-white-50 mb-4">Trajnim & ushqim të personalizuar me mbështetje reale nga trajnerë.<br>Ndërto trupin, mendjen dhe stilin e jetës që dëshiron.</p>
         <div class="d-flex gap-2 justify-content-center">
-          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="mailto:bardhiwellness@gmail.com" aria-label="Email">
-            <i class="bi bi-envelope"></i>
-          </a>
-          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://wa.me/4917684132643?text=P%C3%ABrsh%C3%ABndetje%20Bardhi%2C%20dua%20info%20rreth%20paketave." target="_blank" rel="noopener" aria-label="WhatsApp">
-            <i class="bi bi-whatsapp"></i>
-          </a>
-          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.instagram.com/bardhi.uka" aria-label="Instagram">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.tiktok.com/@bardhiuka" aria-label="TikTok">
-            <i class="bi bi-tiktok"></i>
-          </a>
-          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.youtube.com/@bardhiuka" aria-label="YouTube">
-            <i class="bi bi-youtube"></i>
-          </a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="mailto:bardhiwellness@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://wa.me/4917684132643?text=P%C3%ABrsh%C3%ABndetje%20Bardhi%2C%20dua%20info%20rreth%20paketave." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.instagram.com/bardhi.uka" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.tiktok.com/@bardhiuka" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.youtube.com/@bardhiuka" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
         </div>
       </div>
 
-      <!-- Quick Links -->
       <div class="col-12 col-lg-3">
         <h6 class="text-uppercase small fw-semibold mb-3"><b>Faqet</b></h6>
         <ul class="list-unstyled footer-links m-0">
@@ -203,25 +190,21 @@
         </ul>
       </div>
 
-   <!-- Support & Ligjore -->
-<div class="col-12 col-lg-3">
-  <h6 class="text-uppercase small fw-semibold mb-3"><b>Mbështetje & Ligjore <br> <small>(Unterstützung & Recht)</small> </b></h6>
-  <ul class="list-unstyled footer-links m-0">
-    <li><a href="faq.html" class="link-light">Pyetje të shpeshta (FAQ)</a></li>
-    <li><a href="impressum.html" class="link-light">Të dhënat ligjore - (Impressum)</a></li>
-    <li><a href="privacy.html" class="link-light">Privatësia - (Datenschutz)</a></li>
-    <li><a href="terms.html" class="link-light">Kushtet e përgjithshme - (AGB)</a></li>
-    <li><a href="right-of-withdrawal.html" class="link-light">E drejta e tërheqjes - (Widerrufsrecht)</a></li>
-    <li><a href="refunds-returns.html" class="link-light">Rimbursime & Kthime</a></li>
-  </ul>
-</div>
+      <div class="col-12 col-lg-3">
+        <h6 class="text-uppercase small fw-semibold mb-3"><b>Mbështetje & Ligjore <br><small>(Unterstützung & Recht)</small></b></h6>
+        <ul class="list-unstyled footer-links m-0">
+          <li><a href="faq.html" class="link-light">Pyetje të shpeshta (FAQ)</a></li>
+          <li><a href="impressum.html" class="link-light">Të dhënat ligjore - (Impressum)</a></li>
+          <li><a href="privacy.html" class="link-light">Privatësia - (Datenschutz)</a></li>
+          <li><a href="terms.html" class="link-light">Kushtet e përgjithshme - (AGB)</a></li>
+          <li><a href="right-of-withdrawal.html" class="link-light">E drejta e tërheqjes - (Widerrufsrecht)</a></li>
+          <li><a href="refunds-returns.html" class="link-light">Rimbursime & Kthime</a></li>
+        </ul>
+      </div>
 
-
-      <!-- Newsletter -->
       <div class="col-12 col-lg-3">
         <h6 class="text-uppercase small fw-semibold mb-3"><b>Qëndro i informuar</b></h6>
         <p class="text-white-50 mb-3">Merr këshilla, oferta dhe lajme në inbox.</p>
-
         <form id="newsletterForm" novalidate class="needs-validation mx-auto" style="max-width: 350px;">
           <div class="input-group input-group-lg mb-2">
             <span class="input-group-text bg-transparent text-white-50 border-secondary-subtle"><i class="bi bi-at"></i></span>
@@ -229,12 +212,9 @@
           </div>
           <div class="invalid-feedback d-block small" id="nlError" style="display:none;">Shkruaj një email të vlefshëm.</div>
           <button class="btn btn-brand w-100 mt-2" type="submit">Abonohu</button>
-          <div id="nlMsg" class="alert alert-success mt-3 py-2 d-none" role="alert">
-            ✅ U abonove me sukses! Faleminderit.
-          </div>
+          <div id="nlMsg" class="alert alert-success mt-3 py-2 d-none" role="alert">✅ U abonove me sukses! Faleminderit.</div>
         </form>
       </div>
-      
     </div>
   </div>
 
@@ -244,182 +224,79 @@
     </div>
   </div>
 </footer>
-<!-- ======== /FOOTER ======== -->
-
-
-
 
 <!-- ================== COOKIE CONSENT ================== -->
 <div id="cookieConsent" class="position-fixed bottom-0 start-50 translate-middle-x bg-dark text-white p-4 rounded-4 shadow-lg mb-3 mx-3" style="z-index: 2000; max-width: 480px; display:none;">
   <div class="d-flex flex-column gap-2">
-    <!-- Title -->
     <div class="d-flex align-items-center gap-2 mb-1">
       <i class="bi bi-cookie fs-3 text-warning"></i>
       <h6 class="m-0 fw-bold">Këto faqe përdorin cookies 🍪</h6>
     </div>
-
-    <!-- Text SQ/DE -->
     <div id="cookieText" class="small text-light opacity-75">
-      Ne përdorim cookies për të përmirësuar përvojën tuaj në faqe, për analiza dhe marketing të kufizuar. <br>   
+      Ne përdorim cookies për të përmirësuar përvojën tuaj në faqe, për analiza dhe marketing të kufizuar. <br>
       Duke vazhduar, pranon <a href="privacy.html" class="link-light text-decoration-underline">Politikën e Privatësisë</a>.
     </div>
-
-    <!-- Buttons -->
     <div class="d-flex gap-2 mt-2">
       <button id="cookieAccept" class="btn btn-success btn-sm flex-fill fw-semibold">Prano</button>
       <button id="cookieDecline" class="btn btn-outline-light btn-sm flex-fill">Refuzo</button>
     </div>
-
-    <!-- Language toggle -->
     <div class="text-center mt-2">
       <button id="langToggle" class="btn btn-link btn-sm text-white-50 text-decoration-none">🇩🇪 Deutsch</button>
     </div>
   </div>
 </div>
 
-
-
 <!-- BACK TO TOP BUTTON -->
-<button id="backToTop" aria-label="Kthehu lart">
-  <i class="bi bi-arrow-up-short"></i>
+<button id="backToTop" aria-label="Kthehu lart"
+        style="position:fixed;right:16px;bottom:16px;opacity:0;visibility:hidden;transition:.2s;z-index:1000"
+        class="btn btn-dark rounded-circle">
+  <i class="bi bi-arrow-up-short fs-3"></i>
 </button>
 
-
 <!-- ================= SCRIPTS ================= -->
-
-<!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Your app JS -->
-<script src="assets/js/app.js"></script>
-
-<!-- Tooltips -->
 <script>
-  document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function (el) {
-      new bootstrap.Tooltip(el);
-    });
-  });
-</script>
+/* ------------ Helpers ------------ */
+const $  = (s, ctx=document)=>ctx.querySelector(s);
+const $$ = (s, ctx=document)=>Array.from(ctx.querySelectorAll(s));
 
-<!-- Footer helpers -->
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+/* ------------ Footer year ------------ */
+document.getElementById("year").textContent = new Date().getFullYear();
 
-<!-- Back to top (uses your CSS class .show) -->
-<script>
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) backToTop.classList.add('show');
-    else backToTop.classList.remove('show');
-  });
-  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-</script>
+/* ------------ Navbar scrolled effect ------------ */
+const navbar = document.querySelector('.main-nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+});
 
-<!-- Modal binder for gallery -->
-<script>
-  const tModal = document.getElementById('tModal');
-  if (tModal){
-    tModal.addEventListener('show.bs.modal', function (ev){
-      const trigger = ev.relatedTarget;
-      if(!trigger) return;
-      const img   = trigger.getAttribute('data-img');
-      const title = trigger.getAttribute('data-title') || 'Transformim';
-      const desc  = trigger.getAttribute('data-desc')  || '';
-      const badgesRaw = trigger.getAttribute('data-badges') || '[]';
-      const badges = JSON.parse(badgesRaw);
+/* ------------ Back to top ------------ */
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('show', window.scrollY > 200);
+});
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-      tModal.querySelector('#tModalImg').src = img;
-      tModal.querySelector('#tModalImg').alt = title;
-      tModal.querySelector('#tModalTitle').textContent = title;
-      tModal.querySelector('#tModalDesc').textContent  = desc;
-
-      const holder = tModal.querySelector('#tModalBadges');
-      holder.innerHTML = '';
-      badges.forEach(b => {
-        const span = document.createElement('span');
-        span.className = 'badge bg-success-subtle text-success-emphasis border';
-        span.style.borderColor = 'rgba(0,96,57,.25)';
-        span.textContent = b;
-        holder.appendChild(span);
-      });
-    });
-  }
-</script>
-
-<!-- Optional: sticky/blur on scroll for navbar -->
-<script>
-  const navbar = document.querySelector('.main-nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-  });
-</script>
-
-<!-- Tiny spacing util (if needed) -->
-<style>.shadow-soft{box-shadow:0 10px 28px rgba(2,6,23,.08)}</style>
-
-<script>
-  // Hiq çdo 'active' nga linket e nav-it në këtë faqe
-  document.querySelectorAll('.navbar .nav-link.active')
-    .forEach(a => a.classList.remove('active'));
-</script>
-
-
-
-
-<!-- Navbar Mobile Logic -->
-<script>
-  // Fikso që çdo klikim në offcanvas të mbyllë menunë dhe të ndjekë linkun
-  document.addEventListener("DOMContentLoaded", () => {
-    const mobileNavLinks = document.querySelectorAll('#mobileNav .nav-link');
-    const mobileNav = document.getElementById('mobileNav');
-    const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(mobileNav);
-
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        // mbyll menunë
-        bsOffcanvas.hide();
-        // lejo navigimin pas 200ms që të ketë efekt mbyllja
-        setTimeout(() => { window.location.href = link.href; }, 200);
-      });
-    });
-  });
-</script>
-
-
-<!-- COOKIE CONSENT LOGIC -->
-<script>
+/* ------------ Cookie consent (shkurt) ------------ */
 document.addEventListener("DOMContentLoaded", function(){
   const box   = document.getElementById("cookieConsent");
-  const title = box.querySelector("h6");
+  const title = box?.querySelector("h6");
   const text  = document.getElementById("cookieText");
   const acceptBtn = document.getElementById("cookieAccept");
   const declineBtn= document.getElementById("cookieDecline");
   const langBtn   = document.getElementById("langToggle");
+  if(!box || !title || !text || !acceptBtn || !declineBtn || !langBtn) return;
 
   let lang = localStorage.getItem("lang") || "sq";
-
   const copy = {
-    sq: {
-      title: "Këto faqe përdorin cookies 🍪",
-      text: `Ne përdorim cookies për të përmirësuar përvojën tuaj në faqe, për analiza dhe marketing të kufizuar.
-      Duke vazhduar, pranon <a href="privacy.html" class="link-light text-decoration-underline">Politikën e Privatësisë</a>.`,
-      accept: "Prano",
-      decline: "Refuzo",
-      switch: "🇩🇪 Deutsch"
-    },
-    de: {
-      title: "Diese Website verwendet Cookies 🍪",
-      text: `Wir verwenden Cookies, um Ihre Nutzererfahrung zu verbessern, für Analyse und begrenzte Marketingzwecke.
-      Durch die weitere Nutzung stimmen Sie unserer <a href="privacy.html" class="link-light text-decoration-underline">Datenschutzrichtlinie</a> zu.`,
-      accept: "Annehmen",
-      decline: "Ablehnen",
-      switch: "🇦🇱 Shqip"
-    }
+    sq: { title:"Këto faqe përdorin cookies 🍪",
+          text:'Ne përdorim cookies për të përmirësuar përvojën tuaj në faqe, për analiza dhe marketing të kufizuar. Duke vazhduar, pranon <a href="privacy.html" class="link-light text-decoration-underline">Politikën e Privatësisë</a>.',
+          accept:"Prano", decline:"Refuzo", switch:"🇩🇪 Deutsch" },
+    de: { title:"Diese Website verwendet Cookies 🍪",
+          text:'Wir verwenden Cookies, um Ihre Nutzererfahrung zu verbessern, für Analyse und begrenzte Marketingzwecke. Durch die weitere Nutzung stimmen Sie unserer <a href="privacy.html" class="link-light text-decoration-underline">Datenschutzrichtlinie</a> zu.',
+          accept:"Annehmen", decline:"Ablehnen", switch:"🇦🇱 Shqip" }
   };
-
   function applyLang(l){
     const c = copy[l];
     title.textContent = c.title;
@@ -431,41 +308,53 @@ document.addEventListener("DOMContentLoaded", function(){
     lang = l;
   }
   applyLang(lang);
-
   langBtn.addEventListener("click", () => applyLang(lang === "sq" ? "de" : "sq"));
 
-  // shfaq nëse s'ka zgjedhje më parë
-  if (!localStorage.getItem("cookieAccepted")) box.style.display = "block";
-
-  // ruaj zgjedhjen dhe mbyll
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookieAccepted", "true");
-    box.remove();
-  });
-  declineBtn.addEventListener("click", () => {
-    localStorage.setItem("cookieAccepted", "false");
-    box.remove();
-  });
-});
-</script>
-
-<!-- Fshi padding-body kur pranohet/refuzohet cookie -->
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  const box = document.getElementById("cookieConsent");
-  const key = "cookieAccepted";
-
-  // nëse s'ka zgjedhje, shto padding-body për mos mbuluar CTA
-  if (!localStorage.getItem(key)) {
+  if (!localStorage.getItem("cookieAccepted")) {
+    box.style.display = "block";
     document.body.style.paddingBottom = "110px";
   }
-  const clearPad = () => { document.body.style.paddingBottom = ""; };
+  const clearPad = ()=>{ document.body.style.paddingBottom = ""; };
+  acceptBtn.addEventListener("click", () => { localStorage.setItem("cookieAccepted","true"); box.remove(); clearPad(); });
+  declineBtn.addEventListener("click", () => { localStorage.setItem("cookieAccepted","false"); box.remove(); clearPad(); });
+});
 
-  document.getElementById("cookieAccept")?.addEventListener("click", clearPad);
-  document.getElementById("cookieDecline")?.addEventListener("click", clearPad);
+/* ------------ Offcanvas link auto-dismiss ------------ */
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileNav = document.getElementById('mobileNav');
+  if (!mobileNav) return;
+  const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(mobileNav);
+  mobileNav.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if(!a) return;
+    const href = a.getAttribute('href');
+    if(!href || href.startsWith('#')) return;
+    setTimeout(() => { window.location.href = href; }, 150);
+  });
+});
+
+/* ------------ Reveal on scroll për kartat ------------ */
+document.addEventListener('DOMContentLoaded', function(){
+  const grid  = document.getElementById('masonryGrid');
+  const items = grid ? Array.from(grid.querySelectorAll('.masonry-item')) : [];
+  let io;
+  function revealOnScroll(force){
+    if (!items.length) return;
+    if (force && io) io.disconnect();
+    io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -5% 0px', threshold: 0.01 });
+    items.filter(it => !it.classList.contains('is-visible')).forEach(it => io.observe(it));
+  }
+  // fillimisht të dukshme (nëse s’do të presësh scroll)
+  items.forEach(el => el.classList.add('is-visible'));
+  revealOnScroll();
 });
 </script>
-
-
 </body>
 </html>

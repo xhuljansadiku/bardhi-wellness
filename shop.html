@@ -72,7 +72,7 @@
 </div>
 
 
-<!-- ============ 6- SHOP  ============ -->
+<!-- ============ 5- SHOP  ============ -->
 <section id="shop" class="py-6">
   <div class="container" style="max-width: 980px;">
     <h2 class="text-center fw-bold mb-2" style="color:var(--ink,#0f172a);">Shop</h2>
@@ -98,7 +98,7 @@
 
         <div class="d-flex align-items-baseline gap-2 mb-3">
           <span class="h4 mb-0 text-brand" id="priceLabel">€99,99</span>
-          <span class="text-muted small">EUR (taksat e përfshira)</span>
+          <span class="text-muted small">EUR</span>
         </div>
 
         <p class="text-muted mb-4">
@@ -122,12 +122,20 @@
           ✅ Kuponi u kopjua!
         </div>
 
-
         <!-- CTA -->
         <a href="https://buy.stripe.com/3cIfZi4xD97mgZqcsG5wI00"
-           class="btn btn-brand w-100 mt-3">
+           class="btn btn-brand w-100 mt-3 mb-2">
           Bli tani
         </a>
+
+        <!-- Paypal -->
+        <a href="https://www.paypal.com/ncp/payment/VAQ2D8GCUU9QG"
+   target="_blank"
+   class="btn w-100 mt-2"
+   style="background-color:#0070ba; color:white; font-weight:600;">
+   <i class="bi bi-paypal me-2"></i> Paguaj me PayPal
+</a>
+
 
         <!-- Info të shkurtra -->
         <ul class="list-inline small text-muted mb-0 mt-3">
@@ -139,25 +147,7 @@
     </div>
   </div>
 </div>
-
-<!-- Efekti i pulsimit + Kopjimi -->
-<style>
-  .pulse {
-    animation: pulse 1.3s infinite;
-  }
  
-</style>
-
-<script>
-  document.getElementById("copyBtn").addEventListener("click", function() {
-    const code = document.getElementById("couponCode").textContent;
-    navigator.clipboard.writeText(code);
-    const msg = document.getElementById("copyMsg");
-    msg.style.display = "block";
-    setTimeout(() => msg.style.display = "none", 2000);
-  });
-</script>
-
 
 
     <!-- Info të hollësishme (mbetet nën kartë) -->
@@ -165,8 +155,9 @@
       <div class="card-body p-4 p-lg-5">
         <h6 class="fw-bold mb-1 text-brand">Përdorimi i rekomanduar</h6>
         <p class="text-muted small mb-3">
-          Merrni 2 kapsula në ditë ose sipas këshillës së një specialisti. <br>
-          Pini me ujë, rreth 30 minuta para aktivitetit fizik.
+          Merni 2 kapsula 20/30 min para ushtrimeve<br>
+          Preferohet ujë më shumë gjatë stërvitjes për efekt të plotë. <br>
+          Per rekomandime te reja na <a href="/contact.html">kontaktoni</a>.
         </p>
 
         <h6 class="fw-bold mb-1 text-brand">Si ndihmon</h6>
@@ -180,6 +171,7 @@
         <p class="text-muted small mb-3">
           Mos e tejkaloni dozën e rekomanduar ditore. <br>
           Shtesat ushqimore nuk duhet të përdoren si zëvendësim për një dietë të balancuar. <br>
+          Konsultohuni me mjekun tuaj para përdorimit nëse jeni shtatzënë, ushqeheni me gji, keni ndonjë gjendje mjekësore ose merrni medikamente. <br>
           Mbajeni larg fëmijëve dhe ruajeni në vend të thatë e të freskët.
         </p>
 
@@ -193,7 +185,6 @@
   </div>
 </section>
 
- 
 <!-- ========= FOOTER ========= -->
 <footer class="site-footer text-white mt-auto text-center">
   <div class="container py-5 py-lg-6">

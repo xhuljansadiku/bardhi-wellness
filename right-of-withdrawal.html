@@ -585,6 +585,64 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
+<script>
+(() => {
+  // 1) Active state për desktop & mobile
+  const current = location.pathname.replace(/\/+$/, "");
+  document.querySelectorAll('.main-nav .nav-link, #mobileNav a.stack-item').forEach(a => {
+    try{
+      const url = new URL(a.getAttribute('href'), location.origin);
+      if(url.pathname.replace(/\/+$/, "") === current){
+        a.classList.add('active');
+        a.setAttribute('aria-current', 'page');
+      }
+    }catch{}
+  });
+
+  // 2) Offcanvas: mbyll + navigo pas animimit
+  const el = document.getElementById('mobileNav');
+  if(!el) return;
+  const oc = bootstrap.Offcanvas.getOrCreateInstance(el, {scroll:false, backdrop:true});
+  let pendingHref = null;
+
+  el.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if(!a) return;
+    const href = a.getAttribute('href');
+    if(!href || href.startsWith('#')) return;
+    e.preventDefault();
+    pendingHref = new URL(href, location.origin).href;
+    oc.hide();
+  });
+
+  el.addEventListener('hidden.bs.offcanvas', () => {
+    if(pendingHref){ location.href = pendingHref; pendingHref = null; }
+  });
+
+  // 3) iOS overscroll guard brenda menusë
+  const body = el.querySelector('.offcanvas-body');
+  if(body){
+    body.addEventListener('touchmove', (ev)=>{
+      const atTop = body.scrollTop <= 0;
+      const atBottom = body.scrollTop + body.clientHeight >= body.scrollHeight;
+      if(atTop || atBottom) ev.preventDefault();
+    }, {passive:false});
+  }
+})();
+</script>
+
+ <script>
+(() => {
+  const el = document.querySelector('#mobileNav .offcanvas-body');
+  if(!el) return;
+  el.addEventListener('touchmove', (e) => {
+    const atTop = el.scrollTop <= 0;
+    const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+    if (atTop || atBottom) e.preventDefault(); // shmang chain te dokumenti
+  }, { passive: false });
+})();
+</script>
+
 
   </body>
   </html>

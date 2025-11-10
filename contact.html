@@ -1,22 +1,33 @@
-  <!doctype html>
-  <html lang="sq">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Checkout – Bardhi Wellness</title>
-    <meta name="description" content="Platformë trajnimi dhe ushqimi – programe të personalizuara, aplikacion mobil dhe mbështetje nga trajnerë." />
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/css/style.css">
- 
-  </head>
-  <body>
- 
- 
- 
+  <title>Kontakt – Bardhi Wellness</title>
+  <meta name="description" content="Kontakto me Bardhi Wellness për informacione, bashkëpunime apo ndihmë rreth trajnimeve dhe ushqimit të personalizuar." />
+  <link rel="canonical" href="https://www.bardhiwellness.com/contact.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kontakt – Bardhi Wellness" />
+  <meta property="og:description" content="Na kontakto për informacione ose ndihmë rreth programeve të trajnimit dhe ushqimit të personalizuar nga Bardhi Wellness." />
+  <meta property="og:url" content="https://www.bardhiwellness.com/contact.html" />
+  <meta property="og:image" content="https://www.bardhiwellness.com/assets/images/og-image.jpg" />
+  <meta property="og:site_name" content="Bardhi Wellness" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kontakt – Bardhi Wellness" />
+  <meta name="twitter:description" content="Lidhu me Bardhi Wellness për pyetje, këshilla ose bashkëpunime rreth trajnimeve dhe ushqimit." />
+  <meta name="twitter:image" content="https://www.bardhiwellness.com/assets/images/og-image.jpg" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top main-nav">
   <div class="container">
@@ -81,19 +92,19 @@
     </nav>
   </div>
 
-  <!-- Footer (TANI jashtë .offcanvas-body, s'pengon scroll) -->
+  <!-- Footer (jashtë .offcanvas-body) -->
   <div class="menu-footer">
     <div class="d-flex align-items-center gap-3">
-      <a href="https://instagram.com" target="_blank" rel="noopener" class="social" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://t.me" target="_blank" rel="noopener" class="social" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
-      <a href="https://facebook.com" target="_blank" rel="noopener" class="social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-      <a href="mailto:info@example.com" class="social" aria-label="Email"><i class="bi bi-envelope"></i></a>
+      <a href="https://www.facebook.com/bardhi.ukaaa" target="_blank" rel="noopener" class="social" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/bardhi.uka" target="_blank" rel="noopener" class="social" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.tiktok.com/@bardhiuka" target="_blank" rel="noopener" class="social" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      <a href="https://wa.me/4917684132643?text=P%C3%ABrsh%C3%ABndetje%20Bardhi%2C%20dua%20info%20rreth%20paketave." target="_blank" rel="noopener" class="social" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://www.youtube.com/@bardhiuka" target="_blank" rel="noopener" class="social" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
     </div>
     <small class="muted ms-auto">© Bardhi Wellness</small>
   </div>
 </div>
-
-
+<!-- ======== /NAVBAR ======== -->
 
 <!-- ============ CONTACT (Pro) ============ -->
 <section id="contact" class="py-6">
@@ -101,7 +112,6 @@
     <div class="row g-5 align-items-start">
       <!-- Info -->
       <div class="col-lg-5">
-    
         <h2 class="section-title fw-bold mb-2">Na kontakto</h2>
         <p class="section-lead text-muted mb-4">
           Të ndihmojmë të zgjedhësh planin e duhur, porosi dhe çdo paqartësi.
@@ -158,7 +168,7 @@
         </div>
       </div>
 
-      <!-- Form -->
+      <!-- Form (FormSubmit) -->
       <div class="col-lg-7">
         <div class="card rounded-2xl shadow-soft">
           <div class="card-body p-4 p-lg-5">
@@ -167,67 +177,79 @@
               <span class="small text-muted">∼2 min</span>
             </div>
 
-            <form id="contactForm" novalidate>
-              <!-- honeypot anti-spam -->
-              <input type="text" name="company" id="coField" class="d-none" tabindex="-1" autocomplete="off">
+            <form id="contactForm"
+      action="https://formsubmit.co/bardhiwellness@gmail.com"
+      method="POST" novalidate>
 
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label for="cname" class="form-label">Emri</label>
-                  <input type="text" id="cname" class="form-control" required />
-                  <div class="invalid-feedback">Shkruaj emrin.</div>
-                </div>
-                <div class="col-md-6">
-                  <label for="cemail" class="form-label">Email</label>
-                  <input type="email" id="cemail" class="form-control" required />
-                  <div class="invalid-feedback">Shkruaj një email të vlefshëm.</div>
-                </div>
-                <div class="col-md-6">
-                  <label for="csubject" class="form-label">Subjekti</label>
-                  <input type="text" id="csubject" class="form-control" placeholder="p.sh., Pyetje rreth paketave" required />
-                  <div class="invalid-feedback">Shkruaj subjektin.</div>
-                </div>
-                <div class="col-md-6">
-                  <label for="ctype" class="form-label">Tema</label>
-                  <select id="ctype" class="form-select" required>
-                    <option value="" selected disabled>Zgjidh</option>
-                    <option>Pyetje rreth paketave</option>
-                    <option>Pyetje rreth Shop</option>
-                    <option>Pagesa & faturimi</option>
-                    <option>Mbështetje & progres</option>
-                    <option>Tjetër</option>
-                  </select>
-                  <div class="invalid-feedback">Zgjidh një temë.</div>
-                </div>
-                <div class="col-12">
-                  <label for="cmsg" class="form-label">Mesazhi</label>
-                  <textarea id="cmsg" class="form-control" rows="5" placeholder="Na trego shkurt çfarë kërkon..." required></textarea>
-                  <div class="invalid-feedback">Shkruaj mesazhin.</div>
-                </div>
+  <!-- HONEYPOT (i padukshëm) -->
+  <input type="text" name="_honey" class="d-none" tabindex="-1" autocomplete="off">
 
-                <!-- GDPR consent -->
-                <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="cconsent" required>
-                    <label class="form-check-label" for="cconsent">
-                      Pranoj përpunimin e të dhënave sipas Politikës së Privatësisë.
-                    </label>
-                    <div class="invalid-feedback">Duhet ta pranosh për të vazhduar.</div>
-                  </div>
-                </div>
-              </div>
+  <!-- Opsione FormSubmit -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="Kontakt i ri nga Bardhi Wellness">
+  <!-- Përdor URL absolute të prod-it, JO localhost -->
+  <input type="hidden" name="_next" value="https://www.bardhiwellness.com/thank-you.html">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_autoresponse"
+         value="Faleminderit për mesazhin! E morëm dhe do të të kthehemi shumë shpejt. — Bardhi Wellness">
 
-              <div class="d-grid mt-4">
-                <button class="btn btn-brand btn-lg" type="submit">
-                  <i class="bi bi-send me-2"></i> Dërgo
-                </button>
-              </div>
+  <!-- Fushat -->
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label for="cname" class="form-label">Emri</label>
+      <input type="text" id="cname" name="name" class="form-control" required />
+      <div class="invalid-feedback">Shkruaj emrin.</div>
+    </div>
+    <div class="col-md-6">
+      <label for="cemail" class="form-label">Email</label>
+      <input type="email" id="cemail" name="email" class="form-control" required />
+      <div class="invalid-feedback">Shkruaj një email të vlefshëm.</div>
+    </div>
+    <div class="col-md-6">
+      <label for="csubject" class="form-label">Subjekti</label>
+      <input type="text" id="csubject" name="subject" class="form-control"
+             placeholder="p.sh., Pyetje rreth paketave" required />
+      <div class="invalid-feedback">Shkruaj subjektin.</div>
+    </div>
+    <div class="col-md-6">
+      <label for="ctype" class="form-label">Tema</label>
+      <select id="ctype" name="type" class="form-select" required>
+        <option value="" selected disabled>Zgjidh</option>
+        <option>Pyetje rreth paketave</option>
+        <option>Pyetje rreth Shop</option>
+        <option>Pagesa & faturimi</option>
+        <option>Mbështetje & progres</option>
+        <option>Tjetër</option>
+      </select>
+      <div class="invalid-feedback">Zgjidh një temë.</div>
+    </div>
+    <div class="col-12">
+      <label for="cmsg" class="form-label">Mesazhi</label>
+      <textarea id="cmsg" name="message" class="form-control" rows="5"
+                placeholder="Na trego shkurt çfarë kërkon..." required></textarea>
+      <div class="invalid-feedback">Shkruaj mesazhin.</div>
+    </div>
 
-              <!-- Success -->
-              <div id="cFormMsg" class="alert alert-success d-none mt-3 mb-0" role="alert">
-                <i class="bi bi-check2-circle me-1"></i> Mesazhi u dërgua. Do të të kontaktojmë së shpejti. 🙌
-              </div>
-            </form>
+    <!-- GDPR -->
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="cconsent" name="gdpr_consent" required>
+        <label class="form-check-label" for="cconsent">
+          Pranoj përpunimin e të dhënave sipas Politikës së Privatësisë.
+        </label>
+        <div class="invalid-feedback">Duhet ta pranosh për të vazhduar.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-grid mt-4">
+    <button class="btn btn-brand btn-lg" type="submit">
+      <i class="bi bi-send me-2"></i> Dërgo
+    </button>
+  </div>
+</form>
+
+
           </div>
         </div>
 
@@ -236,13 +258,11 @@
           Po dërguat këtë formular, pranon Politikën e Privatësisë.
         </p>
       </div>
+      
     </div>
   </div>
 </section>
 
-
-
- 
 <!-- ========= FOOTER ========= -->
 <footer class="site-footer text-white mt-auto text-center">
   <div class="container py-5 py-lg-6">
@@ -260,21 +280,12 @@
         </p>
 
         <div class="d-flex gap-2 justify-content-center">
-          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="mailto:bardhiwellness@gmail.com" aria-label="Email">
-            <i class="bi bi-envelope"></i>
-          </a>
-          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://wa.me/4917684132643?text=P%C3%ABrsh%C3%ABndetje%20Bardhi%2C%20dua%20info%20rreth%20paketave." target="_blank" rel="noopener" aria-label="WhatsApp">
-            <i class="bi bi-whatsapp"></i>
-          </a>
-          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.instagram.com/bardhi.uka" aria-label="Instagram">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.tiktok.com/@bardhiuka" aria-label="TikTok">
-            <i class="bi bi-tiktok"></i>
-          </a>
-          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.youtube.com/@bardhiuka" aria-label="YouTube">
-            <i class="bi bi-youtube"></i>
-          </a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.facebook.com/bardhi.ukaaa" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.instagram.com/bardhi.uka" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.tiktok.com/@bardhiuka" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://wa.me/4917684132643?text=P%C3%ABrsh%C3%ABndetje%20Bardhi%2C%20dua%20info%20rreth%20paketave." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="https://www.youtube.com/@bardhiuka" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a class="btn btn-outline-light btn-sm rounded-pill footer-ico" href="mailto:bardhiwellness@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
         </div>
       </div>
 
@@ -291,19 +302,18 @@
         </ul>
       </div>
 
-   <!-- Support & Ligjore -->
-<div class="col-12 col-lg-3">
-  <h6 class="text-uppercase small fw-semibold mb-3"><b>Mbështetje & Ligjore <br> <small>(Unterstützung & Recht)</small> </b></h6>
-  <ul class="list-unstyled footer-links m-0">
-    <li><a href="faq.html" class="link-light">Pyetje të shpeshta (FAQ)</a></li>
-    <li><a href="impressum.html" class="link-light">Të dhënat ligjore - (Impressum)</a></li>
-    <li><a href="privacy.html" class="link-light">Privatësia - (Datenschutz)</a></li>
-    <li><a href="terms.html" class="link-light">Kushtet e përgjithshme - (AGB)</a></li>
-    <li><a href="right-of-withdrawal.html" class="link-light">E drejta e tërheqjes - (Widerrufsrecht)</a></li>
-    <li><a href="refunds-returns.html" class="link-light">Rimbursime & Kthime</a></li>
-  </ul>
-</div>
-
+      <!-- Support & Ligjore -->
+      <div class="col-12 col-lg-3">
+        <h6 class="text-uppercase small fw-semibold mb-3"><b>Mbështetje & Ligjore <br> <small>(Unterstützung & Recht)</small> </b></h6>
+        <ul class="list-unstyled footer-links m-0">
+          <li><a href="faq.html" class="link-light">Pyetje të shpeshta (FAQ)</a></li>
+          <li><a href="impressum.html" class="link-light">Të dhënat ligjore - (Impressum)</a></li>
+          <li><a href="privacy.html" class="link-light">Privatësia - (Datenschutz)</a></li>
+          <li><a href="terms.html" class="link-light">Kushtet e përgjithshme - (AGB)</a></li>
+          <li><a href="right-of-withdrawal.html" class="link-light">E drejta e tërheqjes - (Widerrufsrecht)</a></li>
+          <li><a href="refunds-returns.html" class="link-light">Rimbursime & Kthime</a></li>
+        </ul>
+      </div>
 
       <!-- Newsletter -->
       <div class="col-12 col-lg-3">
@@ -322,7 +332,7 @@
           </div>
         </form>
       </div>
-      
+
     </div>
   </div>
 
@@ -333,8 +343,6 @@
   </div>
 </footer>
 <!-- ======== /FOOTER ======== -->
-
-
 
 <!-- ================== COOKIE CONSENT ================== -->
 <div id="cookieConsent" class="position-fixed bottom-0 start-50 translate-middle-x bg-dark text-white p-4 rounded-4 shadow-lg mb-3 mx-3" style="z-index: 2000; max-width: 480px; display:none;">
@@ -347,7 +355,7 @@
 
     <!-- Text SQ/DE -->
     <div id="cookieText" class="small text-light opacity-75">
-      Ne përdorim cookies për të përmirësuar përvojën tuaj në faqe, për analiza dhe marketing të kufizuar. <br>   
+      Ne përdorim cookies për të përmirësuar përvojën tuaj në faqe, për analiza dhe marketing të kufizuar. <br>
       Duke vazhduar, pranon <a href="privacy.html" class="link-light text-decoration-underline">Politikën e Privatësisë</a>.
     </div>
 
@@ -364,14 +372,10 @@
   </div>
 </div>
 
-
-
-
 <!-- BACK TO TOP BUTTON -->
 <button id="backToTop" aria-label="Kthehu lart">
   <i class="bi bi-arrow-up-short"></i>
 </button>
-
 
 <script>
   // FAQ: opsionale – auto-scroll te pyetja e hapur
@@ -379,49 +383,14 @@
     const acc = e.target.closest('.accordion-item');
     if (acc) acc.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
-
-  // Lead form (nëse e përdor diku tjetër me id="leadForm")
-  (function(){
-    const lead = document.getElementById('leadForm');
-    if(!lead) return;
-    lead.addEventListener('submit', function(ev){
-      ev.preventDefault();
-      if(!lead.checkValidity()){
-        ev.stopPropagation();
-        lead.classList.add('was-validated');
-        return;
-      }
-      document.getElementById('formMsg')?.classList.remove('d-none');
-      lead.reset(); lead.classList.remove('was-validated');
-    });
-  })();
-
-  // Contact form
-  (function(){
-    const form = document.getElementById('contactForm');
-    if(!form) return;
-    form.addEventListener('submit', function(ev){
-      ev.preventDefault();
-      if(!form.checkValidity()){
-        ev.stopPropagation();
-        form.classList.add('was-validated');
-        return;
-      }
-      // këtu mund të dërgosh me fetch() te një endpoint tëndin
-      document.getElementById('cFormMsg')?.classList.remove('d-none');
-      form.reset(); form.classList.remove('was-validated');
-    });
-  })();
 </script>
-
 
 <script>
   // vendos automatikisht vitin
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-
-    <script>
+<script>
 /* ---------------- CART helpers ---------------- */
 function readCart(){
   try{ return JSON.parse(localStorage.getItem('cart')||'null'); }catch(e){ return null; }
@@ -434,15 +403,12 @@ function ensureCart(){
 }
 function addToCart(item){
   const c = ensureCart();
-  // merge sipas sku + mode (p.sh. e njëjta pako por 'sub' vs 'pay' janë të ndryshme)
   const i = c.items.find(x => x.sku===item.sku && x.mode===item.mode);
   if(i){ i.qty += item.qty||1; }
   else { c.items.push({ ...item, qty:item.qty||1 }); }
   c.updatedAt = Date.now();
   writeCart(c);
 }
-
- 
 
 /* ---------------- SHOP: “Bli tani” (suplement) ---------------- */
 (function(){
@@ -453,7 +419,6 @@ function addToCart(item){
   const minus = document.getElementById('qtyMinus');
   const plus  = document.getElementById('qtyPlus');
 
-  // stepper
   minus?.addEventListener('click', ()=> { qtyEl.value = Math.max(1,(+qtyEl.value||1)-1); });
   plus ?.addEventListener('click', ()=> { qtyEl.value = Math.max(1,(+qtyEl.value||1)+1); });
 
@@ -463,26 +428,26 @@ function addToCart(item){
 
     addToCart({
       type: 'product',
-      sku:  this.dataset.sku,                 // SUPL-DBS-001
-      title:this.dataset.title,               // Suplement Dobësimi
-      price:parseFloat(this.dataset.price),   // 119
+      sku:  this.dataset.sku,
+      title:this.dataset.title,
+      price:parseFloat(this.dataset.price),
       currency:this.dataset.currency || 'EUR',
       image:this.dataset.image,
       qty,
-      mode: 'pay'                             // produkt = pagesë njëherë
+      mode: 'pay'
     });
 
     const base = location.pathname.replace(/[^/]*$/, '');
     location.href = new URL(base + 'checkout.html', location.origin).toString();
   });
 })();
-    </script>
+</script>
 
- 
-  <!--  Pastaj ngarko Bootstrap dhe app.js -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/app.js"></script>
-  <script>
+<!--  Pastaj ngarko Bootstrap dhe app.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+<script>
   const nav = document.getElementById('navMenu');
   if (nav) {
     nav.addEventListener('shown.bs.collapse', () => document.body.classList.add('menu-open'));
@@ -497,38 +462,27 @@ function addToCart(item){
   });
 </script>
 
+<style>
+  /* spacing utility (since Bootstrap <=5 s’ka py-6) */
+  .py-6{padding-top:4.5rem;padding-bottom:4.5rem}
+</style>
 
-    <style>
-      /* spacing utility (since Bootstrap <=5 s’ka py-6) */
-      .py-6{padding-top:4.5rem;padding-bottom:4.5rem}
-    </style>
-
-    
 <script>
   const backToTop = document.getElementById('backToTop');
-
-  // Shfaq / fsheh butonin
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
+    if (window.scrollY > 200) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
   });
-
-  // Scroll smooth deri në fillim
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
-
 
 <script>
   // Hiq çdo 'active' nga linket e nav-it në këtë faqe
   document.querySelectorAll('.navbar .nav-link.active')
     .forEach(a => a.classList.remove('active'));
 </script>
-
 
 <script>
   // Copy-to-clipboard për email
@@ -546,7 +500,7 @@ function addToCart(item){
     });
   });
 
-  // Prefill WhatsApp sipas temës/subjektit nëse përdoruesi ka zgjedhur diçka
+  // Prefill WhatsApp sipas temës/subjektit
   (function(){
     const wa = document.getElementById('waLink');
     const subject = document.getElementById('csubject');
@@ -563,30 +517,22 @@ function addToCart(item){
     subject.addEventListener('input', buildMsg);
     typeSel.addEventListener('change', buildMsg);
   })();
-
-  // Validim dhe “success” message (mock submit)
-  (function(){
-    const form = document.getElementById('contactForm');
-    if(!form) return;
-    form.addEventListener('submit', function(ev){
-      ev.preventDefault();
-      // honeypot
-      if (document.getElementById('coField')?.value) return;
-
-      if(!form.checkValidity()){
-        ev.stopPropagation();
-        form.classList.add('was-validated');
-        return;
-      }
-      // këtu mund të dërgosh me fetch(...) te endpoint-i yt
-      document.getElementById('cFormMsg')?.classList.remove('d-none');
-      form.reset();
-      form.classList.remove('was-validated');
-    });
-  })();
 </script>
 
-
+<!-- VALIDIM & SUKSES për FormSubmit -->
+<script>
+(() => {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', (ev) => {
+    if (!form.checkValidity()) {
+      ev.preventDefault();
+      ev.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  });
+})();
+</script>
 
 
 <!-- Navbar Mobile Logic -->
@@ -599,15 +545,12 @@ function addToCart(item){
 
     mobileNavLinks.forEach(link => {
       link.addEventListener('click', e => {
-        // mbyll menunë
         bsOffcanvas.hide();
-        // lejo navigimin pas 200ms që të ketë efekt mbyllja
         setTimeout(() => { window.location.href = link.href; }, 200);
       });
     });
   });
 </script>
-
 
 <!-- COOKIE CONSENT LOGIC -->
 <script>
@@ -654,10 +597,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
   langBtn.addEventListener("click", () => applyLang(lang === "sq" ? "de" : "sq"));
 
-  // shfaq nëse s'ka zgjedhje më parë
   if (!localStorage.getItem("cookieAccepted")) box.style.display = "block";
 
-  // ruaj zgjedhjen dhe mbyll
   acceptBtn.addEventListener("click", () => {
     localStorage.setItem("cookieAccepted", "true");
     box.remove();
@@ -675,7 +616,6 @@ document.addEventListener("DOMContentLoaded", function(){
   const box = document.getElementById("cookieConsent");
   const key = "cookieAccepted";
 
-  // nëse s'ka zgjedhje, shto padding-body për mos mbuluar CTA
   if (!localStorage.getItem(key)) {
     document.body.style.paddingBottom = "110px";
   }
@@ -685,8 +625,6 @@ document.addEventListener("DOMContentLoaded", function(){
   document.getElementById("cookieDecline")?.addEventListener("click", clearPad);
 });
 </script>
-
-
 
 <script>
 (() => {
@@ -734,18 +672,17 @@ document.addEventListener("DOMContentLoaded", function(){
 })();
 </script>
 
- <script>
+<script>
 (() => {
   const el = document.querySelector('#mobileNav .offcanvas-body');
   if(!el) return;
   el.addEventListener('touchmove', (e) => {
     const atTop = el.scrollTop <= 0;
     const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
-    if (atTop || atBottom) e.preventDefault(); // shmang chain te dokumenti
+    if (atTop || atBottom) e.preventDefault();
   }, { passive: false });
 })();
 </script>
 
-
-  </body>
-  </html>
+</body>
+</html>

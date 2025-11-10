@@ -1384,6 +1384,78 @@ body{ padding-top: var(--nav-h,64px); }
 /* Hidden për "Shfaq më shumë" */
 .masonry-item.is-hidden{ display:none; }
 
+/* ===== VIP Clients Strip – Light Version ===== */
+.vip-strip {
+  --vip-bg: #f9fafb;           /* gri shumë e lehtë */
+  --vip-border: rgba(0,0,0,.05);
+  --vip-ink: #0f172a;          /* tekst i errët */
+  --vip-accent: #00a37a;       /* jeshile brand */
+  background: var(--vip-bg);
+  color: var(--vip-ink);
+}
+
+.vip-strip .section-title { color: var(--vip-ink); }
+.vip-strip .section-lead { color: #64748b; }
+
+.vip-kicker .vip-crown { font-size: 1rem; line-height: 1; }
+.vip-kicker { opacity: .85; }
+
+/* Karta VIP */
+.vip-card {
+  background: #ffffff;
+  border: 1px solid var(--vip-border);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,.04);
+}
+.vip-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+}
+
+.vip-media {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: #f3f4f6;
+}
+.vip-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vip-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, var(--vip-accent), #34d399);
+  color: #fff;
+  font-weight: 700;
+  font-size: .72rem;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  letter-spacing: .4px;
+  box-shadow: 0 4px 10px rgba(0,163,122,.3);
+}
+
+.vip-body {
+  padding: 14px 14px 16px 14px;
+}
+.vip-body h6 {
+  color: var(--vip-ink);
+  font-weight: 700;
+}
+.vip-desc {
+  color: #64748b !important;
+  font-size: .875rem;
+}
+
+/* Responsivitet i lehtë */
+@media (max-width: 575.98px) {
+  .vip-body { padding: 12px; }
+}
 
  
 /* =========================== 7) ABOUT SECTION =========================== */
